@@ -1,0 +1,32 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# Cache generado automáticamente
+cache/chips/
+
+# Archivos grandes (>100MB, límite GitHub)
+model/modelo_v02_completo.pth
+model/areas_protegidas_latam.geojson
+forestnet_data/
+*.zip
+
+# Logs
+*.log
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Archivos de versión vacíos
+=0.15
+=0.9
+=10.0
+=2.0
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Entornos virtuales
+venv/
+.venv/
