@@ -79,38 +79,70 @@ def get_median_ndvi(collection: ee.ImageCollection, aoi: ee.Geometry) -> ee.Imag
     return compute_ndvi(median_composite).clip(aoi)
 
 
+def get_sentinel1_collection(
+    aoi: ee.Geometry,
+    start: str,
+    end: str,
+) -> ee.ImageCollection:
+    """Loads a Sentinel-1 GRD collection filtered for IW mode with VV and VH polarizations.
+
+    Args:
+        aoi:   GEE geometry to filter by bounds.
+        start: Start date string, e.g. "2023-06-01".
+        end:   End date string, e.g. "2023-08-31".
+
+    Returns:
+        Filtered ee.ImageCollection with bands VV and VH (values in dB).
+    """
+    return (
+        ee.ImageCollection("COPERNICUS/S1_GRD")
+        .filterBounds(aoi)
+        .filterDate(start, end)
+        .filter(ee.Filter.eq("instrumentMode", "IW"))
+        .filter(ee.Filter.listContains("transmitterReceiverPolarisation", "VV"))
+        .filter(ee.Filter.listContains("transmitterReceiverPolarisation", "VH"))
+        .select(["VV", "VH"])
+    )
+
+
 def get_classification_composite(
     collection: ee.ImageCollection,
-    bands: list[str] | None = None,
+    s1_collection: ee.ImageCollection | None = None,
 ) -> ee.Image:
-    """Builds a median composite pre-selected for classification bands.
+    """Builds a median composite for classification.
 
     Call this once per pipeline run and pass the resulting ee.Image to
-    extract_chip() for all alerts, so GEE can serve chips from a single
+    extract_chip() for all alerts, so GEE serves chips from a single
     cached composite instead of recomputing median() per alert.
 
     Args:
-        collection: Cloud-filtered ee.ImageCollection for the analysis period.
-        bands:      Bands to retain. Defaults to ["B4", "B3", "B2", "B8"].
+        collection:    Cloud-filtered Sentinel-2 ee.ImageCollection.
+        s1_collection: Optional Sentinel-1 ee.ImageCollection (IW, VV+VH).
+                       When provided the output is a 6-band image
+                       [B4, B3, B2, B8, VV, VH]; otherwise 4-band [B4, B3, B2, B8].
 
     Returns:
-        ee.Image with only the requested bands.
+        ee.Image with raw DN values for S2 bands and raw dB values for S1 bands.
     """
-    if bands is None:
-        bands = ["B4", "B3", "B2", "B8"]
-    return collection.median().select(bands)
+    s2 = collection.median().select(["B4", "B3", "B2", "B8"])
+    if s1_collection is None:
+        return s2
+    s1 = s1_collection.median().select(["VV", "VH"])
+    return s2.addBands(s1)
 
 
 def extract_chip(
     image: ee.Image,
     centroid: ee.Geometry,
     size_m: int = 640,
+    n_bands: int = 6,
 ) -> np.ndarray:
-    """Extracts a Sentinel-2 chip centred on a point from a pre-built composite.
+    """Extracts a chip centred on a point from a pre-built composite.
 
-    Accepts the ee.Image returned by get_classification_composite() so that
-    the median composite is computed only once per pipeline run instead of
-    once per alert.
+    Returns raw pixel values so the classifier can apply its own per-sensor
+    normalisation:
+      - S2 bands (B4/B3/B2/B8): raw DN in [0, 10 000].
+      - S1 bands (VV/VH):       raw backscatter in dB, typically [-30, 30].
 
     sampleRectangle is limited to ~262 144 total pixels. At 10 m/px a 640 m
     window is 64×64 = 4 096 pixels per band, well within the limit.
@@ -119,12 +151,15 @@ def extract_chip(
         image:    Pre-built ee.Image (output of get_classification_composite()).
         centroid: ee.Geometry.Point at the polygon centroid.
         size_m:   Side length of the chip in metres (default 640 → 64×64 px).
+        n_bands:  Expected number of bands; used only for the fallback shape.
 
     Returns:
-        Float32 numpy array [H, W, C] with values scaled to [0, 1].
-        Returns a zero array of the expected shape if the download fails.
+        Float32 numpy array [H, W, C] with raw values.
+        Returns a zero array of shape [fallback_size, fallback_size, n_bands]
+        if the download fails.
     """
     fallback_size = max(1, size_m // 10)
+    fallback = np.zeros((fallback_size, fallback_size, n_bands), dtype=np.float32)
 
     try:
         region = centroid.buffer(size_m / 2).bounds()
@@ -134,21 +169,18 @@ def extract_chip(
         ).getInfo()
 
         props = chip_info.get("properties", {})
-        # Use the band names actually present in the response
         bands = [k for k in props if isinstance(props[k], list)]
-        fallback = np.zeros((fallback_size, fallback_size, len(bands)), dtype=np.float32)
+        if not bands:
+            return fallback
 
         arrays = [np.array(props[b], dtype=np.float32) for b in bands]
-
         if arrays[0].ndim != 2 or arrays[0].size == 0:
             return fallback
 
-        # Scale Sentinel-2 SR [0, 10000] → [0, 1]
-        chip = np.stack(arrays, axis=-1) / 10_000.0
-        return np.clip(chip, 0.0, 1.0).astype(np.float32)
+        return np.stack(arrays, axis=-1).astype(np.float32)
 
     except Exception:
-        return np.zeros((fallback_size, fallback_size, 4), dtype=np.float32)
+        return fallback
 
 
 # ---------------------------------------------------------------------------
@@ -294,7 +326,9 @@ def download_chips_from_drive(polygon_ids: list[str], drive_folder: str) -> None
         finally:
             os.unlink(tmp_path)
 
-        chip = np.clip(data.astype("float32") / 10_000.0, 0.0, 1.0)
+        # Store raw values: S2 DN [0, 10000], S1 dB [~-30, 30].
+        # Normalisation is applied by the classifier at inference time.
+        chip = data.astype("float32")
         save_chip(pid, chip)
         downloaded += 1
 

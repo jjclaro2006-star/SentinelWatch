@@ -13,17 +13,28 @@ if TYPE_CHECKING:
     import ee
     from sentinel_classifier import SentinelClassifier
 
-_CHIP_CACHE = Path("cache") / "chips"
+_CHIP_CACHE_S1S2 = Path("cache") / "chips_s1s2"
 
 
-def _load_tif_chip(severity: str, idx: int) -> "np.ndarray | None":
-    """Reads cache/chips/{severity}/alerta_{idx:04d}.tif as a float32 [H,W,C] array."""
-    path = _CHIP_CACHE / severity / f"alerta_{idx:04d}.tif"
+def _load_chip_s1s2(polygon_id: str) -> "np.ndarray | None":
+    """Returns a cached [H, W, 6] chip from cache/chips_s1s2/, or None.
+
+    Ignores any cached file that does not have exactly 6 bands so that stale
+    4-band chips never reach the classifier.
+    """
+    path = _CHIP_CACHE_S1S2 / f"{polygon_id}.npy"
     if not path.exists():
         return None
-    import tifffile
-    data = tifffile.imread(str(path))
-    return np.clip(data.astype(np.float32) / 10_000.0, 0.0, 1.0)
+    chip = np.load(path)
+    if chip.ndim != 3 or chip.shape[-1] != 6:
+        return None
+    return chip
+
+
+def _save_chip_s1s2(polygon_id: str, chip: np.ndarray) -> None:
+    """Persists a [H, W, 6] chip to cache/chips_s1s2/{polygon_id}.npy."""
+    _CHIP_CACHE_S1S2.mkdir(parents=True, exist_ok=True)
+    np.save(_CHIP_CACHE_S1S2 / f"{polygon_id}.npy", chip)
 
 
 def build_alerts(
@@ -31,6 +42,7 @@ def build_alerts(
     detection_date: date | None = None,
     classifier: "SentinelClassifier | None" = None,
     sentinel2_image: "ee.Image | None" = None,
+    sentinel1_image: "ee.Image | None" = None,
     classified_ids: "set[str] | None" = None,
     existing_by_id: "dict[str, dict] | None" = None,
 ) -> list[dict]:
@@ -38,10 +50,11 @@ def build_alerts(
 
     Classification flow (when classifier is provided):
     1. If polygon_id is in classified_ids → carry forward existing classification.
-    2. Load chip from cache/chips/{severity}/alerta_{idx:04d}.tif.
-       If the TIF is absent, fall back to a live sampleRectangle download
-       (requires sentinel2_image).
-    3. Run SentinelClassifier.predecir() and verify legality.
+    2. Load chip from cache/chips_s1s2/{polygon_id}.npy (must be 6-band).
+       If absent or < 6 bands, fall back to a live sampleRectangle download
+       (requires sentinel2_image; fused with sentinel1_image when provided) and
+       save the result to cache/chips_s1s2/ for future runs.
+    3. Run SentinelClassifier.predecir() on a [H, W, 6] array and verify legality.
     """
     if detection_date is None:
         detection_date = date.today()
@@ -77,11 +90,24 @@ def build_alerts(
                 alert["confianza"] = src["confianza"]
                 alert["veredicto"] = src["veredicto"]
             else:
-                chip = _load_tif_chip(severity, idx)
+                chip = _load_chip_s1s2(pid)
                 if chip is None and sentinel2_image is not None:
                     import ee
                     from gee_client import extract_chip
-                    chip = extract_chip(sentinel2_image, ee.Geometry.Point([lon, lat]))
+                    # Fuse S2 (B4/B3/B2/B8) with S1 (VV/VH) when available.
+                    classification_image = (
+                        sentinel2_image.addBands(sentinel1_image)
+                        if sentinel1_image is not None
+                        else sentinel2_image
+                    )
+                    n_bands = 6 if sentinel1_image is not None else 4
+                    chip = extract_chip(
+                        classification_image,
+                        ee.Geometry.Point([lon, lat]),
+                        n_bands=n_bands,
+                    )
+                    if chip is not None and chip.shape[-1] == 6:
+                        _save_chip_s1s2(pid, chip)
 
                 if chip is not None:
                     resultado = classifier.predecir(chip, coordenadas=(lat, lon))

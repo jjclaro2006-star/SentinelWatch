@@ -1,3 +1,4 @@
+import argparse
 import json
 from datetime import date
 from pathlib import Path
@@ -8,6 +9,7 @@ from gee_client import (
     aoi_geometry,
     get_classification_composite,
     get_median_ndvi,
+    get_sentinel1_collection,
     get_sentinel2_collection,
 )
 from ndvi import detect_loss, vectorize_loss
@@ -18,6 +20,7 @@ def run_pipeline(
     baseline: tuple[str, str] = DATE_BASELINE,
     analysis: tuple[str, str] = DATE_ANALYSIS,
     detection_date: date | None = None,
+    reclassify: bool = False,
 ) -> dict:
     """Runs the deforestation detection pipeline in incremental mode.
 
@@ -29,18 +32,23 @@ def run_pipeline(
         baseline:       (start, end) date strings for the reference period.
         analysis:       (start, end) date strings for the analysis period.
         detection_date: Date stamped on each alert. Defaults to today.
+        reclassify:     When True, ignore all previous classifications and
+                        re-run inference on every polygon with the current model.
+                        Use this after a model upgrade.
 
     Returns:
         Summary dict with alert count, output path, severity/activity breakdown.
     """
     authenticate_and_initialize()
 
-    print("[1/5] Loading Sentinel-2 collections...")
+    print("[1/5] Loading Sentinel-2 and Sentinel-1 collections...")
     aoi      = aoi_geometry()
     col_base = get_sentinel2_collection(aoi, *baseline)
     col_now  = get_sentinel2_collection(aoi, *analysis)
-    print(f"      Baseline images : {col_base.size().getInfo()}")
-    print(f"      Analysis images : {col_now.size().getInfo()}")
+    col_s1   = get_sentinel1_collection(aoi, *analysis)
+    print(f"      Baseline S2 images : {col_base.size().getInfo()}")
+    print(f"      Analysis S2 images : {col_now.size().getInfo()}")
+    print(f"      Analysis S1 images : {col_s1.size().getInfo()}")
 
     print("[2/5] Computing NDVI composites...")
     ndvi_base = get_median_ndvi(col_base, aoi)
@@ -56,18 +64,23 @@ def run_pipeline(
     print("[5/5] Building alerts (incremental)...")
 
     # Load previously classified alerts to avoid re-running inference on them.
+    # With --reclassify, treat every polygon as new regardless of prior results.
     existing_features  = _load_existing_alerts()
     existing_by_id     = {f["properties"]["id"]: f["properties"] for f in existing_features}
-    classified_ids     = {
-        pid for pid, props in existing_by_id.items() if "actividad" in props
-    }
-    print(f"      Previously classified : {len(classified_ids)}")
+    if reclassify:
+        classified_ids = set()
+        print("      --reclassify: all polygons will be re-classified.")
+    else:
+        classified_ids = {
+            pid for pid, props in existing_by_id.items() if "actividad" in props
+        }
+        print(f"      Previously classified : {len(classified_ids)}")
 
-    classifier         = _load_classifier()
+    classifier           = _load_classifier()
     classification_image = None
 
     if classifier:
-        classification_image = get_classification_composite(col_now)
+        classification_image = get_classification_composite(col_now, s1_collection=col_s1)
 
     alerts = build_alerts(
         gdf,
@@ -135,7 +148,7 @@ def _load_existing_alerts() -> list[dict]:
 
 def _load_classifier():
     """Returns a SentinelClassifier if model weights exist, otherwise None."""
-    weights_path = Path("model") / "modelo_v02_completo.pth"
+    weights_path = Path("model") / "gaia_v04_s1s2.pth"
     if not weights_path.exists():
         print(f"      Warning: model weights not found at {weights_path}. Skipping classification.")
         return None
@@ -148,4 +161,12 @@ def _load_classifier():
 
 
 if __name__ == "__main__":
-    run_pipeline()
+    parser = argparse.ArgumentParser(description="SentinelWatch deforestation pipeline.")
+    parser.add_argument(
+        "--reclassify",
+        action="store_true",
+        help="Ignore previous classifications and re-run inference on all polygons. "
+             "Use after a model upgrade.",
+    )
+    args = parser.parse_args()
+    run_pipeline(reclassify=args.reclassify)
