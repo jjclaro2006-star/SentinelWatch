@@ -622,8 +622,9 @@
           <label class="ck-wrap"><input type="checkbox" data-filter="act" value="deforestacion" checked><div class="ck-box"></div><span class="ck-label">Deforestación</span><span class="ck-ct" data-act-ct="deforestacion">0</span></label>
           <label class="ck-wrap"><input type="checkbox" data-filter="act" value="mineria" checked><div class="ck-box"></div><span class="ck-label">Minería</span><span class="ck-ct" data-act-ct="mineria">0</span></label>
           <label class="ck-wrap"><input type="checkbox" data-filter="act" value="agricultura" checked><div class="ck-box"></div><span class="ck-label">Agricultura</span><span class="ck-ct" data-act-ct="agricultura">0</span></label>
+          <label class="ck-wrap"><input type="checkbox" data-filter="act" value="incendio" checked><div class="ck-box"></div><span class="ck-label">Incendio</span><span class="ck-ct" data-act-ct="incendio">0</span></label>
+          <label class="ck-wrap"><input type="checkbox" data-filter="act" value="asentamiento" checked><div class="ck-box"></div><span class="ck-label">Asentamiento</span><span class="ck-ct" data-act-ct="asentamiento">0</span></label>
           <label class="ck-wrap"><input type="checkbox" data-filter="act" value="normal" checked><div class="ck-box"></div><span class="ck-label">Normal</span><span class="ck-ct" data-act-ct="normal">0</span></label>
-          <label class="ck-wrap"><input type="checkbox" data-filter="act" value="sin_clasificar" checked><div class="ck-box"></div><span class="ck-label">Sin clasificar</span><span class="ck-ct" data-act-ct="sin_clasificar">0</span></label>
         </div>
 
         <!-- Severidad -->
@@ -745,9 +746,8 @@
     return { alta:'Alta', media:'Media', baja:'Baja' }[s] || (s || '—');
   }
   function actLabel(a) {
-    if (!a || a === 'sin_clasificar') return 'Sin clasificar';
-    return { normal:'Normal', deforestacion:'Deforestación',
-             agricultura:'Agricultura', mineria:'Minería' }[a] || a;
+    return { normal:'Normal', deforestacion:'Deforestación', agricultura:'Agricultura',
+             mineria:'Minería', incendio:'Incendio', asentamiento:'Asentamiento' }[a] || (a || 'Sin clasificar');
   }
   function verShort(v) {
     if (!v) return 'Sin veredicto';
@@ -787,17 +787,17 @@
 
   // ── MARKERS ────────────────────────────────────────────────
   function renderMarkers(alerts) {
-    // Fade overlay pane out, repopulate, fade back in
-    const overlayPane = map.getPane('overlayPane');
-    if (overlayPane) {
-      overlayPane.style.transition = 'opacity 300ms ease-out';
-      overlayPane.style.opacity = '0';
+    console.log('[renderMarkers] total recibidos:', alerts.length);
+    if (alerts.length > 0) {
+      const fp = alerts[0].properties;
+      console.log('[renderMarkers] primer feature lat:', fp.lat, 'lon:', fp.lon);
     }
     markerLayer.clearLayers();
     markers = {};
+    let added = 0, skipped = 0;
     alerts.forEach(f => {
       const p = f.properties;
-      if (p.lat == null || p.lon == null) return;
+      if (p.lat == null || p.lon == null) { skipped++; return; }
       const c  = sevColor(p.severity);
       const sel = p.id === activeId;
       const circle = L.circleMarker([p.lat, p.lon], {
@@ -806,8 +806,7 @@
         weight: sel ? 2 : 1, opacity: 0.9, fillOpacity: 0.75,
       });
       circle.bindPopup(buildPopup(p), { maxWidth: 260 });
-      circle.on('click', (e) => {
-        // Prevent click from bubbling to map (empty-area handler)
+      circle.on('click', () => {
         _markerClickLock = true;
         setTimeout(() => { _markerClickLock = false; }, 0);
         activate(p.id);
@@ -816,11 +815,9 @@
       });
       circle.addTo(markerLayer);
       markers[p.id] = { circle, props: p };
+      added++;
     });
-    // Fade back in after render
-    if (overlayPane) {
-      requestAnimationFrame(() => { overlayPane.style.opacity = '1'; });
-    }
+    console.log('[renderMarkers] marcadores añadidos:', added, '| omitidos (sin coords):', skipped);
   }
 
   function reStyleMarkers() {
@@ -987,9 +984,21 @@
         fetch(`${API_BASE}/alerts/summary`).then(r => { if(!r.ok) throw new Error(r.status); return r.json(); }),
       ]);
       hideErr();
+      console.log('[SentinelWatch] GeoJSON recibido:', gj);
+      const first = gj.features?.[0];
+      console.log('[SentinelWatch] Primer feature — properties:', first?.properties, '| geometry:', first?.geometry);
       const hpSys = document.getElementById('hp-sys');
       if (hpSys) hpSys.textContent = 'ONLINE';
-      allAlerts = gj.features || [];
+      const SEV_MAP = { low: 'baja', medium: 'media', high: 'alta' };
+      allAlerts = (gj.features || []).map(f => {
+        const p = { ...f.properties };
+        if (SEV_MAP[p.severity]) p.severity = SEV_MAP[p.severity];
+        if (p.lat == null || p.lon == null) {
+          const coords = f.geometry?.coordinates;
+          if (coords) { p.lat = coords[1]; p.lon = coords[0]; }
+        }
+        return { ...f, properties: p };
+      });
       updateCounts();
       applyFilters();
       updateSummaryUI(sum);
