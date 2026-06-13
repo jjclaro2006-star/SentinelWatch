@@ -4,7 +4,7 @@ from datetime import date
 from pathlib import Path
 
 from auth import authenticate_and_initialize
-from config import DATE_BASELINE, DATE_ANALYSIS, OUTPUT_DIR
+from config import DATE_BASELINE, DATE_ANALYSIS, OUTPUT_DIR, REGIONS
 from gee_client import (
     aoi_geometry,
     get_classification_composite,
@@ -21,6 +21,7 @@ def run_pipeline(
     analysis: tuple[str, str] = DATE_ANALYSIS,
     detection_date: date | None = None,
     reclassify: bool = False,
+    region: str = "peru",
 ) -> dict:
     """Runs the deforestation detection pipeline in incremental mode.
 
@@ -35,14 +36,19 @@ def run_pipeline(
         reclassify:     When True, ignore all previous classifications and
                         re-run inference on every polygon with the current model.
                         Use this after a model upgrade.
+        region:         Named region to process. Must be a key in config.REGIONS.
+                        Defaults to "peru".
 
     Returns:
         Summary dict with alert count, output path, severity/activity breakdown.
     """
     authenticate_and_initialize()
 
+    aoi_bbox = REGIONS.get(region, REGIONS["peru"])
+    print(f"[0/5] Region: {region}  AOI: {aoi_bbox}")
+
     print("[1/5] Loading Sentinel-2 and Sentinel-1 collections...")
-    aoi      = aoi_geometry()
+    aoi      = aoi_geometry(aoi_bbox)
     col_base = get_sentinel2_collection(aoi, *baseline)
     col_now  = get_sentinel2_collection(aoi, *analysis)
     col_s1   = get_sentinel1_collection(aoi, *analysis)
@@ -90,7 +96,7 @@ def run_pipeline(
         classified_ids=classified_ids,
         existing_by_id=existing_by_id,
     )
-    output_path = save_geojson(alerts)
+    output_path = save_geojson(alerts, region=region)
 
     severity_counts:  dict[str, int] = {}
     activity_counts:  dict[str, int] = {}
@@ -168,5 +174,11 @@ if __name__ == "__main__":
         help="Ignore previous classifications and re-run inference on all polygons. "
              "Use after a model upgrade.",
     )
+    parser.add_argument(
+        "--region",
+        choices=list(REGIONS.keys()),
+        default="peru",
+        help="Region to process. Options: %(choices)s. Default: %(default)s.",
+    )
     args = parser.parse_args()
-    run_pipeline(reclassify=args.reclassify)
+    run_pipeline(reclassify=args.reclassify, region=args.region)

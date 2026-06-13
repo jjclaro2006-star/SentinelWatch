@@ -1,10 +1,12 @@
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from pathlib import Path
 from typing import TYPE_CHECKING
 
 import geopandas as gpd
 import numpy as np
+from tqdm import tqdm
 
 from chip_cache import make_polygon_id
 from config import OUTPUT_DIR
@@ -37,6 +39,54 @@ def _save_chip_s1s2(polygon_id: str, chip: np.ndarray) -> None:
     np.save(_CHIP_CACHE_S1S2 / f"{polygon_id}.npy", chip)
 
 
+def _classify_alert(
+    alert: dict,
+    pid: str,
+    lat: float,
+    lon: float,
+    classifier: "SentinelClassifier",
+    classification_image: "ee.Image | None",
+    n_bands: int,
+    classified_ids: set,
+    existing_by_id: dict,
+) -> dict:
+    """Downloads a chip and runs inference for one alert. Called from threads.
+
+    Each thread operates on its own alert dict and polygon_id, so there is no
+    shared mutable state. GEE HTTP calls and PyTorch forward passes both release
+    the GIL, making threads effective here despite the GIL.
+
+    Returns the alert dict, augmented with actividad/confianza/veredicto when
+    classification succeeds.
+    """
+    if pid in classified_ids:
+        src = existing_by_id[pid]
+        alert["actividad"] = src["actividad"]
+        alert["confianza"] = src["confianza"]
+        alert["veredicto"] = src["veredicto"]
+        return alert
+
+    chip = _load_chip_s1s2(pid)
+    if chip is None and classification_image is not None:
+        import ee
+        from gee_client import extract_chip
+        chip = extract_chip(
+            classification_image,
+            ee.Geometry.Point([lon, lat]),
+            n_bands=n_bands,
+        )
+        if chip is not None and chip.shape[-1] == 6:
+            _save_chip_s1s2(pid, chip)
+
+    if chip is not None:
+        resultado = classifier.predecir(chip, coordenadas=(lat, lon))
+        alert["actividad"] = resultado["actividad"]
+        alert["confianza"] = resultado["confianza"]
+        alert["veredicto"] = resultado["veredicto"]
+
+    return alert
+
+
 def build_alerts(
     gdf: gpd.GeoDataFrame,
     detection_date: date | None = None,
@@ -45,6 +95,7 @@ def build_alerts(
     sentinel1_image: "ee.Image | None" = None,
     classified_ids: "set[str] | None" = None,
     existing_by_id: "dict[str, dict] | None" = None,
+    max_workers: int = 8,
 ) -> list[dict]:
     """Converts a loss GeoDataFrame into a list of alert dicts.
 
@@ -54,85 +105,110 @@ def build_alerts(
        If absent or < 6 bands, fall back to a live sampleRectangle download
        (requires sentinel2_image; fused with sentinel1_image when provided) and
        save the result to cache/chips_s1s2/ for future runs.
-    3. Run SentinelClassifier.predecir() on a [H, W, 6] array and verify legality.
+    3. Run SentinelClassifier.predecir() on a [H, W, 6] array.
+
+    Steps 2-3 are executed in parallel across max_workers threads. GEE downloads
+    are I/O-bound and release the GIL; PyTorch inference also releases the GIL
+    during its C++ forward pass, so both benefit from thread-level concurrency.
+
+    Args:
+        max_workers: Thread pool size for parallel chip download + inference.
+                     Default 8 reduces ~8 h serial classification to <1 h for
+                     ~11 k alerts with typical GEE latency of 2-3 s per chip.
     """
     if detection_date is None:
         detection_date = date.today()
 
-    date_str        = detection_date.isoformat()
-    classify        = classifier is not None
-    classified_ids  = classified_ids or set()
-    existing_by_id  = existing_by_id or {}
-    alerts          = []
+    date_str       = detection_date.isoformat()
+    classify       = classifier is not None
+    classified_ids = classified_ids or set()
+    existing_by_id = existing_by_id or {}
 
-    for idx, (_, row) in enumerate(gdf.iterrows()):
+    # --- Build base alert dicts (fast, no I/O) ---
+    rows: list[tuple[dict, str, float, float]] = []
+    for _, row in gdf.iterrows():
         centroid = row.geometry.centroid
         lat      = round(centroid.y, 6)
         lon      = round(centroid.x, 6)
         pid      = make_polygon_id(lat, lon)
-        severity = row["severity"]
-
         alert: dict = {
             "id":             pid,
             "lat":            lat,
             "lon":            lon,
             "detection_date": date_str,
-            "severity":       severity,
+            "severity":       row["severity"],
             "ndvi_change":    round(float(row["ndvi_change"]), 4),
             "area_ha":        round(float(row["area_ha"]), 2),
             "geometry":       row.geometry.__geo_interface__,
         }
+        rows.append((alert, pid, lat, lon))
 
-        if classify:
-            if pid in classified_ids:
-                src = existing_by_id[pid]
-                alert["actividad"] = src["actividad"]
-                alert["confianza"] = src["confianza"]
-                alert["veredicto"] = src["veredicto"]
-            else:
-                chip = _load_chip_s1s2(pid)
-                if chip is None and sentinel2_image is not None:
-                    import ee
-                    from gee_client import extract_chip
-                    # Fuse S2 (B4/B3/B2/B8) with S1 (VV/VH) when available.
-                    classification_image = (
-                        sentinel2_image.addBands(sentinel1_image)
-                        if sentinel1_image is not None
-                        else sentinel2_image
-                    )
-                    n_bands = 6 if sentinel1_image is not None else 4
-                    chip = extract_chip(
-                        classification_image,
-                        ee.Geometry.Point([lon, lat]),
-                        n_bands=n_bands,
-                    )
-                    if chip is not None and chip.shape[-1] == 6:
-                        _save_chip_s1s2(pid, chip)
+    if not classify:
+        return [alert for alert, *_ in rows]
 
-                if chip is not None:
-                    resultado = classifier.predecir(chip, coordenadas=(lat, lon))
-                    alert["actividad"] = resultado["actividad"]
-                    alert["confianza"] = resultado["confianza"]
-                    alert["veredicto"] = resultado["veredicto"]
+    # Pre-build classification image once — EE graph construction is not
+    # thread-safe, so this must happen before the executor starts.
+    classification_image: "ee.Image | None" = None
+    n_bands = 4
+    if sentinel2_image is not None:
+        # Fuse S2 (B4/B3/B2/B8) with S1 (VV/VH) when available.
+        classification_image = (
+            sentinel2_image.addBands(sentinel1_image)
+            if sentinel1_image is not None
+            else sentinel2_image
+        )
+        n_bands = 6 if sentinel1_image is not None else 4
 
-        alerts.append(alert)
+    # --- Parallel chip download + inference ---
+    results: dict[int, dict] = {}
 
-    return alerts
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_idx = {
+            executor.submit(
+                _classify_alert,
+                alert, pid, lat, lon,
+                classifier, classification_image, n_bands,
+                classified_ids, existing_by_id,
+            ): i
+            for i, (alert, pid, lat, lon) in enumerate(rows)
+        }
+
+        with tqdm(total=len(future_to_idx), desc="Classifying alerts", unit="alert") as pbar:
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+                    results[idx] = future.result()
+                except Exception as exc:
+                    # Keep the base alert; classification is best-effort.
+                    alert, pid, *_ = rows[idx]
+                    tqdm.write(f"      Warning: classification failed for {pid}: {exc}")
+                    results[idx] = alert
+                pbar.update(1)
+
+    return [results[i] for i in range(len(rows))]
 
 
-def save_geojson(alerts: list[dict], filepath: Path | None = None) -> Path:
+def save_geojson(
+    alerts: list[dict],
+    filepath: Path | None = None,
+    region: str | None = None,
+) -> Path:
     """Writes alerts to a GeoJSON FeatureCollection file.
 
     Args:
         alerts:   List of alert dicts from build_alerts().
-        filepath: Destination path. Defaults to outputs/alerts_YYYYMMDD.geojson.
+        filepath: Destination path. If given, region is ignored.
+        region:   Region name inserted into the filename:
+                  outputs/alerts_<region>_YYYYMMDD.geojson.
+                  Omit for the legacy outputs/alerts_YYYYMMDD.geojson name.
 
     Returns:
         The path where the file was written.
     """
     if filepath is None:
-        filename = f"alerts_{date.today().strftime('%Y%m%d')}.geojson"
-        filepath = OUTPUT_DIR / filename
+        today = date.today().strftime("%Y%m%d")
+        stem = f"alerts_{region}_{today}" if region else f"alerts_{today}"
+        filepath = OUTPUT_DIR / f"{stem}.geojson"
 
     features = [
         {

@@ -8,6 +8,11 @@ from config import MIN_AREA_HA, MAX_PIXELS, NDVI_LOSS_THRESHOLD
 # bestEffort=True lets GEE auto-coarsen to fit within MAX_PIXELS.
 _SCALE = 100
 
+# GEE's server hard-caps getInfo() at 5,000 features per call.
+# _MAX_FEATURES guards against runaway paging on very large regions.
+_PAGE_SIZE = 5_000
+_MAX_FEATURES = 50_000
+
 
 def detect_loss(
     ndvi_baseline: ee.Image,
@@ -28,6 +33,34 @@ def detect_loss(
     ndvi_diff = ndvi_baseline.subtract(ndvi_analysis).rename("ndvi_change")
     loss_mask = ndvi_diff.gt(threshold).rename("loss").toInt()
     return ndvi_diff, loss_mask
+
+
+def _paginated_features(fc: ee.FeatureCollection) -> list[dict]:
+    """Pages through a GEE FeatureCollection in batches of _PAGE_SIZE.
+
+    GEE's getInfo() is hard-capped at 5,000 features per call. Fetches at
+    most _MAX_FEATURES total to avoid runaway requests on large regions.
+    Each page costs one synchronous GEE API call.
+    """
+    total = min(fc.size().getInfo(), _MAX_FEATURES)
+    if total == 0:
+        return []
+
+    pages = -(-total // _PAGE_SIZE)  # ceiling division
+    print(f"      Fetching {total} polygons in {pages} page(s)...")
+
+    features: list[dict] = []
+    offset = 0
+    while offset < total:
+        batch: list[dict] = fc.toList(_PAGE_SIZE, offset).getInfo()
+        if not batch:
+            break
+        features.extend(batch)
+        offset += len(batch)
+        print(f"      {offset}/{total} polygons fetched", end="\r")
+
+    print()  # newline after the progress line
+    return features
 
 
 def _classify_severity(delta: float) -> str:
@@ -90,8 +123,7 @@ def vectorize_loss(
         ee.Filter.gte("area_ha", MIN_AREA_HA)
     )
 
-    fc_info = filtered.getInfo()
-    features = fc_info.get("features", [])
+    features = _paginated_features(filtered)
 
     if not features:
         return gpd.GeoDataFrame(

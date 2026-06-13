@@ -4,9 +4,13 @@ import numpy as np
 from config import AOI, CLOUD_COVER_MAX
 
 
-def aoi_geometry() -> ee.Geometry:
-    """Returns the area of interest as a GEE Rectangle."""
-    west, south, east, north = AOI
+def aoi_geometry(aoi: list[float] | None = None) -> ee.Geometry:
+    """Returns the area of interest as a GEE Rectangle.
+
+    Args:
+        aoi: [west, south, east, north]. Falls back to config.AOI if None.
+    """
+    west, south, east, north = aoi if aoi is not None else AOI
     return ee.Geometry.BBox(west, south, east, north)
 
 
