@@ -6,10 +6,18 @@ AOI = [-75.5, -5.0, -73.5, -3.0]
 
 # Named regions for --region CLI flag [west, south, east, north]
 REGIONS: dict[str, list[float]] = {
-    "peru":     [-75.5, -5.0,  -73.5,  -3.0],
-    "colombia": [-77.0, -1.0,  -67.0,   7.0],
-    "brasil":   [-74.0, -15.0, -44.0,   5.0],
-    "bolivia":  [-70.0, -18.0, -57.0,  -9.0],
+    "peru":          [-75.5, -5.0,  -73.5,  -3.0],
+    "colombia":      [-77.0, -1.0,  -67.0,   7.0],
+    "brasil":        [-74.0, -15.0, -44.0,   5.0],
+    "brasil_norte":  [-74.0,  -5.0, -52.0,   5.0],
+    "brasil_oeste":   [-74.0, -15.0, -52.0,  -5.0],
+    "brasil_oeste_1": [-74.0, -10.0, -63.0,  -5.0],
+    "brasil_oeste_2": [-63.0, -10.0, -52.0,  -5.0],
+    "brasil_oeste_3": [-74.0, -15.0, -63.0, -10.0],
+    "brasil_oeste_4": [-63.0, -15.0, -52.0, -10.0],
+    "brasil_este":   [-52.0,  -5.0, -44.0,   5.0],
+    "brasil_sur":    [-52.0, -15.0, -44.0,  -5.0],
+    "bolivia":       [-70.0, -18.0, -57.0,  -9.0],
 }
 
 # Static periods that are known-good (June-August: low cloud cover in the Amazon).

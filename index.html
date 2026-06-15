@@ -7,7 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
   <style>
     /* ===== RESET ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -550,6 +553,39 @@
     .hp-k { color: rgba(100,255,218,0.4); letter-spacing: 0.12em; font-family: 'Share Tech Mono', monospace; }
     .hp-v { color: #FFFFFF; letter-spacing: 0.06em; font-family: 'Share Tech Mono', monospace; }
 
+    /* ===== MARKER CLUSTERS ===== */
+    .sw-cluster {
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      font-family: 'Share Tech Mono', monospace;
+      font-weight: 700;
+      border: 1px solid rgba(100,255,218,0.6);
+      background: rgba(8,14,24,0.92);
+      color: #64FFDA;
+      box-shadow: 0 0 14px rgba(100,255,218,0.25), inset 0 0 8px rgba(100,255,218,0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .sw-cluster:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 22px rgba(100,255,218,0.45), inset 0 0 10px rgba(100,255,218,0.08);
+    }
+    .sw-cluster.sw-cl-md {
+      border-color: rgba(255,149,0,0.65);
+      color: #FF9500;
+      box-shadow: 0 0 14px rgba(255,149,0,0.25), inset 0 0 8px rgba(255,149,0,0.05);
+    }
+    .sw-cluster.sw-cl-md:hover {
+      box-shadow: 0 0 22px rgba(255,149,0,0.45), inset 0 0 10px rgba(255,149,0,0.08);
+    }
+    .sw-cluster.sw-cl-lg {
+      border-color: rgba(255,59,59,0.65);
+      color: #FF3B3B;
+      box-shadow: 0 0 14px rgba(255,59,59,0.25), inset 0 0 8px rgba(255,59,59,0.05);
+    }
+    .sw-cluster.sw-cl-lg:hover {
+      box-shadow: 0 0 22px rgba(255,59,59,0.45), inset 0 0 10px rgba(255,59,59,0.08);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .al-item { animation: none; opacity: 1; transform: none; }
       .live-dot.pulsing { animation: none; }
@@ -729,7 +765,27 @@
     }
   ).addTo(map);
 
-  const markerLayer = L.layerGroup().addTo(map);
+  const markerLayer = L.markerClusterGroup({
+    maxClusterRadius: 60,
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+    zoomToBoundsOnClick: true,
+    animate: true,
+    iconCreateFunction(cluster) {
+      const n = cluster.getChildCount();
+      let sz, cls;
+      if (n < 10)  { sz = 34; cls = ''; }
+      else if (n < 100) { sz = 42; cls = 'sw-cl-md'; }
+      else              { sz = 52; cls = 'sw-cl-lg'; }
+      const fs = sz > 40 ? 13 : 11;
+      return L.divIcon({
+        html: `<div class="sw-cluster ${cls}" style="width:${sz}px;height:${sz}px;font-size:${fs}px">${n}</div>`,
+        className: '',
+        iconSize: L.point(sz, sz),
+        iconAnchor: L.point(sz / 2, sz / 2),
+      });
+    },
+  }).addTo(map);
 
   // Click on empty map area → reset to LATAM overview
   let _markerClickLock = false;
@@ -867,8 +923,12 @@
       el.addEventListener('click', () => {
         activate(p.id);
         if (p.lat != null && p.lon != null) {
-          map.flyTo([p.lat, p.lon], 10, { animate: true, duration: 1.2, easeLinearity: 0.1 });
-          setTimeout(() => markers[p.id]?.circle.openPopup(), 400);
+          const mk = markers[p.id];
+          if (mk) {
+            markerLayer.zoomToShowLayer(mk.circle, () => mk.circle.openPopup());
+          } else {
+            map.flyTo([p.lat, p.lon], 10, { animate: true, duration: 1.2, easeLinearity: 0.1 });
+          }
         }
       });
       frag.appendChild(el);
