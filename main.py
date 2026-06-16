@@ -22,6 +22,7 @@ def run_pipeline(
     detection_date: date | None = None,
     reclassify: bool = False,
     region: str = "peru",
+    model_path: str | Path | None = None,
 ) -> dict:
     """Runs the deforestation detection pipeline in incremental mode.
 
@@ -38,6 +39,8 @@ def run_pipeline(
                         Use this after a model upgrade.
         region:         Named region to process. Must be a key in config.REGIONS.
                         Defaults to "peru".
+        model_path:     Path to model weights file. Defaults to
+                        model/gaia_v04_s1s2.pth if None.
 
     Returns:
         Summary dict with alert count, output path, severity/activity breakdown.
@@ -82,7 +85,7 @@ def run_pipeline(
         }
         print(f"      Previously classified : {len(classified_ids)}")
 
-    classifier           = _load_classifier()
+    classifier           = _load_classifier(model_path)
     classification_image = None
 
     if classifier:
@@ -152,9 +155,9 @@ def _load_existing_alerts() -> list[dict]:
         return []
 
 
-def _load_classifier():
+def _load_classifier(model_path: str | Path | None = None):
     """Returns a SentinelClassifier if model weights exist, otherwise None."""
-    weights_path = Path("model") / "gaia_v04_s1s2.pth"
+    weights_path = Path(model_path) if model_path else Path("model") / "gaia_v04_s1s2.pth"
     if not weights_path.exists():
         print(f"      Warning: model weights not found at {weights_path}. Skipping classification.")
         return None
@@ -180,5 +183,10 @@ if __name__ == "__main__":
         default="peru",
         help="Region to process. Options: %(choices)s. Default: %(default)s.",
     )
+    parser.add_argument(
+        "--model",
+        default="model/gaia_v04_s1s2.pth",
+        help="Path to model weights file. Default: %(default)s.",
+    )
     args = parser.parse_args()
-    run_pipeline(reclassify=args.reclassify, region=args.region)
+    run_pipeline(reclassify=args.reclassify, region=args.region, model_path=args.model)

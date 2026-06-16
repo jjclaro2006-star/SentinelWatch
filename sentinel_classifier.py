@@ -32,6 +32,14 @@ WDPA_LOCAL_PATH = Path(__file__).parent / "model" / "areas_protegidas_latam.geoj
 
 CLASES = ["normal", "deforestacion", "agricultura", "mineria", "incendio", "asentamiento"]
 NUM_CLASES = len(CLASES)
+
+# Nombres de clase por número de salidas — extender al entrenar nuevas versiones
+_CLASES_POR_N: dict[int, list[str]] = {
+    6: CLASES,
+    8: ["normal", "deforestacion", "agricultura", "mineria", "incendio", "asentamiento",
+        "coca", "pesca"],
+}
+
 NUM_BANDAS = 6          # B4, B3, B2, B8 (S2) + VV, VH (S1)
 TAMANIO_ENTRADA = 224   # píxeles
 
@@ -206,13 +214,11 @@ class SentinelClassifier:
         self,
         model_path: str | Path = MODEL_PATH,
         device: str | None = None,
+        clases: list[str] | None = None,
     ):
         if device is None:
             device = "cuda" if torch.cuda.is_available() else "cpu"
         self.device = torch.device(device)
-
-        self.model = _crear_modelo_6b(NUM_CLASES)
-        self.model.to(self.device)
 
         ruta = Path(model_path)
         if not ruta.exists():
@@ -224,8 +230,25 @@ class SentinelClassifier:
             k.startswith("conv_stem") for k in state
         ):
             state = state["model"]
+
+        # Auto-detectar número de clases desde el checkpoint
+        num_clases = int(state["classifier.1.bias"].shape[0])
+        if clases is not None:
+            self.clases = clases
+        elif num_clases in _CLASES_POR_N:
+            self.clases = _CLASES_POR_N[num_clases]
+        else:
+            self.clases = [f"clase_{i}" for i in range(num_clases)]
+            print(
+                f"      Aviso: modelo con {num_clases} clases desconocidas. "
+                f"Usa el parámetro 'clases' para asignar nombres. "
+                f"Usando nombres genéricos: {self.clases}"
+            )
+
+        self.model = _crear_modelo_6b(num_clases)
+        self.model.to(self.device)
         self.model.load_state_dict(state)
-        print(f"Modelo cargado desde {ruta}")
+        print(f"Modelo cargado desde {ruta}  ({num_clases} clases)")
 
         # Polígonos WDPA: descarga única si no existe el archivo local
         if not WDPA_LOCAL_PATH.exists():
@@ -262,7 +285,7 @@ class SentinelClassifier:
             probs = torch.softmax(self.model(tensor), dim=-1).cpu()[0]
 
         idx = int(probs.argmax())
-        actividad = CLASES[idx]
+        actividad = self.clases[idx]
         confianza = round(float(probs[idx]), 4)
 
         # Veredicto legal (verificación local, sin llamadas GEE por alerta)
@@ -287,7 +310,15 @@ class SentinelClassifier:
 # ── Smoke test ────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    clf = SentinelClassifier()
+    import argparse as _argparse
+    _parser = _argparse.ArgumentParser(description="Smoke test del clasificador.")
+    _parser.add_argument(
+        "--model",
+        default=str(MODEL_PATH),
+        help="Ruta al archivo de pesos del modelo. Default: %(default)s.",
+    )
+    _args = _parser.parse_args()
+    clf = SentinelClassifier(model_path=_args.model)
 
     # Bandas 0-3: S2 en [0, 10000]; bandas 4-5: S1 en dB [-30, 30]
     s2 = np.random.randint(0, 5000, (64, 64, 4), dtype=np.int16)
