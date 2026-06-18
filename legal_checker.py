@@ -184,16 +184,6 @@ def _point_in_tree(tree: STRtree, punto: Point) -> bool:
 # Territorios indígenas — WFS (descarga única, caché local)
 _TI_SOURCES: list[dict] = [
     {
-        "layer":    "ti_peru",
-        "url":      "https://geo.ibcperu.org/geoserver/ibcperu/ows",
-        "typenames": [
-            "ibcperu:comunidades_nativas_peru",
-            "ibcperu:comunidades_nativas",
-            "ibcperu:tierras_comunales_peru",
-        ],
-        "desc": "IBC Perú — comunidades nativas",
-    },
-    {
         "layer":    "ti_brazil",
         "url":      "https://geoserver.funai.gov.br/geoserver/Funai/ows",
         "typenames": [
@@ -202,17 +192,9 @@ _TI_SOURCES: list[dict] = [
         ],
         "desc": "FUNAI Brasil — terras indígenas Amazônia Legal",
     },
-    {
-        "layer":    "ti_colombia",
-        "url":      "https://geoportal.igac.gov.co/geoserver/ows",
-        "typenames": [
-            "IGAC:resguardos_indigenas",
-            "visor:Resguardos_Indigenas",
-            "IGAC:Resguardos_Indigenas_2023",
-        ],
-        "desc": "IGAC Colombia — resguardos indígenas",
-    },
 ]
+# Nota: IBC Perú (geo.ibcperu.org) y IGAC Colombia (geoportal.igac.gov.co) no responden
+# desde este entorno. El respaldo pan-amazónico es RAISG REST (_check_ti_raisg).
 
 # Territorios indígenas — RAISG ArcGIS REST (toda la Amazonia, consulta por punto)
 # Fuente: https://www.raisg.org — actualizado mensualmente, acceso público
