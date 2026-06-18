@@ -40,3 +40,5 @@ models/*.pth
 __pycache__/
 
 .env
+
+model/*.pth
