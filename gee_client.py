@@ -1,5 +1,8 @@
+import io
+
 import ee
 import numpy as np
+import requests
 
 from config import AOI, CLOUD_COVER_MAX
 
@@ -135,6 +138,43 @@ def get_classification_composite(
     return s2.addBands(s1)
 
 
+# Bandas S2 usadas por Gaia v0.5 (12 bandas SR — B10 no disponible en HARMONIZED)
+S2_12B_BANDS = ["B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B9", "B11", "B12"]
+
+
+def get_s2_12band_composite(collection: ee.ImageCollection) -> ee.Image:
+    """Builds a 12-band Sentinel-2 median composite for Gaia v0.5.4.
+
+    Returns all 12 SR bands in SSL4EO-S12 order: B1-B9, B11, B12.
+    Values are raw DN in [0, 10 000]; the classifier divides by 10 000.
+
+    Note: do NOT call .reproject() here. getDownloadURL(scale=10) handles
+    resolution internally and correctly returns spatially-varying chips.
+    .reproject() causes sampleRectangle to return constant-valued chips.
+
+    Args:
+        collection: Cloud-filtered Sentinel-2 SR ee.ImageCollection.
+
+    Returns:
+        12-band ee.Image (median composite, native multi-resolution).
+    """
+    return collection.median().select(S2_12B_BANDS)
+
+
+# Sentinel-2 band sort order (numerical, not alphabetical string order).
+# GEE sampleRectangle returns band names alphabetically (B1, B11, B12, B2 …),
+# which scrambles spectral signatures. This key restores the correct order.
+_S2_BAND_SORT: dict[str, float] = {
+    "B1": 1, "B2": 2, "B3": 3, "B4": 4, "B5": 5, "B6": 6,
+    "B7": 7, "B8": 8, "B8A": 8.5, "B9": 9, "B10": 10, "B11": 11, "B12": 12,
+}
+
+
+def _sort_bands(band_names: list[str]) -> list[str]:
+    """Sort S2 band names numerically; non-S2 bands (VV, VH …) go to the end."""
+    return sorted(band_names, key=lambda b: _S2_BAND_SORT.get(b, 100))
+
+
 def extract_chip(
     image: ee.Image,
     centroid: ee.Geometry,
@@ -148,6 +188,9 @@ def extract_chip(
       - S2 bands (B4/B3/B2/B8): raw DN in [0, 10 000].
       - S1 bands (VV/VH):       raw backscatter in dB, typically [-30, 30].
 
+    Bands are sorted numerically (B1, B2 … B9, B11, B12) before stacking
+    to match the expected channel ordering of all classifiers.
+
     sampleRectangle is limited to ~262 144 total pixels. At 10 m/px a 640 m
     window is 64×64 = 4 096 pixels per band, well within the limit.
 
@@ -158,7 +201,7 @@ def extract_chip(
         n_bands:  Expected number of bands; used only for the fallback shape.
 
     Returns:
-        Float32 numpy array [H, W, C] with raw values.
+        Float32 numpy array [H, W, C] with raw values, bands in numeric S2 order.
         Returns a zero array of shape [fallback_size, fallback_size, n_bands]
         if the download fails.
     """
@@ -173,15 +216,69 @@ def extract_chip(
         ).getInfo()
 
         props = chip_info.get("properties", {})
-        bands = [k for k in props if isinstance(props[k], list)]
-        if not bands:
+        bands_raw = [k for k in props if isinstance(props[k], list)]
+        if not bands_raw:
             return fallback
+
+        # Sort S2 bands numerically to avoid alphabetical scrambling.
+        bands = _sort_bands(bands_raw)
 
         arrays = [np.array(props[b], dtype=np.float32) for b in bands]
         if arrays[0].ndim != 2 or arrays[0].size == 0:
             return fallback
 
         return np.stack(arrays, axis=-1).astype(np.float32)
+
+    except Exception:
+        return fallback
+
+
+_DOWNLOAD_TIMEOUT_S = 120
+
+
+def download_chip_12b(
+    image: ee.Image,
+    centroid: ee.Geometry,
+    size_m: int = 640,
+) -> np.ndarray:
+    """Downloads a 12-band S2 chip via getDownloadURL (NPY format).
+
+    Unlike sampleRectangle, getDownloadURL preserves per-pixel spatial
+    variation (std > 0 per band), which is required for the ViT backbone
+    to produce meaningful attention patterns. sampleRectangle collapses
+    multi-resolution composites to a single constant pixel per band.
+
+    Bands are returned in S2_12B_BANDS order (B1...B12), matching the
+    channel ordering expected by GaiaV05Classifier.
+
+    Args:
+        image:    12-band ee.Image (output of get_s2_12band_composite()).
+        centroid: ee.Geometry.Point at the polygon centroid.
+        size_m:   Side length of the chip in metres (default 640).
+
+    Returns:
+        Float32 numpy array [H, W, 12] with raw DN values in [0, 10000].
+        Returns a zero array of shape [size_m//10, size_m//10, 12] on error.
+    """
+    fallback_px = max(1, size_m // 10)
+    fallback = np.zeros((fallback_px, fallback_px, len(S2_12B_BANDS)), dtype=np.float32)
+
+    try:
+        region = centroid.buffer(size_m / 2).bounds()
+        url = image.getDownloadURL({
+            "region": region,
+            "scale": 10,
+            "format": "NPY",
+        })
+        response = requests.get(url, timeout=_DOWNLOAD_TIMEOUT_S)
+        response.raise_for_status()
+
+        data = np.load(io.BytesIO(response.content))
+        arr = np.stack(
+            [data[b].astype(np.float32) for b in S2_12B_BANDS],
+            axis=-1,
+        )
+        return arr
 
     except Exception:
         return fallback

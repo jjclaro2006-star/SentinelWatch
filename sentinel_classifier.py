@@ -5,9 +5,11 @@ Modelo gaia_v04_s1s2.pth — fusión Sentinel-2 + Sentinel-1.
 6 bandas de entrada: B4/B3/B2/B8 (S2) + VV/VH (S1)
 6 clases de salida : normal | deforestacion | agricultura | mineria | incendio | asentamiento
 
-Veredicto legal:
-  ILEGAL              → coordenadas dentro de un área protegida (WDPA)
-  Requiere verificación → coordenadas fuera de área protegida
+Veredicto legal (multi-capa):
+  ILEGAL              → área protegida WDPA, zona de amortiguamiento, territorio
+                        indígena, sin concesión minera, o sin permiso ambiental.
+  REQUIERE VERIFICACIÓN → fuera de zonas prohibidas y con permisos verificados
+                          (o no verificables por servicio externo).
 """
 
 from __future__ import annotations
@@ -24,6 +26,8 @@ from PIL import Image
 from shapely.geometry import Point, shape
 from shapely.strtree import STRtree
 from torchvision import models
+
+from legal_checker import LegalChecker
 
 # ── Constantes ────────────────────────────────────────────────────────────────
 
@@ -58,9 +62,10 @@ _LATAM_BBOX = (-82, -56, -34, 13)
 # ── Resultado tipado ──────────────────────────────────────────────────────────
 
 class ResultadoClasificacion(TypedDict):
-    actividad: str
-    confianza: float
-    veredicto: str
+    actividad:    str
+    confianza:    float
+    veredicto:    str
+    legal_detail: str
 
 
 # ── Arquitectura: EfficientNet-B2 con 6 bandas de entrada ────────────────────
@@ -253,8 +258,11 @@ class SentinelClassifier:
         # Polígonos WDPA: descarga única si no existe el archivo local
         if not WDPA_LOCAL_PATH.exists():
             _descargar_wdpa_latam()
-        self._wdpa_tree: STRtree | None = _cargar_wdpa_tree()
+        self._wdpa_tree: STRtree = _cargar_wdpa_tree()
         print(f"Índice WDPA cargado ({WDPA_LOCAL_PATH.name})")
+
+        # Verificador legal multi-capa (TI, concesiones, permisos, buffer WDPA)
+        self._legal = LegalChecker(self._wdpa_tree)
 
     def predecir(
         self,
@@ -272,9 +280,10 @@ class SentinelClassifier:
 
         Returns:
             Diccionario con:
-              actividad  — clase predicha
-              confianza  — probabilidad en [0, 1]
-              veredicto  — "ILEGAL" o "Requiere verificación"
+              actividad    — clase predicha
+              confianza    — probabilidad en [0, 1]
+              veredicto    — "ILEGAL" o "REQUIERE VERIFICACIÓN"
+              legal_detail — razones del veredicto separadas por "; "
         """
         lat, lon = coordenadas
 
@@ -288,22 +297,20 @@ class SentinelClassifier:
         actividad = self.clases[idx]
         confianza = round(float(probs[idx]), 4)
 
-        # Veredicto legal (verificación local, sin llamadas GEE por alerta)
+        # Veredicto legal multi-capa
         try:
-            punto = Point(lon, lat)
-            candidatos = self._wdpa_tree.query(punto)
-            protegida = any(
-                self._wdpa_tree.geometries[i].contains(punto)
-                for i in candidatos
-            )
-            veredicto = "ILEGAL" if protegida else "Requiere verificación"
+            resultado_legal = self._legal.verificar(lat, lon)
+            veredicto    = resultado_legal["veredicto"]
+            legal_detail = resultado_legal["legal_detail"]
         except Exception as exc:
-            veredicto = f"Requiere verificación (error WDPA: {exc})"
+            veredicto    = "REQUIERE VERIFICACIÓN"
+            legal_detail = f"error en verificación legal: {exc}"
 
         return ResultadoClasificacion(
             actividad=actividad,
             confianza=confianza,
             veredicto=veredicto,
+            legal_detail=legal_detail,
         )
 
 

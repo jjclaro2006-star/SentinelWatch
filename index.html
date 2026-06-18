@@ -6,13 +6,9 @@
   <title>SentinelWatch — Inteligencia Geoespacial</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css">
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
   <style>
-    /* ===== RESET ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -21,1073 +17,940 @@
       --bg-elevated: #0D1520;
       --bg-hover:    #111E2E;
       --border:      #162030;
-      --border-sub:  #0E1826;
-
       --text-pri:    #C8D8D3;
       --text-sec:    #4A6070;
       --text-muted:  #243040;
-      --text-accent: #64FFDA;
-
+      --accent:      #64FFDA;
+      --accent-teal: #64FFDA;
+      --accent-cyan: #00D4FF;
+      --accent-red:  #FF3B3B;
       --sev-alta:    #FF3B3B;
       --sev-media:   #FF9500;
       --sev-baja:    #FFD60A;
-      --sev-none:    #495a6e;
+      --font-ui:     'Rajdhani', 'Segoe UI', sans-serif;
+      --font-mono:   'Share Tech Mono', 'Consolas', monospace;
+      --nav-h:       46px;
+      --sidebar-w:   284px;
+    }
+    body.mode-globe     { --accent: #64FFDA; }
+    body.mode-map       { --accent: #00D4FF; }
+    body.mode-satellite { --accent: #FF3B3B; }
 
-      --font-ui:   'Rajdhani', 'Segoe UI', sans-serif;
-      --font-mono: 'Share Tech Mono', 'Consolas', monospace;
-
-      --nav-h:     46px;
-      --sidebar-w: 284px;
-      --bar-h:     44px;
-
-      --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
-      --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    html, body {
+      height: 100%; overflow: hidden;
+      background: var(--bg-base); color: var(--text-pri);
+      font-family: var(--font-ui); font-size: 12px; line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
 
-    html, body { height: 100%; overflow: hidden; background: var(--bg-base);
-      color: var(--text-pri); font-family: var(--font-ui); font-size: 12px;
-      line-height: 1.5; -webkit-font-smoothing: antialiased; }
-
+    /* Scanlines */
     body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background: repeating-linear-gradient(
-        0deg, transparent, transparent 2px,
-        rgba(0,255,180,0.012) 2px, rgba(0,255,180,0.012) 4px
-      );
-      pointer-events: none;
-      z-index: 9999;
+      content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px,
+        rgba(0,0,0,0.012) 2px, rgba(0,0,0,0.012) 4px);
     }
 
+    /* Globe */
+    #cesium-container { position: fixed; inset: 0; z-index: 0; }
+    .cesium-widget-credits,
+    .cesium-credit-container { display: none !important; }
+
+    /* Corner brackets */
     .corner {
-      position: fixed; width: 16px; height: 16px; z-index: 9998;
+      position: fixed; width: 28px; height: 28px;
+      z-index: 80; pointer-events: none;
+      transition: border-color 0.8s;
     }
-    .corner-tl { top:6px; left:6px;
-      border-top:1px solid rgba(100,255,218,0.45);
-      border-left:1px solid rgba(100,255,218,0.45); }
-    .corner-tr { top:6px; right:6px;
-      border-top:1px solid rgba(100,255,218,0.45);
-      border-right:1px solid rgba(100,255,218,0.45); }
-    .corner-bl { bottom:6px; left:6px;
-      border-bottom:1px solid rgba(100,255,218,0.45);
-      border-left:1px solid rgba(100,255,218,0.45); }
-    .corner-br { bottom:6px; right:6px;
-      border-bottom:1px solid rgba(100,255,218,0.45);
-      border-right:1px solid rgba(100,255,218,0.45); }
-
-    /* ===== APP SHELL ===== */
-    #app { display: flex; flex-direction: column; height: 100vh; }
+    .corner-tl { top: 8px; left: 8px;
+      border-top: 1.5px solid var(--accent); border-left: 1.5px solid var(--accent); }
+    .corner-tr { top: 8px; right: 8px;
+      border-top: 1.5px solid var(--accent); border-right: 1.5px solid var(--accent); }
+    .corner-bl { bottom: 8px; left: 8px;
+      border-bottom: 1.5px solid var(--accent); border-left: 1.5px solid var(--accent); }
+    .corner-br { bottom: 8px; right: 8px;
+      border-bottom: 1.5px solid var(--accent); border-right: 1.5px solid var(--accent); }
 
     /* ===== NAVBAR ===== */
     #navbar {
-      height: var(--nav-h);
-      background: var(--bg-surface);
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center;
-      padding: 0 14px; gap: 16px;
-      flex-shrink: 0; z-index: 200;
+      position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h);
+      z-index: 100; display: flex; align-items: center; padding: 0 10px; gap: 10px;
+      background: rgba(5,10,15,0.85); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(100,255,218,0.08);
     }
+    #sidebar-toggle {
+      width: 28px; height: 28px; flex-shrink: 0; cursor: pointer;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--text-sec); font-size: 13px; display: flex;
+      align-items: center; justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    #sidebar-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
-    .logo {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 0.26em; text-transform: uppercase;
-      color: #FFFFFF;
-      text-shadow: 0 0 22px rgba(100,255,218,0.45);
-      display: flex; align-items: center; gap: 10px;
-      flex-shrink: 0; user-select: none;
+    .nav-logo {
+      display: flex; align-items: center; gap: 7px; flex-shrink: 0;
     }
-    .logo-icon { display: flex; align-items: center; }
-    .logo-diamond {
-      width: 15px; height: 15px;
-      border: 1px solid #64FFDA;
-      transform: rotate(45deg);
-      box-shadow: 0 0 10px rgba(100,255,218,0.35),
-                  inset 0 0 6px rgba(100,255,218,0.12);
-      position: relative; flex-shrink: 0;
+    .nav-logo svg { width: 18px; height: 18px; color: var(--accent); transition: color 0.8s; }
+    .nav-logo-text {
+      font-family: var(--font-ui); font-weight: 700; font-size: 13px;
+      letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase;
+      transition: color 0.8s;
     }
-    .logo-diamond::after {
-      content: '';
-      position: absolute; inset: 3px;
-      background: #64FFDA;
-      box-shadow: 0 0 5px #64FFDA;
-    }
+    .nav-div { width: 1px; height: 22px; background: var(--border); flex-shrink: 0; }
 
-    .vr { width: 1px; height: 18px; background: var(--border); flex-shrink: 0; }
-
-    .nav-stats { display: flex; align-items: center; gap: 18px; }
-    .nav-kv { display: flex; align-items: baseline; gap: 5px; }
-    .nav-kv-k {
-      font-size: 8px; font-weight: 600; letter-spacing: 0.18em;
-      text-transform: uppercase; color: rgba(100,255,218,0.4);
+    .nav-stats { display: flex; gap: 14px; flex: 1; }
+    .nav-stat { display: flex; flex-direction: column; gap: 1px; }
+    .nav-stat-lbl {
+      font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-sec); font-family: var(--font-mono);
     }
-    .nav-kv-v {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 11px; color: #FFFFFF; font-weight: 600;
-    }
+    .nav-stat-val { font-family: var(--font-mono); font-size: 10px; color: var(--text-pri); }
 
-    .nav-right { display: flex; align-items: center; gap: 10px; margin-left: auto; }
-
-    .live-pill {
-      display: flex; align-items: center; gap: 5px;
-      font-size: 9px; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: #64FFDA;
+    .nav-live {
+      display: flex; align-items: center; gap: 5px; flex-shrink: 0;
+      font-family: var(--font-mono); font-size: 9px; color: #4CAF50; letter-spacing: 0.1em;
     }
     .live-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: #64FFDA;
-      flex-shrink: 0;
-      animation: pulse-live 2s ease-in-out infinite;
+      width: 6px; height: 6px; border-radius: 50%; background: #4CAF50;
+      animation: pulsedot 1.5s infinite;
     }
-    @keyframes pulse-live {
-      0%, 100% { opacity: 1;   box-shadow: 0 0 4px #64FFDA; }
-      50%       { opacity: 0.4; box-shadow: 0 0 12px #64FFDA; }
+    @keyframes pulsedot {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.4; transform:scale(0.75); }
     }
 
-    .last-update {
-      font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);
+    #countdown {
+      font-family: var(--font-mono); font-size: 9px;
+      color: var(--text-sec); flex-shrink: 0; letter-spacing: 0.05em;
     }
 
-    /* ===== ERROR BANNER ===== */
-    #err-banner {
-      display: none; align-items: center; gap: 8px;
-      padding: 5px 14px;
-      background: rgba(255,59,59,0.07);
-      border-bottom: 1px solid rgba(255,59,59,0.18);
-      font-size: 11px; color: #e05a5a;
-      flex-shrink: 0;
+    .nav-modes { display: flex; gap: 3px; flex-shrink: 0; }
+    .mode-btn {
+      padding: 3px 9px; border: 1px solid var(--border); background: transparent;
+      color: var(--text-sec); font-family: var(--font-ui); font-size: 9px;
+      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.3s;
     }
-    #err-banner.on { display: flex; }
-    .err-icon { flex-shrink: 0; }
-
-    /* ===== MAIN ROW ===== */
-    #main { flex: 1; display: flex; overflow: hidden; }
+    .mode-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .mode-btn.active {
+      border-color: var(--accent); color: var(--accent);
+      background: rgba(100,255,218,0.06);
+      box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 30%, transparent);
+    }
 
     /* ===== SIDEBAR ===== */
     #sidebar {
-      width: var(--sidebar-w);
-      background: var(--bg-surface);
-      border-right: 1px solid #1E293B;
-      display: flex; flex-direction: column;
-      overflow: hidden; flex-shrink: 0;
-      position: relative;
-    }
-    #sidebar::after {
-      content: '';
-      position: absolute; top: 0; left: 0;
-      width: 1px; height: 100%;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(100,255,218,0.35) 25%,
-        rgba(100,255,218,0.35) 75%,
-        transparent 100%
-      );
-      pointer-events: none;
-    }
-
-    .sec-head {
-      padding: 7px 12px 5px;
-      font-size: 9px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-muted);
-      border-bottom: 1px solid #1E293B;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-shrink: 0;
-    }
-
-    /* --- FILTERS --- */
-    .filters-body { padding: 8px 12px 6px; flex-shrink: 0; }
-
-    .fg { margin-bottom: 8px; }
-    .fg-label {
-      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em;
-      text-transform: uppercase; color: #64FFDA;
-      text-shadow: 0 0 8px rgba(100,255,218,0.4);
-      margin-bottom: 6px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .fg-label::before {
-      content: ''; display: block;
-      width: 14px; height: 1px;
-      background: #64FFDA;
-      box-shadow: 0 0 5px #64FFDA;
-      flex-shrink: 0;
-    }
-
-    .ck-wrap {
-      display: flex; align-items: center; gap: 8px;
-      padding: 4px 4px; cursor: pointer;
-      transition: padding-left 0.15s ease;
-    }
-    .ck-wrap:hover { padding-left: 7px; background: transparent; }
-    .ck-wrap input[type="checkbox"] { display: none; }
-
-    .ck-box {
-      width: 12px; height: 12px;
-      border: 1px solid rgba(100,255,218,0.25);
-      background: transparent;
-      flex-shrink: 0; position: relative;
-      transition: all 120ms ease;
-    }
-    .ck-wrap:hover .ck-box {
-      border-color: #64FFDA;
-      box-shadow: 0 0 6px rgba(100,255,218,0.4);
-    }
-    .ck-wrap input:checked ~ .ck-box {
-      background: rgba(100,255,218,0.15);
-      border-color: #64FFDA;
-      box-shadow: 0 0 8px rgba(100,255,218,0.3);
-    }
-    .ck-wrap input:checked ~ .ck-box::after {
-      content: '';
-      position: absolute; top: 1px; left: 3px;
-      width: 4px; height: 7px;
-      border: 1.5px solid #64FFDA;
-      border-top: none; border-left: none;
-      transform: rotate(45deg);
-    }
-    .ck-label {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: #9BBFB3; flex: 1;
-    }
-    .ck-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-    /* Severity dot glows */
-    label:has(input[value="alta"])  .ck-dot { box-shadow: 0 0 9px rgba(255,59,59,0.9); }
-    label:has(input[value="media"]) .ck-dot { box-shadow: 0 0 9px rgba(255,149,0,0.9); }
-    label:has(input[value="baja"])  .ck-dot { box-shadow: 0 0 9px rgba(255,214,10,0.9); }
-    .ck-ct {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 10px; color: rgba(100,255,218,0.5);
-      min-width: 16px; text-align: right;
-    }
-
-    .v-btns { display: flex; gap: 3px; }
-    .v-btn {
-      flex: 1; padding: 5px 4px;
-      border: 1px solid rgba(100,255,218,0.12);
-      background: transparent;
-      color: rgba(100,255,218,0.3);
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.6rem; font-weight: 400;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      cursor: pointer;
-      clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
-      transition: all 0.2s ease;
-    }
-    .v-btn:hover {
-      border-color: rgba(100,255,218,0.5);
-      color: rgba(100,255,218,0.7);
-    }
-    .v-btn.on {
-      border-color: #64FFDA;
-      color: #64FFDA;
-      background: rgba(100,255,218,0.07);
-      box-shadow: 0 0 12px rgba(100,255,218,0.15),
-                  inset 0 0 10px rgba(100,255,218,0.05);
-    }
-
-    .filter-foot { padding: 4px 12px 8px; flex-shrink: 0; }
-    .btn-reset {
-      width: 100%; padding: 5px 8px;
-      background: transparent; border: 1px solid var(--border);
-      color: var(--text-muted); font-size: 10px;
-      font-family: var(--font-ui); letter-spacing: 0.06em;
-      cursor: pointer;
-      transition: all 100ms var(--ease-out);
-    }
-    .btn-reset:hover { border-color: var(--text-sec); color: var(--text-sec); background: var(--bg-hover); }
-    .btn-reset:active { transform: scale(0.98); }
-
-    /* --- ALERT LIST --- */
-    .list-head {
-      padding: 6px 12px 5px;
-      display: flex; align-items: center; justify-content: space-between;
-      border-top: 1px solid #1E293B;
-      border-bottom: 1px solid #1E293B;
-      flex-shrink: 0;
-    }
-    .list-head-label {
-      font-size: 0.58rem; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: #64FFDA;
-      text-shadow: 0 0 8px rgba(100,255,218,0.4);
-      display: flex; align-items: center; gap: 8px;
-    }
-    .list-head-label::before {
-      content: ''; display: block;
-      width: 14px; height: 1px;
-      background: #64FFDA;
-      box-shadow: 0 0 5px #64FFDA;
-      flex-shrink: 0;
-    }
-    .ct-badge {
-      font-family: var(--font-mono); font-size: 9px;
-      color: #FFFFFF; font-weight: 600;
-      background: var(--bg-elevated);
-      padding: 1px 5px; border: 1px solid var(--border);
-    }
-
-    #alert-list {
-      flex: 1; overflow-y: auto; overflow-x: hidden;
-    }
-    #alert-list::-webkit-scrollbar { width: 3px; }
-    #alert-list::-webkit-scrollbar-track { background: transparent; }
-    #alert-list::-webkit-scrollbar-thumb { background: var(--border); }
-    #alert-list::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
-
-    .al-item {
-      display: flex; align-items: flex-start; gap: 8px;
-      padding: 6px 12px 6px 10px;
-      cursor: pointer;
-      border-bottom: 1px solid var(--border-sub);
-      border-left: 2px solid transparent;
-      transition: background 100ms var(--ease-out), border-left-color 100ms, padding-left 100ms;
-      opacity: 0; transform: translateY(4px);
-      animation: item-in 180ms var(--ease-out) forwards;
-    }
-    @keyframes item-in { to { opacity: 1; transform: translateY(0); } }
-    .al-item:hover {
-      background: rgba(100,255,218,0.03);
-      border-left-color: rgba(100,255,218,0.2);
-      padding-left: 14px;
-    }
-    .al-item.sel {
-      background: rgba(100,255,218,0.05);
-      border-left-color: #64FFDA;
-    }
-
-    .al-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      flex-shrink: 0; margin-top: 3px;
-    }
-    .al-body { flex: 1; min-width: 0; }
-    .al-top {
-      display: flex; align-items: baseline;
-      justify-content: space-between; gap: 4px;
-    }
-    .al-act {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      color: #C8D8D3;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
-    .al-sev {
-      font-size: 8px; font-weight: 700;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      flex-shrink: 0;
-    }
-    .al-bot {
-      display: flex; align-items: center; gap: 5px; margin-top: 1px;
-    }
-    .al-ver {
-      font-size: 10px; color: var(--text-sec);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
-    .al-ver.il { color: var(--sev-alta); }
-    .al-id {
-      font-family: var(--font-mono); font-size: 8px;
-      color: var(--text-muted); flex-shrink: 0;
-    }
-
-    .list-empty {
-      padding: 20px 12px; text-align: center;
-      font-size: 10px; color: var(--text-muted);
-      letter-spacing: 0.04em;
-    }
-
-    /* ===== MAP ===== */
-    #map-wrap { flex: 1; display: flex; overflow: hidden; }
-    #map { flex: 1; }
-    .leaflet-container { background: var(--bg-base); }
-
-    /* Leaflet controls */
-    .leaflet-control-zoom {
-      border: 1px solid var(--border) !important;
-      border-radius: 0 !important;
-      box-shadow: none !important;
-    }
-    .leaflet-control-zoom a {
-      background: var(--bg-elevated) !important;
-      color: var(--text-sec) !important;
-      border-bottom: 1px solid var(--border) !important;
-      border-radius: 0 !important;
-      transition: background 100ms, color 100ms;
-    }
-    .leaflet-control-zoom a:hover {
-      background: var(--bg-hover) !important;
-      color: var(--text-pri) !important;
-    }
-    .leaflet-bar { box-shadow: none !important; }
-    .leaflet-control-attribution {
-      background: rgba(8,11,14,0.75) !important;
-      color: var(--text-muted) !important;
-      font-size: 9px !important;
-    }
-    .leaflet-control-attribution a { color: var(--text-muted) !important; }
-
-    /* Popup */
-    .leaflet-popup-content-wrapper {
-      background: var(--bg-elevated) !important;
-      border: 1px solid var(--border) !important;
-      border-top: 2px solid #64FFDA !important;
-      border-radius: 0 !important;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.7) !important;
-      padding: 0 !important;
-      color: var(--text-pri);
-    }
-    .leaflet-popup-tip { background: var(--bg-elevated) !important; }
-    .leaflet-popup-content { margin: 0 !important; font-family: var(--font-ui); }
-    .leaflet-popup-close-button {
-      color: var(--text-muted) !important;
-      font-size: 16px !important;
-      right: 7px !important; top: 6px !important;
-      transition: color 100ms;
-    }
-    .leaflet-popup-close-button:hover { color: var(--text-pri) !important; }
-
-    .popup-wrap { width: 236px; }
-    .popup-hd {
-      padding: 9px 30px 8px 11px;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .popup-act { font-size: 12px; font-weight: 600; text-transform: capitalize; }
-    .popup-sev-badge {
-      font-size: 8px; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 2px 6px;
-    }
-    .popup-rows { padding: 7px 11px 9px; }
-    .popup-row {
-      display: flex; justify-content: space-between; align-items: baseline;
-      padding: 2px 0;
-    }
-    .popup-k {
-      font-size: 9px; color: var(--text-muted);
-      text-transform: uppercase; letter-spacing: 0.07em;
-    }
-    .popup-v {
-      font-family: var(--font-mono); font-size: 10px;
-      color: var(--text-pri); text-align: right;
-      max-width: 140px; word-break: break-all;
-    }
-    .popup-v.il { color: var(--sev-alta); font-weight: 600; }
-    .popup-ft {
-      padding: 5px 11px 8px;
-      border-top: 1px solid var(--border);
-    }
-    .popup-id {
-      font-family: var(--font-mono); font-size: 8px;
-      color: var(--text-muted); word-break: break-all;
-    }
-
-    /* ===== STATS BAR ===== */
-    #stats-bar {
-      height: var(--bar-h);
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-      display: flex; align-items: center;
-      padding: 0 14px; gap: 0;
-      flex-shrink: 0; overflow: hidden;
-    }
-    .sb-block {
-      display: flex; align-items: center; gap: 7px;
-      padding-right: 14px; margin-right: 14px;
+      position: fixed; left: 0; top: var(--nav-h);
+      width: var(--sidebar-w); height: calc(100% - var(--nav-h));
+      z-index: 90; display: flex; flex-direction: column; overflow: hidden;
+      background: rgba(5,10,15,0.82); backdrop-filter: blur(8px);
       border-right: 1px solid var(--border);
-      white-space: nowrap;
+      transition: transform 0.35s cubic-bezier(0.23,1,0.32,1);
     }
-    .sb-block:last-child { border-right: none; margin-right: 0; }
-    .sb-k {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 8px; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: rgba(100,255,218,0.35);
-    }
-    .sb-v { font-family: var(--font-mono); font-size: 12px; font-weight: 600; }
+    #sidebar.collapsed { transform: translateX(calc(-1 * var(--sidebar-w))); }
 
-    .sev-row {
-      display: flex; align-items: center; gap: 14px;
-      margin-left: auto;
+    .sb-section {
+      padding: 8px 11px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
     }
-    .sev-item { display: flex; align-items: center; gap: 5px; }
-    .sev-dot { width: 7px; height: 7px; border-radius: 50%; }
-    .sev-ct { font-family: var(--font-mono); font-size: 12px; font-weight: 600; }
-    .sev-lbl {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 8px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(100,255,218,0.35);
+    .sb-title {
+      font-size: 8px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-sec); margin-bottom: 6px;
     }
 
-    /* ===== HUD PANEL ===== */
-    #map-wrap { position: relative; }
-    .hud-panel {
-      position: absolute;
-      top: 14px; right: 14px;
-      background: rgba(5,10,15,0.85);
-      border: 1px solid rgba(100,255,218,0.18);
-      padding: 8px 12px;
-      z-index: 500;
-      backdrop-filter: blur(4px);
-      min-width: 148px;
-      pointer-events: none;
+    .filter-group { display: flex; flex-direction: column; gap: 3px; }
+    .filter-row {
+      display: flex; align-items: center; gap: 6px; cursor: pointer;
+      padding: 2px 3px; transition: background 0.15s;
     }
-    .hud-panel::before {
-      content: '';
-      position: absolute;
-      top: -1px; left: 12px;
-      width: 28px; height: 1px;
-      background: #64FFDA;
-      box-shadow: 0 0 6px #64FFDA;
+    .filter-row:hover { background: var(--bg-hover); }
+    .filter-check {
+      width: 11px; height: 11px; border: 1px solid var(--border);
+      background: transparent; flex-shrink: 0; position: relative;
+      transition: border-color 0.25s;
     }
-    .hp-row {
-      display: flex; justify-content: space-between;
-      gap: 14px; margin-bottom: 3px;
-      font-size: 0.55rem;
+    .filter-check.on { border-color: var(--accent); background: rgba(100,255,218,0.08); }
+    .filter-check.on::after {
+      content: ''; position: absolute; inset: 2px; background: var(--accent);
     }
-    .hp-row:last-child { margin-bottom: 0; }
-    .hp-k { color: rgba(100,255,218,0.4); letter-spacing: 0.12em; font-family: 'Share Tech Mono', monospace; }
-    .hp-v { color: #FFFFFF; letter-spacing: 0.06em; font-family: 'Share Tech Mono', monospace; }
+    .filter-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .filter-lbl { font-size: 10px; color: var(--text-pri); }
 
-    /* ===== MARKER CLUSTERS ===== */
-    .sw-cluster {
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 50%;
-      font-family: 'Share Tech Mono', monospace;
-      font-weight: 700;
-      border: 1px solid rgba(100,255,218,0.6);
-      background: rgba(8,14,24,0.92);
-      color: #64FFDA;
-      box-shadow: 0 0 14px rgba(100,255,218,0.25), inset 0 0 8px rgba(100,255,218,0.05);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    .filter-select {
+      width: 100%; background: var(--bg-elevated); border: 1px solid var(--border);
+      color: var(--text-pri); font-family: var(--font-mono); font-size: 10px;
+      padding: 3px 6px; cursor: pointer;
     }
-    .sw-cluster:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 22px rgba(100,255,218,0.45), inset 0 0 10px rgba(100,255,218,0.08);
+    .filter-select:focus { outline: none; border-color: var(--accent); }
+
+    .sb-list-hdr {
+      padding: 5px 11px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-shrink: 0;
     }
-    .sw-cluster.sw-cl-md {
-      border-color: rgba(255,149,0,0.65);
-      color: #FF9500;
-      box-shadow: 0 0 14px rgba(255,149,0,0.25), inset 0 0 8px rgba(255,149,0,0.05);
-    }
-    .sw-cluster.sw-cl-md:hover {
-      box-shadow: 0 0 22px rgba(255,149,0,0.45), inset 0 0 10px rgba(255,149,0,0.08);
-    }
-    .sw-cluster.sw-cl-lg {
-      border-color: rgba(255,59,59,0.65);
-      color: #FF3B3B;
-      box-shadow: 0 0 14px rgba(255,59,59,0.25), inset 0 0 8px rgba(255,59,59,0.05);
-    }
-    .sw-cluster.sw-cl-lg:hover {
-      box-shadow: 0 0 22px rgba(255,59,59,0.45), inset 0 0 10px rgba(255,59,59,0.08);
+    #alert-count {
+      font-family: var(--font-mono); font-size: 9px;
+      padding: 1px 5px; background: rgba(255,59,59,0.1);
+      border: 1px solid rgba(255,59,59,0.25); color: var(--sev-alta);
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .al-item { animation: none; opacity: 1; transform: none; }
-      .live-dot.pulsing { animation: none; }
+    #alert-list { flex: 1; overflow-y: auto; }
+    #alert-list::-webkit-scrollbar { width: 3px; }
+    #alert-list::-webkit-scrollbar-thumb { background: var(--border); }
+    #alert-list::-webkit-scrollbar-track { background: transparent; }
+
+    .alert-item {
+      display: flex; align-items: flex-start; gap: 7px;
+      padding: 7px 11px; border-bottom: 1px solid var(--border);
+      cursor: pointer; transition: background 0.12s;
+    }
+    .alert-item:hover { background: var(--bg-hover); }
+    .alert-item.sel { background: rgba(100,255,218,0.04); }
+    .alert-sev-bar { width: 3px; align-self: stretch; border-radius: 1px; flex-shrink: 0; }
+    .alert-body { flex: 1; min-width: 0; }
+    .alert-id {
+      font-family: var(--font-mono); font-size: 9px; color: var(--text-sec);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .alert-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-top: 2px;
+    }
+    .alert-act { font-size: 11px; font-weight: 600; text-transform: capitalize; }
+    .alert-area { font-family: var(--font-mono); font-size: 9px; color: var(--text-sec); }
+    .alert-date { font-family: var(--font-mono); font-size: 9px; color: var(--text-muted); margin-top: 1px; }
+
+    .sb-footer {
+      padding: 5px 11px; border-top: 1px solid var(--border);
+      display: flex; gap: 10px; flex-shrink: 0;
+    }
+    .sev-count {
+      display: flex; align-items: center; gap: 4px;
+      font-family: var(--font-mono); font-size: 10px; color: var(--text-sec);
+    }
+    .sev-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+    .empty-msg {
+      padding: 20px 12px; text-align: center;
+      color: var(--text-sec); font-size: 11px;
+    }
+
+    /* ===== DETAIL PANEL ===== */
+    #detail-panel {
+      position: fixed; right: 0; top: var(--nav-h);
+      width: 300px; height: calc(100% - var(--nav-h));
+      z-index: 95; display: flex; flex-direction: column; overflow: hidden;
+      background: rgba(5,10,15,0.88); backdrop-filter: blur(10px);
+      border-left: 1px solid var(--border);
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.23,1,0.32,1);
+    }
+    #detail-panel.open { transform: translateX(0); }
+
+    .dp-hdr {
+      padding: 11px 13px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-shrink: 0;
+    }
+    .dp-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent); transition: color 0.8s;
+    }
+    .dp-close {
+      width: 22px; height: 22px; border: 1px solid var(--border);
+      background: transparent; color: var(--text-sec); cursor: pointer;
+      font-size: 11px; display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .dp-close:hover { border-color: var(--accent); color: var(--accent); }
+
+    .dp-body { flex: 1; overflow-y: auto; padding: 13px; }
+    .dp-body::-webkit-scrollbar { width: 3px; }
+    .dp-body::-webkit-scrollbar-thumb { background: var(--border); }
+
+    .dp-banner {
+      padding: 7px 9px; margin-bottom: 11px;
+      display: flex; align-items: center; gap: 8px; border: 1px solid;
+    }
+    .dp-sev { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .dp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+    .dp-field {
+      padding: 5px 7px; background: var(--bg-elevated); border: 1px solid var(--border);
+    }
+    .dp-field.full { grid-column: 1 / -1; }
+    .dp-lbl {
+      font-size: 7px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-sec); margin-bottom: 2px;
+    }
+    .dp-val { font-family: var(--font-mono); font-size: 10px; color: var(--text-pri); word-break: break-all; }
+    .c-ilegal { color: var(--sev-alta); }
+    .c-verif  { color: var(--sev-media); }
+
+    /* ===== ERROR BANNER ===== */
+    #error-banner {
+      position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%);
+      background: rgba(255,59,59,0.08); border: 1px solid rgba(255,59,59,0.35);
+      color: var(--sev-alta); font-family: var(--font-mono); font-size: 9px;
+      padding: 5px 14px; z-index: 200; pointer-events: none;
+      letter-spacing: 0.05em; opacity: 0; transition: opacity 0.4s;
+    }
+    #error-banner.show { opacity: 1; }
+
+    /* ===== HUD MAP ===== */
+    #hud-map {
+      position: fixed; inset: var(--nav-h) 0 0 0;
+      z-index: 70; pointer-events: none;
+      opacity: 0; transition: opacity 0.6s;
+    }
+    body.mode-map #hud-map { opacity: 1; }
+    .grid-h {
+      position: absolute; left: 0; right: 0; height: 1px;
+      background: rgba(0,212,255,0.05);
+    }
+    .grid-v {
+      position: absolute; top: 0; bottom: 0; width: 1px;
+      background: rgba(0,212,255,0.05);
+    }
+    #map-coords {
+      position: absolute; top: 7px; right: 11px;
+      font-family: var(--font-mono); font-size: 9px;
+      color: rgba(0,212,255,0.45); letter-spacing: 0.05em;
+    }
+
+    /* ===== HUD SATELLITE ===== */
+    #hud-sat {
+      position: fixed; inset: 0;
+      z-index: 75; pointer-events: none;
+      opacity: 0; transition: opacity 0.6s;
+    }
+    body.mode-satellite #hud-sat { opacity: 1; }
+
+    .xhair {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px; height: 44px;
+    }
+    .xhair::before, .xhair::after {
+      content: ''; position: absolute; background: rgba(255,59,59,0.75);
+    }
+    .xhair::before { width: 1px; height: 100%; left: 50%; top: 0; }
+    .xhair::after  { height: 1px; width: 100%; top: 50%; left: 0; }
+    .xhair-ring {
+      position: absolute; top: 50%; left: 50%;
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 1px solid rgba(255,59,59,0.65);
+      transform: translate(-50%, -50%);
+    }
+    .tgt {
+      position: absolute; top: 50%; left: 50%;
+      width: 88px; height: 88px;
+      transform: translate(-50%, -50%);
+      animation: tgt-pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes tgt-pulse {
+      0%,100% { opacity:0.55; transform:translate(-50%,-50%) scale(1); }
+      50% { opacity:1; transform:translate(-50%,-50%) scale(1.06); }
+    }
+    .bk { position: absolute; width: 13px; height: 13px; border-color: rgba(255,59,59,0.75); border-style: solid; }
+    .bk-tl { top:0; left:0; border-width: 1.5px 0 0 1.5px; }
+    .bk-tr { top:0; right:0; border-width: 1.5px 1.5px 0 0; }
+    .bk-bl { bottom:0; left:0; border-width: 0 0 1.5px 1.5px; }
+    .bk-br { bottom:0; right:0; border-width: 0 1.5px 1.5px 0; }
+
+    #hud-cursor {
+      position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%);
+      font-family: var(--font-mono); font-size: 9px;
+      color: rgba(255,59,59,0.6); z-index: 76; pointer-events: none;
+      letter-spacing: 0.08em;
+    }
+    #hud-alt {
+      position: fixed; bottom: 15px; right: 14px;
+      font-family: var(--font-mono); font-size: 9px;
+      color: rgba(255,59,59,0.45); z-index: 76; pointer-events: none;
     }
   </style>
 </head>
-<body>
-<div id="app">
+<body class="mode-globe">
+
+  <div id="cesium-container"></div>
+
   <div class="corner corner-tl"></div>
   <div class="corner corner-tr"></div>
   <div class="corner corner-bl"></div>
   <div class="corner corner-br"></div>
 
-  <!-- ── NAVBAR ──────────────────────────────────────────── -->
+  <div id="hud-map">
+    <div id="map-coords">--°N  --°E</div>
+  </div>
+
+  <div id="hud-sat">
+    <div class="xhair"></div>
+    <div class="xhair-ring"></div>
+    <div class="tgt">
+      <div class="bk bk-tl"></div>
+      <div class="bk bk-tr"></div>
+      <div class="bk bk-bl"></div>
+      <div class="bk bk-br"></div>
+    </div>
+  </div>
+  <div id="hud-cursor">--°N  --°E</div>
+  <div id="hud-alt">ALT: --</div>
+
   <nav id="navbar">
-    <div class="logo">
-      <div class="logo-icon">
-        <div class="logo-diamond"></div>
-      </div>
-      SentinelWatch
+    <button id="sidebar-toggle">☰</button>
+    <div class="nav-logo">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 2L18 7V13L10 18L2 13V7L10 2Z" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M10 6L14 8.5V11.5L10 14L6 11.5V8.5L10 6Z" fill="currentColor" opacity="0.25"/>
+        <circle cx="10" cy="10" r="1.8" fill="currentColor"/>
+      </svg>
+      <span class="nav-logo-text">SentinelWatch</span>
     </div>
-
-    <div class="vr"></div>
-
+    <div class="nav-div"></div>
     <div class="nav-stats">
-      <div class="nav-kv">
-        <span class="nav-kv-k">Alertas</span>
-        <span class="nav-kv-v" id="nv-total">—</span>
+      <div class="nav-stat">
+        <span class="nav-stat-lbl">Alertas</span>
+        <span class="nav-stat-val" id="stat-total">—</span>
       </div>
-      <div class="nav-kv">
-        <span class="nav-kv-k">Detección</span>
-        <span class="nav-kv-v" id="nv-date">—</span>
+      <div class="nav-stat">
+        <span class="nav-stat-lbl">Fecha</span>
+        <span class="nav-stat-val" id="stat-date">—</span>
       </div>
-      <div class="nav-kv">
-        <span class="nav-kv-k">Archivo</span>
-        <span class="nav-kv-v" id="nv-file">—</span>
+      <div class="nav-stat" style="max-width:130px;overflow:hidden">
+        <span class="nav-stat-lbl">Fuente</span>
+        <span class="nav-stat-val" id="stat-file" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block">—</span>
       </div>
     </div>
-
-    <div class="nav-right">
-      <div class="live-pill">
-        <div class="live-dot" id="live-dot"></div>
-        LIVE
-      </div>
-      <span class="last-update" id="last-upd">—</span>
+    <div class="nav-live"><div class="live-dot"></div>LIVE</div>
+    <span id="countdown">NEXT SCAN: 30s</span>
+    <div class="nav-modes">
+      <button class="mode-btn active" data-mode="globe">GLOBO</button>
+      <button class="mode-btn" data-mode="map">MAPA</button>
+      <button class="mode-btn" data-mode="satellite">SATELITAL</button>
     </div>
   </nav>
 
-  <!-- ── ERROR BANNER ────────────────────────────────────── -->
-  <div id="err-banner">
-    <svg class="err-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
-      <path d="M6 1.5 L10.5 10 H1.5 Z" stroke="#e05a5a" stroke-width="1.1" fill="none"/>
-      <line x1="6" y1="5.5" x2="6" y2="7.5" stroke="#e05a5a" stroke-width="1.1"/>
-      <circle cx="6" cy="9" r=".6" fill="#e05a5a"/>
-    </svg>
-    <span id="err-msg">No se puede conectar con la API.</span>
+  <aside id="sidebar">
+    <div class="sb-section">
+      <div class="sb-title">Actividad</div>
+      <div class="filter-group" id="filt-act"></div>
+    </div>
+    <div class="sb-section">
+      <div class="sb-title">Severidad</div>
+      <div class="filter-group" id="filt-sev"></div>
+    </div>
+    <div class="sb-section">
+      <div class="sb-title">Veredicto</div>
+      <select class="filter-select" id="filt-ver">
+        <option value="all">Todos</option>
+        <option value="ILEGAL">ILEGAL</option>
+        <option value="Requiere">Requiere verificación</option>
+      </select>
+    </div>
+    <div class="sb-list-hdr">
+      <span class="sb-title" style="margin:0">Alertas</span>
+      <span id="alert-count">0</span>
+    </div>
+    <div id="alert-list"><div class="empty-msg">Cargando…</div></div>
+    <div class="sb-footer">
+      <div class="sev-count"><div class="sev-dot" style="background:var(--sev-alta)"></div><span id="n-alta">0</span></div>
+      <div class="sev-count"><div class="sev-dot" style="background:var(--sev-media)"></div><span id="n-media">0</span></div>
+      <div class="sev-count"><div class="sev-dot" style="background:var(--sev-baja)"></div><span id="n-baja">0</span></div>
+    </div>
+  </aside>
+
+  <div id="detail-panel">
+    <div class="dp-hdr">
+      <span class="dp-title">Detalle de Alerta</span>
+      <button class="dp-close" id="dp-close">✕</button>
+    </div>
+    <div class="dp-body" id="dp-body"></div>
   </div>
 
-  <!-- ── MAIN ───────────────────────────────────────────── -->
-  <div id="main">
-
-    <!-- SIDEBAR -->
-    <div id="sidebar">
-      <div class="sec-head">Filtros</div>
-
-      <div class="filters-body">
-        <!-- Actividad -->
-        <div class="fg">
-          <div class="fg-label">Actividad</div>
-          <label class="ck-wrap"><input type="checkbox" data-filter="act" value="deforestacion" checked><div class="ck-box"></div><span class="ck-label">Deforestación</span><span class="ck-ct" data-act-ct="deforestacion">0</span></label>
-          <label class="ck-wrap"><input type="checkbox" data-filter="act" value="mineria" checked><div class="ck-box"></div><span class="ck-label">Minería</span><span class="ck-ct" data-act-ct="mineria">0</span></label>
-          <label class="ck-wrap"><input type="checkbox" data-filter="act" value="agricultura" checked><div class="ck-box"></div><span class="ck-label">Agricultura</span><span class="ck-ct" data-act-ct="agricultura">0</span></label>
-          <label class="ck-wrap"><input type="checkbox" data-filter="act" value="incendio" checked><div class="ck-box"></div><span class="ck-label">Incendio</span><span class="ck-ct" data-act-ct="incendio">0</span></label>
-          <label class="ck-wrap"><input type="checkbox" data-filter="act" value="asentamiento" checked><div class="ck-box"></div><span class="ck-label">Asentamiento</span><span class="ck-ct" data-act-ct="asentamiento">0</span></label>
-          <label class="ck-wrap"><input type="checkbox" data-filter="act" value="normal" checked><div class="ck-box"></div><span class="ck-label">Normal</span><span class="ck-ct" data-act-ct="normal">0</span></label>
-        </div>
-
-        <!-- Severidad -->
-        <div class="fg">
-          <div class="fg-label">Severidad</div>
-          <label class="ck-wrap"><input type="checkbox" data-filter="sev" value="alta" checked><div class="ck-box"></div><div class="ck-dot" style="background:var(--sev-alta)"></div><span class="ck-label">Alta</span><span class="ck-ct" data-sev-ct="alta">0</span></label>
-          <label class="ck-wrap"><input type="checkbox" data-filter="sev" value="media" checked><div class="ck-box"></div><div class="ck-dot" style="background:var(--sev-media)"></div><span class="ck-label">Media</span><span class="ck-ct" data-sev-ct="media">0</span></label>
-          <label class="ck-wrap"><input type="checkbox" data-filter="sev" value="baja" checked><div class="ck-box"></div><div class="ck-dot" style="background:var(--sev-baja)"></div><span class="ck-label">Baja</span><span class="ck-ct" data-sev-ct="baja">0</span></label>
-        </div>
-
-        <!-- Veredicto -->
-        <div class="fg">
-          <div class="fg-label">Veredicto</div>
-          <div class="v-btns">
-            <button class="v-btn on" data-vf="todos">Todos</button>
-            <button class="v-btn" data-vf="ilegal">Ilegal</button>
-            <button class="v-btn" data-vf="verif">Verif.</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="filter-foot">
-        <button class="btn-reset" id="btn-reset">Restablecer filtros</button>
-      </div>
-
-      <!-- List -->
-      <div class="list-head">
-        <span class="list-head-label">Alertas</span>
-        <span class="ct-badge" id="list-ct">0</span>
-      </div>
-      <div id="alert-list">
-        <div class="list-empty" id="list-empty">Sin datos</div>
-      </div>
-    </div>
-
-    <!-- MAP -->
-    <div id="map-wrap">
-      <div id="map"></div>
-      <div class="hud-panel">
-        <div class="hp-row"><span class="hp-k">SYS</span><span class="hp-v" id="hp-sys">CONNECTING</span></div>
-        <div class="hp-row"><span class="hp-k">SAT</span><span class="hp-v">SENTINEL-2</span></div>
-        <div class="hp-row"><span class="hp-k">RES</span><span class="hp-v">10M / PX</span></div>
-        <div class="hp-row"><span class="hp-k">PRÓX. SCAN</span><span class="hp-v" id="hp-countdown">T−00:30</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── STATS BAR ────────────────────────────────────────── -->
-  <div id="stats-bar">
-    <div class="sb-block">
-      <span class="sb-k">Total</span>
-      <span class="sb-v" id="sb-total" style="color:var(--text-pri)">—</span>
-    </div>
-    <div class="sb-block">
-      <span class="sb-k">Archivo</span>
-      <span class="sb-v" id="sb-file" style="font-size:10px;color:var(--text-sec)">—</span>
-    </div>
-    <div class="sb-block">
-      <span class="sb-k">Fecha</span>
-      <span class="sb-v" id="sb-date" style="font-size:11px;color:var(--text-sec)">—</span>
-    </div>
-    <div class="sev-row">
-      <div class="sev-item">
-        <div class="sev-dot" style="background:var(--sev-alta)"></div>
-        <span class="sev-ct" id="sb-alta" style="color:var(--sev-alta)">—</span>
-        <span class="sev-lbl">Alta</span>
-      </div>
-      <div class="sev-item">
-        <div class="sev-dot" style="background:var(--sev-media)"></div>
-        <span class="sev-ct" id="sb-media" style="color:var(--sev-media)">—</span>
-        <span class="sev-lbl">Media</span>
-      </div>
-      <div class="sev-item">
-        <div class="sev-dot" style="background:var(--sev-baja)"></div>
-        <span class="sev-ct" id="sb-baja" style="color:var(--sev-baja)">—</span>
-        <span class="sev-lbl">Baja</span>
-      </div>
-    </div>
-  </div>
-
-</div><!-- #app -->
+  <div id="error-banner"></div>
 
 <script>
-  const API_BASE = "http://localhost:8000";
+// ============================================================
+// CONFIG
+// ============================================================
+const API_BASE    = "http://localhost:8000";
+const CESIUM_TOK  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4ZjRhY2EzOC1lYTJjLTQ5ZGItYjEwMi00OWY4M2VhODU5MGEiLCJpZCI6NDQ1OTczLCJzdWIiOiJqamNsYXJvMjAwNi1zdGFyIiwiaXNzIjoiaHR0cHM6Ly9hcGkuY2VzaXVtLmNvbSIsImF1ZCI6ImpqY2xhcm8yMDA2LXN0YXJfZGVmYXVsdCIsImlhdCI6MTc4MTc0OTgyN30.5yuXpDZJjOdRUZ1yQeSk98NcSHMHY7dsdnamp9Nld0A";
+const POLL_S      = 30;
+const GLOBE_H     = 3_000_000;
+const MAP_H       = 500_000;
 
-  // ── STATE ──────────────────────────────────────────────────
-  let allAlerts    = [];
-  let filtered     = [];
-  let markers      = {};   // id → { circle, props }
-  let activeId     = null;
-  let vfMode       = 'todos';
+// ============================================================
+// STATE
+// ============================================================
+const S = {
+  mode:      'globe',
+  alerts:    [],
+  filtered:  [],
+  selected:  null,
+  fAct:      new Set(['all']),
+  fSev:      new Set(['all']),
+  fVer:      'all',
+  esriLayer: null,
+  rotating:  true,
+  countdown: POLL_S,
+};
 
-  // ── MAP ────────────────────────────────────────────────────
-  const map = L.map('map', { center: [-15, -60], zoom: 4 });
+// ============================================================
+// CESIUM INIT
+// ============================================================
+Cesium.Ion.defaultAccessToken = CESIUM_TOK;
 
-  L.tileLayer(
-    'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png',
-    {
-      attribution: '&copy; OpenStreetMap contributors &copy; CartoDB',
-      subdomains: 'abcd',
-      maxZoom: 19,
-    }
-  ).addTo(map);
+const viewer = new Cesium.Viewer('cesium-container', {
+  animation: false, baseLayerPicker: false, fullscreenButton: false,
+  vrButton: false, geocoder: false, homeButton: false, infoBox: false,
+  sceneModePicker: false, selectionIndicator: false, timeline: false,
+  navigationHelpButton: false,
+  creditContainer: document.createElement('div'),
+});
 
-  const markerLayer = L.markerClusterGroup({
-    maxClusterRadius: 60,
-    spiderfyOnMaxZoom: true,
-    showCoverageOnHover: false,
-    zoomToBoundsOnClick: true,
-    animate: true,
-    iconCreateFunction(cluster) {
-      const n = cluster.getChildCount();
-      let sz, cls;
-      if (n < 10)  { sz = 34; cls = ''; }
-      else if (n < 100) { sz = 42; cls = 'sw-cl-md'; }
-      else              { sz = 52; cls = 'sw-cl-lg'; }
-      const fs = sz > 40 ? 13 : 11;
-      return L.divIcon({
-        html: `<div class="sw-cluster ${cls}" style="width:${sz}px;height:${sz}px;font-size:${fs}px">${n}</div>`,
-        className: '',
-        iconSize: L.point(sz, sz),
-        iconAnchor: L.point(sz / 2, sz / 2),
-      });
-    },
-  }).addTo(map);
+viewer.camera.setView({
+  destination: Cesium.Cartesian3.fromDegrees(-60, -15, 8_000_000)
+});
 
-  // Click on empty map area → reset to LATAM overview
-  let _markerClickLock = false;
-  map.on('click', () => {
-    if (_markerClickLock) return;
-    map.flyTo([-15, -60], 4, { animate: true, duration: 1.5 });
+viewer.scene.skyAtmosphere.show = true;
+viewer.scene.fog.enabled = false;
+viewer.scene.globe.showGroundAtmosphere = true;
+
+// ESRI World Imagery layer (added only in satellite mode)
+S.esriLayer = new Cesium.ImageryLayer(
+  new Cesium.UrlTemplateImageryProvider({
+    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    maximumLevel: 19,
+  }),
+  { alpha: 1.0 }
+);
+
+// ============================================================
+// SVG BILLBOARD FACTORY
+// ============================================================
+const _svgCache = {};
+
+function billboardURL(severity, style) {
+  const key = style + '_' + severity;
+  if (_svgCache[key]) return _svgCache[key];
+  const c = severity === 'alta' ? '#FF3B3B' : severity === 'media' ? '#FF9500' : '#FFD60A';
+  let svg;
+  if (style === 'dot') {
+    svg = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="5" fill="${c}" opacity="0.25"/>
+      <circle cx="7" cy="7" r="3" fill="${c}" opacity="0.9"/>
+      <circle cx="7" cy="7" r="1.2" fill="#fff" opacity="0.85"/>
+    </svg>`;
+  } else {
+    svg = `<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+      <defs>
+        <filter id="gf" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <g filter="url(#gf)">
+        <line x1="17" y1="3"  x2="17" y2="12" stroke="${c}" stroke-width="1.5"/>
+        <line x1="17" y1="22" x2="17" y2="31" stroke="${c}" stroke-width="1.5"/>
+        <line x1="3"  y1="17" x2="12" y2="17" stroke="${c}" stroke-width="1.5"/>
+        <line x1="22" y1="17" x2="31" y2="17" stroke="${c}" stroke-width="1.5"/>
+        <circle cx="17" cy="17" r="6" stroke="${c}" stroke-width="1.5" fill="none"/>
+        <circle cx="17" cy="17" r="2" fill="${c}"/>
+        <line x1="13.5" y1="13.5" x2="15"   y2="15"   stroke="${c}" stroke-width="0.8" opacity="0.5"/>
+        <line x1="20.5" y1="13.5" x2="19"   y2="15"   stroke="${c}" stroke-width="0.8" opacity="0.5"/>
+        <line x1="13.5" y1="20.5" x2="15"   y2="19"   stroke="${c}" stroke-width="0.8" opacity="0.5"/>
+        <line x1="20.5" y1="20.5" x2="19"   y2="19"   stroke="${c}" stroke-width="0.8" opacity="0.5"/>
+      </g>
+    </svg>`;
+  }
+  const url = 'data:image/svg+xml;base64,' + btoa(svg);
+  _svgCache[key] = url;
+  return url;
+}
+
+// ============================================================
+// RENDER ALERTS
+// ============================================================
+function renderAlerts(alerts) {
+  viewer.entities.removeAll();
+  const isGlobe = S.mode === 'globe';
+  alerts.forEach(p => {
+    const lat = parseFloat(p.lat), lon = parseFloat(p.lon);
+    if (isNaN(lat) || isNaN(lon)) return;
+    const sev = normSev(p.severity || p.severidad);
+    const entity = viewer.entities.add({
+      position: Cesium.Cartesian3.fromDegrees(lon, lat),
+      billboard: isGlobe
+        ? { image: billboardURL(sev,'dot'), width:14, height:14,
+            verticalOrigin: Cesium.VerticalOrigin.CENTER,
+            scaleByDistance: new Cesium.NearFarScalar(5e5, 1.2, 2e7, 0.4),
+            translucencyByDistance: new Cesium.NearFarScalar(3e6, 1.0, 1.5e7, 0.5) }
+        : { image: billboardURL(sev,'xhair'), width:34, height:34,
+            verticalOrigin: Cesium.VerticalOrigin.CENTER,
+            scaleByDistance: new Cesium.NearFarScalar(5e4, 1.2, 3e6, 0.5) }
+    });
+    entity._ap = p;
   });
+}
 
-  // ── HELPERS ────────────────────────────────────────────────
-  function sevColor(s) {
-    return { alta:'#FF3B3B', media:'#FF9500', baja:'#FFD60A' }[s] || '#495a6e';
-  }
-  function sevLabel(s) {
-    return { alta:'Alta', media:'Media', baja:'Baja' }[s] || (s || '—');
-  }
-  function actLabel(a) {
-    return { normal:'Normal', deforestacion:'Deforestación', agricultura:'Agricultura',
-             mineria:'Minería', incendio:'Incendio', asentamiento:'Asentamiento' }[a] || (a || 'Sin clasificar');
-  }
-  function verShort(v) {
-    if (!v) return 'Sin veredicto';
-    if (v.startsWith('Requiere')) return 'Requiere verificación';
-    return v;
-  }
-  function fmt(v, digits, suffix) {
-    return v != null ? v.toFixed(digits) + (suffix||'') : '—';
-  }
-  function esc(s) {
-    if (!s) return '—';
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  }
+// ============================================================
+// MODE SWITCHING
+// ============================================================
+function setMode(mode, force) {
+  if (mode === S.mode && !force) return;
+  S.mode = mode;
+  document.body.className = 'mode-' + mode;
 
-  // ── POPUP ──────────────────────────────────────────────────
-  function buildPopup(p) {
-    const c   = sevColor(p.severity);
-    const il  = p.veredicto === 'ILEGAL';
-    const vt  = verShort(p.veredicto);
-    return `
-      <div class="popup-wrap">
-        <div class="popup-hd">
-          <span class="popup-act">${esc(actLabel(p.actividad))}</span>
-          <span class="popup-sev-badge" style="color:${c};border:1px solid ${c}22;background:${c}12">${esc(sevLabel(p.severity))}</span>
-        </div>
-        <div class="popup-rows">
-          <div class="popup-row"><span class="popup-k">Veredicto</span><span class="popup-v${il?' il':''}">${esc(vt)}</span></div>
-          <div class="popup-row"><span class="popup-k">Área</span><span class="popup-v">${fmt(p.area_ha,2,' ha')}</span></div>
-          <div class="popup-row"><span class="popup-k">Confianza</span><span class="popup-v">${p.confianza!=null?(p.confianza*100).toFixed(1)+'%':'—'}</span></div>
-          <div class="popup-row"><span class="popup-k">NDVI Δ</span><span class="popup-v">${fmt(p.ndvi_change,4)}</span></div>
-          <div class="popup-row"><span class="popup-k">Fecha</span><span class="popup-v">${esc(p.detection_date)||'—'}</span></div>
-          <div class="popup-row"><span class="popup-k">Coords</span><span class="popup-v">${fmt(p.lat,5)}, ${fmt(p.lon,5)}</span></div>
-        </div>
-        <div class="popup-ft"><div class="popup-id">ID: ${esc(p.id)||'—'}</div></div>
-      </div>`;
-  }
+  const hasEsri = viewer.imageryLayers.contains(S.esriLayer);
+  if (mode === 'satellite' && !hasEsri) viewer.imageryLayers.add(S.esriLayer);
+  if (mode !== 'satellite' && hasEsri) viewer.imageryLayers.remove(S.esriLayer, false);
 
-  // ── MARKERS ────────────────────────────────────────────────
-  function renderMarkers(alerts) {
-    console.log('[renderMarkers] total recibidos:', alerts.length);
-    if (alerts.length > 0) {
-      const fp = alerts[0].properties;
-      console.log('[renderMarkers] primer feature lat:', fp.lat, 'lon:', fp.lon);
-    }
-    markerLayer.clearLayers();
-    markers = {};
-    let added = 0, skipped = 0;
-    alerts.forEach(f => {
-      const p = f.properties;
-      if (p.lat == null || p.lon == null) { skipped++; return; }
-      const c  = sevColor(p.severity);
-      const sel = p.id === activeId;
-      const circle = L.circleMarker([p.lat, p.lon], {
-        radius: sel ? 9 : 7,
-        fillColor: c, color: sel ? '#fff' : c,
-        weight: sel ? 2 : 1, opacity: 0.9, fillOpacity: 0.75,
-      });
-      circle.bindPopup(buildPopup(p), { maxWidth: 260 });
-      circle.on('click', () => {
-        _markerClickLock = true;
-        setTimeout(() => { _markerClickLock = false; }, 0);
-        activate(p.id);
-        map.flyTo([p.lat, p.lon], 10, { animate: true, duration: 1.2, easeLinearity: 0.1 });
-        setTimeout(() => markers[p.id]?.circle.openPopup(), 400);
-      });
-      circle.addTo(markerLayer);
-      markers[p.id] = { circle, props: p };
-      added++;
-    });
-    console.log('[renderMarkers] marcadores añadidos:', added, '| omitidos (sin coords):', skipped);
-  }
+  S.rotating = (mode === 'globe');
 
-  function reStyleMarkers() {
-    Object.entries(markers).forEach(([id, {circle, props}]) => {
-      const c   = sevColor(props.severity);
-      const sel = id === activeId;
-      circle.setStyle({
-        radius: sel ? 9 : 7,
-        color:  sel ? '#fff' : c, weight: sel ? 2 : 1,
-      });
-    });
-  }
-
-  // ── ALERT LIST ─────────────────────────────────────────────
-  function renderList(alerts) {
-    const cont  = document.getElementById('alert-list');
-    const empty = document.getElementById('list-empty');
-    document.getElementById('list-ct').textContent = alerts.length;
-
-    cont.querySelectorAll('.al-item').forEach(el => el.remove());
-
-    if (!alerts.length) { empty.style.display = 'block'; return; }
-    empty.style.display = 'none';
-
-    const frag = document.createDocumentFragment();
-    alerts.forEach((f, i) => {
-      const p   = f.properties;
-      const c   = sevColor(p.severity);
-      const il  = p.veredicto === 'ILEGAL';
-      const sel = p.id === activeId;
-      const el  = document.createElement('div');
-      el.className = 'al-item' + (sel ? ' sel' : '');
-      el.dataset.id = p.id || '';
-      el.style.animationDelay = Math.min(i * 25, 350) + 'ms';
-      el.innerHTML = `
-        <div class="al-dot" style="background:${c}"></div>
-        <div class="al-body">
-          <div class="al-top">
-            <span class="al-act">${esc(actLabel(p.actividad))}</span>
-            <span class="al-sev" style="color:${c}">${sevLabel(p.severity).toUpperCase()}</span>
-          </div>
-          <div class="al-bot">
-            <span class="al-ver${il?' il':''}">${esc(verShort(p.veredicto))}</span>
-            <span class="al-id">${esc((p.id||'').slice(0,8))}</span>
-          </div>
-        </div>`;
-      el.addEventListener('click', () => {
-        activate(p.id);
-        if (p.lat != null && p.lon != null) {
-          const mk = markers[p.id];
-          if (mk) {
-            markerLayer.zoomToShowLayer(mk.circle, () => mk.circle.openPopup());
-          } else {
-            map.flyTo([p.lat, p.lon], 10, { animate: true, duration: 1.2, easeLinearity: 0.1 });
-          }
-        }
-      });
-      frag.appendChild(el);
-    });
-    cont.appendChild(frag);
-  }
-
-  function activate(id) {
-    activeId = id;
-    document.querySelectorAll('.al-item').forEach(el =>
-      el.classList.toggle('sel', el.dataset.id === id)
-    );
-    reStyleMarkers();
-  }
-
-  // ── FILTERS ────────────────────────────────────────────────
-  function activeActs() {
-    return Array.from(document.querySelectorAll('[data-filter="act"]:checked')).map(e => e.value);
-  }
-  function activeSevs() {
-    return Array.from(document.querySelectorAll('[data-filter="sev"]:checked')).map(e => e.value);
-  }
-
-  function applyFilters() {
-    const acts = activeActs();
-    const sevs = activeSevs();
-    filtered = allAlerts.filter(f => {
-      const p = f.properties;
-      const act = p.actividad || 'sin_clasificar';
-      if (!acts.includes(act)) return false;
-      if (p.severity && !sevs.includes(p.severity)) return false;
-      if (vfMode === 'ilegal'   && p.veredicto !== 'ILEGAL')         return false;
-      if (vfMode === 'verif'    && !p.veredicto?.startsWith('Requiere')) return false;
-      return true;
-    });
-    renderMarkers(filtered);
-    renderList(filtered);
-  }
-
-  function updateCounts() {
-    const ac = {}, sc = {};
-    allAlerts.forEach(f => {
-      const p = f.properties;
-      const act = p.actividad || 'sin_clasificar';
-      ac[act] = (ac[act]||0) + 1;
-      if (p.severity) sc[p.severity] = (sc[p.severity]||0) + 1;
-    });
-    document.querySelectorAll('[data-act-ct]').forEach(el =>
-      el.textContent = ac[el.dataset.actCt] || 0
-    );
-    document.querySelectorAll('[data-sev-ct]').forEach(el =>
-      el.textContent = sc[el.dataset.sevCt] || 0
-    );
-  }
-
-  // Filter listeners
-  document.querySelectorAll('[data-filter]').forEach(el =>
-    el.addEventListener('change', applyFilters)
+  document.querySelectorAll('.mode-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.mode === mode)
   );
-  document.querySelectorAll('.v-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.v-btn').forEach(b => b.classList.remove('on'));
-      btn.classList.add('on');
-      vfMode = btn.dataset.vf;
-      applyFilters();
+
+  renderAlerts(S.filtered);
+}
+
+// ============================================================
+// AUTO-ROTATE
+// ============================================================
+viewer.clock.onTick.addEventListener(() => {
+  if (S.rotating) viewer.camera.rotate(Cesium.Cartesian3.UNIT_Z, -0.0005);
+});
+
+// Pause rotate on user drag, resume after 3s
+viewer.scene.canvas.addEventListener('pointerdown', () => {
+  if (S.mode === 'globe') S.rotating = false;
+});
+viewer.scene.canvas.addEventListener('pointerup', () => {
+  if (S.mode === 'globe') setTimeout(() => { S.rotating = true; }, 3000);
+});
+
+// ============================================================
+// CAMERA HEIGHT → MODE DETECTION
+// ============================================================
+viewer.camera.changed.addEventListener(() => {
+  const carto = viewer.camera.positionCartographic;
+  if (!carto) return;
+  const h = carto.height;
+  const newMode = h > GLOBE_H ? 'globe' : h > MAP_H ? 'map' : 'satellite';
+  setMode(newMode, false);
+
+  // Alt display
+  document.getElementById('hud-alt').textContent =
+    h > 1000 ? `ALT: ${(h/1000).toFixed(0)} km` : `ALT: ${h.toFixed(0)} m`;
+
+  // Map coords
+  if (S.mode === 'map') {
+    const lat = Cesium.Math.toDegrees(carto.latitude).toFixed(3);
+    const lon = Cesium.Math.toDegrees(carto.longitude).toFixed(3);
+    document.getElementById('map-coords').textContent = `${lat}°N  ${lon}°E`;
+  }
+});
+
+// ============================================================
+// CLICK HANDLER
+// ============================================================
+const clickH = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+clickH.setInputAction(e => {
+  const picked = viewer.scene.pick(e.position);
+  if (Cesium.defined(picked) && picked.id && picked.id._ap) {
+    selectAlert(picked.id._ap);
+  } else {
+    closeDetail();
+  }
+}, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+// ============================================================
+// MOUSE MOVE → CURSOR COORDS (satellite mode)
+// ============================================================
+const moveH = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+moveH.setInputAction(e => {
+  if (S.mode !== 'satellite') return;
+  const cart = viewer.camera.pickEllipsoid(e.endPosition, viewer.scene.globe.ellipsoid);
+  if (cart) {
+    const c = Cesium.Cartographic.fromCartesian(cart);
+    document.getElementById('hud-cursor').textContent =
+      `${Cesium.Math.toDegrees(c.latitude).toFixed(5)}°N  ${Cesium.Math.toDegrees(c.longitude).toFixed(5)}°E`;
+  }
+}, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+// ============================================================
+// SELECT ALERT
+// ============================================================
+function selectAlert(p) {
+  S.selected = p;
+  const lat = parseFloat(p.lat), lon = parseFloat(p.lon);
+  viewer.camera.flyTo({
+    destination: Cesium.Cartesian3.fromDegrees(lon, lat, 50000),
+    duration: 2.0,
+    easingFunction: Cesium.EasingFunction.CUBIC_IN_OUT,
+  });
+  showDetail(p);
+  document.querySelectorAll('.alert-item').forEach(el =>
+    el.classList.toggle('sel', el.dataset.id === (p.id || ''))
+  );
+}
+
+// ============================================================
+// DETAIL PANEL
+// ============================================================
+function showDetail(p) {
+  const sev   = normSev(p.severity || p.severidad);
+  const sc    = sev === 'alta' ? 'var(--sev-alta)' : sev === 'media' ? 'var(--sev-media)' : 'var(--sev-baja)';
+  const act   = p.actividad || 'normal';
+  const ver   = p.veredicto || '—';
+  const vcls  = ver.includes('ILEGAL') ? 'c-ilegal' : ver !== '—' ? 'c-verif' : '';
+  const conf  = p.confianza != null ? (parseFloat(p.confianza)*100).toFixed(1)+'%' : '—';
+  const ndvi  = p.ndvi_change != null ? parseFloat(p.ndvi_change).toFixed(4) : '—';
+  const area  = p.area_ha != null ? parseFloat(p.area_ha).toFixed(2)+' ha' : '—';
+
+  document.getElementById('dp-body').innerHTML = `
+    <div class="dp-banner" style="border-color:${sc};background:${sc}18">
+      <span class="dp-sev" style="color:${sc}">${sev.toUpperCase()}</span>
+      <span style="font-family:var(--font-mono);font-size:9px;color:var(--text-sec)">${act.toUpperCase()}</span>
+    </div>
+    <div class="dp-grid">
+      <div class="dp-field"><div class="dp-lbl">Severidad</div><div class="dp-val" style="color:${sc}">${sev}</div></div>
+      <div class="dp-field"><div class="dp-lbl">Actividad</div><div class="dp-val">${act}</div></div>
+      <div class="dp-field full"><div class="dp-lbl">Veredicto</div><div class="dp-val ${vcls}">${ver}</div></div>
+      <div class="dp-field"><div class="dp-lbl">Área</div><div class="dp-val">${area}</div></div>
+      <div class="dp-field"><div class="dp-lbl">Confianza</div><div class="dp-val">${conf}</div></div>
+      <div class="dp-field"><div class="dp-lbl">ΔNDVI</div><div class="dp-val">${ndvi}</div></div>
+      <div class="dp-field"><div class="dp-lbl">Fecha</div><div class="dp-val">${p.detection_date||'—'}</div></div>
+      <div class="dp-field"><div class="dp-lbl">Lat</div><div class="dp-val">${parseFloat(p.lat).toFixed(6)}</div></div>
+      <div class="dp-field"><div class="dp-lbl">Lon</div><div class="dp-val">${parseFloat(p.lon).toFixed(6)}</div></div>
+      <div class="dp-field full"><div class="dp-lbl">ID</div><div class="dp-val" style="font-size:9px">${p.id||'—'}</div></div>
+    </div>`;
+  document.getElementById('detail-panel').classList.add('open');
+}
+
+function closeDetail() {
+  document.getElementById('detail-panel').classList.remove('open');
+  S.selected = null;
+  document.querySelectorAll('.alert-item').forEach(el => el.classList.remove('sel'));
+}
+document.getElementById('dp-close').addEventListener('click', closeDetail);
+
+// ============================================================
+// SIDEBAR TOGGLE
+// ============================================================
+document.getElementById('sidebar-toggle').addEventListener('click', () =>
+  document.getElementById('sidebar').classList.toggle('collapsed')
+);
+
+// ============================================================
+// MODE BUTTONS (manual override)
+// ============================================================
+document.querySelectorAll('.mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const m = btn.dataset.mode;
+    const targets = { globe: 8_000_000, map: 1_500_000, satellite: 150_000 };
+    const carto = viewer.camera.positionCartographic;
+    const lat = carto ? Cesium.Math.toDegrees(carto.latitude) : -15;
+    const lon = carto ? Cesium.Math.toDegrees(carto.longitude) : -60;
+    viewer.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(lon, lat, targets[m]),
+      duration: 1.5,
     });
+    setMode(m, true);
   });
-  document.getElementById('btn-reset').addEventListener('click', () => {
-    document.querySelectorAll('[data-filter]').forEach(el => el.checked = true);
-    document.querySelectorAll('.v-btn').forEach(b => b.classList.remove('on'));
-    document.querySelector('.v-btn[data-vf="todos"]').classList.add('on');
-    vfMode = 'todos';
-    applyFilters();
+});
+
+// ============================================================
+// FILTERS: INIT CHECKBOXES
+// ============================================================
+const ACTS = [
+  { id:'all',          lbl:'Todas',          c:'var(--text-sec)' },
+  { id:'deforestacion',lbl:'Deforestación',  c:'var(--sev-alta)' },
+  { id:'mineria',      lbl:'Minería',        c:'var(--sev-media)' },
+  { id:'agricultura',  lbl:'Agricultura',    c:'var(--sev-baja)' },
+  { id:'incendio',     lbl:'Incendio',       c:'#FF6B00' },
+  { id:'asentamiento', lbl:'Asentamiento',   c:'#9B59B6' },
+  { id:'normal',       lbl:'Normal',         c:'var(--text-sec)' },
+];
+const SEVS = [
+  { id:'all',   lbl:'Todas', c:'var(--text-sec)' },
+  { id:'alta',  lbl:'Alta',  c:'var(--sev-alta)' },
+  { id:'media', lbl:'Media', c:'var(--sev-media)' },
+  { id:'baja',  lbl:'Baja',  c:'var(--sev-baja)' },
+];
+
+function buildCheckboxes(containerId, items, filterSet, onToggle) {
+  const container = document.getElementById(containerId);
+  items.forEach(it => {
+    const row = document.createElement('div');
+    row.className = 'filter-row';
+    row.dataset.val = it.id;
+    row.innerHTML = `
+      <div class="filter-check ${it.id==='all'?'on':''}"></div>
+      <div class="filter-dot" style="background:${it.c}"></div>
+      <span class="filter-lbl">${it.lbl}</span>`;
+    row.addEventListener('click', () => onToggle(it.id, row, container, filterSet));
+    container.appendChild(row);
   });
+}
 
-  // ── UI UTILS ───────────────────────────────────────────────
-  function setLive(on) {
-    document.getElementById('live-dot').classList.toggle('pulsing', on);
-  }
-  function showErr(msg) {
-    document.getElementById('err-msg').textContent = msg;
-    document.getElementById('err-banner').classList.add('on');
-  }
-  function hideErr() {
-    document.getElementById('err-banner').classList.remove('on');
-  }
-  function updateNavTime() {
-    const n = new Date();
-    const t = [n.getHours(), n.getMinutes(), n.getSeconds()]
-      .map(v => String(v).padStart(2,'0')).join(':');
-    document.getElementById('last-upd').textContent = t;
-  }
-  function updateSummaryUI(s) {
-    const tot = s.total_alerts ?? '—';
-    document.getElementById('nv-total').textContent  = tot;
-    document.getElementById('nv-date').textContent   = s.detection_date || '—';
-    document.getElementById('nv-file').textContent   = s.source_file    || '—';
-    document.getElementById('sb-total').textContent  = tot;
-    document.getElementById('sb-file').textContent   = s.source_file    || '—';
-    document.getElementById('sb-date').textContent   = s.detection_date || '—';
-    const sv = s.severity || {};
-    document.getElementById('sb-alta').textContent  = sv.alta  ?? '—';
-    document.getElementById('sb-media').textContent = sv.media ?? '—';
-    document.getElementById('sb-baja').textContent  = sv.baja  ?? '—';
-  }
-
-  // ── FETCH ──────────────────────────────────────────────────
-  async function refresh() {
-    setLive(true);
-    try {
-      const [gj, sum] = await Promise.all([
-        fetch(`${API_BASE}/alerts`).then(r => { if(!r.ok) throw new Error(r.status); return r.json(); }),
-        fetch(`${API_BASE}/alerts/summary`).then(r => { if(!r.ok) throw new Error(r.status); return r.json(); }),
-      ]);
-      hideErr();
-      console.log('[SentinelWatch] GeoJSON recibido:', gj);
-      const first = gj.features?.[0];
-      console.log('[SentinelWatch] Primer feature — properties:', first?.properties, '| geometry:', first?.geometry);
-      const hpSys = document.getElementById('hp-sys');
-      if (hpSys) hpSys.textContent = 'ONLINE';
-      const SEV_MAP = { low: 'baja', medium: 'media', high: 'alta' };
-      allAlerts = (gj.features || []).map(f => {
-        const p = { ...f.properties };
-        if (SEV_MAP[p.severity]) p.severity = SEV_MAP[p.severity];
-        if (p.lat == null || p.lon == null) {
-          const coords = f.geometry?.coordinates;
-          if (coords) { p.lat = coords[1]; p.lon = coords[0]; }
-        }
-        return { ...f, properties: p };
-      });
-      updateCounts();
-      applyFilters();
-      updateSummaryUI(sum);
-      updateNavTime();
-    } catch (e) {
-      const hpSys = document.getElementById('hp-sys');
-      if (hpSys) hpSys.textContent = 'ERROR';
-      showErr(
-        `No se puede conectar con ${API_BASE}. ` +
-        `Verifique que el servidor esté corriendo y que CORS esté habilitado. ` +
-        `Reintentando en 30 s…`
-      );
-    } finally {
-      setLive(false);
+function toggleCheck(id, row, container, filterSet) {
+  const chk = row.querySelector('.filter-check');
+  if (id === 'all') {
+    filterSet.clear(); filterSet.add('all');
+    container.querySelectorAll('.filter-check').forEach(c => c.classList.remove('on'));
+    chk.classList.add('on');
+  } else {
+    filterSet.delete('all');
+    container.querySelector('[data-val="all"] .filter-check').classList.remove('on');
+    if (filterSet.has(id)) {
+      filterSet.delete(id); chk.classList.remove('on');
+      if (filterSet.size === 0) {
+        filterSet.add('all');
+        container.querySelector('[data-val="all"] .filter-check').classList.add('on');
+      }
+    } else {
+      filterSet.add(id); chk.classList.add('on');
     }
   }
+  applyFilters();
+}
 
-  // ── HUD COUNTDOWN ─────────────────────────────────────────
-  let _countdown = 30;
-  function resetCountdown() { _countdown = 30; }
-  setInterval(() => {
-    _countdown = Math.max(0, _countdown - 1);
-    const s = String(_countdown).padStart(2, '0');
-    const el = document.getElementById('hp-countdown');
-    if (el) el.textContent = `T−00:${s}`;
-  }, 1000);
+buildCheckboxes('filt-act', ACTS, S.fAct, toggleCheck);
+buildCheckboxes('filt-sev', SEVS, S.fSev, toggleCheck);
+document.getElementById('filt-ver').addEventListener('change', e => {
+  S.fVer = e.target.value; applyFilters();
+});
 
-  refresh();
-  setInterval(() => { resetCountdown(); refresh(); }, 30_000);
+// ============================================================
+// MAP GRID LINES
+// ============================================================
+(function buildGrid() {
+  const hud = document.getElementById('hud-map');
+  for (let i = 1; i < 6; i++) {
+    const l = document.createElement('div'); l.className = 'grid-h';
+    l.style.top = `${(i/6)*100}%`; hud.appendChild(l);
+  }
+  for (let i = 1; i < 8; i++) {
+    const l = document.createElement('div'); l.className = 'grid-v';
+    l.style.left = `${(i/8)*100}%`; hud.appendChild(l);
+  }
+})();
+
+// ============================================================
+// NORMALIZE SEVERITY  (API returns low/medium/high OR baja/media/alta)
+// ============================================================
+function normSev(raw) {
+  const s = (raw || 'baja').toLowerCase();
+  if (s === 'high'   || s === 'alta')  return 'alta';
+  if (s === 'medium' || s === 'media') return 'media';
+  return 'baja';
+}
+
+// ============================================================
+// APPLY FILTERS
+// ============================================================
+function applyFilters() {
+  S.filtered = S.alerts.filter(p => {
+    const act = (p.actividad || 'normal').toLowerCase();
+    const sev = normSev(p.severity || p.severidad);
+    const ver = p.veredicto || '';
+    return (S.fAct.has('all') || S.fAct.has(act))
+        && (S.fSev.has('all') || S.fSev.has(sev))
+        && (S.fVer === 'all'  || ver.includes(S.fVer));
+  });
+  renderAlerts(S.filtered);
+  renderList(S.filtered);
+}
+
+// ============================================================
+// RENDER ALERT LIST
+// ============================================================
+function renderList(alerts) {
+  document.getElementById('alert-count').textContent = alerts.length;
+  const list = document.getElementById('alert-list');
+  if (!alerts.length) {
+    list.innerHTML = '<div class="empty-msg">Sin alertas</div>'; return;
+  }
+  const sorted = [...alerts].sort((a, b) => {
+    const o = { alta:0, media:1, baja:2 };
+    return (o[normSev(a.severity||a.severidad)]??3) - (o[normSev(b.severity||b.severidad)]??3);
+  });
+  list.innerHTML = '';
+  sorted.forEach(p => {
+    const sev = normSev(p.severity||p.severidad);
+    const sc  = sev==='alta'?'var(--sev-alta)':sev==='media'?'var(--sev-media)':'var(--sev-baja)';
+    const el  = document.createElement('div');
+    el.className = 'alert-item' + (S.selected && S.selected.id===p.id ? ' sel' : '');
+    el.dataset.id = p.id || '';
+    el.innerHTML = `
+      <div class="alert-sev-bar" style="background:${sc}"></div>
+      <div class="alert-body">
+        <div class="alert-id">${(p.id||'—').slice(0,18)}…</div>
+        <div class="alert-row">
+          <span class="alert-act">${p.actividad||'normal'}</span>
+          <span class="alert-area">${p.area_ha!=null?parseFloat(p.area_ha).toFixed(1)+' ha':''}</span>
+        </div>
+        <div class="alert-date">${p.detection_date||''}</div>
+      </div>`;
+    el.addEventListener('click', () => selectAlert(p));
+    list.appendChild(el);
+  });
+
+  // Footer counts
+  const counts = { alta:0, media:0, baja:0 };
+  alerts.forEach(p => {
+    const s = normSev(p.severity||p.severidad);
+    if (counts[s]!=null) counts[s]++;
+  });
+  document.getElementById('n-alta').textContent  = counts.alta;
+  document.getElementById('n-media').textContent = counts.media;
+  document.getElementById('n-baja').textContent  = counts.baja;
+}
+
+// ============================================================
+// FETCH DATA
+// ============================================================
+async function fetchData() {
+  try {
+    const [ra, rs] = await Promise.all([
+      fetch(API_BASE + '/alerts'),
+      fetch(API_BASE + '/alerts/summary'),
+    ]);
+    if (!ra.ok || !rs.ok) throw new Error('HTTP ' + ra.status);
+    const geojson = await ra.json();
+    const summary = await rs.json();
+    S.alerts = (geojson.features || []).map(f => f.properties).filter(Boolean);
+    // Update stats
+    document.getElementById('stat-total').textContent = summary.total_alerts ?? S.alerts.length;
+    document.getElementById('stat-date').textContent  = summary.detection_date || '—';
+    const files = summary.source_files || (summary.source_file ? [summary.source_file] : []);
+    document.getElementById('stat-file').textContent  = files.length ? files[files.length-1] : '—';
+    applyFilters();
+    hideErr();
+  } catch(e) {
+    showErr('API no disponible — reintentando');
+  }
+}
+
+function showErr(msg) {
+  const el = document.getElementById('error-banner');
+  el.textContent = '⚠ ' + msg; el.classList.add('show');
+}
+function hideErr() {
+  document.getElementById('error-banner').classList.remove('show');
+}
+
+// ============================================================
+// POLLING
+// ============================================================
+fetchData();
+setInterval(fetchData, POLL_S * 1000);
+setInterval(() => {
+  S.countdown = S.countdown > 0 ? S.countdown - 1 : POLL_S;
+  document.getElementById('countdown').textContent = `NEXT SCAN: ${S.countdown}s`;
+}, 1000);
 </script>
 </body>
 </html>

@@ -16,6 +16,7 @@ if TYPE_CHECKING:
     from sentinel_classifier import SentinelClassifier
 
 _CHIP_CACHE_S1S2 = Path("cache") / "chips_s1s2"
+_CHIP_CACHE_12B  = Path("cache") / "chips_s2_12b"
 
 
 def _load_chip_s1s2(polygon_id: str) -> "np.ndarray | None":
@@ -39,6 +40,23 @@ def _save_chip_s1s2(polygon_id: str, chip: np.ndarray) -> None:
     np.save(_CHIP_CACHE_S1S2 / f"{polygon_id}.npy", chip)
 
 
+def _load_chip_12b(polygon_id: str) -> "np.ndarray | None":
+    """Returns a cached [H, W, 12] chip from cache/chips_s2_12b/, or None."""
+    path = _CHIP_CACHE_12B / f"{polygon_id}.npy"
+    if not path.exists():
+        return None
+    chip = np.load(path)
+    if chip.ndim != 3 or chip.shape[-1] != 12:
+        return None
+    return chip
+
+
+def _save_chip_12b(polygon_id: str, chip: np.ndarray) -> None:
+    """Persists a [H, W, 12] chip to cache/chips_s2_12b/{polygon_id}.npy."""
+    _CHIP_CACHE_12B.mkdir(parents=True, exist_ok=True)
+    np.save(_CHIP_CACHE_12B / f"{polygon_id}.npy", chip)
+
+
 def _classify_alert(
     alert: dict,
     pid: str,
@@ -46,7 +64,7 @@ def _classify_alert(
     lon: float,
     classifier: "SentinelClassifier",
     classification_image: "ee.Image | None",
-    n_bands: int,
+    chip_bands: int,
     classified_ids: set,
     existing_by_id: dict,
 ) -> dict:
@@ -56,33 +74,43 @@ def _classify_alert(
     shared mutable state. GEE HTTP calls and PyTorch forward passes both release
     the GIL, making threads effective here despite the GIL.
 
+    chip_bands controls which cache directory is used (6 = S2+S1, 12 = S2-only).
+
     Returns the alert dict, augmented with actividad/confianza/veredicto when
     classification succeeds.
     """
     if pid in classified_ids:
         src = existing_by_id[pid]
-        alert["actividad"] = src["actividad"]
-        alert["confianza"] = src["confianza"]
-        alert["veredicto"] = src["veredicto"]
+        alert["actividad"]    = src["actividad"]
+        alert["confianza"]    = src["confianza"]
+        alert["veredicto"]    = src["veredicto"]
+        alert["legal_detail"] = src.get("legal_detail", "")
         return alert
 
-    chip = _load_chip_s1s2(pid)
+    use_12b = chip_bands == 12
+    chip = _load_chip_12b(pid) if use_12b else _load_chip_s1s2(pid)
+
     if chip is None and classification_image is not None:
         import ee
-        from gee_client import extract_chip
-        chip = extract_chip(
-            classification_image,
-            ee.Geometry.Point([lon, lat]),
-            n_bands=n_bands,
-        )
-        if chip is not None and chip.shape[-1] == 6:
-            _save_chip_s1s2(pid, chip)
+        centroid = ee.Geometry.Point([lon, lat])
+        if use_12b:
+            from gee_client import download_chip_12b
+            chip = download_chip_12b(classification_image, centroid)
+        else:
+            from gee_client import extract_chip
+            chip = extract_chip(classification_image, centroid, n_bands=chip_bands)
+        if chip is not None and chip.shape[-1] == chip_bands:
+            if use_12b:
+                _save_chip_12b(pid, chip)
+            else:
+                _save_chip_s1s2(pid, chip)
 
     if chip is not None:
         resultado = classifier.predecir(chip, coordenadas=(lat, lon))
-        alert["actividad"] = resultado["actividad"]
-        alert["confianza"] = resultado["confianza"]
-        alert["veredicto"] = resultado["veredicto"]
+        alert["actividad"]    = resultado["actividad"]
+        alert["confianza"]    = resultado["confianza"]
+        alert["veredicto"]    = resultado["veredicto"]
+        alert["legal_detail"] = resultado.get("legal_detail", "")
 
     return alert
 
@@ -146,18 +174,23 @@ def build_alerts(
     if not classify:
         return [alert for alert, *_ in rows]
 
+    # Detect how many bands the classifier expects (6 for S2+S1, 12 for S2-only).
+    chip_bands: int = getattr(classifier, "chip_bands", 6)
+
     # Pre-build classification image once — EE graph construction is not
     # thread-safe, so this must happen before the executor starts.
     classification_image: "ee.Image | None" = None
-    n_bands = 4
     if sentinel2_image is not None:
-        # Fuse S2 (B4/B3/B2/B8) with S1 (VV/VH) when available.
-        classification_image = (
-            sentinel2_image.addBands(sentinel1_image)
-            if sentinel1_image is not None
-            else sentinel2_image
-        )
-        n_bands = 6 if sentinel1_image is not None else 4
+        if chip_bands == 12:
+            # 12-band S2-only composite (already built by main.py via get_s2_12band_composite)
+            classification_image = sentinel2_image
+        else:
+            # Fuse S2 (B4/B3/B2/B8) with S1 (VV/VH) when available.
+            classification_image = (
+                sentinel2_image.addBands(sentinel1_image)
+                if sentinel1_image is not None
+                else sentinel2_image
+            )
 
     # --- Parallel chip download + inference ---
     results: dict[int, dict] = {}
@@ -167,7 +200,7 @@ def build_alerts(
             executor.submit(
                 _classify_alert,
                 alert, pid, lat, lon,
-                classifier, classification_image, n_bands,
+                classifier, classification_image, chip_bands,
                 classified_ids, existing_by_id,
             ): i
             for i, (alert, pid, lat, lon) in enumerate(rows)

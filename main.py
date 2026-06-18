@@ -9,6 +9,7 @@ from gee_client import (
     aoi_geometry,
     get_classification_composite,
     get_median_ndvi,
+    get_s2_12band_composite,
     get_sentinel1_collection,
     get_sentinel2_collection,
 )
@@ -89,7 +90,12 @@ def run_pipeline(
     classification_image = None
 
     if classifier:
-        classification_image = get_classification_composite(col_now, s1_collection=col_s1)
+        chip_bands = getattr(classifier, "chip_bands", 6)
+        if chip_bands == 12:
+            print("      Clasificador 12 bandas (Gaia v0.5) — composite S2-only.")
+            classification_image = get_s2_12band_composite(col_now)
+        else:
+            classification_image = get_classification_composite(col_now, s1_collection=col_s1)
 
     alerts = build_alerts(
         gdf,
@@ -155,17 +161,33 @@ def _load_existing_alerts() -> list[dict]:
         return []
 
 
+_DEFAULT_MODEL = Path("models") / "gaia_v05_amw_ssl4eo_v4.pth"
+_GAIA_V05_MARKERS = ("gaia_v05", "ssl4eo")
+
+
 def _load_classifier(model_path: str | Path | None = None):
-    """Returns a SentinelClassifier if model weights exist, otherwise None."""
-    weights_path = Path(model_path) if model_path else Path("model") / "gaia_v04_s1s2.pth"
+    """Returns a classifier instance if model weights exist, otherwise None.
+
+    Loads GaiaV05Classifier for paths containing 'gaia_v05' or 'ssl4eo',
+    and SentinelClassifier (EfficientNet-B2, 6-band) for all other paths.
+    """
+    weights_path = Path(model_path) if model_path else _DEFAULT_MODEL
     if not weights_path.exists():
         print(f"      Warning: model weights not found at {weights_path}. Skipping classification.")
         return None
+
+    name_lower = weights_path.name.lower()
+    use_gaia_v05 = any(m in name_lower for m in _GAIA_V05_MARKERS)
+
     try:
-        from sentinel_classifier import SentinelClassifier
-        return SentinelClassifier(model_path=weights_path)
+        if use_gaia_v05:
+            from gaia_v05 import GaiaV05Classifier
+            return GaiaV05Classifier(model_path=weights_path)
+        else:
+            from sentinel_classifier import SentinelClassifier
+            return SentinelClassifier(model_path=weights_path)
     except Exception as exc:
-        print(f"      Warning: could not load SentinelClassifier ({exc}). Skipping classification.")
+        print(f"      Warning: could not load classifier ({exc}). Skipping classification.")
         return None
 
 
@@ -185,7 +207,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--model",
-        default="model/gaia_v04_s1s2.pth",
+        default=str(_DEFAULT_MODEL),
         help="Path to model weights file. Default: %(default)s.",
     )
     args = parser.parse_args()

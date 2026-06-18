@@ -30,3 +30,13 @@ Thumbs.db
 # Entornos virtuales
 venv/
 .venv/
+
+SSL4EO-S12/
+
+models/*.pth
+
+*.npy
+
+__pycache__/
+
+.env
