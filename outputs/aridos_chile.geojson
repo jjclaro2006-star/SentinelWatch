@@ -1,0 +1,1393 @@
+{
+  "type": "FeatureCollection",
+  "name": "Extraccion Ilegal de Aridos - SNIFA SMA Chile",
+  "metadata": {
+    "descripcion": "Casos de extracción de áridos con procedimientos sancionatorios en el SNIFA (Superintendencia del Medio Ambiente, Chile)",
+    "fuente": "https://snifa.sma.gob.cl",
+    "fecha_extraccion": "2026-06-19",
+    "total_casos": 46,
+    "coordenadas": "WGS84 lat/lon",
+    "uso": "Ground truth para entrenamiento de modelo de detección satelital",
+    "notas_coordenadas": "coord_source=UTM_PDF indica coordenadas exactas extraidas de resoluciones PDF. coord_source=UF_centroid indica centroide del poligono de la Unidad Fiscalizable registrada en SNIFA",
+    "fecha_actualizacion": "2026-06-19"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.010864,
+          -41.497033
+        ]
+      },
+      "properties": {
+        "expediente": "F-077-2025",
+        "nombre": "POZO DE ARIDOS MONRROY",
+        "titular": "MONRROY Y COMPAÑIA LIMITADA SOC MONRROY E HIJOS LIMITADA",
+        "categoria": "Minería",
+        "region": "Región de los Lagos",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "23302",
+        "san_id": "4398",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/4398",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/23302",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -41.497033,
+        "lon": -73.010864,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.076032,
+          -40.609895
+        ]
+      },
+      "properties": {
+        "expediente": "D-258-2025",
+        "nombre": "Áridos VICAT Osorno",
+        "titular": "SERVICIOS DE TRANSPORTES Y ARIDOS VICAT LIMITADA",
+        "categoria": "Minería",
+        "region": "Región de los Lagos",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "20349",
+        "san_id": "4295",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/4295",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/20349",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -40.609895,
+        "lon": -73.076032,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.833141,
+          -38.522885
+        ]
+      },
+      "properties": {
+        "expediente": "D-235-2025",
+        "nombre": "Aridos Felix Molina Curacautin",
+        "titular": "Félix Molina",
+        "categoria": "Minería",
+        "region": "Región de la Araucanía",
+        "estado_original": "Programa de Cumplimiento en ejecución",
+        "estado": "programa_cumplimiento_ejecucion",
+        "uf_id": "22966",
+        "san_id": "4255",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/4255",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/22966",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -38.522885,
+        "lon": -71.833141,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.700479,
+          -42.318945
+        ]
+      },
+      "properties": {
+        "expediente": "D-228-2025",
+        "nombre": "ARIDOS PUERTO OCTAY, DALCAHUE",
+        "titular": "CONSTRUCTORA PUERTO OCTAY LIMITADA",
+        "categoria": "Minería",
+        "region": "Región de los Lagos",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "23810",
+        "san_id": "4250",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/4250",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/23810",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -42.318945,
+        "lon": -73.700479,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.922349,
+          -36.511935
+        ]
+      },
+      "properties": {
+        "expediente": "D-065-2025",
+        "nombre": "Aridos Fe Blanca San Carlos",
+        "titular": "INGENIERÍA Y CONSTRUCCIONES FE BLANCA SPA",
+        "categoria": "Minería",
+        "region": "Región de Ñuble",
+        "estado_original": "Terminado - Sanción",
+        "estado": "sancionado",
+        "uf_id": "22692",
+        "san_id": "4064",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/4064",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/22692",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -36.511935,
+        "lon": -71.922349,
+        "coord_source": "UTM_PDF",
+        "utm_este": 238295,
+        "utm_norte": 5955295,
+        "utm_huso": "19H",
+        "utm_datum": "WGS84",
+        "coord_precision": "exact_from_resolucion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.247524,
+          -41.580488
+        ]
+      },
+      "properties": {
+        "expediente": "D-237-2024",
+        "nombre": "EMPRESTITO CABERO",
+        "titular": "ARIDOS PUERTO MONTT SPA",
+        "categoria": "Minería",
+        "region": "Región de los Lagos",
+        "estado_original": "Programa de Cumplimiento en ejecución",
+        "estado": "programa_cumplimiento_ejecucion",
+        "uf_id": "6451",
+        "san_id": "3873",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/3873",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6451",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -41.580488,
+        "lon": -73.247524,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.742828,
+          -32.731192
+        ]
+      },
+      "properties": {
+        "expediente": "D-226-2024",
+        "nombre": "Aridos ENCON",
+        "titular": "Daniel Urtubia",
+        "categoria": "Otras categorías",
+        "region": "Región de Valparaíso",
+        "estado_original": "Programa de Cumplimiento en ejecución",
+        "estado": "programa_cumplimiento_ejecucion",
+        "uf_id": "21360",
+        "san_id": "3833",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/3833",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/21360",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -32.731192,
+        "lon": -70.742828,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.5522113535756,
+          -37.5814453489897
+        ]
+      },
+      "properties": {
+        "expediente": "D-181-2024",
+        "nombre": "EXTRACCION DE ARIDOS POZO GALLEGOS",
+        "titular": "SOCIEDAD CONCESIONARIA RUTA NAHUELBUTA S.A.",
+        "categoria": "Minería",
+        "region": "Región del Biobío",
+        "estado_original": "Programa de Cumplimiento en ejecución",
+        "estado": "programa_cumplimiento_ejecucion",
+        "uf_id": "22223",
+        "san_id": "3790",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/3790",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/22223",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -37.5814453489897,
+        "lon": -72.5522113535756,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.270444,
+          -32.890097
+        ]
+      },
+      "properties": {
+        "expediente": "D-050-2024",
+        "nombre": "ÁRIDOS BOCO",
+        "titular": "ARIDOS BOCO LIMITADA",
+        "categoria": "Minería",
+        "region": "Región de Valparaíso",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "18562",
+        "san_id": "3626",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/3626",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/18562",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -32.890097,
+        "lon": -71.270444,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.756183,
+          -40.263661
+        ]
+      },
+      "properties": {
+        "expediente": "D-263-2022",
+        "nombre": "ARIDOS POZO COLUMO",
+        "titular": "SERVICIOS DE TRANSPORTES Y ARIDOS VICAT LIMITADA INVERSIONES CONSTRUCTORA Y GESTION INMOBILIARIA RIO BUENO SPA",
+        "categoria": "Minería",
+        "region": "Región de Los Ríos",
+        "estado_original": "Programa de Cumplimiento en ejecución",
+        "estado": "programa_cumplimiento_ejecucion",
+        "uf_id": "18804",
+        "san_id": "3147",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/3147",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/18804",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -40.263661,
+        "lon": -72.756183,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.681111,
+          -33.286667
+        ]
+      },
+      "properties": {
+        "expediente": "D-247-2022",
+        "nombre": "ÁRIDOS VICENTE GALAZ - COLINA",
+        "titular": "ARIDOS VICENTE GALAZ SPA",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "17895",
+        "san_id": "3114",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/3114",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/17895",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.286667,
+        "lon": -70.681111,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.872763,
+          -41.429002
+        ]
+      },
+      "properties": {
+        "expediente": "D-156-2022",
+        "nombre": "PROYECTO PLANTA Y EXPLOTACION DE ARIDOS LA VARA-SENDA SUR",
+        "titular": "INMOBILIARIA SOCOVESA SUR S A MELON ARIDOS LIMITADA",
+        "categoria": "Minería",
+        "region": "Región de los Lagos",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "9031",
+        "san_id": "2972",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2972",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/9031",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -41.429002,
+        "lon": -72.872763,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.098166,
+          -36.658792
+        ]
+      },
+      "properties": {
+        "expediente": "D-061-2022",
+        "nombre": "CANTERA FUNDO LO ALFARO",
+        "titular": "SOCIEDAD EXTRACTORA Y COMERCIALIZADORA DE ARIDOS SANTA FE LIMITADA",
+        "categoria": "Minería",
+        "region": "Región del Biobío",
+        "estado_original": "Programa de Cumplimiento en ejecución",
+        "estado": "programa_cumplimiento_ejecucion",
+        "uf_id": "3728",
+        "san_id": "2859",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2859",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3728",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -36.658792,
+        "lon": -73.098166,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.953091,
+          -40.3387387
+        ]
+      },
+      "properties": {
+        "expediente": "D-009-2022",
+        "nombre": "ÁRIDOS VICAT",
+        "titular": "SERVICIOS DE TRANSPORTES Y ARIDOS VICAT LIMITADA",
+        "categoria": "Minería",
+        "region": "Región de Los Ríos",
+        "estado_original": "Terminado - Sanción",
+        "estado": "sancionado",
+        "uf_id": "17274",
+        "san_id": "2784",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2784",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/17274",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -40.3387387,
+        "lon": -72.953091,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6030909729344,
+          -33.5698729868232
+        ]
+      },
+      "properties": {
+        "expediente": "D-244-2021",
+        "nombre": "PLANTA DE EXTRACCION DE ARIDOS BALTIERRA",
+        "titular": "INMOBILIARIA AGRICOLA Y COMERCIAL BALTIERRA",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "Programa de Cumplimiento en ejecución",
+        "estado": "programa_cumplimiento_ejecucion",
+        "uf_id": "13157",
+        "san_id": "2748",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2748",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/13157",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.5698729868232,
+        "lon": -70.6030909729344,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.270444,
+          -32.890097
+        ]
+      },
+      "properties": {
+        "expediente": "D-242-2021",
+        "nombre": "ÁRIDOS BOCO",
+        "titular": "ARIDOS BOCO LIMITADA",
+        "categoria": "Minería",
+        "region": "Región de Valparaíso",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "18562",
+        "san_id": "2746",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2746",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/18562",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -32.890097,
+        "lon": -71.270444,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.85336,
+          -41.43007
+        ]
+      },
+      "properties": {
+        "expediente": "D-230-2021",
+        "nombre": "EXTRACCION DE ARIDOS POZO MALDONADO",
+        "titular": "CONSTRUCTORA LA ESPERANZA LTDA.",
+        "categoria": "Minería",
+        "region": "Región de los Lagos",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "10901",
+        "san_id": "2732",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2732",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/10901",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -41.43007,
+        "lon": -72.85336,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.203347,
+          -33.711347
+        ]
+      },
+      "properties": {
+        "expediente": "D-222-2021",
+        "nombre": "EXTRACCION DE ARIDOS EN SECTOR PUENTE INGENIERO MARAMBIO - MELIPILLA",
+        "titular": "BESALCO CONSTRUCCIONES S.A",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "Terminado - Sanción",
+        "estado": "sancionado",
+        "uf_id": "6823",
+        "san_id": "2722",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2722",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6823",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.711347,
+        "lon": -71.203347,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.716328,
+          -34.213143
+        ]
+      },
+      "properties": {
+        "expediente": "D-125-2020",
+        "nombre": "ARIDOS GUERRICO",
+        "titular": "ARIDOS GUERRICO CHILE LIMITADA",
+        "categoria": "Minería",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "estado_original": "Programa de Cumplimiento en ejecución",
+        "estado": "programa_cumplimiento_ejecucion",
+        "uf_id": "10793",
+        "san_id": "2299",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2299",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/10793",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -34.213143,
+        "lon": -70.716328,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.72556,
+          -33.520217
+        ]
+      },
+      "properties": {
+        "expediente": "D-169-2021",
+        "nombre": "ARIDOS MAIPU S.A.",
+        "titular": "PROYECTOS E INGENIERIA RINCONADA S.A.",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "3483",
+        "san_id": "2652",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2652",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3483",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.520217,
+        "lon": -70.72556,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.198455,
+          -36.882157
+        ]
+      },
+      "properties": {
+        "expediente": "D-141-2021",
+        "nombre": "EXTRACCION ARIDOS SOPRAMAT CAUCE DEL RIO DIGUILLIN - SECTOR LOS TILOS",
+        "titular": "SOCIEDAD PRODUCTORA DE ARIDOS SERVICIOS Y TRANSPORTE LIMITADA",
+        "categoria": "Minería",
+        "region": "Región de Ñuble",
+        "estado_original": "Terminado - Sanción",
+        "estado": "sancionado",
+        "uf_id": "6808",
+        "san_id": "2632",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2632",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6808",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -36.882157,
+        "lon": -72.198455,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.991214,
+          -41.369273
+        ]
+      },
+      "properties": {
+        "expediente": "F-061-2021",
+        "nombre": "ARIDOS PETROMIN (PLANTA LAJA)",
+        "titular": "ARIDOS PETROMIN S.A.",
+        "categoria": "Minería",
+        "region": "Región de los Lagos",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "12079",
+        "san_id": "2600",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2600",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/12079",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -41.369273,
+        "lon": -72.991214,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.971834,
+          -40.753033
+        ]
+      },
+      "properties": {
+        "expediente": "D-036-2021",
+        "nombre": "ARIDOS DOWLING & SCHILLING SECTOR CANCURA",
+        "titular": "ARIDOS DOWLING & SCHILLING S.A.",
+        "categoria": "Minería",
+        "region": "Región de los Lagos",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "3473",
+        "san_id": "2485",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2485",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3473",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -40.753033,
+        "lon": -72.971834,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.2307798,
+          -39.2820124
+        ]
+      },
+      "properties": {
+        "expediente": "D-106-2020",
+        "nombre": "ÁRIDOS PUTUE BAJO",
+        "titular": "INMOBILIARIA MEDITERRANEO LIMITADA CONSTRUCTORA DONIMO LIMITADA CONSTRUCTORA Y ARIDOS DONIMO SPA TRANSPORTES RUBEN ALBERTO ROSAS E.I.R.L. SOCIEDAD PRODUCTORA DE ARIDOS SPA",
+        "categoria": "Minería",
+        "region": "Región de la Araucanía",
+        "estado_original": "Terminado - Sanción",
+        "estado": "sancionado",
+        "uf_id": "14805",
+        "san_id": "2292",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2292",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/14805",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -39.2820124,
+        "lon": -72.2307798,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.26661,
+          -35.012392
+        ]
+      },
+      "properties": {
+        "expediente": "F-005-2020",
+        "nombre": "ÁRIDOS RIO LONTUE",
+        "titular": "ARIDOS TENO LIMITADA",
+        "categoria": "Minería",
+        "region": "Región del Maule",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "3493",
+        "san_id": "2129",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2129",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3493",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -35.012392,
+        "lon": -71.26661,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.169751,
+          -29.919582
+        ]
+      },
+      "properties": {
+        "expediente": "D-191-2019",
+        "nombre": "EXTRACCIÓN DE ÁRIDOS ACONCAGUA - HORMIGONES INDEPENDENCIA",
+        "titular": "HORMIGONES BICENTENARIO S.A.",
+        "categoria": "Minería",
+        "region": "Región de Coquimbo",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "14808",
+        "san_id": "2087",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2087",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/14808",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -29.919582,
+        "lon": -71.169751,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.6854644617463,
+          -38.7699482958163
+        ]
+      },
+      "properties": {
+        "expediente": "D-174-2019",
+        "nombre": "EXTRACCION DE ARIDOS LA FRONTERA",
+        "titular": "MAQUINARIAS LA FRONTERA SPA",
+        "categoria": "Minería",
+        "region": "Región de la Araucanía",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "11859",
+        "san_id": "2072",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2072",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/11859",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -38.7699482958163,
+        "lon": -72.6854644617463,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.440110091858,
+          -38.5824240709756
+        ]
+      },
+      "properties": {
+        "expediente": "D-129-2019",
+        "nombre": "EXTRACCION DE ARIDOS RIO CAUTIN-CANTERA LAUTARO",
+        "titular": "ARIDOS Y CONSTRUCTORA SAN VICENTE LIMITADA",
+        "categoria": "Minería",
+        "region": "Región de la Araucanía",
+        "estado_original": "Terminado - Sanción",
+        "estado": "sancionado",
+        "uf_id": "6837",
+        "san_id": "2012",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2012",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6837",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -38.5824240709756,
+        "lon": -72.440110091858,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.411707,
+          -36.81738
+        ]
+      },
+      "properties": {
+        "expediente": "D-125-2019",
+        "nombre": "EXTRACCION ARIDOS ABRATEC",
+        "titular": "ABRATEC S.A.",
+        "categoria": "Minería",
+        "region": "Región de Ñuble",
+        "estado_original": "Terminado - Sanción",
+        "estado": "sancionado",
+        "uf_id": "6801",
+        "san_id": "2008",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2008",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6801",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -36.81738,
+        "lon": -72.411707,
+        "coord_source": "UTM_PDF_polygon_centroid",
+        "coord_precision": "centroid_cunas_extraccion",
+        "utm_cunas_polygon": [
+          [
+            -72.413555,
+            -36.816787
+          ],
+          [
+            -72.410812,
+            -36.816664
+          ],
+          [
+            -72.409935,
+            -36.817745
+          ],
+          [
+            -72.412611,
+            -36.818182
+          ],
+          [
+            -72.411624,
+            -36.81752
+          ]
+        ],
+        "utm_huso": 18,
+        "utm_datum": "WGS84",
+        "utm_norte_vals": [
+          5922330,
+          5922337,
+          5922215,
+          5922173,
+          5922244
+        ],
+        "utm_este_vals": [
+          730705,
+          730950,
+          731025,
+          730785,
+          730875
+        ],
+        "pdf_source": "Dictamen D-125-2019 Tabla 1 (102528 chars)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.20505377,
+          -30.15374735
+        ]
+      },
+      "properties": {
+        "expediente": "D-069-2019",
+        "nombre": "POZO ARIDOS EL MANZANO",
+        "titular": "SACYR CHILE S.A",
+        "categoria": "Minería",
+        "region": "Región de Coquimbo",
+        "estado_original": "Programa de Cumplimiento en ejecución",
+        "estado": "programa_cumplimiento_ejecucion",
+        "uf_id": "11707",
+        "san_id": "1977",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1977",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/11707",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -30.15374735,
+        "lon": -71.20505377,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.664737,
+          -33.630362
+        ]
+      },
+      "properties": {
+        "expediente": "D-161-2022",
+        "nombre": "MINERA LOS ESTEROS DE MARGA MARGA S.A. (RECUPERACION DE POZO DE EXTRACCION DE ARIDOS EN ABANDONO) - SAN BERNARDO",
+        "titular": "INDUSTRIAL Y MINERA LOS ESTEROS LIMITADA",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "101",
+        "san_id": "2977",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/2977",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/101",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.630362,
+        "lon": -70.664737,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.664737,
+          -33.630362
+        ]
+      },
+      "properties": {
+        "expediente": "D-065-2019",
+        "nombre": "MINERA LOS ESTEROS DE MARGA MARGA S.A. (RECUPERACION DE POZO DE EXTRACCION DE ARIDOS EN ABANDONO) - SAN BERNARDO",
+        "titular": "INDUSTRIAL Y MINERA LOS ESTEROS DE MARGA MARGA S A",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "101",
+        "san_id": "1920",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1920",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/101",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.630362,
+        "lon": -70.664737,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.658869,
+          -38.763904
+        ]
+      },
+      "properties": {
+        "expediente": "F-006-2019",
+        "nombre": "ARIDOS MAQUEHUE",
+        "titular": "SOCIEDAD DE TRANSPORTE Y ARIDOS MAQUEHUE LTDA.",
+        "categoria": "Minería",
+        "region": "Región de la Araucanía",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "3484",
+        "san_id": "1871",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1871",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3484",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -38.763904,
+        "lon": -72.658869,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.6593504824346,
+          -33.2838267621748
+        ]
+      },
+      "properties": {
+        "expediente": "D-027-2019",
+        "nombre": "ÁRIDOS TULIO HENRÍQUEZ",
+        "titular": "TRANSPORTES Y ARIDOS TULIO ENRIQUE GUTIERREZ STRANGE E.I.R.L.",
+        "categoria": "Minería",
+        "region": "Región de Valparaíso",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "16156",
+        "san_id": "1860",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1860",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/16156",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.2838267621748,
+        "lon": -71.6593504824346,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.78578083,
+          -33.71895149
+        ]
+      },
+      "properties": {
+        "expediente": "F-043-2018",
+        "nombre": "EXTRACCION DE ARIDOS TEMPLE - SAN BERNARDO",
+        "titular": "ECOLOGICAL SYSTEMS S.A.",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "6840",
+        "san_id": "1810",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1810",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6840",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.71895149,
+        "lon": -70.78578083,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.799572,
+          -33.734692
+        ]
+      },
+      "properties": {
+        "expediente": "D-095-2018",
+        "nombre": "EXTRACCION DE ARIDOS MINERA SANTA LAURA - SAN BERNARDO",
+        "titular": "MINERA SANTA LAURA LIMITADA",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "6827",
+        "san_id": "1801",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1801",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6827",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.734692,
+        "lon": -70.799572,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.7055565,
+          -33.670521
+        ]
+      },
+      "properties": {
+        "expediente": "D-090-2018",
+        "nombre": "EXTRACCION DE ARIDOS CONSTRUCTORA AGUA SANTA - BUIN",
+        "titular": "EMPRESA CONSTRUCTORA AGUA SANTA SA",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "6821",
+        "san_id": "1794",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1794",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6821",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.670521,
+        "lon": -70.7055565,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.41313,
+          -36.822077
+        ]
+      },
+      "properties": {
+        "expediente": "D-074-2018",
+        "nombre": "PLANTA DE ARIDOS EL MAITEN",
+        "titular": "CHAVEZ SALAZAR NESTOR FABIAN",
+        "categoria": "Minería",
+        "region": "Región de Ñuble",
+        "estado_original": "Terminado - Sanción",
+        "estado": "sancionado",
+        "uf_id": "14057",
+        "san_id": "1765",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1765",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/14057",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -36.822077,
+        "lon": -72.41313,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.5302249,
+          -32.9337434
+        ]
+      },
+      "properties": {
+        "expediente": "D-071-2018",
+        "nombre": "ÁRIDOS SANTA ÁNGELA",
+        "titular": "SOC GANADERA Y EXTRACTORA DE ARIDOS SANTA ANGELA LIMITADA",
+        "categoria": "Minería",
+        "region": "Región de Valparaíso",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "14882",
+        "san_id": "1757",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1757",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/14882",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -32.9337434,
+        "lon": -71.5302249,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.483328,
+          -22.663986
+        ]
+      },
+      "properties": {
+        "expediente": "D-036-2018",
+        "nombre": "PLANTA DE ARIDOS SAN PEDRO",
+        "titular": "ARIDOS SAN PEDRO SPA",
+        "categoria": "Minería",
+        "region": "Región de Antofagasta",
+        "estado_original": "Terminado - Sanción",
+        "estado": "sancionado",
+        "uf_id": "13128",
+        "san_id": "1714",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1714",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/13128",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -22.663986,
+        "lon": -68.483328,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.774467,
+          -34.191842
+        ]
+      },
+      "properties": {
+        "expediente": "D-019-2018",
+        "nombre": "ARIDOS CACHAPOAL - OLIVAR",
+        "titular": "ARIDOS CACHAPOAL LIMITADA",
+        "categoria": "Minería",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "estado_original": "En curso",
+        "estado": "en_tramitacion",
+        "uf_id": "2237",
+        "san_id": "1691",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1691",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2237",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -34.191842,
+        "lon": -70.774467,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.88637,
+          -41.43657
+        ]
+      },
+      "properties": {
+        "expediente": "F-013-2017",
+        "nombre": "EXTRACCION DE ARIDOS POZO MARQUEZ",
+        "titular": "CONSTRUCTORA LA ESPERANZA LTDA.",
+        "categoria": "Minería",
+        "region": "Región de los Lagos",
+        "estado_original": "Programa de Cumplimiento en ejecución",
+        "estado": "programa_cumplimiento_ejecucion",
+        "uf_id": "10902",
+        "san_id": "1524",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1524",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/10902",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -41.43657,
+        "lon": -72.88637,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.7726,
+          -33.7143
+        ]
+      },
+      "properties": {
+        "expediente": "F-052-2015",
+        "nombre": "EXTRACCION DE ARIDOS KM 45-65 SECTOR PUENTE MAIPO (HORMIGONES TRANSEX) - SAN BERNARDO",
+        "titular": "HORMIGONES TRANSEX LIMITADA",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "6826",
+        "san_id": "1315",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1315",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6826",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.7143,
+        "lon": -70.7726,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.7736,
+          -33.7072
+        ]
+      },
+      "properties": {
+        "expediente": "F-025-2015",
+        "nombre": "PROCESAMIENTO DE ARIDOS MINERA ROSARIO - SAN BERNARDO",
+        "titular": "SOCIEDAD MINERA ROSARIO LIMITADA",
+        "categoria": "Minería",
+        "region": "Región Metropolitana",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "2814",
+        "san_id": "1273",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1273",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2814",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -33.7072,
+        "lon": -70.7736,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0032,
+          -36.7613
+        ]
+      },
+      "properties": {
+        "expediente": "F-056-2014",
+        "nombre": "EXTRACCION DE ARIDOS FUNDO LANDA",
+        "titular": "ARIDOS MADESAL SPA",
+        "categoria": "Minería",
+        "region": "Región del Biobío",
+        "estado_original": "Terminado - PDC Satisfactorio",
+        "estado": "programa_cumplimiento_ok",
+        "uf_id": "11162",
+        "san_id": "1147",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1147",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/11162",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -36.7613,
+        "lon": -73.0032,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0068,
+          -39.7922
+        ]
+      },
+      "properties": {
+        "expediente": "F-055-2014",
+        "nombre": "ARIDOS RUTA T-35",
+        "titular": "OBRASCON HUARTE LAIN S.A. (OHL S.A.)",
+        "categoria": "Minería",
+        "region": "Región de Los Ríos",
+        "estado_original": "Terminado - Absolución",
+        "estado": "absuelto",
+        "uf_id": "3494",
+        "san_id": "1144",
+        "url_sancionatorio": "https://snifa.sma.gob.cl/Sancionatorio/Ficha/1144",
+        "url_unidad_fiscalizable": "https://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3494",
+        "fuente": "SNIFA - SMA Chile",
+        "tipo_extraccion": "áridos",
+        "lat": -39.7922,
+        "lon": -73.0068,
+        "coord_source": "UF_centroid",
+        "coord_precision": "centroid_proyecto"
+      }
+    }
+  ]
+}

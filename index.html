@@ -493,6 +493,7 @@ const S = {
   fVer:      'all',
   esriLayer: null,
   rotating:  true,
+  flyLock:   false,
   countdown: POLL_S,
 };
 
@@ -507,7 +508,21 @@ const viewer = new Cesium.Viewer('cesium-container', {
   sceneModePicker: false, selectionIndicator: false, timeline: false,
   navigationHelpButton: false,
   creditContainer: document.createElement('div'),
+  baseLayer: false,
+  terrainProvider: new Cesium.EllipsoidTerrainProvider(),
 });
+
+// ESRI World Imagery as base layer — WebMercator tiling scheme required
+viewer.imageryLayers.add(
+  new Cesium.ImageryLayer(
+    new Cesium.UrlTemplateImageryProvider({
+      url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      tilingScheme: new Cesium.WebMercatorTilingScheme(),
+      maximumLevel: 19,
+      credit: 'Tiles © Esri',
+    })
+  )
+);
 
 viewer.camera.setView({
   destination: Cesium.Cartesian3.fromDegrees(-60, -15, 8_000_000)
@@ -517,14 +532,8 @@ viewer.scene.skyAtmosphere.show = true;
 viewer.scene.fog.enabled = false;
 viewer.scene.globe.showGroundAtmosphere = true;
 
-// ESRI World Imagery layer (added only in satellite mode)
-S.esriLayer = new Cesium.ImageryLayer(
-  new Cesium.UrlTemplateImageryProvider({
-    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    maximumLevel: 19,
-  }),
-  { alpha: 1.0 }
-);
+// esriLayer not needed — base layer already uses ESRI
+S.esriLayer = null;
 
 // ============================================================
 // SVG BILLBOARD FACTORY
@@ -602,9 +611,7 @@ function setMode(mode, force) {
   S.mode = mode;
   document.body.className = 'mode-' + mode;
 
-  const hasEsri = viewer.imageryLayers.contains(S.esriLayer);
-  if (mode === 'satellite' && !hasEsri) viewer.imageryLayers.add(S.esriLayer);
-  if (mode !== 'satellite' && hasEsri) viewer.imageryLayers.remove(S.esriLayer, false);
+  // satellite mode: nothing extra needed, base layer already ESRI
 
   S.rotating = (mode === 'globe');
 
@@ -637,8 +644,10 @@ viewer.camera.changed.addEventListener(() => {
   const carto = viewer.camera.positionCartographic;
   if (!carto) return;
   const h = carto.height;
-  const newMode = h > GLOBE_H ? 'globe' : h > MAP_H ? 'map' : 'satellite';
-  setMode(newMode, false);
+  if (!S.flyLock) {
+    const newMode = h > GLOBE_H ? 'globe' : h > MAP_H ? 'map' : 'satellite';
+    setMode(newMode, false);
+  }
 
   // Alt display
   document.getElementById('hud-alt').textContent =
@@ -753,9 +762,12 @@ document.querySelectorAll('.mode-btn').forEach(btn => {
     const carto = viewer.camera.positionCartographic;
     const lat = carto ? Cesium.Math.toDegrees(carto.latitude) : -15;
     const lon = carto ? Cesium.Math.toDegrees(carto.longitude) : -60;
+    S.flyLock = true;
     viewer.camera.flyTo({
       destination: Cesium.Cartesian3.fromDegrees(lon, lat, targets[m]),
       duration: 1.5,
+      complete: () => { S.flyLock = false; },
+      cancel:   () => { S.flyLock = false; },
     });
     setMode(m, true);
   });

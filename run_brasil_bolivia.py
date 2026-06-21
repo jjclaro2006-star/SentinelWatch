@@ -14,15 +14,32 @@ BRASIL_SUBREGIONS = [
     "brasil_oeste_1",
     "brasil_oeste_2",
     "brasil_oeste_3",
-    "brasil_oeste_4",
+    "brasil_oeste_4a",
+    "brasil_oeste_4b",
     "brasil_este",
-    "brasil_sur",
+    "brasil_sur_a",  # brasil_sur dividido por timeout GEE
+    "brasil_sur_b",
 ]
+
+# Sub-regiones ya completadas — se saltan, solo se usan para el resumen final
+COMPLETED = {
+    "brasil_norte":   {"total": 11282, "mineria": 3085, "ilegales": 6897},
+    "brasil_oeste_1": {"total": 2619,  "mineria": 264,  "ilegales": 1419},
+    "brasil_oeste_2": {"total": 3083,  "mineria": 204,  "ilegales": 2879},
+    "brasil_oeste_3": {"total": 6204,  "mineria": 1093, "ilegales": 3164},
+    "brasil_oeste_4a": {"total": 6608, "mineria": 272,  "ilegales": 2441},
+    "brasil_oeste_4b": {"total": 6223, "mineria": 258,  "ilegales": 916},
+    "brasil_este":    {"total": 8718,  "mineria": 1758, "ilegales": 4323},
+}
 
 REGIONS = BRASIL_SUBREGIONS + ["bolivia"]
 results = {}
 
 for region in REGIONS:
+    if region in COMPLETED:
+        print(f"\n[SKIP] {region.upper()} ya completado anteriormente.", flush=True)
+        results[region] = COMPLETED[region]
+        continue
     start = datetime.now()
     print(f"\n{'='*60}", flush=True)
     print(f"[{start.strftime('%H:%M:%S')}] Iniciando: {region.upper()}", flush=True)
@@ -61,7 +78,7 @@ for region in REGIONS:
         results[region] = {"error": "no output file", "minutos": round(elapsed, 1)}
         print(f"  ERROR: no se encontro archivo de output para {region}", flush=True)
 
-# Agregar totales Brasil desde sub-regiones
+# Agregar totales Brasil desde sub-regiones (completadas + nuevas)
 brasil_total = brasil_mineria = brasil_ilegales = 0
 for r in BRASIL_SUBREGIONS:
     if r in results and "error" not in results[r]:

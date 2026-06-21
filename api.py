@@ -35,12 +35,18 @@ def _load_all_alerts() -> tuple[list[dict], list[str]]:
         raise HTTPException(status_code=404, detail="No alert files found in outputs/")
 
     # Pick the latest file per region key.
+    # Filename format: alerts_<region>_YYYYMMDD.geojson
+    # The date is always the last 8-digit token; everything between "alerts" and
+    # the date is the region key (handles sub-regions like brasil_norte).
+    # Legacy: alerts_YYYYMMDD.geojson → region_key = ""
     latest_per_region: dict[str, Path] = {}
     for path in files:
         parts = path.stem.split("_")
-        # "alerts_peru_20260613" → parts[1] = "peru"
-        # "alerts_20260613"     → no region token, key = ""
-        region_key = parts[1] if len(parts) == 3 else ""
+        # Drop leading "alerts" and trailing date (8 digits); join the rest.
+        if len(parts) >= 3 and parts[-1].isdigit() and len(parts[-1]) == 8:
+            region_key = "_".join(parts[1:-1])
+        else:
+            region_key = ""
         latest_per_region[region_key] = path  # sorted asc, so last wins
 
     features: list[dict] = []
@@ -56,16 +62,18 @@ def _load_all_alerts() -> tuple[list[dict], list[str]]:
 @app.get("/alerts")
 def get_alerts():
     features, _ = _load_all_alerts()
-    return JSONResponse(content={"type": "FeatureCollection", "features": features})
+    mining = [f for f in features if f.get("properties", {}).get("actividad") == "mineria"]
+    return JSONResponse(content={"type": "FeatureCollection", "features": mining})
 
 
 @app.get("/alerts/summary")
 def get_alerts_summary():
     features, source_files = _load_all_alerts()
+    mining = [f for f in features if f.get("properties", {}).get("actividad") == "mineria"]
 
     severity: dict[str, int] = {}
     dates: set[str] = set()
-    for f in features:
+    for f in mining:
         props = f.get("properties", {})
         sev = props.get("severity", "unknown")
         severity[sev] = severity.get(sev, 0) + 1
@@ -73,7 +81,7 @@ def get_alerts_summary():
             dates.add(d)
 
     return {
-        "total_alerts":   len(features),
+        "total_alerts":   len(mining),
         "severity":       severity,
         "detection_date": sorted(dates)[-1] if dates else None,
         "source_files":   sorted(source_files),

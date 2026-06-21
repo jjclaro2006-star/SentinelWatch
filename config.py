@@ -26,7 +26,7 @@ REGIONS: dict[str, list[float]] = {
 }
 
 def dynamic_date_windows(window_days: int = 60) -> tuple[tuple[str, str], tuple[str, str]]:
-    """Return windows ending two years and six months before today."""
+    """Return windows ending two years ago and today, respectively."""
     today = date.today()
 
     def months_ago(value: date, months: int) -> date:
@@ -36,7 +36,7 @@ def dynamic_date_windows(window_days: int = 60) -> tuple[tuple[str, str], tuple[
         day = min(value.day, monthrange(year, month)[1])
         return value.replace(year=year, month=month, day=day)
 
-    analysis_end   = months_ago(today, 6)
+    analysis_end   = today
     analysis_start = analysis_end - timedelta(days=window_days)
     baseline_end   = months_ago(today, 24)
     baseline_start = baseline_end - timedelta(days=window_days)
