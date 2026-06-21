@@ -106,7 +106,7 @@ def _classify_alert(
         else:
             from gee_client import extract_chip
             chip = extract_chip(classification_image, centroid, n_bands=chip_bands)
-        if chip is not None and chip.shape[-1] == chip_bands:
+        if chip is not None and chip.shape[-1] == chip_bands and chip.max() > 0:
             if use_12b:
                 _save_chip_12b(pid, chip)
             else:
