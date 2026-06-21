@@ -105,18 +105,18 @@ class _GaiaV05Net(nn.Module):
         return self.classifier(feats)   # [B, 1]
 
 
-def _build_model(device: torch.device) -> _GaiaV05Net:
+def _build_model(device: torch.device, model_path: Path) -> _GaiaV05Net:
     """
-    Carga pesos fine-tuned desde MODEL_PATH.
+    Carga pesos fine-tuned desde model_path.
 
     El state_dict tiene claves 'backbone.*' + 'classifier.*'.
     Se carga con strict=False para tolerar claves internas de timm que
     no tengan parámetros (e.g. Identity layers).
     """
-    if not MODEL_PATH.exists():
-        raise FileNotFoundError(f"Pesos del modelo no encontrados: {MODEL_PATH}")
+    if not model_path.exists():
+        raise FileNotFoundError(f"Pesos del modelo no encontrados: {model_path}")
 
-    state = torch.load(MODEL_PATH, map_location=device, weights_only=True)
+    state = torch.load(model_path, map_location=device, weights_only=True)
 
     # Admite checkpoints anidados bajo 'model' o 'state_dict'
     for key in ("model", "state_dict"):
@@ -142,7 +142,7 @@ def _build_model(device: torch.device) -> _GaiaV05Net:
     for param in model.backbone.parameters():
         param.requires_grad_(False)
 
-    print(f"Gaia v0.5.4 cargado desde {MODEL_PATH}")
+    print(f"Gaia v0.5.4 cargado desde {model_path}")
     return model
 
 
@@ -239,10 +239,8 @@ class GaiaV05Classifier:
             device = "cuda" if torch.cuda.is_available() else "cpu"
         self.device = torch.device(device)
 
-        global MODEL_PATH
-        MODEL_PATH = Path(model_path)
-
-        self.model = _build_model(self.device)
+        self.model_path = Path(model_path)
+        self.model = _build_model(self.device, self.model_path)
         self.model.eval()
 
         if not WDPA_LOCAL_PATH.exists():

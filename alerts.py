@@ -48,11 +48,18 @@ def _load_chip_12b(polygon_id: str) -> "np.ndarray | None":
     chip = np.load(path)
     if chip.ndim != 3 or chip.shape[-1] != 12:
         return None
+    if chip.max() <= 0:
+        path.unlink()
+        print(f"      Ignoring and removing zero-valued cached 12-band chip '{polygon_id}'.")
+        return None
     return chip
 
 
 def _save_chip_12b(polygon_id: str, chip: np.ndarray) -> None:
     """Persists a [H, W, 12] chip to cache/chips_s2_12b/{polygon_id}.npy."""
+    if chip.max() <= 0:
+        print(f"      Skipping cache for zero-valued 12-band chip '{polygon_id}'.")
+        return
     _CHIP_CACHE_12B.mkdir(parents=True, exist_ok=True)
     np.save(_CHIP_CACHE_12B / f"{polygon_id}.npy", chip)
 

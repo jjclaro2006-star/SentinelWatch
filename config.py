@@ -1,3 +1,4 @@
+from calendar import monthrange
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -15,31 +16,35 @@ REGIONS: dict[str, list[float]] = {
     "brasil_oeste_2": [-63.0, -10.0, -52.0,  -5.0],
     "brasil_oeste_3": [-74.0, -15.0, -63.0, -10.0],
     "brasil_oeste_4": [-63.0, -15.0, -52.0, -10.0],
+    "brasil_oeste_4a": [-63.0, -15.0, -57.5, -10.0],
+    "brasil_oeste_4b": [-57.5, -15.0, -52.0, -10.0],
     "brasil_este":   [-52.0,  -5.0, -44.0,   5.0],
     "brasil_sur":    [-52.0, -15.0, -44.0,  -5.0],
+    "brasil_sur_a":  [-52.0, -15.0, -48.0,  -5.0],
+    "brasil_sur_b":  [-48.0, -15.0, -44.0,  -5.0],
     "bolivia":       [-70.0, -18.0, -57.0,  -9.0],
 }
 
-# Static periods that are known-good (June-August: low cloud cover in the Amazon).
-# Used as fallback until the adaptive window logic is wired into the API.
-DATE_BASELINE = ("2023-06-01", "2023-08-31")
-DATE_ANALYSIS  = ("2024-06-01", "2024-08-31")
-
-
 def dynamic_date_windows(window_days: int = 60) -> tuple[tuple[str, str], tuple[str, str]]:
-    """Returns (baseline, analysis) date tuples relative to today.
-
-    Adaptive window logic (up to 120 days) will replace this in the
-    FastAPI iteration. Called explicitly by the API layer; not used at
-    import time so the static fallback above remains active.
-    """
+    """Return windows ending two years and six months before today."""
     today = date.today()
-    analysis_end   = today
-    analysis_start = today - timedelta(days=window_days)
-    baseline_end   = analysis_start - timedelta(days=1)
+
+    def months_ago(value: date, months: int) -> date:
+        month_index = value.year * 12 + value.month - 1 - months
+        year, month_zero_based = divmod(month_index, 12)
+        month = month_zero_based + 1
+        day = min(value.day, monthrange(year, month)[1])
+        return value.replace(year=year, month=month, day=day)
+
+    analysis_end   = months_ago(today, 6)
+    analysis_start = analysis_end - timedelta(days=window_days)
+    baseline_end   = months_ago(today, 24)
     baseline_start = baseline_end - timedelta(days=window_days)
     fmt = lambda d: d.isoformat()
     return (fmt(baseline_start), fmt(baseline_end)), (fmt(analysis_start), fmt(analysis_end))
+
+
+DATE_BASELINE, DATE_ANALYSIS = dynamic_date_windows()
 
 
 # Maximum cloud cover percentage to accept an image

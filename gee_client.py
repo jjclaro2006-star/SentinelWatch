@@ -280,7 +280,8 @@ def download_chip_12b(
         )
         return arr
 
-    except Exception:
+    except Exception as exc:
+        print(f"      Error downloading 12-band chip: {exc}")
         return fallback
 
 

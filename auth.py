@@ -31,8 +31,9 @@ def initialize(project: str | None = None) -> None:
 
 
 def authenticate_and_initialize(project: str | None = None) -> None:
-    """Convenience wrapper: authenticate if needed, then initialize."""
-    authenticate()
+    """Authenticate only when credentials are absent, then initialize GEE."""
+    if not _CREDENTIALS_PATH.exists():
+        authenticate()
     initialize(project=project)
 
 
