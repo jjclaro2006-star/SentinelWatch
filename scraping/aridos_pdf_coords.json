@@ -1,0 +1,92 @@
+{
+  "4064": {
+    "case": {
+      "san_id": 4064,
+      "expediente": "D-065-2025",
+      "nombre": "Aridos Fe Blanca San Carlos"
+    },
+    "docs_count": 13,
+    "coords_found": [],
+    "parsed": []
+  },
+  "2784": {
+    "case": {
+      "san_id": 2784,
+      "expediente": "D-009-2022",
+      "nombre": "ARIDOS VICAT"
+    },
+    "docs_count": 19,
+    "coords_found": [],
+    "parsed": []
+  },
+  "2722": {
+    "case": {
+      "san_id": 2722,
+      "expediente": "D-222-2021",
+      "nombre": "EXTRACCION ARIDOS SECTOR PUENTE MARAMBIO"
+    },
+    "docs_count": 16,
+    "coords_found": [],
+    "parsed": []
+  },
+  "2632": {
+    "case": {
+      "san_id": 2632,
+      "expediente": "D-141-2021",
+      "nombre": "EXTRACCION ARIDOS SOPRAMAT"
+    },
+    "docs_count": 31,
+    "coords_found": [],
+    "parsed": []
+  },
+  "2292": {
+    "case": {
+      "san_id": 2292,
+      "expediente": "D-106-2020",
+      "nombre": "ARIDOS PUTUE BAJO"
+    },
+    "docs_count": 63,
+    "coords_found": [],
+    "parsed": []
+  },
+  "2012": {
+    "case": {
+      "san_id": 2012,
+      "expediente": "D-129-2019",
+      "nombre": "EXTRACCION ARIDOS RIO CAUTIN"
+    },
+    "docs_count": 51,
+    "coords_found": [],
+    "parsed": []
+  },
+  "2008": {
+    "case": {
+      "san_id": 2008,
+      "expediente": "D-125-2019",
+      "nombre": "EXTRACCION ARIDOS ABRATEC"
+    },
+    "docs_count": 30,
+    "coords_found": [],
+    "parsed": []
+  },
+  "1765": {
+    "case": {
+      "san_id": 1765,
+      "expediente": "D-074-2018",
+      "nombre": "PLANTA DE ARIDOS EL MAITEN"
+    },
+    "docs_count": 30,
+    "coords_found": [],
+    "parsed": []
+  },
+  "1714": {
+    "case": {
+      "san_id": 1714,
+      "expediente": "D-036-2018",
+      "nombre": "PLANTA DE ARIDOS SAN PEDRO"
+    },
+    "docs_count": 67,
+    "coords_found": [],
+    "parsed": []
+  }
+}

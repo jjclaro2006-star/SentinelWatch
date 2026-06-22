@@ -1,0 +1,130 @@
+{
+  "4064": {
+    "case": {
+      "san_id": 4064,
+      "expediente": "D-065-2025",
+      "uf_id": "22692",
+      "nombre": "Aridos Fe Blanca San Carlos",
+      "lat_orig": -36.5179,
+      "lon_orig": -71.9283
+    },
+    "coords_from_pdf": [
+      {
+        "este": 238295,
+        "norte": 5955295,
+        "huso": 19,
+        "desc": "mE mN",
+        "context": "ributario N° 76.889.461-2, titular del Recinto\n“Planta de Extracción de Áridos Monte Blanco”, ubicado en camino vecinal sin número, km 3,\ncoordenadas 238295 m E 5955295 m N WGS 19H, sector Monte Blanco, comuna de San Carlos,\nregión del Ñuble, por la siguiente infracción:\nSuperintendencia del Medio Ambiente, Gobierno de Chile\nSitio web: portal.sma.gob.cl\nPágina 3 de 8\nEste documento ha sido firmado electrónicamente de acuerdo con la Ley Nº 19.799.\nEl siguiente hecho, a",
+        "lat_utm": null,
+        "lon_utm": null,
+        "huso_used": 19
+      }
+    ],
+    "coords_used": {
+      "este": 238295,
+      "norte": 5955295,
+      "huso": 19,
+      "desc": "mE mN",
+      "context": "ributario N° 76.889.461-2, titular del Recinto\n“Planta de Extracción de Áridos Monte Blanco”, ubicado en camino vecinal sin número, km 3,\ncoordenadas 238295 m E 5955295 m N WGS 19H, sector Monte Blanco, comuna de San Carlos,\nregión del Ñuble, por la siguiente infracción:\nSuperintendencia del Medio Ambiente, Gobierno de Chile\nSitio web: portal.sma.gob.cl\nPágina 3 de 8\nEste documento ha sido firmado electrónicamente de acuerdo con la Ley Nº 19.799.\nEl siguiente hecho, a",
+      "lat_utm": null,
+      "lon_utm": null,
+      "huso_used": 19
+    }
+  },
+  "2784": {
+    "case": {
+      "san_id": 2784,
+      "expediente": "D-009-2022",
+      "uf_id": "17274",
+      "nombre": "ARIDOS VICAT",
+      "lat_orig": -40.3387,
+      "lon_orig": -72.9531
+    },
+    "coords_from_pdf": [],
+    "coords_used": null
+  },
+  "2722": {
+    "case": {
+      "san_id": 2722,
+      "expediente": "D-222-2021",
+      "uf_id": "6823",
+      "nombre": "EXTRACCION ARIDOS SECTOR PUENTE MARAMBIO",
+      "lat_orig": -33.7113,
+      "lon_orig": -71.2033
+    },
+    "coords_from_pdf": [],
+    "coords_used": null
+  },
+  "2632": {
+    "case": {
+      "san_id": 2632,
+      "expediente": "D-141-2021",
+      "uf_id": "6808",
+      "nombre": "EXTRACCION ARIDOS SOPRAMAT",
+      "lat_orig": -36.8822,
+      "lon_orig": -72.1985
+    },
+    "coords_from_pdf": [],
+    "coords_used": null
+  },
+  "2292": {
+    "case": {
+      "san_id": 2292,
+      "expediente": "D-106-2020",
+      "uf_id": "14805",
+      "nombre": "ARIDOS PUTUE BAJO",
+      "lat_orig": -39.282,
+      "lon_orig": -72.2308
+    },
+    "coords_from_pdf": [],
+    "coords_used": null
+  },
+  "2012": {
+    "case": {
+      "san_id": 2012,
+      "expediente": "D-129-2019",
+      "uf_id": "6837",
+      "nombre": "EXTRACCION ARIDOS RIO CAUTIN",
+      "lat_orig": -38.5824,
+      "lon_orig": -72.4401
+    },
+    "coords_from_pdf": [],
+    "coords_used": null
+  },
+  "2008": {
+    "case": {
+      "san_id": 2008,
+      "expediente": "D-125-2019",
+      "uf_id": "6801",
+      "nombre": "EXTRACCION ARIDOS ABRATEC",
+      "lat_orig": -36.8199,
+      "lon_orig": -72.4062
+    },
+    "coords_from_pdf": [],
+    "coords_used": null
+  },
+  "1765": {
+    "case": {
+      "san_id": 1765,
+      "expediente": "D-074-2018",
+      "uf_id": "14057",
+      "nombre": "PLANTA DE ARIDOS EL MAITEN",
+      "lat_orig": -36.8221,
+      "lon_orig": -72.4131
+    },
+    "coords_from_pdf": [],
+    "coords_used": null
+  },
+  "1714": {
+    "case": {
+      "san_id": 1714,
+      "expediente": "D-036-2018",
+      "uf_id": "13128",
+      "nombre": "PLANTA DE ARIDOS SAN PEDRO",
+      "lat_orig": -22.664,
+      "lon_orig": -68.4833
+    },
+    "coords_from_pdf": [],
+    "coords_used": null
+  }
+}
