@@ -31,6 +31,9 @@ from typing import Any
 
 import numpy as np
 import requests
+import timm
+import torch
+import torch.nn as nn
 from shapely.geometry import Point, mapping, shape
 from shapely.strtree import STRtree
 
@@ -58,6 +61,12 @@ MIN_AREA_HA              = 1.0    # polígonos menores se descartan
 _SEV_HIGH_THR    = 0.20
 _SEV_MEDIUM_THR  = 0.12
 _CHIP_CACHE_DIR  = Path("cache") / "chips_salares_s2_12b"
+_SALARES_MODEL_PATH = Path(__file__).parent / "models" / "gaia_salares_v01.pth"
+_FALLBACK_MODEL_PATH = Path(__file__).parent / "models" / "gaia_v05_amw_ssl4eo_v4.pth"
+_EMBED_DIM  = 384
+_INPUT_SIZE = 224
+_S2_SCALE   = 10_000.0
+_GAIA_THRESHOLD = 0.50
 
 # ── Legal: fuentes chilenas ───────────────────────────────────────────────────
 
@@ -230,33 +239,120 @@ class LegalCheckerSalares:
         return {"veredicto": veredicto, "legal_detail": legal_detail}
 
 
-# ── Clasificador placeholder ───────────────────────────────────────────────────
+# ── Arquitectura Gaia Salares ─────────────────────────────────────────────────
+
+class _GaiaSalaresNet(nn.Module):
+    """ViT-S/16 backbone + binary MLP head (idéntico a GaiaV05)."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.backbone = timm.create_model(
+            "vit_small_patch16_224",
+            in_chans=12,
+            num_classes=0,
+            global_pool="token",
+            pretrained=False,
+        )
+        self.classifier = nn.Sequential(
+            nn.Linear(_EMBED_DIM, 256),
+            nn.ReLU(),
+            nn.Dropout(0.3),
+            nn.Linear(256, 1),
+            nn.Sigmoid(),
+        )
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        return self.classifier(self.backbone(x))
+
+
+def _build_salares_model(device: torch.device, model_path: Path) -> _GaiaSalaresNet:
+    state = torch.load(model_path, map_location=device, weights_only=True)
+    for key in ("model", "state_dict"):
+        if key in state and isinstance(state[key], dict):
+            state = state[key]
+            break
+
+    net = _GaiaSalaresNet().to(device)
+    backbone_sd = {k[len("backbone."):]: v for k, v in state.items() if k.startswith("backbone.")}
+    head_sd     = {k[len("classifier."):]: v for k, v in state.items() if k.startswith("classifier.")}
+
+    net.backbone.load_state_dict(backbone_sd, strict=False)
+    if head_sd:
+        net.classifier.load_state_dict(head_sd, strict=True)
+
+    for param in net.backbone.parameters():
+        param.requires_grad_(False)
+    return net
+
+
+def _preprocess_chip(arr: np.ndarray) -> torch.Tensor:
+    arr = np.clip(arr.astype(np.float32) / _S2_SCALE, 0.0, 1.0)
+    t   = torch.tensor(arr.transpose(2, 0, 1), dtype=torch.float32).unsqueeze(0)
+    return nn.functional.interpolate(t, size=(_INPUT_SIZE, _INPUT_SIZE), mode="bilinear", align_corners=False)
+
+
+# ── Clasificador real ──────────────────────────────────────────────────────────
 
 class GaiaSalaresClassifier:
     """
-    Placeholder para el clasificador de piscinas de evaporación en salares.
+    Clasificador de piscinas de evaporación en salares.
+    ViT-S/16 fine-tuned sobre chips S2 12 bandas con labels de expansión verificada.
 
-    Será un ViT-S/16 fine-tuned sobre chips S2 12 bandas con etiquetas
-    de expansión verificadas contra imágenes Planet/SkySat de alta resolución.
-    Retorna prob=0.5 hasta que el modelo esté entrenado.
+    Carga gaia_salares_v01.pth si existe; si no, usa gaia_v05_amw_ssl4eo_v4.pth
+    como backbone de transferencia (mismo backbone, head de minería amazónica —
+    los resultados son indicativos, no calibrados para salares).
     """
 
     chip_bands: int = 12
 
-    def __init__(self, model_path=None) -> None:
-        self.model_path = model_path
-        print("      GaiaSalares v0.1 (placeholder) — confianza=0.5 para todas las alertas.")
+    def __init__(self, model_path: Path | None = None) -> None:
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        if model_path is None:
+            model_path = _SALARES_MODEL_PATH
+
+        if Path(model_path).exists():
+            self._model = _build_salares_model(self.device, Path(model_path))
+            self._model.eval()
+            self._label = f"GaiaSalares v0.1 [{Path(model_path).name}]"
+            self._calibrated = True
+        elif _FALLBACK_MODEL_PATH.exists():
+            self._model = _build_salares_model(self.device, _FALLBACK_MODEL_PATH)
+            self._model.eval()
+            self._label = "GaiaSalares fallback [gaia_v05 backbone — no calibrado salares]"
+            self._calibrated = False
+        else:
+            self._model = None
+            self._label = "GaiaSalares sin pesos — prob=0.5"
+            self._calibrated = False
+
+        print(f"      {self._label}")
 
     def predecir(
         self,
         imagen_array: np.ndarray,
         coordenadas: tuple[float, float],
     ) -> dict:
+        if self._model is None or imagen_array is None or imagen_array.max() == 0:
+            return {
+                "actividad":    "expansion_piscinas",
+                "confianza":    0.5,
+                "veredicto":    "REQUIERE VERIFICACIÓN",
+                "legal_detail": "sin modelo — verificar manualmente",
+            }
+
+        tensor = _preprocess_chip(imagen_array).to(self.device)
+        with torch.no_grad():
+            prob = float(self._model(tensor).cpu().squeeze())
+
+        actividad = "expansion_piscinas" if prob >= _GAIA_THRESHOLD else "normal"
+        confianza = round(prob, 4)
+
         return {
-            "actividad":    "expansion_piscinas",
-            "confianza":    0.5,
-            "veredicto":    "REQUIERE VERIFICACIÓN",
-            "legal_detail": "Gaia Salares no entrenado — verificar manualmente",
+            "actividad": actividad,
+            "confianza": confianza,
+            "veredicto": "REQUIERE VERIFICACIÓN",
+            "legal_detail": "",
         }
 
 
@@ -436,10 +532,11 @@ def _classify_polygon(
                 "legal_detail": "chip no disponible",
             }
 
-        if gaia_result["actividad"] != "normal":
-            legal = legal_checker.verificar(poly["lat"], poly["lon"], salar=salar_name)
-            gaia_result["veredicto"]    = legal["veredicto"]
-            gaia_result["legal_detail"] = legal["legal_detail"]
+        # El legal checker corre siempre para toda expansión SSI detectada.
+        # Gaia solo aporta confianza/severidad; no filtra el veredicto legal.
+        legal = legal_checker.verificar(poly["lat"], poly["lon"], salar=salar_name)
+        gaia_result["veredicto"]    = legal["veredicto"]
+        gaia_result["legal_detail"] = legal["legal_detail"]
 
     severity = _assign_severity(poly["ssi_delta"], gaia_result["confianza"])
 
