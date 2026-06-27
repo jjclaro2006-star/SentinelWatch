@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"process.stdin.resume();let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{try{const o=JSON.parse(d);const f=(o.tool_input||{}).file_path||'';if(f.includes('frontend2.0')&&!f.endsWith('.md'))console.log('[DOC-REMINDER] '+f+' editado. Actualiza el .md segun frontend2.0/CLAUDE.md');}catch(e){}});\""
+          }
+        ]
+      }
+    ]
+  }
+}
