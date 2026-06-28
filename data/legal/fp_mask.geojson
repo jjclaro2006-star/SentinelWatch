@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.7385,
+          -38.336
+        ]
+      },
+      "properties": {
+        "lat": -38.336,
+        "lon": -72.7385,
+        "duration_days": 7.98,
+        "detection_count": 85,
+        "added_date": "2026-06-25",
+        "source": "auto_2025"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.5382,
+          -36.8275
+        ]
+      },
+      "properties": {
+        "lat": -36.8275,
+        "lon": -71.5382,
+        "duration_days": 15.08,
+        "detection_count": 43,
+        "added_date": "2026-06-25",
+        "source": "auto_2025"
+      }
+    }
+  ]
+}

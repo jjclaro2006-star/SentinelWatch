@@ -1,0 +1,34 @@
+{
+  "version": "2026-06-21",
+  "purpose": "Source registry for the Chile riverbed-aggregate extraction pilot. Verify terms and availability before each production use.",
+  "sources": [
+    {
+      "id": "sma_snifa",
+      "name": "SNIFA — Superintendencia del Medio Ambiente",
+      "url": "https://snifa.sma.gob.cl/",
+      "use": "Public cases, fiscalisation context and source links",
+      "label_policy": "Use confirmed labels only when the public record clearly establishes the activity and location."
+    },
+    {
+      "id": "sea_seia",
+      "name": "SEIA — Servicio de Evaluación Ambiental",
+      "url": "https://seia.sea.gob.cl/",
+      "use": "Projects/RCA for authorised-extraction examples",
+      "label_policy": "Record permit validity separately; a project record alone is not proof of a permit active on a specific date."
+    },
+    {
+      "id": "transparency_portal",
+      "name": "Portal de Transparencia del Estado",
+      "url": "https://www.portaltransparencia.cl/PortalPdT/",
+      "use": "Structured requests for permit, inspection and resolution lists",
+      "label_policy": "Keep the received authority, response date and original file with every imported record."
+    },
+    {
+      "id": "earth_search",
+      "name": "Earth Search STAC",
+      "url": "https://earth-search.aws.element84.com/v1",
+      "use": "Sentinel-1 and Sentinel-2 scene discovery/download",
+      "label_policy": "Preserve scene ID, acquisition datetime and asset URL with the derived image patch."
+    }
+  ]
+}

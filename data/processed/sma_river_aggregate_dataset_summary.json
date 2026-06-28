@@ -1,0 +1,9 @@
+{
+  "source": "SMA SNIFA Datos Abiertos: UF_Instrumentos.csv + Sancionatorios.csv",
+  "candidate_sites": 108,
+  "sentinel2_patches": 108,
+  "patch_size_pixels": 256,
+  "pixel_resolution_meters": 10,
+  "label": "known_aggregate_site",
+  "label_note": "Candidate label only; visual/time validity review required before supervised training."
+}

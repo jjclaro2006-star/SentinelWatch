@@ -13,11 +13,14 @@ interface Props {
   onClosePopup: () => void
 }
 
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000"
+
 const REGION_VIEW: Record<Region, { center: [number, number]; zoom: number }> = {
-  colombia: { center: [-72.5, -0.5], zoom: 6 },
-  peru:     { center: [-74.5, -5.0], zoom: 6 },
+  colombia: { center: [-72.5,  -0.5], zoom: 6 },
+  peru:     { center: [-74.5,  -5.0], zoom: 6 },
   brasil:   { center: [-62.0, -10.0], zoom: 5 },
   bolivia:  { center: [-65.0, -15.0], zoom: 6 },
+  biobio:   { center: [-72.0, -37.5], zoom: 8 },
 }
 
 const ACTIVITY_COLORS: Record<ActivityType, string> = {
@@ -25,6 +28,26 @@ const ACTIVITY_COLORS: Record<ActivityType, string> = {
   deforestacion: "#22c55e",
   incendios:     "#eab308",
   cultivos:      "#a855f7",
+}
+
+const METERS_PER_PIXEL_AT_ZOOM: mapboxgl.ExpressionSpecification = [
+  "interpolate", ["exponential", 2], ["zoom"],
+  0,  ["/", ["get", "radius_m"], 156543],
+  22, ["/", ["get", "radius_m"], 0.037],
+]
+
+function toFireGeoJSON(alerts: Alert[]): GeoJSON.FeatureCollection {
+  const fires = alerts.filter((a) => a.type === "incendios" && a.tier === "confirmed")
+  return {
+    type: "FeatureCollection",
+    features: fires.map((a) => ({
+      type: "Feature",
+      geometry: { type: "Point", coordinates: [a.lon, a.lat] },
+      properties: {
+        radius_m: (((a as unknown as Record<string, unknown>).threat_radius_km as number | undefined) ?? 2) * 1000,
+      },
+    })),
+  }
 }
 
 function toGeoJSON(alerts: Alert[]): GeoJSON.FeatureCollection {
@@ -59,6 +82,45 @@ function buildPopupHTML(p: Record<string, unknown>): string {
     ...(p.area_ha != null ? [["Área", `${Number(p.area_ha).toFixed(1)} ha`] as [string, string]] : []),
     ...(p.wdpaName ? [["WDPA", `<span style="color:#f85149">${p.wdpaName}</span>`] as [string, string]] : []),
   ]
+
+  if (p.type === "incendios") {
+    if (p.max_frp != null)
+      rows.push(["FRP máx.", `${Number(p.max_frp).toFixed(1)} MW`])
+    if (p.duration_hours != null)
+      rows.push(["Activo", `${Number(p.duration_hours).toFixed(1)} h`])
+    if (p.detection_count != null)
+      rows.push(["Detecciones", String(p.detection_count)])
+    if (p.intentionality_level)
+      rows.push(["Intencionalidad", `${String(p.intentionality_level)}${p.intentionality_score != null ? ` (${p.intentionality_score}/100)` : ""}`])
+    if (p.legal_risk_score != null)
+      rows.push(["Riesgo legal", `${p.legal_risk_score}/100`])
+    if (p.spread_summary)
+      rows.push(["Propagación", String(p.spread_summary)])
+    if (p.fire_weather_index)
+      rows.push(["FWI", String(p.fire_weather_index)])
+  }
+  const thumbId = `sat-thumb-${String(p.id)}`
+
+  setTimeout(async () => {
+    try {
+      const res = await fetch(
+        `${API_BASE}/alert/thumbnail?lat=${p.lat}&lon=${p.lon}&date=${p.date}&actividad=${p.type}`
+      )
+      const data = (await res.json()) as { url?: string | null }
+      const img = document.getElementById(thumbId) as HTMLImageElement | null
+      if (img) {
+        if (data.url) {
+          img.src = data.url
+        } else {
+          img.style.display = "none"
+        }
+      }
+    } catch {
+      const img = document.getElementById(thumbId) as HTMLImageElement | null
+      if (img) img.style.display = "none"
+    }
+  }, 100)
+
   return `
     <div style="font-family:ui-monospace,monospace;font-size:11px;line-height:1.6;
                 color:#c9d1d9;background:#161b22;padding:10px 12px;
@@ -71,6 +133,12 @@ function buildPopupHTML(p: Record<string, unknown>): string {
             <td>${v}</td>
           </tr>`).join("")}
       </table>
+      <img
+        id="${thumbId}"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style="width:100%;height:120px;object-fit:cover;border-radius:4px;background:#1a1a2e;margin-top:8px;display:block"
+        alt="Imagen satelital"
+      />
     </div>`
 }
 
@@ -159,6 +227,26 @@ export function MapViewport({ alerts, region, selected, onSelect, onClosePopup }
         },
       })
 
+      // Fire area circles (incendios confirmed only)
+      map.addSource("fire-areas", {
+        type: "geojson",
+        data: toFireGeoJSON([]),
+      })
+
+      map.addLayer({
+        id: "fire-areas-fill",
+        type: "circle",
+        source: "fire-areas",
+        paint: {
+          "circle-radius": METERS_PER_PIXEL_AT_ZOOM,
+          "circle-color": "#ef4444",
+          "circle-opacity": 0.25,
+          "circle-stroke-width": 2,
+          "circle-stroke-color": "#dc2626",
+          "circle-stroke-opacity": 0.8,
+        },
+      })
+
       // Cursor
       const setCursor = (layer: string, cursor: string) => {
         map.on("mouseenter", layer, () => { map.getCanvas().style.cursor = cursor })
@@ -218,6 +306,13 @@ export function MapViewport({ alerts, region, selected, onSelect, onClosePopup }
     if (!mapRef.current || !mapLoadedRef.current) return
     const src = mapRef.current.getSource("alerts") as mapboxgl.GeoJSONSource
     src?.setData(toGeoJSON(alerts))
+  }, [alerts])
+
+  // Sync fire area circles
+  useEffect(() => {
+    if (!mapRef.current || !mapLoadedRef.current) return
+    const src = mapRef.current.getSource("fire-areas") as mapboxgl.GeoJSONSource
+    src?.setData(toFireGeoJSON(alerts))
   }, [alerts])
 
   // Popup for selected alert

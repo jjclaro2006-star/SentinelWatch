@@ -46,6 +46,26 @@ def run_pipeline(
     Returns:
         Summary dict with alert count, output path, severity/activity breakdown.
     """
+    # Chile áridos usa pipeline MNDWI independiente
+    if region == "chile_aridos":
+        from chile_aridos import run_chile_aridos
+        return run_chile_aridos(
+            baseline=baseline,
+            analysis=analysis,
+            detection_date=detection_date,
+            reclassify=reclassify,
+        )
+
+    # Chile salares usa pipeline SWIR SSI independiente
+    if region == "chile_salares":
+        from chile_salares import run_chile_salares
+        return run_chile_salares(
+            baseline=baseline,
+            analysis=analysis,
+            detection_date=detection_date,
+            reclassify=reclassify,
+        )
+
     authenticate_and_initialize()
 
     aoi_bbox = REGIONS.get(region, REGIONS["peru"])

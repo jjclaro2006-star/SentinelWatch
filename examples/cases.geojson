@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-70.735, -33.432]},
+      "properties": {
+        "id": "demo-confirmed-001",
+        "label": "confirmed_extraction",
+        "observed_at": "2025-11-18",
+        "confidence": 0.95,
+        "precision": "polygon_documented",
+        "source_url": "https://example.org/public-case-001"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-70.690, -33.410]},
+      "properties": {
+        "id": "demo-authorized-001",
+        "label": "authorized_extraction",
+        "observed_at": "2025-11-18",
+        "confidence": 0.9,
+        "precision": "approximate_point",
+        "source_url": "https://example.org/permitted-case-001"
+      }
+    }
+  ]
+}

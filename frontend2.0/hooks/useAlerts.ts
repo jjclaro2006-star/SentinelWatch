@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import type { Alert, AlertSummary } from '@/lib/sentinel-data'
-import { fetchAlerts, fetchSummary } from '@/lib/api'
+import { fetchAlerts, fetchSummary, fetchFireEvents, mapFireEventToAlert } from '@/lib/api'
 
 
 export interface UseAlertsReturn {
@@ -22,8 +22,13 @@ export function useAlerts(): UseAlertsReturn {
 
   const poll = useCallback(async () => {
     try {
-      const [alertsData, summaryData] = await Promise.all([fetchAlerts(), fetchSummary()])
-      setAlerts(alertsData)
+      const [alertsData, summaryData, fireData] = await Promise.all([
+        fetchAlerts(),
+        fetchSummary(),
+        fetchFireEvents(),
+      ])
+      const fireAlerts = (fireData.features ?? []).map(mapFireEventToAlert)
+      setAlerts([...alertsData, ...fireAlerts])
       setSummary(summaryData)
       setError(null)
       setLastSync(new Date())

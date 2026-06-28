@@ -23,6 +23,11 @@ REGIONS: dict[str, list[float]] = {
     "brasil_sur_a":  [-52.0, -15.0, -48.0,  -5.0],
     "brasil_sur_b":  [-48.0, -15.0, -44.0,  -5.0],
     "bolivia":       [-70.0, -18.0, -57.0,  -9.0],
+    # Chile — extracción de áridos en ríos (dispatched to chile_aridos.py)
+    "chile_aridos":  [-74.0, -46.0, -68.0, -18.0],
+    "chile_norte":   [-70.5, -26.5, -68.5, -23.5],  # Atacama/Antofagasta
+    # Chile — expansión piscinas de evaporación en salares (dispatched to chile_salares.py)
+    "chile_salares": [-69.4, -27.1, -67.4, -23.1],  # envuelve los 5 salares prioritarios
 }
 
 def dynamic_date_windows(window_days: int = 60) -> tuple[tuple[str, str], tuple[str, str]]:

@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-70.695, -33.415], [-70.685, -33.415], [-70.685, -33.405], [-70.695, -33.405], [-70.695, -33.415]]]
+      },
+      "properties": {
+        "id": "demo-permit-001",
+        "status": "active",
+        "valid_from": "2025-01-01",
+        "valid_to": "2026-12-31",
+        "authority": "demo municipality",
+        "source_url": "https://example.org/permit-001"
+      }
+    }
+  ]
+}

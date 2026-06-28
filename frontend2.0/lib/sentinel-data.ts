@@ -4,9 +4,9 @@ export type ActivityType =
   | "incendios"
   | "cultivos"
 
-export type Region = "colombia" | "peru" | "brasil" | "bolivia"
+export type Region = "colombia" | "peru" | "brasil" | "bolivia" | "biobio"
 
-export type Verdict = "ILEGAL" | "VERIFICAR"
+export type Verdict = "ILEGAL" | "VERIFICAR" | "CONFIRMADO" | "PRELIMINAR"
 
 export type Severity = "critica" | "alta" | "media"
 
@@ -27,6 +27,16 @@ export interface Alert {
   y: number
   area_ha?: number | null
   ndvi_change?: number | null
+  // Module A fire-specific fields
+  tier?: "confirmed" | "preliminary" | "unconfirmed"
+  max_frp?: number
+  duration_hours?: number
+  detection_count?: number
+  intentionality_score?: number
+  intentionality_level?: string
+  legal_risk_score?: number
+  spread_summary?: string
+  fire_weather_index?: string
 }
 
 export interface AlertSummary {
@@ -48,6 +58,7 @@ export const REGION_LABELS: Record<Region, string> = {
   peru: "Amazonas — Perú",
   brasil: "Amazonas — Brasil",
   bolivia: "Amazonas — Bolivia",
+  biobio: "Chile — Biobío",
 }
 
 export const SEVERITY_META: Record<

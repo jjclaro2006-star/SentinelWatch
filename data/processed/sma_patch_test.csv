@@ -1,0 +1,2 @@
+id,patch_path,label,label_confidence,scene_id,acquired_at,cloud_cover,source_asset,review_required
+sma-uf-10003,data\imagery\sma_patch_test\sma-uf-10003.png,known_aggregate_site,0.8,S2B_18GXA_20260107_0_L2A,2026-01-07T14:54:06.555000Z,0.002535,https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/G/XA/2026/1/S2B_18GXA_20260107_0_L2A/TCI.tif,yes

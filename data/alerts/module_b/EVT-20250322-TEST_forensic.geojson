@@ -1,0 +1,16 @@
+{
+  "alert_id": "EVT-20250322-TEST",
+  "lat": -38.33,
+  "lon": -72.61,
+  "fire_date": "2025-03-22",
+  "forensic_score": 0.3085,
+  "forensic_level": "MODERADO",
+  "forensic_verdict": "NO INTENCIONAL",
+  "forensic_signals": [
+    "anomalia_espectral_detectada"
+  ],
+  "post_image_date": "2025-04-19",
+  "days_after_fire": 28,
+  "analysis_date": "2026-06-26",
+  "model_version": "v0.2"
+}

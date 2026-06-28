@@ -1,0 +1,801 @@
+lat,lon,fecha_inicio,causa,label,superficie_ha,region,comuna
+-37.32472222,-73.3425,2023-09-30,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,2.5,Biobío,Arauco
+-37.32361111,-73.40083333,2023-09-30,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.3,Biobío,Arauco
+-37.57388889,-72.87805556,2023-10-10,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.85,Biobío,Nacimiento
+-37.41055556,-72.95694444,2023-10-10,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,1.1,Biobío,Nacimiento
+-37.49527778,-72.81916667,2023-10-11,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.3,Biobío,Nacimiento
+-37.78333333,-72.19472222,2023-10-12,4.8 - Otras quemas | 4.8.1. Quema no avisada con fines de limpieza en canales  cunetas  cercos o caminos (en predios particulares o públicos) que se propaga libre y sin control,0,0.3,Biobío,Mulchén
+-37.68861111,-73.44111111,2023-10-13,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,5.6,Biobío,Los Alamos
+-36.53166667,-72.96666667,2023-10-16,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.22,Biobío,Tomé
+-37.13055556,-72.52444444,2023-10-17,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.5,Biobío,Yumbel
+-37.21472222,-73.25166667,2023-10-18,1.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 1.3.1. Empleo de fuentes de calor en áreas habilitadas  como fogatas  cocinillas u otro elemento para cocinar  calefacción  iluminación u otros fines,0,0.005,Biobío,Arauco
+-36.56944444,-72.94805556,2023-10-18,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.01,Biobío,Tomé
+-37.35111111,-73.64527778,2023-10-18,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Arauco
+-36.71277778,-72.96861111,2023-10-19,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.02,Biobío,Penco
+-36.62833333,-72.94972222,2023-10-20,1.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 1.3.1. Empleo de fuentes de calor en áreas habilitadas  como fogatas  cocinillas u otro elemento para cocinar  calefacción  iluminación u otros fines,0,0.15,Biobío,Tomé
+-36.93333333,-72.93527778,2023-10-21,1.10 - Otras causas,0,0.75,Biobío,Hualqui
+-36.74805556,-73.00305556,2023-10-22,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.02,Biobío,Penco
+-37.33583333,-72.4375,2023-10-22,4.1 - Faenas forestales | 4.1.5. Rebrote de quema forestal no avisada que  se propaga libre y sin control,0,0.09,Biobío,Laja
+-37.64888889,-73.39416667,2023-10-22,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.01,Biobío,Los Alamos
+-37.01861111,-73.14805556,2023-10-23,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.35,Biobío,Coronel
+-37.60611111,-73.5025,2023-10-24,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.56,Biobío,Los Alamos
+-37.46166667,-72.73888889,2023-10-24,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,2.0,Biobío,Nacimiento
+-37.01972222,-73.14777778,2023-10-24,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.8,Biobío,Coronel
+-37.08055556,-72.445,2023-10-26,4.8 - Otras quemas | 4.8.1. Quema no avisada con fines de limpieza en canales  cunetas  cercos o caminos (en predios particulares o públicos) que se propaga libre y sin control,0,0.12,Biobío,Cabrero
+-37.68833333,-71.27166667,2023-10-26,2.1 - Incendios Intencionales,1,2.0,Biobío,Alto Biobío
+-37.06138889,-72.42888889,2023-10-26,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.9,Biobío,Cabrero
+-37.22,-72.535,2023-10-26,4.2 - Faenas agrícolas y pecuarias | 4.2.1. Quema no avisada de desechos agrícolas que se propaga libre y sin control,0,0.1,Biobío,Negrete
+-37.70416667,-73.54166667,2023-10-27,5.1 - Incendios de causa indeterminada,0,0.09,Biobío,Lebu
+-37.73055556,-73.37944444,2023-11-03,4.1 - Faenas forestales | 4.1.6. Quema avisada de desechos forestales mal ejecutada que se propaga libre y sin control (plan de quemas  aviso de quemas),0,0.22,Biobío,Cañete
+-37.45666667,-72.38638889,2023-11-04,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.01,Biobío,Los Angeles
+-36.63472222,-72.80027778,2023-11-05,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Tomé
+-37.57972222,-72.28444444,2023-11-06,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,0.02,Biobío,Los Angeles
+-37.45666667,-72.38638889,2023-11-06,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.04,Biobío,Los Angeles
+-37.55472222,-72.30861111,2023-11-13,2.1 - Incendios Intencionales,1,0.06,Biobío,Los Angeles
+-37.3925,-72.66083333,2023-11-13,4.1 - Faenas forestales | 4.1.5. Rebrote de quema forestal no avisada que  se propaga libre y sin control,0,0.11,Biobío,Los Angeles
+-37.62222222,-73.675,2023-11-13,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.2,Biobío,Lebu
+-36.90472222,-73.14,2023-11-14,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.04,Biobío,San Pedro de la Paz
+-37.61944444,-72.60888889,2023-11-21,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.9,Biobío,Negrete
+-36.88861111,-73.15083333,2023-11-22,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.4,Biobío,San Pedro de la Paz
+-37.56694444,-72.37638889,2023-11-22,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.3,Biobío,Los Angeles
+-36.87527778,-73.1325,2023-11-22,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.04,Biobío,San Pedro de la Paz
+-37.66055556,-73.37888889,2023-11-23,4.1 - Faenas forestales | 4.1.6. Quema avisada de desechos forestales mal ejecutada que se propaga libre y sin control (plan de quemas  aviso de quemas),0,1.0,Biobío,Los Alamos
+-36.67,-72.96055556,2023-11-25,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.03,Biobío,Tomé
+-37.58805556,-73.6425,2023-11-25,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.1,Biobío,Lebu
+-36.62416667,-72.94972222,2023-11-26,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.14,Biobío,Tomé
+-37.45972222,-73.58111111,2023-11-28,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,2.0,Biobío,Lebu
+-37.6275,-73.65333333,2023-12-02,2.1 - Incendios Intencionales | 2.1.9. Cambio irregular de uso de suelo (habitacional  parcelaciones  agrícola  recreacional  otros),1,0.05,Biobío,Lebu
+-36.90388889,-73.14222222,2023-12-02,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.01,Biobío,San Pedro de la Paz
+-36.90583333,-73.13694444,2023-12-03,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.2,Biobío,San Pedro de la Paz
+-36.76222222,-72.95166667,2023-12-03,5.1 - Incendios de causa indeterminada,0,0.01,Biobío,Penco
+-37.8625,-73.405,2023-12-03,4.2 - Faenas agrícolas y pecuarias,0,0.21,Biobío,Cañete
+-36.87083333,-73.12638889,2023-12-03,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.1,Biobío,Tomé
+-37.61611111,-73.66694444,2023-12-04,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,2.5,Biobío,Lebu
+-37.72472222,-73.39305556,2023-12-04,4.8 - Otras quemas,0,0.17,Biobío,Cañete
+-37.02694444,-73.13777778,2023-12-04,1.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 1.6.1. Incendio estructural,0,0.25,Biobío,Coronel
+-37.17666667,-72.56333333,2023-12-04,1.9 - Líneas eléctricas | 1.9.3. Otro accidente eléctrico no clasificado,0,0.16,Biobío,Yumbel
+-37.20416667,-72.64638889,2023-12-05,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.24,Biobío,Yumbel
+-37.29138889,-71.96055556,2023-12-05,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.2,Biobío,Tucapel
+-38.14944444,-73.34916667,2023-12-05,2.1 - Incendios Intencionales,1,0.1,Biobío,Tirúa
+-37.70138889,-73.56722222,2023-12-05,1.1 - Faenas Forestales,0,0.5,Biobío,Lebu
+-37.80194444,-73.28194444,2023-12-05,1.8 - Otras quemas,0,0.45,Biobío,Cañete
+-37.85111111,-73.13277778,2023-12-06,5.1 - Incendios de causa indeterminada,0,15.0,Biobío,Cañete
+-37.47083333,-73.33888889,2023-12-06,2.1 - Incendios Intencionales,1,0.68,Biobío,Curanilahue
+-36.90222222,-73.14194444,2023-12-06,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.8,Biobío,San Pedro de la Paz
+-36.98555556,-72.63583333,2023-12-07,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.7,Biobío,Yumbel
+-38.00888889,-73.3175,2023-12-07,2.1 - Incendios Intencionales | 2.1.4. Conflicto territorial o patrimonial (deslindes  propiedades  apropiaciones de terreno  otros),1,0.06,Biobío,Cañete
+-36.87388889,-73.13361111,2023-12-07,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.1,Biobío,San Pedro de la Paz
+-37.24138889,-72.24805556,2023-12-08,1.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 1.3.1. Empleo de fuentes de calor en áreas habilitadas  como fogatas  cocinillas u otro elemento para cocinar  calefacción  iluminación u otros fines,0,1.46,Biobío,Los Angeles
+-37.46388889,-72.38583333,2023-12-08,2.1 - Incendios Intencionales | 2.1.6. Para observar operaciones de combate de incendios forestales,1,0.08,Biobío,Los Angeles
+-37.64666667,-73.61805556,2023-12-08,4.10 - Otras causas | 4.10.5. Empleo de fuentes de calor por menores de edad,0,1.41,Biobío,Lebu
+-38.18,-73.34722222,2023-12-08,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,0.5,Biobío,Tirúa
+-37.29333333,-71.96,2023-12-08,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.12,Biobío,Tucapel
+-38.13055556,-73.33277778,2023-12-09,2.1 - Incendios Intencionales,1,10.0,Biobío,Tirúa
+-37.51333333,-73.40916667,2023-12-09,4.1 - Faenas forestales,0,0.1,Biobío,Curanilahue
+-37.58916667,-73.6425,2023-12-10,2.1 - Incendios Intencionales,1,0.01,Biobío,Lebu
+-37.4075,-72.41055556,2023-12-11,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,0.05,Biobío,Los Angeles
+-37.48527778,-72.365,2023-12-11,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,0.2,Biobío,Los Angeles
+-37.3725,-72.63277778,2023-12-11,2.1 - Incendios Intencionales,1,0.11,Biobío,Los Angeles
+-36.83666667,-73.06055556,2023-12-12,4.8 - Otras quemas | 4.8.5. Empleo de fuentes de calor en vertederos o basurales,0,0.01,Biobío,Concepción
+-37.58166667,-72.53388889,2023-12-12,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.02,Biobío,Negrete
+-38.28055556,-73.49805556,2023-12-12,5.1 - Incendios de causa indeterminada,0,0.5,Biobío,Tirúa
+-37.74833333,-73.41666667,2023-12-12,4.9 - Líneas eléctricas | 4.9.2. Corte de conductor eléctrico por caída de rama o árbol (excepto por faena forestal o agrícola),0,0.03,Biobío,Cañete
+-37.78916667,-73.47638889,2023-12-13,2.1 - Incendios Intencionales,1,0.8,Biobío,Los Alamos
+-38.03805556,-73.24305556,2023-12-13,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.19,Biobío,Contulmo
+-37.22888889,-72.64416667,2023-12-13,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.1. Generado por el uso de equipos o herramientas con fines de construcción  limpieza o montaje de estructuras,0,12.0,Biobío,San Rosendo
+-37.575,-72.13555556,2023-12-13,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.55,Biobío,Quilleco
+-36.81888889,-72.86861111,2023-12-14,4.1 - Faenas forestales | 4.1.4. Partícula incandescente generada sin roce por vehículo  maquinaria o herramienta forestal,0,1.2,Biobío,Concepción
+-36.87083333,-73.12638889,2023-12-14,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.45,Biobío,San Pedro de la Paz
+-37.38333333,-72.4525,2023-12-14,4.8 - Otras quemas,0,0.28,Biobío,Los Angeles
+-37.6975,-73.37027778,2023-12-14,4.1 - Faenas forestales,0,0.05,Biobío,Cañete
+-37.6525,-73.49527778,2023-12-14,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.3,Biobío,Los Alamos
+-37.19805556,-72.60888889,2023-12-15,2.1 - Incendios Intencionales | 2.1.6. Para observar operaciones de combate de incendios forestales,1,5.0,Biobío,Yumbel
+-37.66777778,-73.54861111,2023-12-15,5.1 - Incendios de causa indeterminada,0,0.05,Biobío,Lebu
+-37.68194444,-71.23111111,2023-12-15,2.1 - Incendios Intencionales,1,3.5,Biobío,Alto Biobío
+-37.69805556,-73.52611111,2023-12-15,4.1 - Faenas forestales | 4.1.5. Rebrote de quema forestal no avisada que  se propaga libre y sin control,0,0.2,Biobío,Lebu
+-37.86833333,-73.41222222,2023-12-15,5.1 - Incendios de causa indeterminada,0,0.6,Biobío,Cañete
+-37.71027778,-72.23555556,2023-12-15,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.02,Biobío,Mulchén
+-36.76777778,-73.02833333,2023-12-15,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.05,Biobío,Penco
+-36.84888889,-73.12472222,2023-12-15,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.25,Biobío,San Pedro de la Paz
+-37.66777778,-72.065,2023-12-15,4.8 - Otras quemas,0,0.25,Biobío,Quilleco
+-37.655,-72.59,2023-12-15,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Negrete
+-36.70888889,-73.15194444,2023-12-16,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.15,Biobío,Talcahuano
+-36.84138889,-73.13138889,2023-12-16,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.26,Biobío,San Pedro de la Paz
+-37.48388889,-72.32527778,2023-12-16,2.1 - Incendios Intencionales | 2.1.4. Conflicto territorial o patrimonial (deslindes  propiedades  apropiaciones de terreno  otros),1,0.03,Biobío,Los Angeles
+-37.35944444,-72.28944444,2023-12-19,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.1. Generado por el uso de equipos o herramientas con fines de construcción  limpieza o montaje de estructuras,0,0.43,Biobío,Los Angeles
+-36.7425,-72.89305556,2023-12-19,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.08,Biobío,Florida
+-37.43194444,-72.30055556,2023-12-19,1.1 - Faenas Forestales,0,0.15,Biobío,Los Angeles
+-36.85277778,-72.90805556,2023-12-19,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.06,Biobío,Concepción
+-37.40388889,-72.27611111,2023-12-20,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.35,Biobío,Los Angeles
+-37.72694444,-72.24361111,2023-12-20,2.1 - Incendios Intencionales,1,0.03,Biobío,Mulchén
+-37.55416667,-72.3,2023-12-20,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.06,Biobío,Los Angeles
+-37.0025,-73.13888889,2023-12-21,5.1 - Incendios de causa indeterminada,0,0.2,Biobío,Coronel
+-37.00472222,-72.63527778,2023-12-21,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,12.5,Biobío,Yumbel
+-37.50583333,-72.65194444,2023-12-21,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.1,Biobío,Nacimiento
+-37.73111111,-72.22805556,2023-12-21,2.1 - Incendios Intencionales | 2.1.6. Para observar operaciones de combate de incendios forestales,1,0.6,Biobío,Mulchén
+-37.47277778,-72.42861111,2023-12-21,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,3.8,Biobío,Los Angeles
+-36.83305556,-73.145,2023-12-21,4.8 - Otras quemas | 4.8.5. Empleo de fuentes de calor en vertederos o basurales,0,0.4,Biobío,San Pedro de la Paz
+-37.31722222,-71.57361111,2023-12-21,4.9 - Líneas eléctricas | 4.9.5. Otras causas eléctricas negligentes no  clasificadas,0,3.4,Biobío,Antuco
+-37.64472222,-73.56583333,2023-12-22,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.012,Biobío,Lebu
+-37.4075,-72.41,2023-12-22,4.5 - Actividades de control y extinción de incendios forestales,0,0.2,Biobío,Los Angeles
+-37.48666667,-72.69722222,2023-12-22,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,1.0,Biobío,Nacimiento
+-37.72472222,-73.40916667,2023-12-22,2.1 - Incendios Intencionales | 2.1.8. Extracción o producción de hongos o frutos,1,0.11,Biobío,Cañete
+-37.53527778,-72.3325,2023-12-23,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Los Angeles
+-36.90638889,-73.1375,2023-12-23,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.02,Biobío,San Pedro de la Paz
+-36.89805556,-73.13,2023-12-23,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.2,Biobío,San Pedro de la Paz
+-36.95694444,-72.52972222,2023-12-24,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.05,Biobío,Yumbel
+-38.22277778,-73.41111111,2023-12-24,4.1 - Faenas forestales,0,4.3,Biobío,Tirúa
+-36.90361111,-73.14194444,2023-12-24,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.05,Biobío,San Pedro de la Paz
+-37.98805556,-73.26222222,2023-12-24,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.6. Desecho de  cenizas de chimenea  calefacción  cocina leña  tinajas  otros,0,0.32,Biobío,Contulmo
+-37.23833333,-72.63611111,2023-12-24,4.10 - Otras causas,0,0.1,Biobío,Laja
+-37.295,-72.17138889,2023-12-24,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz,0,0.45,Biobío,Los Angeles
+-37.11777778,-72.86888889,2023-12-24,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.05,Biobío,Hualqui
+-37.56388889,-72.56472222,2023-12-25,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.24,Biobío,Los Angeles
+-36.68944444,-72.96638889,2023-12-25,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.07,Biobío,Tomé
+-36.81138889,-73.0825,2023-12-25,2.1 - Incendios Intencionales | 2.1.9. Cambio irregular de uso de suelo (habitacional  parcelaciones  agrícola  recreacional  otros),1,1.02,Biobío,Concepción
+-36.99416667,-73.1525,2023-12-25,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.16,Biobío,Penco
+-37.48333333,-72.44722222,2023-12-25,4.2 - Faenas agrícolas y pecuarias,0,0.11,Biobío,Los Angeles
+-36.99416667,-73.1525,2023-12-25,4.8 - Otras quemas | 4.8.5. Empleo de fuentes de calor en vertederos o basurales,0,0.3,Biobío,Coronel
+-36.75611111,-73.17916667,2023-12-25,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.15,Biobío,Hualpén
+-36.74083333,-72.92861111,2023-12-25,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.05,Biobío,Penco
+-36.85138889,-72.90666667,2023-12-26,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Concepción
+-37.66083333,-72.56388889,2023-12-26,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.16,Biobío,Negrete
+-36.95416667,-72.92944444,2023-12-27,1.7 - Originados por desplazamiento de personas  vehículos o aeronaves,0,0.16,Biobío,Hualqui
+-36.95388889,-72.92888889,2023-12-27,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.06,Biobío,Hualqui
+-38.17638889,-73.43222222,2023-12-28,5.1 - Incendios de causa indeterminada,0,7.45,Biobío,Tirúa
+-36.69111111,-72.97111111,2023-12-28,2.1 - Incendios Intencionales | 2.1.6. Para observar operaciones de combate de incendios forestales,1,0.7,Biobío,Tomé
+-37.37166667,-72.63388889,2023-12-28,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.02,Biobío,Los Angeles
+-37.62777778,-73.57416667,2023-12-28,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,0.3,Biobío,Lebu
+-36.90444444,-73.13055556,2023-12-29,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,1.0,Biobío,San Pedro de la Paz
+-36.98833333,-73.15833333,2023-12-29,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.08,Biobío,Coronel
+-37.62777778,-73.57388889,2023-12-29,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,3.11,Biobío,Los Alamos
+-37.73055556,-73.50527778,2023-12-29,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.15,Biobío,Los Alamos
+-36.85166667,-73.05222222,2023-12-29,4.10 - Otras causas | 4.10.11. Empleo de fuentes de calor por personas en situación de calle,0,0.4,Biobío,Concepción
+-36.8975,-73.12916667,2023-12-30,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.36,Biobío,San Pedro de la Paz
+-37.72388889,-73.3775,2023-12-30,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.2,Biobío,Cañete
+-37.98805556,-73.26111111,2023-12-30,1.10 - Otras causas,0,0.5,Biobío,Contulmo
+-37.10388889,-73.15027778,2023-12-30,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Lota
+-36.64916667,-72.96055556,2023-12-31,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Tomé
+-36.85277778,-72.90833333,2023-12-31,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.01,Biobío,Concepción
+-36.69222222,-72.96694444,2023-12-31,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.25,Biobío,Tomé
+-37.08361111,-73.16972222,2023-12-31,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.3,Biobío,Lota
+-36.73666667,-72.98222222,2023-12-31,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.03,Biobío,Penco
+-37.01777778,-73.5425,2023-12-31,4.10 - Otras causas | 4.10.6. Fuegos artificiales  bengalas  otros artefactos pirotécnicos o globos aerostáticos,0,2.5,Biobío,Coronel
+-37.37,-72.11944444,2023-12-31,1.1 - Faenas Forestales,0,0.05,Biobío,Los Angeles
+-37.72861111,-72.23277778,2023-12-31,2.1 - Incendios Intencionales,1,0.22,Biobío,Mulchén
+-37.08944444,-73.17277778,2023-12-31,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Lota
+-37.51222222,-71.87333333,2023-12-31,4.9 - Líneas eléctricas | 4.9.4. Sobrecalentamiento de estructuras asociados al sistema eléctrico (poste  transformador  uniones  aisladores  otros),0,0.1,Biobío,Quilleco
+-37.61583333,-73.66,2023-12-31,4.10 - Otras causas | 4.10.6. Fuegos artificiales  bengalas  otros artefactos pirotécnicos o globos aerostáticos,0,1.5,Biobío,Lebu
+-36.65555556,-72.89444444,2023-12-31,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.46,Biobío,Tomé
+-37.59,-73.64694444,2024-01-01,2.1 - Incendios Intencionales,1,0.5,Biobío,Lebu
+-36.75194444,-73.00222222,2024-01-01,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.01,Biobío,Penco
+-37.73722222,-72.25305556,2024-01-01,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.9,Biobío,Mulchén
+-37.50194444,-72.68833333,2024-01-01,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.35,Biobío,Nacimiento
+-37.06972222,-72.78611111,2024-01-01,4.9 - Líneas eléctricas,0,0.17,Biobío,Hualqui
+-37.48916667,-72.68916667,2024-01-01,4.10 - Otras causas,0,0.02,Biobío,Nacimiento
+-37.52833333,-72.36777778,2024-01-01,1.9 - Líneas eléctricas,0,0.11,Biobío,Los Angeles
+-36.69277778,-72.96666667,2024-01-01,4.11 - Producción y/o extracción de productos y/o derivados del bosque | 4.11.1. Elaboración de carbón,0,0.05,Biobío,Tomé
+-37.35555556,-72.28694444,2024-01-01,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.05,Biobío,Los Angeles
+-37.54194444,-72.3025,2024-01-01,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,1.5,Biobío,Los Angeles
+-37.04222222,-72.36694444,2024-01-02,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,0.02,Biobío,Cabrero
+-36.98305556,-72.65555556,2024-01-02,2.1 - Incendios Intencionales | 2.1.4. Conflicto territorial o patrimonial (deslindes  propiedades  apropiaciones de terreno  otros),1,0.29,Biobío,Yumbel
+-37.215,-73.25305556,2024-01-02,1.10 - Otras causas | 1.10.1. Otras causas accidentales no clasificadas,0,0.005,Biobío,Arauco
+-37.54361111,-72.28638889,2024-01-02,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.01,Biobío,Los Angeles
+-37.46916667,-72.40388889,2024-01-02,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,0.3,Biobío,Los Angeles
+-37.50111111,-72.6875,2024-01-02,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.31,Biobío,Nacimiento
+-36.64722222,-72.95888889,2024-01-02,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.05,Biobío,Tomé
+-37.02027778,-73.54416667,2024-01-02,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,5.85,Biobío,Coronel
+-37.67861111,-72.16805556,2024-01-02,4.9 - Líneas eléctricas | 4.9.2. Corte de conductor eléctrico por caída de rama o árbol (excepto por faena forestal o agrícola),0,0.94,Biobío,Mulchén
+-37.50222222,-72.69388889,2024-01-02,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.8,Biobío,Nacimiento
+-37.03361111,-72.7675,2024-01-02,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,6.98,Biobío,Hualqui
+-38.17388889,-73.43333333,2024-01-03,5.1 - Incendios de causa indeterminada,0,9.9,Biobío,Tirúa
+-37.37444444,-72.63555556,2024-01-03,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.24,Biobío,Los Angeles
+-36.85111111,-73.1275,2024-01-03,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.25,Biobío,San Pedro de la Paz
+-37.50916667,-72.20305556,2024-01-03,4.10 - Otras causas | 4.10.5. Empleo de fuentes de calor por menores de edad,0,0.01,Biobío,Los Angeles
+-37.71416667,-72.23027778,2024-01-03,2.1 - Incendios Intencionales,1,0.01,Biobío,Mulchén
+-37.29277778,-72.32888889,2024-01-04,1.2 - Faenas agrícolas y pecuarias | 1.2.2. Partículas incandescentes  generadas por roce de maquinaria o herramienta agrícola con rocas  cercos o material metálico,0,0.2,Biobío,Los Angeles
+-36.67,-72.96111111,2024-01-04,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.03,Biobío,Tomé
+-37.59361111,-72.4825,2024-01-04,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.2,Biobío,Negrete
+-37.69805556,-73.52583333,2024-01-04,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.52,Biobío,Lebu
+-37.59027778,-73.64472222,2024-01-05,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.09,Biobío,Lebu
+-37.47222222,-72.36611111,2024-01-05,2.1 - Incendios Intencionales,1,0.12,Biobío,Los Angeles
+-36.82611111,-72.67166667,2024-01-06,5.1 - Incendios de causa indeterminada,0,0.01,Biobío,Florida
+-37.50027778,-72.495,2024-01-06,4.2 - Faenas agrícolas y pecuarias,0,0.4,Biobío,Los Angeles
+-37.46916667,-72.38611111,2024-01-06,2.1 - Incendios Intencionales,1,1.6,Biobío,Los Angeles
+-37.25833333,-72.21194444,2024-01-06,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz,0,2.71,Biobío,Los Angeles
+-37.28833333,-72.63361111,2024-01-07,1.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz,0,0.04,Biobío,Laja
+-37.47333333,-72.38777778,2024-01-07,2.1 - Incendios Intencionales,1,0.02,Biobío,Los Angeles
+-37.82388889,-72.22194444,2024-01-07,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.02,Biobío,Mulchén
+-37.06611111,-72.57722222,2024-01-07,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.35,Biobío,Yumbel
+-37.1725,-72.95555556,2024-01-07,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.05,Biobío,Santa Juana
+-36.98666667,-73.15166667,2024-01-07,4.10 - Otras causas | 4.10.11. Empleo de fuentes de calor por personas en situación de calle,0,0.2,Biobío,Coronel
+-37.22916667,-71.96444444,2024-01-08,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.26,Biobío,Tucapel
+-36.67666667,-72.9475,2024-01-08,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.2,Biobío,Tomé
+-37.50166667,-72.6875,2024-01-08,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Nacimiento
+-37.50805556,-72.34,2024-01-08,2.1 - Incendios Intencionales | 2.1.9. Cambio irregular de uso de suelo (habitacional  parcelaciones  agrícola  recreacional  otros),1,0.55,Biobío,Los Angeles
+-38.25805556,-73.4425,2024-01-08,5.1 - Incendios de causa indeterminada,0,0.4,Biobío,Tirúa
+-37.99388889,-73.39861111,2024-01-08,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.29,Biobío,Cañete
+-37.31555556,-72.68083333,2024-01-08,2.1 - Incendios Intencionales | 2.1.6. Para observar operaciones de combate de incendios forestales,1,0.1,Biobío,Laja
+-37.32277778,-72.17722222,2024-01-09,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,7.13,Biobío,Los Angeles
+-38.23111111,-73.465,2024-01-09,1.10 - Otras causas,0,11.48,Biobío,Tirúa
+-37.51111111,-71.87333333,2024-01-09,4.1 - Faenas forestales | 4.1.3. Contacto o corte de conductor eléctrico producto de faena forestal,0,0.01,Biobío,Quilleco
+-36.7375,-73.1125,2024-01-09,4.10 - Otras causas | 4.10.10. Empleo de fuentes de calor para eliminar recubrimiento de  conductores eléctricos,0,0.9,Biobío,Talcahuano
+-37.28138889,-72.71694444,2024-01-09,2.1 - Incendios Intencionales,1,0.04,Biobío,Laja
+-38.16944444,-73.43,2024-01-09,2.1 - Incendios Intencionales,1,12.4,Biobío,Tirúa
+-37.72611111,-73.42638889,2024-01-09,4.9 - Líneas eléctricas | 4.9.2. Corte de conductor eléctrico por caída de rama o árbol (excepto por faena forestal o agrícola),0,0.1,Biobío,Cañete
+-37.00361111,-73.16527778,2024-01-09,5.1 - Incendios de causa indeterminada,0,0.5,Biobío,Coronel
+-36.8675,-72.82944444,2024-01-09,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Florida
+-36.89972222,-73.1525,2024-01-09,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.01,Biobío,San Pedro de la Paz
+-37.08194444,-72.25694444,2024-01-10,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.04,Biobío,Cabrero
+-38.0025,-73.30805556,2024-01-10,2.1 - Incendios Intencionales | 2.1.4. Conflicto territorial o patrimonial (deslindes  propiedades  apropiaciones de terreno  otros),1,33.5,Biobío,Contulmo
+-37.25861111,-72.72388889,2024-01-10,3.1 - Incendios Naturales,0,0.7,Biobío,San Rosendo
+-37.78138889,-73.52138889,2024-01-10,1.10 - Otras causas,0,0.57,Biobío,Los Alamos
+-37.60666667,-73.66138889,2024-01-10,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.01,Biobío,Lebu
+-37.35694444,-72.64861111,2024-01-10,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.1,Biobío,Laja
+-37.01583333,-73.14444444,2024-01-10,2.1 - Incendios Intencionales | 2.1.4. Conflicto territorial o patrimonial (deslindes  propiedades  apropiaciones de terreno  otros),1,2.3,Biobío,Coronel
+-38.22527778,-73.45777778,2024-01-10,1.9 - Líneas eléctricas,0,1.5,Biobío,Tirúa
+-37.78361111,-73.49138889,2024-01-10,4.2 - Faenas agrícolas y pecuarias | 4.2.1. Quema no avisada de desechos agrícolas que se propaga libre y sin control,0,0.19,Biobío,Los Alamos
+-37.26305556,-71.96694444,2024-01-11,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.38,Biobío,Tucapel
+-36.67694444,-72.94888889,2024-01-11,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.03,Biobío,Tomé
+-37.46611111,-72.39111111,2024-01-11,2.1 - Incendios Intencionales,1,0.12,Biobío,Los Angeles
+-36.67777778,-72.94611111,2024-01-11,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.9,Biobío,Tomé
+-36.69555556,-72.96888889,2024-01-11,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.02,Biobío,Tomé
+-36.89666667,-73.12694444,2024-01-11,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,4.7,Biobío,San Pedro de la Paz
+-37.78888889,-73.46555556,2024-01-11,4.1 - Faenas forestales | 4.1.3. Contacto o corte de conductor eléctrico producto de faena forestal,0,0.27,Biobío,Cañete
+-37.5975,-73.66722222,2024-01-11,1.7 - Originados por desplazamiento de personas  vehículos o aeronaves,0,0.02,Biobío,Lebu
+-37.45055556,-72.26111111,2024-01-11,4.9 - Líneas eléctricas,0,0.05,Biobío,Los Angeles
+-37.73611111,-73.50333333,2024-01-11,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,1.0,Biobío,Los Alamos
+-37.49916667,-72.69555556,2024-01-11,2.1 - Incendios Intencionales,1,0.12,Biobío,Nacimiento
+-37.59666667,-73.49222222,2024-01-11,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,0.1,Biobío,Los Alamos
+-36.74444444,-72.97333333,2024-01-11,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.01,Biobío,Penco
+-37.09805556,-72.54722222,2024-01-12,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.48,Biobío,Yumbel
+-36.79222222,-72.75388889,2024-01-12,1.2 - Faenas agrícolas y pecuarias | 1.2.2. Partículas incandescentes  generadas por roce de maquinaria o herramienta agrícola con rocas  cercos o material metálico,0,2.0,Biobío,Florida
+-37.26833333,-72.71555556,2024-01-12,5.1 - Incendios de causa indeterminada,0,0.02,Biobío,Laja
+-36.66805556,-72.88361111,2024-01-12,1.1 - Faenas Forestales | 1.1.2. Partículas incandescentes generadas por roce de maquinaria o herramienta forestal con rocas  cercos o material metálico,0,0.3,Biobío,Tomé
+-36.82277778,-72.87611111,2024-01-12,1.7 - Originados por desplazamiento de personas  vehículos o aeronaves | 1.7.1. Accidente o incendio de vehículo,0,0.01,Biobío,Concepción
+-37.06805556,-72.59027778,2024-01-13,1.9 - Líneas eléctricas,0,2.7,Biobío,Yumbel
+-37.56361111,-72.56527778,2024-01-13,2.1 - Incendios Intencionales,1,0.64,Biobío,Los Angeles
+-37.41055556,-72.24916667,2024-01-13,2.1 - Incendios Intencionales,1,0.72,Biobío,Los Angeles
+-37.21361111,-73.21527778,2024-01-13,1.10 - Otras causas | 1.10.1. Otras causas accidentales no clasificadas,0,0.5,Biobío,Arauco
+-38.33861111,-73.49527778,2024-01-13,1.10 - Otras causas,0,12.59,Biobío,Tirúa
+-36.61027778,-72.96861111,2024-01-13,1.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 1.6.1. Incendio estructural,0,0.2,Biobío,Tomé
+-36.66694444,-72.96416667,2024-01-13,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.14,Biobío,Tomé
+-36.80027778,-72.94888889,2024-01-13,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.03,Biobío,Concepción
+-37.73138889,-72.25083333,2024-01-13,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,2.76,Biobío,Mulchén
+-38.17722222,-73.43555556,2024-01-13,2.1 - Incendios Intencionales,1,0.52,Biobío,Tirúa
+-37.37611111,-72.63416667,2024-01-14,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.08,Biobío,Los Angeles
+-37.43638889,-72.26777778,2024-01-14,4.9 - Líneas eléctricas,0,0.32,Biobío,Los Angeles
+-38.23472222,-73.44333333,2024-01-14,2.1 - Incendios Intencionales,1,2.25,Biobío,Tirúa
+-37.58944444,-73.64138889,2024-01-14,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.2,Biobío,Lebu
+-36.76861111,-73.08861111,2024-01-14,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.23,Biobío,Talcahuano
+-37.45972222,-72.14611111,2024-01-14,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,16.0,Biobío,Los Angeles
+-38.19083333,-73.36333333,2024-01-14,4.5 - Actividades de control y extinción de incendios forestales,0,5.4,Biobío,Tirúa
+-36.96527778,-73.15888889,2024-01-14,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.01,Biobío,Coronel
+-36.80277778,-72.63388889,2024-01-14,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,1.6,Biobío,Florida
+-37.38916667,-72.64527778,2024-01-15,2.1 - Incendios Intencionales,1,0.01,Biobío,Los Angeles
+-37.62,-73.46,2024-01-15,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.09,Biobío,Los Alamos
+-36.73722222,-72.95638889,2024-01-15,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,1.8,Biobío,Penco
+-37.45555556,-72.14638889,2024-01-15,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,0.45,Biobío,Los Angeles
+-37.92972222,-73.42055556,2024-01-15,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.91,Biobío,Cañete
+-37.13722222,-72.55277778,2024-01-15,5.1 - Incendios de causa indeterminada,0,0.06,Biobío,Yumbel
+-37.18444444,-72.29583333,2024-01-15,2.1 - Incendios Intencionales,1,0.11,Biobío,Cabrero
+-37.13583333,-72.52388889,2024-01-16,4.8 - Otras quemas,0,0.05,Biobío,Yumbel
+-37.42444444,-72.50027778,2024-01-16,4.9 - Líneas eléctricas | 4.9.5. Otras causas eléctricas negligentes no  clasificadas,0,1.28,Biobío,Los Angeles
+-36.71138889,-72.96833333,2024-01-16,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.5,Biobío,Penco
+-36.8325,-73.15305556,2024-01-16,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.75,Biobío,San Pedro de la Paz
+-37.37666667,-72.825,2024-01-16,5.1 - Incendios de causa indeterminada | 5.1.1. Se investiga pero no es posible establecer la causa,0,0.77,Biobío,Nacimiento
+-37.56444444,-73.55416667,2024-01-16,1.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz,0,0.3,Biobío,Lebu
+-36.61222222,-72.95277778,2024-01-16,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.01,Biobío,Tomé
+-37.08,-73.16416667,2024-01-16,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.15,Biobío,Lota
+-37.4025,-72.41361111,2024-01-16,2.1 - Incendios Intencionales,1,0.2,Biobío,Los Angeles
+-37.14472222,-73.16833333,2024-01-17,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.005,Biobío,Lota
+-37.72111111,-72.2325,2024-01-17,2.1 - Incendios Intencionales,1,0.15,Biobío,Mulchén
+-37.28055556,-72.63083333,2024-01-17,1.2 - Faenas agrícolas y pecuarias | 1.2.2. Partículas incandescentes  generadas por roce de maquinaria o herramienta agrícola con rocas  cercos o material metálico,0,0.6,Biobío,Laja
+-38.08722222,-73.36694444,2024-01-17,5.1 - Incendios de causa indeterminada,0,3.0,Biobío,Cañete
+-37.52166667,-72.50916667,2024-01-18,4.9 - Líneas eléctricas | 4.9.3. Corte de conductor eléctrico por caída o fatiga de estructura de tendido eléctrico o postación,0,1.5,Biobío,Los Angeles
+-36.98277778,-72.65416667,2024-01-18,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,35.0,Biobío,Yumbel
+-37.46916667,-72.535,2024-01-18,1.7 - Originados por desplazamiento de personas  vehículos o aeronaves | 1.7.3. Generado por vehículo  (roce metálico  tubo de escape  desperfecto  otros),0,0.75,Biobío,Los Angeles
+-37.61138889,-72.25166667,2024-01-18,2.1 - Incendios Intencionales,1,0.06,Biobío,Los Angeles
+-37.15833333,-72.91777778,2024-01-18,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,1.2,Biobío,Hualqui
+-37.61305556,-73.67472222,2024-01-18,5.1 - Incendios de causa indeterminada,0,0.01,Biobío,Lebu
+-37.06416667,-72.25027778,2024-01-18,5.1 - Incendios de causa indeterminada,0,0.08,Biobío,Cabrero
+-37.60694444,-73.66194444,2024-01-18,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.19,Biobío,Lebu
+-37.43777778,-72.43777778,2024-01-18,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz,0,0.03,Biobío,Los Angeles
+-36.76861111,-73.08861111,2024-01-18,5.1 - Incendios de causa indeterminada,0,0.4,Biobío,Talcahuano
+-38.08,-73.31444444,2024-01-19,2.1 - Incendios Intencionales,1,22.0,Biobío,Contulmo
+-37.19555556,-72.40166667,2024-01-19,1.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz,0,0.02,Biobío,Cabrero
+-37.43333333,-72.19138889,2024-01-19,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.02,Biobío,Los Angeles
+-36.98972222,-73.14805556,2024-01-19,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.02,Biobío,Coronel
+-37.18055556,-72.6025,2024-01-19,4.9 - Líneas eléctricas,0,0.66,Biobío,Yumbel
+-36.88166667,-72.585,2024-01-19,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.48,Biobío,Florida
+-37.00583333,-73.15083333,2024-01-19,5.1 - Incendios de causa indeterminada,0,0.2,Biobío,Coronel
+-37.34055556,-72.74944444,2024-01-20,4.1 - Faenas forestales,0,0.2,Biobío,Nacimiento
+-37.08083333,-73.14444444,2024-01-20,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.5,Biobío,Lota
+-36.80444444,-72.7975,2024-01-20,4.11 - Producción y/o extracción de productos y/o derivados del bosque | 4.11.4. Empleo de fuentes de calor en actividades de apicultura,0,0.3,Biobío,Florida
+-37.64527778,-72.44472222,2024-01-20,1.2 - Faenas agrícolas y pecuarias,0,0.68,Biobío,Mulchén
+-37.67888889,-73.53333333,2024-01-20,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.86,Biobío,Lebu
+-37.64583333,-73.5775,2024-01-20,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.2,Biobío,Lebu
+-37.72888889,-72.25361111,2024-01-21,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,1.8,Biobío,Mulchén
+-37.64805556,-72.27722222,2024-01-21,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.16,Biobío,Mulchén
+-37.22333333,-72.21388889,2024-01-21,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.1. Generado por el uso de equipos o herramientas con fines de construcción  limpieza o montaje de estructuras,0,3.7,Biobío,Los Angeles
+-36.86388889,-73.12666667,2024-01-21,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.02,Biobío,San Pedro de la Paz
+-37.02583333,-72.39083333,2024-01-21,4.10 - Otras causas,0,0.01,Biobío,Cabrero
+-37.71722222,-71.24916667,2024-01-21,4.7 - Originados por desplazamiento de personas  vehículos o aeronaves | 4.7.1. Empleo de fuentes de calor en actividades religiosas  de peregrinación o de veneración,0,0.55,Biobío,Alto Biobío
+-36.77027778,-73.11972222,2024-01-21,5.1 - Incendios de causa indeterminada,0,2.8,Biobío,Talcahuano
+-37.01861111,-73.14277778,2024-01-21,2.1 - Incendios Intencionales | 2.1.4. Conflicto territorial o patrimonial (deslindes  propiedades  apropiaciones de terreno  otros),1,1.0,Biobío,Coronel
+-37.0875,-73.16583333,2024-01-21,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.1,Biobío,Lota
+-36.54416667,-72.91694444,2024-01-21,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.01,Biobío,Tomé
+-37.30527778,-71.94638889,2024-01-22,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.06,Biobío,Tucapel
+-37.93277778,-71.24305556,2024-01-22,3.1 - Incendios Naturales,0,0.62,Biobío,Alto Biobío
+-37.50194444,-72.68666667,2024-01-22,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.02,Biobío,Nacimiento
+-37.58166667,-71.88861111,2024-01-22,5.1 - Incendios de causa indeterminada,0,0.43,Biobío,Santa Bárbara
+-36.97888889,-72.64777778,2024-01-23,4.9 - Líneas eléctricas,0,0.4,Biobío,Yumbel
+-38.17833333,-73.43611111,2024-01-23,4.5 - Actividades de control y extinción de incendios forestales,0,0.5,Biobío,Tirúa
+-37.0675,-72.79416667,2024-01-23,2.1 - Incendios Intencionales,1,0.07,Biobío,Hualqui
+-37.4025,-72.40916667,2024-01-23,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.4,Biobío,Los Angeles
+-38.15388889,-73.36805556,2024-01-23,4.8 - Otras quemas,0,0.65,Biobío,Tirúa
+-37.82,-71.67138889,2024-01-23,2.1 - Incendios Intencionales,1,0.15,Biobío,Alto Biobío
+-36.67,-72.95972222,2024-01-23,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.05,Biobío,Tomé
+-38.25166667,-73.42388889,2024-01-23,1.10 - Otras causas,0,6.0,Biobío,Tirúa
+-37.58111111,-72.53583333,2024-01-23,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.15,Biobío,Negrete
+-37.46722222,-71.92111111,2024-01-23,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.06,Biobío,Quilleco
+-36.71972222,-72.97277778,2024-01-24,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.01,Biobío,Penco
+-36.78972222,-73.15916667,2024-01-24,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.6,Biobío,Hualpén
+-37.07083333,-72.28833333,2024-01-24,2.1 - Incendios Intencionales,1,0.2,Biobío,Cabrero
+-37.78277778,-73.42111111,2024-01-24,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.02,Biobío,Cañete
+-37.45166667,-72.37222222,2024-01-24,1.1 - Faenas Forestales | 1.1.2. Partículas incandescentes generadas por roce de maquinaria o herramienta forestal con rocas  cercos o material metálico,0,22.9,Biobío,Los Angeles
+-38.20833333,-73.445,2024-01-24,1.10 - Otras causas,0,1.17,Biobío,Tirúa
+-36.90305556,-73.1425,2024-01-24,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.1,Biobío,San Pedro de la Paz
+-37.47333333,-72.38305556,2024-01-24,5.1 - Incendios de causa indeterminada,0,0.1,Biobío,Los Angeles
+-37.23277778,-73.22972222,2024-01-25,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.149,Biobío,Arauco
+-37.81833333,-73.33083333,2024-01-25,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.46,Biobío,Cañete
+-36.72527778,-72.97194444,2024-01-25,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.2,Biobío,Penco
+-37.35694444,-72.29305556,2024-01-25,4.10 - Otras causas,0,0.01,Biobío,Los Angeles
+-36.90388889,-73.13694444,2024-01-25,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.25,Biobío,San Pedro de la Paz
+-37.01111111,-72.5175,2024-01-25,2.1 - Incendios Intencionales,1,0.24,Biobío,Cabrero
+-36.68305556,-72.96277778,2024-01-26,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.52,Biobío,Tomé
+-36.71972222,-72.97305556,2024-01-26,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,0.03,Biobío,Penco
+-36.64694444,-72.9575,2024-01-26,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.02,Biobío,Tomé
+-36.86388889,-73.12666667,2024-01-26,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.48,Biobío,San Pedro de la Paz
+-36.66972222,-72.96,2024-01-26,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.01,Biobío,Tomé
+-36.54,-72.92027778,2024-01-26,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Tomé
+-37.10083333,-73.14972222,2024-01-26,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.01,Biobío,Lota
+-37.79083333,-71.23944444,2024-01-27,1.10 - Otras causas,0,0.48,Biobío,Alto Biobío
+-37.73166667,-72.25083333,2024-01-27,2.1 - Incendios Intencionales,1,0.4,Biobío,Mulchén
+-37.32861111,-72.1875,2024-01-27,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,1.14,Biobío,Los Angeles
+-36.73694444,-72.98277778,2024-01-27,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.22,Biobío,Penco
+-37.28055556,-72.47972222,2024-01-27,1.7 - Originados por desplazamiento de personas  vehículos o aeronaves | 1.7.3. Generado por vehículo  (roce metálico  tubo de escape  desperfecto  otros),0,0.15,Biobío,Los Angeles
+-37.045,-72.36972222,2024-01-27,4.9 - Líneas eléctricas,0,0.96,Biobío,Cabrero
+-37.44194444,-71.94805556,2024-01-27,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.1,Biobío,Quilleco
+-37.40888889,-72.76611111,2024-01-27,1.10 - Otras causas | 1.10.1. Otras causas accidentales no clasificadas,0,0.09,Biobío,Nacimiento
+-37.29194444,-71.95777778,2024-01-27,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.32,Biobío,Tucapel
+-37.28944444,-72.30638889,2024-01-27,2.1 - Incendios Intencionales,1,0.5,Biobío,Los Angeles
+-36.72611111,-72.97305556,2024-01-28,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.01,Biobío,Penco
+-37.74638889,-73.56722222,2024-01-28,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.23,Biobío,Lebu
+-37.21277778,-72.64888889,2024-01-28,1.7 - Originados por desplazamiento de personas  vehículos o aeronaves | 1.7.3. Generado por vehículo  (roce metálico  tubo de escape  desperfecto  otros),0,0.08,Biobío,San Rosendo
+-37.45,-71.91888889,2024-01-28,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.4,Biobío,Quilleco
+-37.63305556,-72.09638889,2024-01-28,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.2. Generado por conexión  irregular de energía eléctrica,0,0.25,Biobío,Santa Bárbara
+-37.44611111,-71.91805556,2024-01-28,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.14,Biobío,Quilleco
+-36.74916667,-72.92361111,2024-01-28,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.4,Biobío,Penco
+-37.60555556,-72.47638889,2024-01-29,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.6,Biobío,Negrete
+-37.66305556,-72.62361111,2024-01-29,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.09,Biobío,Negrete
+-37.72361111,-72.2975,2024-01-29,1.2 - Faenas agrícolas y pecuarias | 1.2.2. Partículas incandescentes  generadas por roce de maquinaria o herramienta agrícola con rocas  cercos o material metálico,0,12.0,Biobío,Mulchén
+-37.86527778,-71.67194444,2024-01-29,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.9,Biobío,Alto Biobío
+-37.42861111,-71.93111111,2024-01-29,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,5.6,Biobío,Quilleco
+-37.51805556,-72.21055556,2024-01-29,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.2. Generado por conexión  irregular de energía eléctrica,0,0.22,Biobío,Los Angeles
+-37.89888889,-73.485,2024-01-29,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.5,Biobío,Cañete
+-37.08472222,-73.17027778,2024-01-29,2.1 - Incendios Intencionales,1,0.54,Biobío,Lota
+-36.68194444,-73.11833333,2024-01-30,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.16,Biobío,Talcahuano
+-37.73472222,-72.23361111,2024-01-30,2.1 - Incendios Intencionales,1,1.12,Biobío,Mulchén
+-37.5425,-72.48472222,2024-01-30,5.1 - Incendios de causa indeterminada,0,0.4,Biobío,Los Angeles
+-37.43638889,-72.42222222,2024-01-30,5.1 - Incendios de causa indeterminada,0,2.5,Biobío,Los Angeles
+-37.81805556,-72.41111111,2024-01-30,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,1.66,Biobío,Mulchén
+-37.46472222,-72.43611111,2024-01-30,2.1 - Incendios Intencionales,1,0.05,Biobío,Los Angeles
+-37.27416667,-72.65305556,2024-01-30,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.05,Biobío,Laja
+-36.87444444,-73.13472222,2024-01-30,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,2.8,Biobío,San Pedro de la Paz
+-37.41722222,-72.34805556,2024-01-30,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,1.56,Biobío,Los Angeles
+-36.97916667,-73.14416667,2024-01-30,2.1 - Incendios Intencionales | 2.1.4. Conflicto territorial o patrimonial (deslindes  propiedades  apropiaciones de terreno  otros),1,1.25,Biobío,Coronel
+-37.1325,-72.86694444,2024-01-30,1.9 - Líneas eléctricas | 1.9.3. Otro accidente eléctrico no clasificado,0,0.2,Biobío,Hualqui
+-37.72777778,-73.53027778,2024-01-30,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Lebu
+-37.31,-72.35805556,2024-01-31,2.1 - Incendios Intencionales,1,0.07,Biobío,Los Angeles
+-37.46,-73.33,2024-01-31,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.248,Biobío,Curanilahue
+-36.60944444,-72.94388889,2024-01-31,4.10 - Otras causas | 4.10.10. Empleo de fuentes de calor para eliminar recubrimiento de  conductores eléctricos,0,0.4,Biobío,Tomé
+-37.00583333,-73.17277778,2024-01-31,5.1 - Incendios de causa indeterminada,0,0.01,Biobío,Coronel
+-36.82027778,-73.06527778,2024-01-31,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.12,Biobío,Concepción
+-37.26111111,-72.23055556,2024-01-31,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,1.0,Biobío,Mulchén
+-37.5525,-72.32722222,2024-01-31,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.05,Biobío,Los Angeles
+-37.71527778,-72.10638889,2024-01-31,4.2 - Faenas agrícolas y pecuarias | 4.2.8. Otras causas negligentes no clasificadas en faenas agrícolas y pecuarias,0,135.43,Biobío,Mulchén
+-37.01472222,-72.40388889,2024-01-31,2.1 - Incendios Intencionales,1,2.7,Biobío,Cabrero
+-37.52722222,-72.51472222,2024-01-31,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,5.7,Biobío,Los Angeles
+-36.70361111,-73.13777778,2024-01-31,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.2,Biobío,Talcahuano
+-36.86777778,-73.13055556,2024-01-31,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.9,Biobío,San Pedro de la Paz
+-36.84444444,-73.11083333,2024-02-01,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.2,Biobío,San Pedro de la Paz
+-37.73138889,-73.53361111,2024-02-01,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.03,Biobío,Lebu
+-37.94305556,-73.41333333,2024-02-01,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,0.3,Biobío,Cañete
+-36.79527778,-72.63333333,2024-02-01,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.1. Generado por el uso de equipos o herramientas con fines de construcción  limpieza o montaje de estructuras,0,0.2,Biobío,Florida
+-37.55888889,-72.56305556,2024-02-01,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.1. Generado por el uso de equipos o herramientas con fines de construcción  limpieza o montaje de estructuras,0,1.86,Biobío,Los Angeles
+-37.27694444,-72.6475,2024-02-01,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.04,Biobío,Laja
+-37.72055556,-72.47555556,2024-02-01,2.1 - Incendios Intencionales,1,97.21,Biobío,Mulchén
+-37.72944444,-72.24333333,2024-02-01,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,2.2,Biobío,Mulchén
+-37.71111111,-72.30222222,2024-02-01,5.1 - Incendios de causa indeterminada,0,9.0,Biobío,Mulchén
+-37.93277778,-71.24305556,2024-02-01,3.1 - Incendios Naturales,0,6.5,Biobío,Alto Biobío
+-37.685,-72.36305556,2024-02-01,2.1 - Incendios Intencionales,1,1.05,Biobío,Mulchén
+-36.89444444,-73.12527778,2024-02-02,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,San Pedro de la Paz
+-36.81166667,-73.0825,2024-02-02,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.2,Biobío,Hualpén
+-37.31833333,-72.17444444,2024-02-02,2.1 - Incendios Intencionales,1,1.17,Biobío,Los Angeles
+-37.40777778,-72.40694444,2024-02-02,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.21,Biobío,Los Angeles
+-37.23,-72.8,2024-02-02,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.1. Generado por el uso de equipos o herramientas con fines de construcción  limpieza o montaje de estructuras,0,0.06,Biobío,Santa Juana
+-37.28805556,-71.80111111,2024-02-02,4.2 - Faenas agrícolas y pecuarias | 4.2.8. Otras causas negligentes no clasificadas en faenas agrícolas y pecuarias,0,1.2,Biobío,Tucapel
+-37.40055556,-72.48972222,2024-02-02,3.1 - Incendios Naturales,0,0.11,Biobío,Los Angeles
+-37.24222222,-72.38027778,2024-02-02,5.1 - Incendios de causa indeterminada,0,5.0,Biobío,Los Angeles
+-37.32,-72.06,2024-02-03,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.36,Biobío,Los Angeles
+-36.74,-72.96777778,2024-02-03,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Penco
+-37.62194444,-73.66305556,2024-02-03,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.6,Biobío,Lebu
+-37.08305556,-72.25388889,2024-02-03,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.1. Generado por el uso de equipos o herramientas con fines de construcción  limpieza o montaje de estructuras,0,0.25,Biobío,Cabrero
+-37.27,-73.33555556,2024-02-03,2.1 - Incendios Intencionales,1,0.21,Biobío,Arauco
+-36.54694444,-72.91611111,2024-02-03,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.04,Biobío,Tomé
+-37.26638889,-72.7275,2024-02-03,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.1,Biobío,San Rosendo
+-36.99027778,-73.15138889,2024-02-03,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.01,Biobío,Coronel
+-37.93055556,-73.42027778,2024-02-03,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.22,Biobío,Cañete
+-37.59777778,-73.65083333,2024-02-03,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,5.32,Biobío,Lebu
+-37.33138889,-72.10916667,2024-02-03,4.9 - Líneas eléctricas | 4.9.4. Sobrecalentamiento de estructuras asociados al sistema eléctrico (poste  transformador  uniones  aisladores  otros),0,0.62,Biobío,Los Angeles
+-37.50055556,-72.69722222,2024-02-03,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.24,Biobío,Nacimiento
+-37.94805556,-73.47166667,2024-02-03,5.1 - Incendios de causa indeterminada,0,0.2,Biobío,Cañete
+-37.14527778,-72.9225,2024-02-03,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.06,Biobío,Hualqui
+-37.73166667,-72.25083333,2024-02-03,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.04,Biobío,Mulchén
+-37.78,-71.96166667,2024-02-04,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.34,Biobío,Quilaco
+-38.45888889,-73.48611111,2024-02-04,5.1 - Incendios de causa indeterminada,0,3.54,Biobío,Tirúa
+-37.32777778,-72.10805556,2024-02-04,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Los Angeles
+-37.20194444,-72.2225,2024-02-04,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.2,Biobío,Los Angeles
+-38.25611111,-73.50805556,2024-02-04,5.1 - Incendios de causa indeterminada,0,6.0,Biobío,Tirúa
+-37.4925,-72.26166667,2024-02-04,5.1 - Incendios de causa indeterminada,0,7.53,Biobío,Los Angeles
+-37.20777778,-72.22138889,2024-02-04,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.29,Biobío,Los Angeles
+-37.54277778,-72.30527778,2024-02-04,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.1,Biobío,Los Angeles
+-37.005,-73.13972222,2024-02-04,2.1 - Incendios Intencionales | 2.1.4. Conflicto territorial o patrimonial (deslindes  propiedades  apropiaciones de terreno  otros),1,0.5,Biobío,Coronel
+-36.71194444,-73.14638889,2024-02-05,5.1 - Incendios de causa indeterminada,0,0.05,Biobío,Talcahuano
+-37.82916667,-73.39861111,2024-02-05,4.10 - Otras causas | 4.10.5. Empleo de fuentes de calor por menores de edad,0,0.1,Biobío,Cañete
+-37.81833333,-72.22305556,2024-02-05,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,64.38,Biobío,Mulchén
+-37.54277778,-72.55472222,2024-02-05,4.10 - Otras causas | 4.10.8. Ignición por combustión espontánea en combustibles orgánicos  (fardos de pastos  acopios de aserrín o chips de madera),0,0.05,Biobío,Los Angeles
+-37.59916667,-72.53888889,2024-02-06,5.1 - Incendios de causa indeterminada,0,0.04,Biobío,Negrete
+-37.82361111,-72.40916667,2024-02-07,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.38,Biobío,Mulchén
+-37.39138889,-72.34416667,2024-02-07,5.1 - Incendios de causa indeterminada,0,0.14,Biobío,Los Angeles
+-36.65583333,-72.95416667,2024-02-07,5.1 - Incendios de causa indeterminada | 5.1.1. Se investiga pero no es posible establecer la causa,0,0.01,Biobío,Tomé
+-37.40666667,-72.52472222,2024-02-07,2.1 - Incendios Intencionales,1,0.15,Biobío,Los Angeles
+-37.64777778,-73.57888889,2024-02-07,2.1 - Incendios Intencionales | 2.1.9. Cambio irregular de uso de suelo (habitacional  parcelaciones  agrícola  recreacional  otros),1,0.01,Biobío,Lebu
+-37.48305556,-72.41694444,2024-02-07,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,2.03,Biobío,Los Angeles
+-37.68055556,-71.81861111,2024-02-07,5.1 - Incendios de causa indeterminada,0,10.0,Biobío,Santa Bárbara
+-36.65583333,-72.95416667,2024-02-07,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Tomé
+-36.53805556,-72.90694444,2024-02-07,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.09,Biobío,Tomé
+-37.25722222,-72.73222222,2024-02-08,2.1 - Incendios Intencionales,1,0.9,Biobío,San Rosendo
+-37.25583333,-72.73611111,2024-02-08,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,0.07,Biobío,San Rosendo
+-37.93027778,-73.41694444,2024-02-08,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,3.6,Biobío,Cañete
+-37.54388889,-72.59611111,2024-02-08,4.11 - Producción y/o extracción de productos y/o derivados del bosque | 4.11.4. Empleo de fuentes de calor en actividades de apicultura,0,0.12,Biobío,Negrete
+-37.60666667,-73.66083333,2024-02-08,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.03,Biobío,Lebu
+-37.62888889,-73.65444444,2024-02-08,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.6,Biobío,Lebu
+-37.57111111,-73.43305556,2024-02-08,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.06,Biobío,Los Alamos
+-36.80416667,-72.97388889,2024-02-09,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.15,Biobío,Penco
+-37.34638889,-72.88666667,2024-02-09,1.7 - Originados por desplazamiento de personas  vehículos o aeronaves | 1.7.1. Accidente o incendio de vehículo,0,1.2,Biobío,Nacimiento
+-37.26972222,-72.71388889,2024-02-09,2.1 - Incendios Intencionales,1,0.2,Biobío,Laja
+-37.025,-73.11611111,2024-02-09,1.9 - Líneas eléctricas | 1.9.3. Otro accidente eléctrico no clasificado,0,0.2,Biobío,Coronel
+-38.40194444,-73.38166667,2024-02-09,5.1 - Incendios de causa indeterminada,0,0.2,Biobío,Tirúa
+-36.76777778,-73.13277778,2024-02-09,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.28,Biobío,Talcahuano
+-36.85277778,-73.12888889,2024-02-09,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.09,Biobío,San Pedro de la Paz
+-37.17722222,-72.61,2024-02-10,1.9 - Líneas eléctricas,0,0.35,Biobío,Yumbel
+-36.5425,-72.9575,2024-02-10,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.02,Biobío,Tomé
+-37.43611111,-71.92805556,2024-02-10,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.39,Biobío,Quilleco
+-37.57888889,-72.15305556,2024-02-10,5.1 - Incendios de causa indeterminada,0,0.4,Biobío,Los Angeles
+-37.01333333,-73.14916667,2024-02-10,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.65,Biobío,Coronel
+-37.39472222,-71.79222222,2024-02-11,2.1 - Incendios Intencionales | 2.1.4. Conflicto territorial o patrimonial (deslindes  propiedades  apropiaciones de terreno  otros),1,0.9,Biobío,Quilleco
+-36.69555556,-72.96861111,2024-02-11,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.3,Biobío,Penco
+-37.49833333,-72.27166667,2024-02-11,2.1 - Incendios Intencionales,1,0.03,Biobío,Los Angeles
+-36.79527778,-72.63333333,2024-02-11,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.22,Biobío,Concepción
+-37.44416667,-71.91916667,2024-02-12,2.1 - Incendios Intencionales,1,0.01,Biobío,Quilleco
+-36.75361111,-73.02583333,2024-02-12,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.06,Biobío,Penco
+-36.77055556,-73.02416667,2024-02-12,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.08,Biobío,Penco
+-37.00166667,-73.14,2024-02-12,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.5,Biobío,Coronel
+-37.42611111,-72.63722222,2024-02-12,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,1.95,Biobío,Los Angeles
+-38.16166667,-73.38361111,2024-02-12,5.1 - Incendios de causa indeterminada,0,0.3,Biobío,Tirúa
+-37.43916667,-71.90888889,2024-02-12,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.23,Biobío,Quilleco
+-37.47055556,-72.28722222,2024-02-12,1.2 - Faenas agrícolas y pecuarias | 1.2.2. Partículas incandescentes  generadas por roce de maquinaria o herramienta agrícola con rocas  cercos o material metálico,0,1.3,Biobío,Los Angeles
+-37.50166667,-72.17694444,2024-02-12,2.1 - Incendios Intencionales,1,0.15,Biobío,Los Angeles
+-37.43666667,-72.52972222,2024-02-12,4.2 - Faenas agrícolas y pecuarias,0,1.0,Biobío,Los Angeles
+-37.60472222,-72.47638889,2024-02-13,2.1 - Incendios Intencionales,1,1.98,Biobío,Negrete
+-37.41611111,-72.52138889,2024-02-13,5.1 - Incendios de causa indeterminada,0,0.2,Biobío,Los Angeles
+-37.37444444,-71.9325,2024-02-13,1.1 - Faenas Forestales | 1.1.2. Partículas incandescentes generadas por roce de maquinaria o herramienta forestal con rocas  cercos o material metálico,0,2.34,Biobío,Quilleco
+-37.49388889,-72.43722222,2024-02-13,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.76,Biobío,Los Angeles
+-36.995,-72.82055556,2024-02-13,4.11 - Producción y/o extracción de productos y/o derivados del bosque | 4.11.1. Elaboración de carbón,0,12.5,Biobío,Hualqui
+-37.76527778,-73.37222222,2024-02-13,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.41,Biobío,Cañete
+-36.74527778,-72.91305556,2024-02-13,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.1,Biobío,Penco
+-37.25888889,-72.73361111,2024-02-14,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,San Rosendo
+-37.2525,-72.20055556,2024-02-14,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.31,Biobío,Los Angeles
+-37.50611111,-72.65111111,2024-02-14,1.10 - Otras causas,0,0.01,Biobío,Nacimiento
+-37.91805556,-72.13361111,2024-02-14,2.1 - Incendios Intencionales,1,0.01,Biobío,Mulchén
+-37.91194444,-72.14861111,2024-02-15,2.1 - Incendios Intencionales,1,0.01,Biobío,Mulchén
+-37.01944444,-72.275,2024-02-15,1.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz,0,0.15,Biobío,Cabrero
+-37.80888889,-73.29333333,2024-02-15,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.4,Biobío,Cañete
+-37.06861111,-72.41694444,2024-02-15,4.8 - Otras quemas | 4.8.1. Quema no avisada con fines de limpieza en canales  cunetas  cercos o caminos (en predios particulares o públicos) que se propaga libre y sin control,0,0.35,Biobío,Cabrero
+-38.18916667,-73.355,2024-02-16,5.1 - Incendios de causa indeterminada,0,3.9,Biobío,Tirúa
+-36.9925,-73.15194444,2024-02-16,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.1,Biobío,Coronel
+-36.83888889,-73.15055556,2024-02-16,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.17,Biobío,San Pedro de la Paz
+-36.60527778,-72.9675,2024-02-16,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.05,Biobío,Tomé
+-37.01,-72.76083333,2024-02-16,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.1. Generado por el uso de equipos o herramientas con fines de construcción  limpieza o montaje de estructuras,0,11.5,Biobío,Hualqui
+-37.25277778,-72.19916667,2024-02-16,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.13,Biobío,Los Angeles
+-37.37277778,-72.63583333,2024-02-16,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,0.6,Biobío,Los Angeles
+-37.20361111,-72.76861111,2024-02-17,5.1 - Incendios de causa indeterminada,0,0.01,Biobío,San Rosendo
+-37.66805556,-72.07833333,2024-02-17,4.1 - Faenas forestales | 4.1.3. Contacto o corte de conductor eléctrico producto de faena forestal,0,0.33,Biobío,Quilaco
+-37.80555556,-73.43138889,2024-02-17,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.26,Biobío,Cañete
+-37.59166667,-73.645,2024-02-17,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.7,Biobío,Lebu
+-36.8325,-73.14277778,2024-02-17,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,2.7,Biobío,San Pedro de la Paz
+-37.90527778,-72.1475,2024-02-17,4.5 - Actividades de control y extinción de incendios forestales,0,8.0,Biobío,Mulchén
+-37.50111111,-72.65,2024-02-17,2.1 - Incendios Intencionales,1,0.1,Biobío,Nacimiento
+-37.87333333,-73.40861111,2024-02-17,4.8 - Otras quemas | 4.8.1. Quema no avisada con fines de limpieza en canales  cunetas  cercos o caminos (en predios particulares o públicos) que se propaga libre y sin control,0,4.0,Biobío,Cañete
+-37.50333333,-72.17722222,2024-02-17,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,10.0,Biobío,Los Angeles
+-37.02833333,-72.43666667,2024-02-17,4.10 - Otras causas,0,0.36,Biobío,Cabrero
+-37.44666667,-71.93972222,2024-02-17,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,8.2,Biobío,Quilleco
+-37.56111111,-72.05194444,2024-02-17,4.10 - Otras causas,0,0.01,Biobío,Santa Bárbara
+-37.66361111,-72.11555556,2024-02-17,1.9 - Líneas eléctricas,0,0.65,Biobío,Santa Bárbara
+-37.63694444,-72.0825,2024-02-17,1.9 - Líneas eléctricas,0,0.03,Biobío,Mulchén
+-37.4875,-72.36027778,2024-02-17,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,12.3,Biobío,Los Angeles
+-37.83416667,-72.22583333,2024-02-17,2.1 - Incendios Intencionales,1,1.55,Biobío,Mulchén
+-37.42777778,-72.61027778,2024-02-18,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.2,Biobío,Los Angeles
+-38.14666667,-73.37583333,2024-02-18,1.1 - Faenas Forestales,0,1.0,Biobío,Tirúa
+-36.70388889,-72.70277778,2024-02-18,5.1 - Incendios de causa indeterminada | 5.1.1. Se investiga pero no es posible establecer la causa,0,0.02,Biobío,Florida
+-36.70416667,-73.13722222,2024-02-18,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.04,Biobío,Talcahuano
+-37.44388889,-71.92833333,2024-02-18,2.1 - Incendios Intencionales,1,0.35,Biobío,Quilleco
+-36.61055556,-72.94388889,2024-02-18,5.1 - Incendios de causa indeterminada,0,0.01,Biobío,Tomé
+-37.40916667,-72.40722222,2024-02-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.4,Biobío,Los Angeles
+-37.67944444,-72.26833333,2024-02-19,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.11,Biobío,Mulchén
+-37.0175,-72.53333333,2024-02-19,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,1.2,Biobío,Yumbel
+-36.67861111,-72.96611111,2024-02-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.18,Biobío,Tomé
+-36.67472222,-72.95138889,2024-02-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.35,Biobío,Tomé
+-37.14555556,-72.91777778,2024-02-19,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,1.1,Biobío,Hualqui
+-37.26555556,-72.72555556,2024-02-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.1,Biobío,San Rosendo
+-37.43916667,-71.90916667,2024-02-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.74,Biobío,Quilleco
+-37.55666667,-72.56083333,2024-02-19,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.2. Generado por conexión  irregular de energía eléctrica,0,4.73,Biobío,Los Angeles
+-37.03305556,-72.38611111,2024-02-19,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.1,Biobío,Cabrero
+-37.08444444,-72.95777778,2024-02-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.12,Biobío,Hualqui
+-36.83555556,-73.05555556,2024-02-19,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.01,Biobío,Concepción
+-37.48388889,-73.57777778,2024-02-20,1.8 - Otras quemas,0,0.1,Biobío,Lebu
+-37.20305556,-72.21833333,2024-02-20,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,1.16,Biobío,Los Angeles
+-38.25138889,-73.50194444,2024-02-21,2.1 - Incendios Intencionales,1,0.5,Biobío,Tirúa
+-37.16055556,-72.91444444,2024-02-21,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.03,Biobío,Hualqui
+-37.81888889,-72.22222222,2024-02-21,2.1 - Incendios Intencionales,1,0.23,Biobío,Mulchén
+-37.0775,-72.64527778,2024-02-22,2.1 - Incendios Intencionales,1,0.01,Biobío,Yumbel
+-37.00861111,-72.96972222,2024-02-22,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.06,Biobío,Hualqui
+-36.71111111,-72.96833333,2024-02-23,2.1 - Incendios Intencionales,1,0.14,Biobío,Penco
+-37.72888889,-72.17194444,2024-02-23,2.1 - Incendios Intencionales,1,0.01,Biobío,Mulchén
+-36.84166667,-73.12972222,2024-02-23,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.03,Biobío,San Pedro de la Paz
+-36.69055556,-72.96333333,2024-02-23,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.6,Biobío,Tomé
+-36.70305556,-72.69416667,2024-02-23,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.02,Biobío,Florida
+-37.21777778,-72.22055556,2024-02-23,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,6.7,Biobío,Los Angeles
+-37.23027778,-72.65861111,2024-02-23,2.1 - Incendios Intencionales,1,0.06,Biobío,San Rosendo
+-36.79166667,-72.60722222,2024-02-24,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.05,Biobío,Florida
+-38.04444444,-73.24472222,2024-02-24,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,3.2,Biobío,Contulmo
+-36.68916667,-72.95305556,2024-02-24,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.1,Biobío,Tomé
+-37.44833333,-72.10222222,2024-02-24,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.2. Generado por conexión  irregular de energía eléctrica,0,0.1,Biobío,Los Angeles
+-37.88472222,-73.38694444,2024-02-24,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.37,Biobío,Cañete
+-37.225,-72.21972222,2024-02-24,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz,0,0.01,Biobío,Los Angeles
+-37.67916667,-72.26861111,2024-02-24,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,0.16,Biobío,Mulchén
+-37.11305556,-72.57,2024-02-25,5.1 - Incendios de causa indeterminada,0,36.0,Biobío,Yumbel
+-36.69611111,-72.96777778,2024-02-25,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,2.45,Biobío,Penco
+-37.46194444,-72.50472222,2024-02-25,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Los Angeles
+-38.12055556,-73.38888889,2024-02-25,2.1 - Incendios Intencionales,1,6.0,Biobío,Tirúa
+-37.81583333,-72.40805556,2024-02-25,2.1 - Incendios Intencionales | 2.1.6. Para observar operaciones de combate de incendios forestales,1,0.02,Biobío,Mulchén
+-37.66888889,-72.59305556,2024-02-25,2.1 - Incendios Intencionales,1,0.87,Biobío,Negrete
+-38.17694444,-73.43583333,2024-02-25,2.1 - Incendios Intencionales,1,1.4,Biobío,Tirúa
+-36.83027778,-73.06638889,2024-02-25,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.04,Biobío,Concepción
+-37.8175,-72.40916667,2024-02-25,2.1 - Incendios Intencionales | 2.1.6. Para observar operaciones de combate de incendios forestales,1,0.02,Biobío,Mulchén
+-37.96527778,-73.22777778,2024-02-25,1.10 - Otras causas,0,3.0,Biobío,Contulmo
+-37.2625,-72.35388889,2024-02-26,4.9 - Líneas eléctricas | 4.9.2. Corte de conductor eléctrico por caída de rama o árbol (excepto por faena forestal o agrícola),0,1.55,Biobío,Los Angeles
+-37.44611111,-72.07555556,2024-02-26,5.1 - Incendios de causa indeterminada,0,0.15,Biobío,Quilleco
+-37.44,-72.07,2024-02-26,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.29,Biobío,Los Angeles
+-38.38166667,-73.46722222,2024-02-26,4.2 - Faenas agrícolas y pecuarias,0,2.01,Biobío,Tirúa
+-37.08638889,-73.15861111,2024-02-26,4.10 - Otras causas | 4.10.5. Empleo de fuentes de calor por menores de edad,0,0.02,Biobío,Lota
+-37.25888889,-72.20277778,2024-02-26,2.1 - Incendios Intencionales,1,0.42,Biobío,Los Angeles
+-37.42527778,-72.21277778,2024-02-26,2.1 - Incendios Intencionales,1,3.44,Biobío,Los Angeles
+-38.035,-73.35222222,2024-02-26,5.1 - Incendios de causa indeterminada,0,0.92,Biobío,Cañete
+-36.77805556,-73.035,2024-02-26,4.8 - Otras quemas,0,0.02,Biobío,Penco
+-36.86916667,-73.13222222,2024-02-27,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.15,Biobío,San Pedro de la Paz
+-36.85666667,-72.93527778,2024-02-27,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.316,Biobío,Concepción
+-37.5075,-72.65388889,2024-02-27,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,0.06,Biobío,Nacimiento
+-36.99055556,-72.63083333,2024-02-27,2.1 - Incendios Intencionales,1,0.3,Biobío,Yumbel
+-36.78333333,-72.70583333,2024-02-27,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.21,Biobío,Florida
+-37.80805556,-73.26333333,2024-02-27,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,1.19,Biobío,Cañete
+-37.42861111,-72.42916667,2024-02-27,1.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz,0,0.07,Biobío,Los Angeles
+-36.96333333,-73.15861111,2024-02-27,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,7.4,Biobío,Coronel
+-36.60555556,-72.95694444,2024-02-27,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.02,Biobío,Tomé
+-36.66888889,-72.95972222,2024-02-27,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.02,Biobío,Tomé
+-38.18388889,-73.40027778,2024-02-28,2.1 - Incendios Intencionales,1,4.92,Biobío,Tirúa
+-37.66805556,-72.0575,2024-02-28,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,13.0,Biobío,Quilaco
+-37.09861111,-72.58861111,2024-02-28,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Yumbel
+-36.90555556,-73.13722222,2024-02-28,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.03,Biobío,San Pedro de la Paz
+-37.70583333,-73.41611111,2024-02-28,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.33,Biobío,Cañete
+-37.08222222,-73.14361111,2024-02-28,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.03,Biobío,Lota
+-37.72694444,-72.23361111,2024-02-28,2.1 - Incendios Intencionales,1,0.1,Biobío,Mulchén
+-37.25916667,-72.7325,2024-02-28,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.2,Biobío,San Rosendo
+-37.08055556,-72.44472222,2024-02-29,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.5,Biobío,Cabrero
+-37.02055556,-73.14944444,2024-02-29,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.03,Biobío,Coronel
+-36.72277778,-73.14388889,2024-02-29,5.1 - Incendios de causa indeterminada,0,0.1,Biobío,Talcahuano
+-37.47305556,-72.38166667,2024-02-29,5.1 - Incendios de causa indeterminada,0,0.2,Biobío,Los Angeles
+-36.59888889,-72.96194444,2024-02-29,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.1,Biobío,Tomé
+-38.34444444,-73.32916667,2024-02-29,4.8 - Otras quemas,0,0.5,Biobío,Tirúa
+-37.72777778,-72.24305556,2024-02-29,4.1 - Faenas forestales | 4.1.8. Otras causas negligentes no clasificadas en faenas forestales,0,0.1,Biobío,Mulchén
+-36.68444444,-72.96638889,2024-03-01,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.1,Biobío,Penco
+-37.18333333,-72.74555556,2024-03-01,5.1 - Incendios de causa indeterminada,0,0.6,Biobío,Yumbel
+-37.62555556,-73.475,2024-03-01,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.35,Biobío,Los Alamos
+-37.93055556,-73.41444444,2024-03-01,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.7,Biobío,Cañete
+-37.82305556,-73.39111111,2024-03-01,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.66,Biobío,Cañete
+-37.10361111,-73.14055556,2024-03-01,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.02,Biobío,Lota
+-37.66666667,-72.06027778,2024-03-02,2.1 - Incendios Intencionales | 2.1.2. Conflicto entre personas (venganza  familiares  pasionales  otros),1,3.39,Biobío,Quilaco
+-38.19777778,-73.39472222,2024-03-02,5.1 - Incendios de causa indeterminada,0,214.66,Biobío,Tirúa
+-37.46666667,-72.12277778,2024-03-02,5.1 - Incendios de causa indeterminada,0,0.15,Biobío,Los Angeles
+-36.80583333,-73.03611111,2024-03-02,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.2,Biobío,Concepción
+-36.97833333,-73.16555556,2024-03-02,4.6 - Parcelaciones  edificaciones residenciales  industriales u otras en zonas rurales o de interfaz | 4.6.1. Generado por el uso de equipos o herramientas con fines de construcción  limpieza o montaje de estructuras,0,0.35,Biobío,Coronel
+-37.88055556,-73.37944444,2024-03-02,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.55,Biobío,Cañete
+-37.81666667,-72.41083333,2024-03-02,2.1 - Incendios Intencionales | 2.1.6. Para observar operaciones de combate de incendios forestales,1,0.05,Biobío,Mulchén
+-37.595,-72.58944444,2024-03-02,2.1 - Incendios Intencionales,1,0.3,Biobío,Negrete
+-38.22555556,-73.42361111,2024-03-02,5.1 - Incendios de causa indeterminada,0,38.0,Biobío,Tirúa
+-36.60777778,-72.95722222,2024-03-02,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.05,Biobío,Tomé
+-37.25611111,-72.19972222,2024-03-03,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.96,Biobío,Los Angeles
+-37.40222222,-72.34222222,2024-03-03,5.1 - Incendios de causa indeterminada,0,0.1,Biobío,Los Angeles
+-37.93111111,-71.24194444,2024-03-03,5.1 - Incendios de causa indeterminada,0,460.81,Biobío,Alto Biobío
+-37.71666667,-72.09805556,2024-03-03,5.1 - Incendios de causa indeterminada,0,0.16,Biobío,Mulchén
+-37.47333333,-72.38277778,2024-03-03,4.1 - Faenas forestales,0,0.4,Biobío,Los Angeles
+-37.5925,-71.56694444,2024-03-03,5.1 - Incendios de causa indeterminada,0,22.63,Biobío,Santa Bárbara
+-38.07722222,-73.15083333,2024-03-04,5.1 - Incendios de causa indeterminada,0,6.72,Biobío,Contulmo
+-37.77027778,-72.13222222,2024-03-04,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,1.0,Biobío,Mulchén
+-38.1025,-73.35388889,2024-03-04,5.1 - Incendios de causa indeterminada,0,6.0,Biobío,Cañete
+-37.14638889,-72.92444444,2024-03-04,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,1.6,Biobío,Hualqui
+-38.1475,-73.33555556,2024-03-04,5.1 - Incendios de causa indeterminada,0,64.68,Biobío,Tirúa
+-36.96333333,-73.15861111,2024-03-04,4.10 - Otras causas | 4.10.4. Acciones asociadas a fumar,0,0.22,Biobío,Coronel
+-37.00916667,-73.53277778,2024-03-04,5.1 - Incendios de causa indeterminada,0,1.5,Biobío,Coronel
+-37.00861111,-73.14444444,2024-03-04,4.10 - Otras causas | 4.10.5. Empleo de fuentes de calor por menores de edad,0,0.3,Biobío,Coronel
+-37.77611111,-72.10055556,2024-03-04,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,7.55,Biobío,Mulchén
+-38.21388889,-73.45138889,2024-03-05,5.1 - Incendios de causa indeterminada,0,0.3,Biobío,Tirúa
+-38.33277778,-73.44638889,2024-03-05,2.1 - Incendios Intencionales,1,6.0,Biobío,Tirúa
+-37.66583333,-72.58583333,2024-03-05,5.1 - Incendios de causa indeterminada | 5.1.1. Se investiga pero no es posible establecer la causa,0,10.0,Biobío,Negrete
+-36.95666667,-72.52972222,2024-03-05,5.1 - Incendios de causa indeterminada,0,0.77,Biobío,Yumbel
+-37.78694444,-72.10444444,2024-03-06,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,33.75,Biobío,Mulchén
+-36.69166667,-72.96416667,2024-03-06,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,20.4,Biobío,Tomé
+-37.72805556,-72.23333333,2024-03-06,2.1 - Incendios Intencionales,1,0.1,Biobío,Mulchén
+-37.00194444,-73.14138889,2024-03-06,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.2,Biobío,Coronel
+-37.175,-72.75555556,2024-03-06,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,1.2,Biobío,Yumbel
+-37.62055556,-73.3975,2024-03-07,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.01,Biobío,Los Alamos
+-37.12888889,-72.71277778,2024-03-07,4.1 - Faenas forestales,0,0.05,Biobío,Yumbel
+-38.08444444,-73.31305556,2024-03-07,5.1 - Incendios de causa indeterminada,0,2.4,Biobío,Cañete
+-38.12555556,-73.38888889,2024-03-07,4.8 - Otras quemas,0,1.8,Biobío,Tirúa
+-37.61361111,-73.67333333,2024-03-07,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.15,Biobío,Lebu
+-37.06,-73.14027778,2024-03-07,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.02,Biobío,Coronel
+-36.74527778,-72.91361111,2024-03-07,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.5,Biobío,Penco
+-36.70583333,-72.71472222,2024-03-07,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.9,Biobío,Tomé
+-37.97555556,-72.08805556,2024-03-08,2.1 - Incendios Intencionales,1,0.01,Biobío,Mulchén
+-37.90194444,-73.39805556,2024-03-08,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.2,Biobío,Cañete
+-37.22361111,-72.25805556,2024-03-09,4.1 - Faenas forestales | 4.1.5. Rebrote de quema forestal no avisada que  se propaga libre y sin control,0,2.35,Biobío,Los Angeles
+-37.22194444,-72.02166667,2024-03-09,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Tucapel
+-37.45138889,-72.31638889,2024-03-09,2.1 - Incendios Intencionales,1,0.15,Biobío,Los Angeles
+-36.68722222,-72.96583333,2024-03-10,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.03,Biobío,Tomé
+-37.6025,-73.42777778,2024-03-10,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.31,Biobío,Los Alamos
+-37.45194444,-73.36416667,2024-03-11,1.10 - Otras causas | 1.10.1. Otras causas accidentales no clasificadas,0,0.01,Biobío,Curanilahue
+-37.37083333,-72.65527778,2024-03-11,2.1 - Incendios Intencionales,1,1.6,Biobío,Laja
+-37.5075,-72.65333333,2024-03-11,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.77,Biobío,Nacimiento
+-36.83,-73.14833333,2024-03-11,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.04,Biobío,San Pedro de la Paz
+-36.75,-72.92277778,2024-03-11,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.28,Biobío,Santa Juana
+-37.34222222,-72.65388889,2024-03-11,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.2,Biobío,Laja
+-37.01583333,-72.60583333,2024-03-12,4.8 - Otras quemas,0,0.02,Biobío,Yumbel
+-37.23166667,-72.60333333,2024-03-12,1.9 - Líneas eléctricas,0,0.1,Biobío,Laja
+-37.82,-72.22055556,2024-03-12,5.1 - Incendios de causa indeterminada,0,0.07,Biobío,Mulchén
+-36.91277778,-72.75916667,2024-03-13,4.1 - Faenas forestales | 4.1.3. Contacto o corte de conductor eléctrico producto de faena forestal,0,0.01,Biobío,Florida
+-37.42361111,-72.33111111,2024-03-13,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,3.9,Biobío,Los Angeles
+-37.73055556,-72.24972222,2024-03-13,2.1 - Incendios Intencionales,1,0.01,Biobío,Mulchén
+-37.42277778,-72.33083333,2024-03-14,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,0.15,Biobío,Los Angeles
+-36.83055556,-73.14583333,2024-03-14,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.9,Biobío,San Pedro de la Paz
+-37.27777778,-71.97305556,2024-03-14,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.19,Biobío,Tucapel
+-36.81666667,-73.08194444,2024-03-14,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.3,Biobío,Concepción
+-37.0675,-72.89555556,2024-03-14,1.7 - Originados por desplazamiento de personas  vehículos o aeronaves,0,0.01,Biobío,Hualqui
+-37.3825,-72.78888889,2024-03-14,5.1 - Incendios de causa indeterminada,0,0.06,Biobío,Nacimiento
+-36.99333333,-73.16194444,2024-03-15,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.07,Biobío,Coronel
+-37.47,-72.69222222,2024-03-15,2.1 - Incendios Intencionales,1,0.02,Biobío,Nacimiento
+-37.73388889,-72.23361111,2024-03-15,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.05,Biobío,Mulchén
+-37.50194444,-72.68666667,2024-03-15,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.05,Biobío,Nacimiento
+-36.97361111,-72.46111111,2024-03-16,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.57,Biobío,Cabrero
+-37.50055556,-72.17722222,2024-03-16,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.08,Biobío,Los Angeles
+-37.28388889,-72.48694444,2024-03-16,4.9 - Líneas eléctricas,0,0.27,Biobío,Laja
+-37.51416667,-72.69722222,2024-03-16,5.1 - Incendios de causa indeterminada,0,0.02,Biobío,Nacimiento
+-36.78777778,-73.02361111,2024-03-16,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.01,Biobío,Concepción
+-36.89777778,-73.13,2024-03-16,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.2,Biobío,San Pedro de la Paz
+-37.69277778,-73.34833333,2024-03-16,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,1.3,Biobío,Los Alamos
+-37.8,-72.20277778,2024-03-17,2.1 - Incendios Intencionales,1,14.0,Biobío,Mulchén
+-37.80472222,-71.21833333,2024-03-17,2.1 - Incendios Intencionales,1,0.3,Biobío,Alto Biobío
+-37.25583333,-72.20444444,2024-03-17,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.03,Biobío,Los Angeles
+-38.14194444,-73.20833333,2024-03-17,2.1 - Incendios Intencionales,1,2.4,Biobío,Contulmo
+-37.80305556,-73.14916667,2024-03-17,5.1 - Incendios de causa indeterminada,0,0.89,Biobío,Cañete
+-38.18,-73.37083333,2024-03-17,4.8 - Otras quemas,0,3.68,Biobío,Tirúa
+-37.24583333,-72.82444444,2024-03-17,4.2 - Faenas agrícolas y pecuarias | 4.2.8. Otras causas negligentes no clasificadas en faenas agrícolas y pecuarias,0,1.0,Biobío,Santa Juana
+-38.08166667,-73.43611111,2024-03-17,5.1 - Incendios de causa indeterminada,0,0.45,Biobío,Cañete
+-36.63416667,-73.09194444,2024-03-17,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.6,Biobío,Talcahuano
+-37.42194444,-72.33166667,2024-03-17,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Los Angeles
+-37.58583333,-73.64388889,2024-03-17,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.01,Biobío,Lebu
+-36.99138889,-73.52888889,2024-03-17,5.1 - Incendios de causa indeterminada,0,0.01,Biobío,Coronel
+-37.50277778,-72.6925,2024-03-17,2.1 - Incendios Intencionales,1,0.27,Biobío,Nacimiento
+-37.15277778,-72.52888889,2024-03-18,4.9 - Líneas eléctricas,0,1.1,Biobío,Yumbel
+-37.02916667,-73.135,2024-03-18,4.10 - Otras causas | 4.10.12. Otras actividades negligentes no clasificadas,0,0.28,Biobío,Coronel
+-36.68444444,-72.95333333,2024-03-18,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.22,Biobío,Tomé
+-37.47027778,-72.40333333,2024-03-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.2,Biobío,Los Angeles
+-37.47,-72.40333333,2024-03-19,4.5 - Actividades de control y extinción de incendios forestales | 4.5.1. Rebrote de incendio anterior  declarado extinto,0,0.32,Biobío,Los Angeles
+-37.50194444,-72.68638889,2024-03-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.34,Biobío,Nacimiento
+-37.26944444,-72.78055556,2024-03-19,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,1.45,Biobío,Santa Juana
+-37.09916667,-72.43388889,2024-03-19,1.9 - Líneas eléctricas,0,0.01,Biobío,Cabrero
+-37.31888889,-72.37666667,2024-03-19,5.1 - Incendios de causa indeterminada,0,0.36,Biobío,Los Angeles
+-37.85916667,-73.52833333,2024-03-19,4.1 - Faenas forestales,0,7.0,Biobío,Cañete
+-37.2075,-72.22194444,2024-03-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.02,Biobío,Los Angeles
+-37.45166667,-72.34194444,2024-03-19,2.1 - Incendios Intencionales,1,1.35,Biobío,Los Angeles
+-37.83194444,-73.35861111,2024-03-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,3.22,Biobío,Cañete
+-37.75138889,-72.29166667,2024-03-19,5.1 - Incendios de causa indeterminada,0,6.0,Biobío,Mulchén
+-37.34083333,-72.66222222,2024-03-19,2.1 - Incendios Intencionales,1,0.06,Biobío,Laja
+-37.48777778,-72.40472222,2024-03-19,2.1 - Incendios Intencionales,1,20.0,Biobío,Los Angeles
+-37.38555556,-72.865,2024-03-19,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,1.0,Biobío,Nacimiento
+-36.55805556,-72.95277778,2024-03-19,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.1,Biobío,Tomé
+-37.38583333,-72.93166667,2024-03-19,4.1 - Faenas forestales,0,2.5,Biobío,Nacimiento
+-37.2075,-72.22138889,2024-03-20,4.11 - Producción y/o extracción de productos y/o derivados del bosque,0,0.01,Biobío,Los Angeles
+-36.68333333,-72.96222222,2024-03-20,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.54,Biobío,Tomé
+-37.25333333,-72.20361111,2024-03-20,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.3,Biobío,Los Angeles
+-37.14555556,-72.92638889,2024-03-21,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.07,Biobío,Hualqui
+-37.23166667,-72.59888889,2024-03-22,4.9 - Líneas eléctricas,0,0.3,Biobío,Laja
+-36.80722222,-73.09277778,2024-03-22,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.2,Biobío,Hualpén
+-36.595,-72.95916667,2024-03-22,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.02,Biobío,Tomé
+-38.14166667,-73.39722222,2024-03-24,4.1 - Faenas forestales,0,0.52,Biobío,Tirúa
+-37.06527778,-72.8625,2024-03-24,4.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros) | 4.3.1. Empleo de fuentes de calor en áreas no habilitadas  como fogatas para cocinar  cocinillas  calefacción  elementos para iluminar u otros.,0,0.05,Biobío,Hualqui
+-36.865,-72.75527778,2024-03-24,4.8 - Otras quemas | 4.8.1. Quema no avisada con fines de limpieza en canales  cunetas  cercos o caminos (en predios particulares o públicos) que se propaga libre y sin control,0,0.6,Biobío,Florida
+-37.35527778,-72.65027778,2024-03-25,4.1 - Faenas forestales | 4.1.5. Rebrote de quema forestal no avisada que  se propaga libre y sin control,0,0.052,Biobío,Laja
+-37.59333333,-72.13277778,2024-03-25,4.2 - Faenas agrícolas y pecuarias,0,1.5,Biobío,Santa Bárbara
+-36.63277778,-72.81805556,2024-03-25,5.1 - Incendios de causa indeterminada | 5.1.1. Se investiga pero no es posible establecer la causa,0,0.03,Biobío,Tomé
+-37.13166667,-72.58,2024-03-25,2.1 - Incendios Intencionales,1,0.01,Biobío,Yumbel
+-37.73527778,-72.27361111,2024-03-25,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.03,Biobío,Mulchén
+-37.18111111,-72.65944444,2024-03-25,4.8 - Otras quemas,0,0.2,Biobío,Yumbel
+-36.96138889,-72.77638889,2024-03-25,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Hualqui
+-37.62861111,-72.25972222,2024-03-26,1.2 - Faenas agrícolas y pecuarias | 1.2.1. Quema avisada de desechos agrícolas  que se propaga libre y sin control,0,0.35,Biobío,Mulchén
+-37.82055556,-73.26277778,2024-03-26,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.27,Biobío,Cañete
+-37.07055556,-72.2525,2024-03-27,4.1 - Faenas forestales | 4.1.7. Empleo de fuentes de calor en zonas de faenas/campamentos forestales,0,0.05,Biobío,Cabrero
+-37.63305556,-72.39972222,2024-03-28,4.2 - Faenas agrícolas y pecuarias,0,9.5,Biobío,Mulchén
+-37.51611111,-71.93638889,2024-03-28,4.8 - Otras quemas | 4.8.1. Quema no avisada con fines de limpieza en canales  cunetas  cercos o caminos (en predios particulares o públicos) que se propaga libre y sin control,0,0.04,Biobío,Quilleco
+-37.50916667,-72.22138889,2024-03-28,2.1 - Incendios Intencionales,1,1.45,Biobío,Los Angeles
+-38.20527778,-73.41027778,2024-03-28,2.1 - Incendios Intencionales,1,2.0,Biobío,Tirúa
+-38.20027778,-73.41138889,2024-03-28,1.7 - Originados por desplazamiento de personas  vehículos o aeronaves,0,1.5,Biobío,Tirúa
+-37.795,-72.10305556,2024-03-29,2.1 - Incendios Intencionales | 2.1.1. No se identifica la motivación,1,20.0,Biobío,Mulchén
+-37.63583333,-73.45555556,2024-03-29,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.4,Biobío,Los Alamos
+-37.29361111,-72.63694444,2024-03-29,2.1 - Incendios Intencionales,1,0.3,Biobío,Laja
+-36.73694444,-72.955,2024-03-29,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.01,Biobío,Penco
+-37.01777778,-72.26888889,2024-03-29,5.1 - Incendios de causa indeterminada,0,0.07,Biobío,Cabrero
+-38.07583333,-73.40388889,2024-03-30,2.1 - Incendios Intencionales,1,2.0,Biobío,Cañete
+-36.75,-72.92277778,2024-03-30,1.7 - Originados por desplazamiento de personas  vehículos o aeronaves | 1.7.3. Generado por vehículo  (roce metálico  tubo de escape  desperfecto  otros),0,0.03,Biobío,Penco
+-37.68361111,-72.26194444,2024-03-30,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.2,Biobío,Mulchén
+-37.55833333,-72.29527778,2024-03-30,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.08,Biobío,Los Angeles
+-38.14027778,-73.08694444,2024-03-30,5.1 - Incendios de causa indeterminada,0,0.01,Biobío,Contulmo
+-37.22916667,-72.24777778,2024-03-30,5.1 - Incendios de causa indeterminada,0,0.41,Biobío,Los Angeles
+-36.89472222,-73.12555556,2024-03-31,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.05,Biobío,San Pedro de la Paz
+-36.92194444,-73.14611111,2024-03-31,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.02,Biobío,Coronel
+-37.82694444,-72.24861111,2024-03-31,2.1 - Incendios Intencionales,1,0.5,Biobío,Mulchén
+-37.46583333,-71.93194444,2024-03-31,2.1 - Incendios Intencionales,1,0.01,Biobío,Quilleco
+-36.89888889,-73.13027778,2024-03-31,2.1 - Incendios Intencionales | 2.1.5. Obtención beneficios económicos (compra de madera  presión por trabajo  robo  maderero  otros),1,0.1,Biobío,San Pedro de la Paz
+-37.12861111,-73.05527778,2024-04-01,2.1 - Incendios Intencionales | 2.1.4. Conflicto territorial o patrimonial (deslindes  propiedades  apropiaciones de terreno  otros),1,0.0025,Biobío,Santa Juana
+-37.05277778,-73.52638889,2024-04-01,5.1 - Incendios de causa indeterminada,0,2.35,Biobío,Coronel
+-36.74638889,-72.89777778,2024-04-09,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.6,Biobío,Penco
+-37.16527778,-72.9025,2024-04-09,1.8 - Otras quemas,0,0.9,Biobío,Hualqui
+-36.65916667,-72.70166667,2024-04-09,4.1 - Faenas forestales | 4.1.6. Quema avisada de desechos forestales mal ejecutada que se propaga libre y sin control (plan de quemas  aviso de quemas),0,0.03,Biobío,Florida
+-37.62055556,-73.46805556,2024-04-09,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.06,Biobío,Los Alamos
+-36.66277778,-72.76944444,2024-04-10,4.2 - Faenas agrícolas y pecuarias | 4.2.1. Quema no avisada de desechos agrícolas que se propaga libre y sin control,0,0.12,Biobío,Tomé
+-37.88861111,-73.40444444,2024-04-11,1.3 - Actividades al aire libre (camping  excursiones  caza  pesca  otros),0,0.4,Biobío,Cañete
+-37.31222222,-71.93277778,2024-04-13,1.2 - Faenas agrícolas y pecuarias | 1.2.1. Quema avisada de desechos agrícolas  que se propaga libre y sin control,0,2.12,Biobío,Tucapel
+-36.71916667,-72.82722222,2024-04-14,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.06,Biobío,Tomé
+-36.73777778,-72.9425,2024-04-14,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Penco
+-37.07388889,-72.79027778,2024-04-15,4.8 - Otras quemas | 4.8.2. Quema de basura residencial o desechos vegetales,0,0.95,Biobío,Hualqui
+-36.74638889,-72.99083333,2024-04-15,2.1 - Incendios Intencionales | 2.1.3. Ataque incendiario (ataques dirigidos a bienes muebles o inmuebles),1,0.01,Biobío,Penco
+-37.6775,-72.245,2024-04-15,5.1 - Incendios de causa indeterminada,0,0.85,Biobío,Mulchén
+-37.44222222,-72.70305556,2024-04-16,5.1 - Incendios de causa indeterminada,0,0.25,Biobío,Nacimiento
+-37.47444444,-72.41805556,2024-04-16,5.1 - Incendios de causa indeterminada,0,0.05,Biobío,Los Angeles
+-37.10916667,-72.56361111,2024-04-16,2.1 - Incendios Intencionales,1,0.4,Biobío,Yumbel
+-37.51083333,-71.82055556,2024-04-17,4.2 - Faenas agrícolas y pecuarias,0,0.05,Biobío,Santa Bárbara
+-37.81527778,-72.36972222,2024-04-17,5.1 - Incendios de causa indeterminada,0,0.06,Biobío,Mulchén
+-36.69055556,-72.81833333,2024-04-19,1.1 - Faenas Forestales | 1.1.1. Quema avisada de desechos forestales que se propaga libre y sin control,0,0.06,Biobío,Tomé
+-37.30944444,-72.94777778,2024-04-21,5.1 - Incendios de causa indeterminada,0,0.3,Biobío,Santa Juana
+-36.72444444,-72.91166667,2024-04-21,4.1 - Faenas forestales | 4.1.1. Quema no avisada de desechos forestales que se propaga libre y sin control,0,0.12,Biobío,Penco

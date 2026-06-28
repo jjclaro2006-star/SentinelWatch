@@ -1,0 +1,162 @@
+{
+  "source": "ACCA/MAAP",
+  "date": "2024-07",
+  "location": "R?o Nanay, Loreto, Per?",
+  "points": [
+    {
+      "lat": -3.815091,
+      "lon": -74.06097,
+      "description": "draga 1 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 387.6,293.0)"
+    },
+    {
+      "lat": -3.804807,
+      "lon": -74.055199,
+      "description": "draga 2 aproximada digitizada del mapa ACCA/Mongabay (cyan, pixel 391.1,284.2)"
+    },
+    {
+      "lat": -3.792994,
+      "lon": -74.042826,
+      "description": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)"
+    },
+    {
+      "lat": -3.815577,
+      "lon": -74.041536,
+      "description": "draga 4 aproximada digitizada del mapa ACCA/Mongabay (red, pixel 399.3,293.4)"
+    },
+    {
+      "lat": -3.825082,
+      "lon": -74.037701,
+      "description": "draga 5 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 401.6,301.5)"
+    },
+    {
+      "lat": -3.823805,
+      "lon": -74.019184,
+      "description": "draga 6 aproximada digitizada del mapa ACCA/Mongabay (red, pixel 412.7,300.4)"
+    },
+    {
+      "lat": -3.804709,
+      "lon": -74.019002,
+      "description": "draga 7 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 412.8,284.2)"
+    },
+    {
+      "lat": -3.836615,
+      "lon": -74.013739,
+      "description": "draga 8 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 416.0,311.3)"
+    },
+    {
+      "lat": -3.833267,
+      "lon": -73.99878,
+      "description": "draga 9 aproximada digitizada del mapa ACCA/Mongabay (red, pixel 425.0,308.5)"
+    },
+    {
+      "lat": -3.815679,
+      "lon": -73.994625,
+      "description": "draga 10 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 427.5,293.5)"
+    },
+    {
+      "lat": -3.847414,
+      "lon": -73.989327,
+      "description": "draga 11 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 430.7,320.5)"
+    },
+    {
+      "lat": -3.845063,
+      "lon": -73.976619,
+      "description": "draga 12 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 438.3,318.5)"
+    },
+    {
+      "lat": -3.825669,
+      "lon": -73.971355,
+      "description": "draga 13 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 441.5,302.0)"
+    },
+    {
+      "lat": -3.847147,
+      "lon": -73.966898,
+      "description": "draga 14 aproximada digitizada del mapa ACCA/Mongabay (purple, pixel 444.2,320.3)"
+    },
+    {
+      "lat": -3.8571,
+      "lon": -73.956858,
+      "description": "draga 15 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 450.2,328.7)"
+    },
+    {
+      "lat": -3.8367,
+      "lon": -73.946616,
+      "description": "draga 16 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 456.4,311.4)"
+    },
+    {
+      "lat": -3.85396,
+      "lon": -73.944447,
+      "description": "draga 17 aproximada digitizada del mapa ACCA/Mongabay (red, pixel 457.7,326.1)"
+    },
+    {
+      "lat": -3.868655,
+      "lon": -73.941675,
+      "description": "draga 18 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 459.4,338.6)"
+    },
+    {
+      "lat": -3.847218,
+      "lon": -73.923709,
+      "description": "draga 19 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 470.2,320.3)"
+    },
+    {
+      "lat": -3.879223,
+      "lon": -73.918376,
+      "description": "draga 20 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 473.4,347.6)"
+    },
+    {
+      "lat": -3.85764,
+      "lon": -73.900384,
+      "description": "draga 21 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 484.2,329.2)"
+    },
+    {
+      "lat": -3.889923,
+      "lon": -73.894437,
+      "description": "draga 22 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 487.8,356.7)"
+    },
+    {
+      "lat": -3.868403,
+      "lon": -73.876616,
+      "description": "draga 23 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 498.5,338.4)"
+    },
+    {
+      "lat": -3.900698,
+      "lon": -73.870383,
+      "description": "draga 24 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 502.2,365.8)"
+    },
+    {
+      "lat": -3.883356,
+      "lon": -73.869749,
+      "description": "draga 25 aproximada digitizada del mapa ACCA/Mongabay (purple, pixel 502.6,351.1)"
+    },
+    {
+      "lat": -3.879793,
+      "lon": -73.851091,
+      "description": "draga 26 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 513.9,348.0)"
+    },
+    {
+      "lat": -3.911421,
+      "lon": -73.84659,
+      "description": "draga 27 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 516.6,375.0)"
+    },
+    {
+      "lat": -3.901481,
+      "lon": -73.837201,
+      "description": "draga 28 aproximada digitizada del mapa ACCA/Mongabay (red, pixel 522.2,366.5)"
+    },
+    {
+      "lat": -3.890315,
+      "lon": -73.827861,
+      "description": "draga 29 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 527.8,357.0)"
+    },
+    {
+      "lat": -3.901693,
+      "lon": -73.810697,
+      "description": "draga 30 aproximada digitizada del mapa ACCA/Mongabay (yellow, pixel 538.2,366.7)"
+    },
+    {
+      "lat": -3.910688,
+      "lon": -73.782846,
+      "description": "draga 31 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 554.9,374.3)"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "active": {
+    "EVT-20260625-043426": {
+      "event_id": "EVT-20260625-043426",
+      "start_date": "2026-06-25T04:46:28.543977+00:00",
+      "last_seen": "2026-06-25T04:46:28.543977+00:00",
+      "centroid_lat": -38.335,
+      "centroid_lon": -72.61500000000001,
+      "detection_count": 2,
+      "max_frp": 92.0,
+      "sources": [
+        "GOES_NRT",
+        "VIIRS"
+      ],
+      "tier": "confirmed",
+      "duration_hours": 0.0
+    },
+    "EVT-20260625-17a9a9": {
+      "event_id": "EVT-20260625-17a9a9",
+      "start_date": "2026-06-25T04:46:28.543977+00:00",
+      "last_seen": "2026-06-25T04:46:28.543977+00:00",
+      "centroid_lat": -37.1,
+      "centroid_lon": -72.93,
+      "detection_count": 1,
+      "max_frp": 45.0,
+      "sources": [
+        "GOES_NRT"
+      ],
+      "tier": "preliminary",
+      "duration_hours": 0.0
+    }
+  },
+  "closed": {},
+  "closed_today": 0,
+  "closed_today_date": "2026-06-25"
+}

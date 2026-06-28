@@ -1,0 +1,138 @@
+[
+  {
+    "id": "hydro-background-0020",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0022",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0062",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0084",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0089",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0108",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0141",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0199",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0201",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0202",
+    "error": "CURL error: Recv failure: Connection was reset"
+  },
+  {
+    "id": "hydro-background-0297",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0298",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0299",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0301",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0307",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0308",
+    "error": "<urlopen error [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host>"
+  },
+  {
+    "id": "hydro-background-0347",
+    "error": "Read failed. See previous exception for details."
+  },
+  {
+    "id": "hydro-background-0445",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0449",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0489",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0490",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0491",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0493",
+    "error": "CURL error: Recv failure: Connection was reset"
+  },
+  {
+    "id": "hydro-background-0494",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0510",
+    "error": "Ten available Sentinel-2 scenes produced blank patches"
+  },
+  {
+    "id": "hydro-background-0568",
+    "error": "Read failed. See previous exception for details."
+  },
+  {
+    "id": "hydro-background-0580",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0698",
+    "error": "'/vsicurl/https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/19/H/CE/2026/4/S2C_19HCE_20260402_0_L2A/TCI.tif' not recognized as being in a supported file format."
+  },
+  {
+    "id": "hydro-background-0705",
+    "error": "'/vsicurl/https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/19/H/CE/2026/4/S2C_19HCE_20260402_0_L2A/TCI.tif' not recognized as being in a supported file format."
+  },
+  {
+    "id": "hydro-background-0708",
+    "error": "'/vsicurl/https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/19/H/CE/2026/4/S2C_19HCE_20260402_0_L2A/TCI.tif' not recognized as being in a supported file format."
+  },
+  {
+    "id": "hydro-background-0736",
+    "error": "CURL error: Recv failure: Connection was reset"
+  },
+  {
+    "id": "hydro-background-0808",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0809",
+    "error": "HTTP response code: 404"
+  },
+  {
+    "id": "hydro-background-0850",
+    "error": "HTTP response code: 404"
+  }
+]

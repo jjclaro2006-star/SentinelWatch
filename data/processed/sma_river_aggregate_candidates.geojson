@@ -1,0 +1,4109 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.593974,
+          -39.950417
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-10003",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/10003",
+        "region": "Región de Los Ríos",
+        "commune": "Valdivia",
+        "unit_name": "VALDICOR",
+        "sma_unit_id": "10003",
+        "sma_instrument_ids": [
+          "10260"
+        ],
+        "instrument_descriptions": [
+          "1627/2002 PRODUCCION DE ARIDOS EN RIO CALLE  CALLE"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "1825"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - Sanción"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.829805,
+          -33.545145
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-10723",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/10723",
+        "region": "Región Metropolitana",
+        "commune": "Padre Hurtado",
+        "unit_name": "EXTRACCION DE ARIDOS RIO MAPOCHO SECTOR EL TREBAL - PADRE HURTADO",
+        "sma_unit_id": "10723",
+        "sma_instrument_ids": [
+          "15043"
+        ],
+        "instrument_descriptions": [
+          "112/2014 EXTRACCION INDUSTRIAL DE ARIDOS RIO MAPOCHO SECTOR EL TREBAL COMUNA PADRE HURTADO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.716328,
+          -34.213143
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-10793",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/10793",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Machalí",
+        "unit_name": "ARIDOS GUERRICO",
+        "sma_unit_id": "10793",
+        "sma_instrument_ids": [
+          "17770"
+        ],
+        "instrument_descriptions": [
+          "11/2020 EXTRACCION DE ARIDOS KM -60 AL -70 RIO CACHAPOAL"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "2299"
+        ],
+        "related_sanction_statuses": [
+          "Programa de Cumplimiento en ejecución"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.779663,
+          -35.540491
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-10802",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/10802",
+        "region": "Región del Maule",
+        "commune": "Maule",
+        "unit_name": "ARIDOS DRY MIX",
+        "sma_unit_id": "10802",
+        "sma_instrument_ids": [
+          "7774"
+        ],
+        "instrument_descriptions": [
+          "139/2013 AUMENTO DE EXTRACCION Y PROCESAMIENTO DE ARIDOS EN EL RIO MAULE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.102108,
+          -36.806388
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-10837",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/10837",
+        "region": "Región del Biobío",
+        "commune": "Hualpén",
+        "unit_name": "ARENERA RIO BIOBIO EL BOLDAL",
+        "sma_unit_id": "10837",
+        "sma_instrument_ids": [
+          "7777"
+        ],
+        "instrument_descriptions": [
+          "34/2014 EXTRACCION DE ARENA DESDE EL RIO BIOBIO SECTOR COSTANERA NORTE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.065275,
+          -40.705557
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-10898",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/10898",
+        "region": "Región de los Lagos",
+        "commune": "Osorno",
+        "unit_name": "AMPLIACION DE EXTRACCION DE ARIDOS EN EL RIO RAHUE SECTOR FUNDO EL ALMUD - SAN FLORENTINO",
+        "sma_unit_id": "10898",
+        "sma_instrument_ids": [
+          "7659"
+        ],
+        "instrument_descriptions": [
+          "604/2013 AMPLIACION DE EXTRACCION DE ARIDOS EN EL RIO RAHUE SECTOR FUNDO EL ALMUD - SAN FLORENTINO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.583401,
+          -33.649298
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-11171",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/11171",
+        "region": "Región de Valparaíso",
+        "commune": "San Antonio",
+        "unit_name": "ARIDOS RIO MAIPO",
+        "sma_unit_id": "11171",
+        "sma_instrument_ids": [
+          "0",
+          "15084"
+        ],
+        "instrument_descriptions": [
+          "4/1992 ESTABLECE NORMA DE EMISION DE MATERIAL PARTICULADO A FUENTES ESTACIONARIAS PUNTUALES Y GRUPALES",
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.4668907,
+          -40.6215099
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-11868",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/11868",
+        "region": "Región de Los Ríos",
+        "commune": "Río Bueno",
+        "unit_name": "ARIDOS MANTILHUE",
+        "sma_unit_id": "11868",
+        "sma_instrument_ids": [
+          "9432"
+        ],
+        "instrument_descriptions": [
+          "65/2014 REGULARIZACION POZO DE EXTRACCION DE ARIDOS SECTOR MANTILHUE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.139157,
+          -30.602805
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-1283",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/1283",
+        "region": "Región de Coquimbo",
+        "commune": "Ovalle",
+        "unit_name": "EXTRACCION MECANIZADA DE ARIDOS DESDE LA CAJA FLUVIAL DEL RIO GRANDE SECTOR SOTAQUI",
+        "sma_unit_id": "1283",
+        "sma_instrument_ids": [
+          "14205"
+        ],
+        "instrument_descriptions": [
+          "/2001 EXTRACCION MECANIZADA DE ARIDOS DESDE LA CAJA FLUVIAL DEL RIO GRANDE SECTOR SOTAQUI COMUNA DE OVALLE IV REGION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.30578144969597,
+          -32.93099403279455
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-13503",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/13503",
+        "region": "Región de Valparaíso",
+        "commune": "Quillota",
+        "unit_name": "MINERA NO METÁLICAARIDOS ACONCAGUA LIMITADA",
+        "sma_unit_id": "13503",
+        "sma_instrument_ids": [
+          "7896"
+        ],
+        "instrument_descriptions": [
+          "96/2013 EXPLOTACION MECANIZADA DE ARIDOS RIO ACONCAGUA SECTOR KILOMETRO 2.1 AL 6.3 AGUAS ARRIBA DEL PUENTE FERROVIARIO LO VENECIA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.34132,
+          -32.93178
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-13505",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/13505",
+        "region": "Región de Valparaíso",
+        "commune": "Limache",
+        "unit_name": "MINERA NO METÁLICAARIDOS ILUSTRE MUNICIPALIDAD DE LIMACHE",
+        "sma_unit_id": "13505",
+        "sma_instrument_ids": [
+          "11528"
+        ],
+        "instrument_descriptions": [
+          "340/2015 PROYECTO DE EXPLOTACION MECANIZADA DE ARIDOS EN RIO ACONCAGUA KILOMETRO 14.0 AL 16.5 SECTORES 1 AL 4 COMUNA DE LIMACHE PROVINCIA DE MARGA MARGA REGION DE VALPARAISO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.3099174569982,
+          -35.3820116708088
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-13507",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/13507",
+        "region": "Región del Maule",
+        "commune": "Constitución",
+        "unit_name": "MINERA NO METÁLICAARIDOS RIO MAULE - SECTOR MELLICO Y PIEDRA DEL LOBO",
+        "sma_unit_id": "13507",
+        "sma_instrument_ids": [
+          "12390"
+        ],
+        "instrument_descriptions": [
+          "162/2015 EXTRACCION Y PROCESAMIENTO DE ARIDOS DESDE EL RIO MAULE SECTOR MELLICO Y PIEDRA DEL LOBO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.7456501,
+          -34.20234099
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-13508",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/13508",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Olivar",
+        "unit_name": "MINERA NO METÁLICAEXTRACCIÓN DE ÁRIDOS DEL RÍO CACHAPOAL, KM -1,5 AL -2,5, SECTOR GULTRO.",
+        "sma_unit_id": "13508",
+        "sma_instrument_ids": [
+          "15849",
+          "9759"
+        ],
+        "instrument_descriptions": [
+          "20780/2014 REFORMA TRIBUTARIA QUE MODIFICA EL SISTEMA DE TRIBUTACION DE LA RENTA E INTRODUCE DIVERSOS AJUSTES EN EL SISTEMA TRIBUTARIO",
+          "55/2015 EXTRACCION MECANIZADA DE ARIDOS DEL RIO CACHAPOAL KM -15 AL -25 SECTOR GULTRO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.040048,
+          -36.88531
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-13696",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/13696",
+        "region": "Región del Biobío",
+        "commune": "Chiguayante",
+        "unit_name": "Extraccion de aridos Río Biobio Costanera Concepcion-Chiguayante",
+        "sma_unit_id": "13696",
+        "sma_instrument_ids": [
+          "15475"
+        ],
+        "instrument_descriptions": [
+          "114/2016 EXTRACCION DE ARIDOS EN RIO BIOBIO PARA CONSTRUCCION DE INTERCONEXION VIAL COSTANERA CONCEPCION - CHIGUAYANTE ETAPA 1"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.83073966033261,
+          -33.752863
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-14258",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/14258",
+        "region": "Región Metropolitana",
+        "commune": "Buin",
+        "unit_name": "EXPLOTACIÓN DE ARIDOS MINERA SANTA LAURA - BUIN (RÍO MAIPO KM 1650)",
+        "sma_unit_id": "14258",
+        "sma_instrument_ids": [
+          "15552"
+        ],
+        "instrument_descriptions": [
+          "313/2016 EXPLOTACION MECANIZADA DE ARIDOS EN RIO MAIPO KM 1.650 AL 5.000AGUAS ABAJO DEL PUENTE LONQUEN"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9,
+          -33.7464562
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-14259",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/14259",
+        "region": "Región Metropolitana",
+        "commune": "Isla de Maipo",
+        "unit_name": "EXTRACCION MECANIZADA DE ARIDOS ISLA DE MAIPO",
+        "sma_unit_id": "14259",
+        "sma_instrument_ids": [
+          "16018"
+        ],
+        "instrument_descriptions": [
+          "195/2017 EXTRACCION MECANIZADA DE ARIDOS TRAMO B5-RIO MAIPO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.108242694165,
+          -36.6043695050706
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-14422",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/14422",
+        "region": "Región de Ñuble",
+        "commune": "Chillán",
+        "unit_name": "PLANTA DE ASFALTO BITUMIX",
+        "sma_unit_id": "14422",
+        "sma_instrument_ids": [
+          "3694"
+        ],
+        "instrument_descriptions": [
+          "12/2008 EXTRACCION MECANIZADA DE ARIDOS RIO CATO ."
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.616419,
+          -33.18573
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-146",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/146",
+        "region": "Región Metropolitana",
+        "commune": "Colina",
+        "unit_name": "EXTRACCION DE ARIDOS EN RIO COLINA - COLINA",
+        "sma_unit_id": "146",
+        "sma_instrument_ids": [
+          "14396"
+        ],
+        "instrument_descriptions": [
+          "288/2010 PLAN DE REGULARIZACION Y EXTRACCION DE ARIDOS DEL RIO COLINA TRAMO KM 0+200 A KM 4+200 AGUAS ARRIBA DE PUENTE ESMERALDA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.43582675432128,
+          -38.5824111761292
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-14954",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/14954",
+        "region": "Región de la Araucanía",
+        "commune": "Lautaro",
+        "unit_name": "ÁRIDOS INACAP LAUTARO",
+        "sma_unit_id": "14954",
+        "sma_instrument_ids": [
+          "10482"
+        ],
+        "instrument_descriptions": [
+          "/1998 EXTRACCION DE ARIDOS RIO CAUTIN-CANTERA LAUTARO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.02860049648439,
+          -36.523342921322055
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-15071",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/15071",
+        "region": "Región de Ñuble",
+        "commune": "San Carlos",
+        "unit_name": "PLANTA DE ARIDOS COVADONGA - RÍO ÑUBLE",
+        "sma_unit_id": "15071",
+        "sma_instrument_ids": [
+          "15072"
+        ],
+        "instrument_descriptions": [
+          "38/2011 ESTABLECE NORMA DE EMISION DE RUIDOS GENERADOS POR FUENTES QUE INDICA ELABORADA A PARTIR DE LA REVISION DEL DECRETO SUPREMO N° 146 DE 1997 MINSEGPRES"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.35445219999997,
+          -37.4728723
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-15269",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/15269",
+        "region": "Región del Biobío",
+        "commune": "Los Ángeles",
+        "unit_name": "EXTRACCION ARIDOS RIO BIOBIO SECTOR LA SUERTE",
+        "sma_unit_id": "15269",
+        "sma_instrument_ids": [
+          "16533"
+        ],
+        "instrument_descriptions": [
+          "80/2018 PROYECTO:EXTRACCION DE ARIDOS DESDE EL RIO BIOBIO SECTOR LA SUERTE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.94853660000001,
+          -40.3313422
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-15284",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/15284",
+        "region": "Región de Los Ríos",
+        "commune": "Río Bueno",
+        "unit_name": "ÁRIDOS FREDY CÁRCAMO",
+        "sma_unit_id": "15284",
+        "sma_instrument_ids": [
+          "16452"
+        ],
+        "instrument_descriptions": [
+          "001/2018 REGULARIZACION EXTRACCION DE ARIDOS SECTOR UNION CHIRRE POZO SECO FREDY CARCAMO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.466665,
+          -31.583336
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-1590",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/1590",
+        "region": "Región de Coquimbo",
+        "commune": "Canela",
+        "unit_name": "EXTRACCION DE ARIDOS DEL CURSO INFERIOR DEL RIO CHOAPA",
+        "sma_unit_id": "1590",
+        "sma_instrument_ids": [
+          "907"
+        ],
+        "instrument_descriptions": [
+          "51/2000 EXTRACCION DE ARIDOS DEL CURSO INFERIOR DEL RIO CHOAPA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.690859,
+          -33.664059
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-161",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/161",
+        "region": "Región Metropolitana",
+        "commune": "Buin",
+        "unit_name": "EXTRACCION DE ARIDOS EN RIO MAIPO - BUIN",
+        "sma_unit_id": "161",
+        "sma_instrument_ids": [
+          "4331"
+        ],
+        "instrument_descriptions": [
+          "337/2010 EXTRACCION DE ARIDOS EN EL CAUCE DEL RIO MAIPO DESDE EL KILOMETRO 1550 AL 3050 AGUAS ABAJO PUENTE LOS MORROS COMUNA DE BUIN REGION METROPOLITANA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.39537448377934,
+          -32.91837153934205
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-16349",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/16349",
+        "region": "Región de Valparaíso",
+        "commune": "Quillota",
+        "unit_name": "ÁRIDOS SANTA ELISA",
+        "sma_unit_id": "16349",
+        "sma_instrument_ids": [
+          "16646"
+        ],
+        "instrument_descriptions": [
+          "031/2018 EXTRACCION DE ARIDOS SANTA ELISA RIO ACONCAGUA COMUNA QUILLOTA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5876272719694,
+          -33.6342934828179
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-16487",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/16487",
+        "region": "Región Metropolitana",
+        "commune": "Puente Alto",
+        "unit_name": "EXTRACCIÓN DE ÁRIDOS TRAMO 43-34 Y BANCO DECANTADOR 40-37, SOCIEDAD CAVILU",
+        "sma_unit_id": "16487",
+        "sma_instrument_ids": [
+          "16743"
+        ],
+        "instrument_descriptions": [
+          "284/2018 ?EXPLOTACION DE LA CONCESION D.E. Nº 1.137. RIO MAIPO SECTOR: TRAMO 43-34 Y BANCO DECANTADOR 40-37?."
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.953091,
+          -40.3387387
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-17274",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/17274",
+        "region": "Región de Los Ríos",
+        "commune": "Río Bueno",
+        "unit_name": "ÁRIDOS VICAT",
+        "sma_unit_id": "17274",
+        "sma_instrument_ids": [
+          "15072"
+        ],
+        "instrument_descriptions": [
+          "38/2011 ESTABLECE NORMA DE EMISION DE RUIDOS GENERADOS POR FUENTES QUE INDICA ELABORADA A PARTIR DE LA REVISION DEL DECRETO SUPREMO N° 146 DE 1997 MINSEGPRES"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "2784"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - Sanción"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.987336,
+          -34.549023
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-175",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/175",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "San Fernando",
+        "unit_name": "ARIDOS ESTERO ANTIVERO",
+        "sma_unit_id": "175",
+        "sma_instrument_ids": [
+          "876"
+        ],
+        "instrument_descriptions": [
+          "113/1999 EXTRACCION DE ARIDOS DESDE EL ESTERO ANTIVERO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.553661,
+          -34.84479
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-176",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/176",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "San Fernando",
+        "unit_name": "ARIDOS RIO TINGUIRIRICA Y ESTERO LOS HELADOS",
+        "sma_unit_id": "176",
+        "sma_instrument_ids": [
+          "313"
+        ],
+        "instrument_descriptions": [
+          "290/2006 EXTRACCION DE ARIDOS EN EL RIO TINGUIRIRICA Y ESTERO LOS HELADOS"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.818749,
+          -34.39443
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-177",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/177",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Rengo",
+        "unit_name": "ARIDOS RIO CLARO",
+        "sma_unit_id": "177",
+        "sma_instrument_ids": [
+          "922"
+        ],
+        "instrument_descriptions": [
+          "13/2000 EXTRACCION DE ARIDOS DESDE EL RIO CLARO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.48376,
+          -33.59321
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-17705",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/17705",
+        "region": "Región Metropolitana",
+        "commune": "San José de Maipo",
+        "unit_name": "SOCIEDAD PÉTREOS LA JUNTA",
+        "sma_unit_id": "17705",
+        "sma_instrument_ids": [
+          "17487"
+        ],
+        "instrument_descriptions": [
+          "661/2019 EXTRACCION DE ARIDOS RIO MAIPO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.054543,
+          -36.525731
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-18137",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/18137",
+        "region": "Región de Ñuble",
+        "commune": "San Carlos",
+        "unit_name": "EXTRACCIÓN DE ÁRIDOS RÍO ÑUBLE",
+        "sma_unit_id": "18137",
+        "sma_instrument_ids": [
+          "17827"
+        ],
+        "instrument_descriptions": [
+          "65/2020 EXTRACCION DE ARIDOS RIO NUBLE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.301389,
+          -37.594563
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-18490",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/18490",
+        "region": "Región del Biobío",
+        "commune": "Los Álamos",
+        "unit_name": "ÁRIDOS RIO TRONGOL",
+        "sma_unit_id": "18490",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "3612"
+        ],
+        "related_sanction_statuses": [
+          "Suspendido"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.916444,
+          -34.045694
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-18530",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/18530",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Navidad",
+        "unit_name": "ÁRIDOS RÍO MAIPO",
+        "sma_unit_id": "18530",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.852845,
+          -41.444034
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-18539",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/18539",
+        "region": "Región de los Lagos",
+        "commune": "Puerto Montt",
+        "unit_name": "ÁRIDOS CONSTRUCTORA RÍO NEGRO",
+        "sma_unit_id": "18539",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.634956,
+          -35.573793
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-19173",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/19173",
+        "region": "Región del Maule",
+        "commune": "San Javier",
+        "unit_name": "ÁRIDOS BUENA VISTA",
+        "sma_unit_id": "19173",
+        "sma_instrument_ids": [
+          "17748"
+        ],
+        "instrument_descriptions": [
+          "90/2020 EXTRACCION Y PROCESAMIENTO DE ARIDOS RIO MAULE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.658232,
+          -35.556363
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-19321",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/19321",
+        "region": "Región del Maule",
+        "commune": "Maule",
+        "unit_name": "ÁRIDOS LA ESPERANZA",
+        "sma_unit_id": "19321",
+        "sma_instrument_ids": [
+          "17541"
+        ],
+        "instrument_descriptions": [
+          "285/2019 EXTRACCION Y PROCESAMIENTO DE ARIDOS AGUAS ARRIBA DEL PUENTE RUTA 5 SUR EN RIO MAULE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.143156,
+          -45.588132
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-19358",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/19358",
+        "region": "Región de Aysén del General Carlos Ibáñez del Campo",
+        "commune": "Coyhaique",
+        "unit_name": "EXTRACCIÓN DE ÁRIDOS RÍO CLARO",
+        "sma_unit_id": "19358",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.893102,
+          -32.795004
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-1953",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/1953",
+        "region": "Región de Valparaíso",
+        "commune": "Panquehue",
+        "unit_name": "RUTA 60 CH SECTOR 1 LOS ANDES - PANQUEHUE V REGION",
+        "sma_unit_id": "1953",
+        "sma_instrument_ids": [
+          "15761"
+        ],
+        "instrument_descriptions": [
+          "382/2015 EXTRACCION MECANIZADA DE ARIDOS RIO ACONCAGUA PROYECTO CAMINO INTERNACIONAL RUTA 60CH SECTOR 1 TRAMO 2 VARIANTE PANQUEHUE"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "2128"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - PDC Satisfactorio"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.242084,
+          -36.58202
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-19719",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/19719",
+        "region": "Región de Ñuble",
+        "commune": "San Nicolás",
+        "unit_name": "EXTRACCIÓN ÁRIDOS RÍO ÑUBLE - CONSTRUCTORA REMFISC LTDA",
+        "sma_unit_id": "19719",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.418287,
+          -45.457837
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-19745",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/19745",
+        "region": "Región de Aysén del General Carlos Ibáñez del Campo",
+        "commune": "Aysén",
+        "unit_name": "EXTRACCIÓN DE ÁRIDOS RÍO CARACOLES",
+        "sma_unit_id": "19745",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.249862,
+          -37.246618
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-19779",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/19779",
+        "region": "Región del Biobío",
+        "commune": "Arauco",
+        "unit_name": "ÁRIDOS RIO TRONGOL - ARAUCO",
+        "sma_unit_id": "19779",
+        "sma_instrument_ids": [
+          "15072"
+        ],
+        "instrument_descriptions": [
+          "38/2011 ESTABLECE NORMA DE EMISION DE RUIDOS GENERADOS POR FUENTES QUE INDICA ELABORADA A PARTIR DE LA REVISION DEL DECRETO SUPREMO N° 146 DE 1997 MINSEGPRES"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.967326,
+          -33.718119
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-19827",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/19827",
+        "region": "Región Metropolitana",
+        "commune": "Isla de Maipo",
+        "unit_name": "EXTRACCIÓN DE ÁRIDOS Y EXPLOTACIÓN MINERA RÍO MAIPO - ISLA DE MAIPO",
+        "sma_unit_id": "19827",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5353418071168,
+          -34.2147306608167
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-20029",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/20029",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Machalí",
+        "unit_name": "EXTRACCION DE ARIDOS EN RIO CACHAPOAL SECTOR SIFON EL GRINGO - MACHALÍ",
+        "sma_unit_id": "20029",
+        "sma_instrument_ids": [
+          "17461"
+        ],
+        "instrument_descriptions": [
+          "25/2019 EXTRACCION DE ARIDOS EN RIO CACHAPOAL SECTOR SIFON EL GRINGO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8219545461013,
+          -34.1917813664515
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-20059",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/20059",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Rancagua",
+        "unit_name": "EXPLOTACION MECANIZADA DE ARIDOS EN RIO CACHAPOAL KILOMETRO 36 AL 62 - RANCAGUA Y OLIVAR",
+        "sma_unit_id": "20059",
+        "sma_instrument_ids": [
+          "18349"
+        ],
+        "instrument_descriptions": [
+          "3/2021 EXPLOTACION MECANIZADA DE ARIDOS EN RIO CACHAPOAL KILOMETRO 36 AL 62"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8964309596934,
+          -34.2191905625556
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-20062",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/20062",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Doñihue",
+        "unit_name": "EXTRACCION DE ARIDOS RIO CACHAPOAL - DOÑIHUE, OLIVAR Y COINCO",
+        "sma_unit_id": "20062",
+        "sma_instrument_ids": [
+          "18404"
+        ],
+        "instrument_descriptions": [
+          "10/2021 EXTRACCION MECANIZADA DE ARIDOS RIO CACHAPOAL"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4568726247834,
+          -32.9210620344016
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-20289",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/20289",
+        "region": "Región de Valparaíso",
+        "commune": "Petorca",
+        "unit_name": "EXTRACCION DE ARIDOS RIO ACONCAGUA SOCIEDAD PETREOS",
+        "sma_unit_id": "20289",
+        "sma_instrument_ids": [
+          "18588"
+        ],
+        "instrument_descriptions": [
+          "25/2021 EXTRACCION DE ARIDOS RIO ACONCAGUA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.13773,
+          -34.415178
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2038",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2038",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "San Vicente",
+        "unit_name": "ARIDOS PUENTE PEUMO - RIO CACHAPOAL",
+        "sma_unit_id": "2038",
+        "sma_instrument_ids": [
+          "6723"
+        ],
+        "instrument_descriptions": [
+          "132/2012 EXTRACCION DE ARIDOS RIO CACHAPOAL SECTOR PUENTE PEUMO ARIDOS PUENTE PEUMO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.89118,
+          -33.80171
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-20681",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/20681",
+        "region": "Región Metropolitana",
+        "commune": "Isla de Maipo",
+        "unit_name": "ARIDOS LAS MERCEDES TRAMO A8 Y A9 RIO MAIPO - ISLA DE MAIPO",
+        "sma_unit_id": "20681",
+        "sma_instrument_ids": [
+          "18146"
+        ],
+        "instrument_descriptions": [
+          "554/2020/2020 EXTRACCION MECANIZADA DE ARIDOS RIO MAIPO TRAMO A8 Y A9"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.59822232,
+          -34.80559356000001
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2072",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2072",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "San Fernando",
+        "unit_name": "HIDROELECTRICA HIGUERA - LA CONFLUENCIA",
+        "sma_unit_id": "2072",
+        "sma_instrument_ids": [
+          "4397",
+          "4682",
+          "4721",
+          "7237"
+        ],
+        "instrument_descriptions": [
+          "146/2009 NUEVOS EMPRESTITOS DE ARIDOS B-6 Y B-7 MODIFICACION A DIA EXTRACCION MECANIZADA DE ARIDOS EN EL RIO TINGUIRIRICA Y ESTERO LOS HELADOS RESUELTA CON RCA N°290/2006",
+          "15/2009 MODIFICACION A DIA RESULTA CON RCA N° 290/2006 EXTRACCION MECANIZADA DE ARIDOS EN EL RIO TINGUIRIRICA Y ESTERO LOS HELADOS",
+          "191/2009 NUEVO PUNTO DE EXTRACCION DE ARIDOS B-10 MODIFICACION DIA EXTRACCION MECANIZADA DE ARIDOS EN EL RIO TINGUIRIRICA Y ESTERO LOS HELADOS RESUELTA CON RCA N°290/2006",
+          "64/2009 EXTRACCION MECANIZADA DE ARIDOS EN RIO TINGUIRIRICA CENTRAL HIDROELECTRICA LA CONFLUENCIA"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "2113"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - PDC Satisfactorio"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8296136675986,
+          -33.7618528074929
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-20741",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/20741",
+        "region": "Región Metropolitana",
+        "commune": "Isla de Maipo",
+        "unit_name": "ARIDOS LONQUEN - ISLA DE MAIPO",
+        "sma_unit_id": "20741",
+        "sma_instrument_ids": [
+          "18674"
+        ],
+        "instrument_descriptions": [
+          "622/2021 EXTRACCION MECANIZADA DE ARIDOS RIO MAIPO KILOMETRO 1127 AL 1157"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.685986,
+          -34.216997
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2081",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2081",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Machalí",
+        "unit_name": "ARIDOS CACHAPOAL - MACHALI",
+        "sma_unit_id": "2081",
+        "sma_instrument_ids": [
+          "6695"
+        ],
+        "instrument_descriptions": [
+          "151/2012 EXTRACCION MECANIZADA DE ARIDOS RIO CACHAPOAL"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.06073,
+          -36.84157
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-21932",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/21932",
+        "region": "Región del Biobío",
+        "commune": "Lota",
+        "unit_name": "EXTRACCION DE ARIDOS EN RIO BIOBIO PARA PROYECTO AMPLIACION CONEXION VIAL CONCEPCION-CHIGUAYANTE. ETAPA 2",
+        "sma_unit_id": "21932",
+        "sma_instrument_ids": [
+          "18633"
+        ],
+        "instrument_descriptions": [
+          "208/2021 EXTRACCION DE ARIDOS EN RIO BIOBIO PARA PROYECTO AMPLIACION CONEXION VIAL CONCEPCION-CHIGUAYANTE. ETAPA 2"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.14869396,
+          -36.82166114
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-21958",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/21958",
+        "region": "Región del Biobío",
+        "commune": "Hualpén",
+        "unit_name": "EXTRACCION DE ARIDOS DESDE EL RIO BIOBIO EN SAN PEDRO DE LA PAZ (INGEMAC)",
+        "sma_unit_id": "21958",
+        "sma_instrument_ids": [
+          "19347"
+        ],
+        "instrument_descriptions": [
+          "202208001125/2022 EXTRACCION DE ARIDOS DESDE EL RIO BIOBIO EN SAN PEDRO DE LA PAZ"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.569869,
+          -35.904575
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-22072",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/22072",
+        "region": "Región del Maule",
+        "commune": "Linares",
+        "unit_name": "Áridos Badilla en Río Achibueno",
+        "sma_unit_id": "22072",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.561559,
+          -36.230042
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-22419",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/22419",
+        "region": "Región del Maule",
+        "commune": "Parral",
+        "unit_name": "Áridos TRICAM sector Río Longaví",
+        "sma_unit_id": "22419",
+        "sma_instrument_ids": [
+          "15072",
+          "19929"
+        ],
+        "instrument_descriptions": [
+          "38/2011 ESTABLECE NORMA DE EMISION DE RUIDOS GENERADOS POR FUENTES QUE INDICA ELABORADA A PARTIR DE LA REVISION DEL DECRETO SUPREMO N° 146 DE 1997 MINSEGPRES",
+          "MP-041-2023 CONSTRUCTORA TRICAM LIMITADA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.64378021204118,
+          -33.94793373718163
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2257",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2257",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Mostazal",
+        "unit_name": "ARIDOS FERROVIAL - SAN FRANCISCO",
+        "sma_unit_id": "2257",
+        "sma_instrument_ids": [
+          "872"
+        ],
+        "instrument_descriptions": [
+          "120/1999 EXTRACCION DE ARIDOS DESDE EL ESTERO PEUCO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.70919027567841,
+          -34.026396074499864
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2259",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2259",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Codegua",
+        "unit_name": "ARIDOS ESTERO CODEGUA",
+        "sma_unit_id": "2259",
+        "sma_instrument_ids": [
+          "924"
+        ],
+        "instrument_descriptions": [
+          "12/2000 EXTRACCION DE ARIDOS DESDE EL ESTERO CODEGUA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.98505852711091,
+          -34.61373121129413
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2265",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2265",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "San Fernando",
+        "unit_name": "ARIDOS FERROVIAL- TINGUIRIRICA",
+        "sma_unit_id": "2265",
+        "sma_instrument_ids": [
+          "878"
+        ],
+        "instrument_descriptions": [
+          "112/1999 EXTRACCION DE ARIDOS DESDE EL RIO TINGUIRIRICA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.89975551819037,
+          -34.21836378270157
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2272",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2272",
+        "region": "Región del Libertador General Bernardo O'Higgins",
+        "commune": "Coinco",
+        "unit_name": "ARIDOS RIO CACHAPOAL - DOÑIHUE",
+        "sma_unit_id": "2272",
+        "sma_instrument_ids": [
+          "921"
+        ],
+        "instrument_descriptions": [
+          "129/1999 EXTRACCION DE ARIDOS DESDE EL RIO CACHAPOAL"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.833236,
+          -40.300221
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-23187",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/23187",
+        "region": "Región de Los Ríos",
+        "commune": "Río Bueno",
+        "unit_name": "Aridos Vicat pozo Nalcahue",
+        "sma_unit_id": "23187",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.77968,
+          -40.342278
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-23188",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/23188",
+        "region": "Región de Los Ríos",
+        "commune": "Río Bueno",
+        "unit_name": "Aridos Vicat pozo Cachillahue",
+        "sma_unit_id": "23188",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.163855,
+          -40.651986
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-23227",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/23227",
+        "region": "Región de los Lagos",
+        "commune": "Río Negro",
+        "unit_name": "ARIDOS CAIPULLI",
+        "sma_unit_id": "23227",
+        "sma_instrument_ids": [
+          "0",
+          "15072"
+        ],
+        "instrument_descriptions": [
+          "38/2011 ESTABLECE NORMA DE EMISION DE RUIDOS GENERADOS POR FUENTES QUE INDICA ELABORADA A PARTIR DE LA REVISION DEL DECRETO SUPREMO N° 146 DE 1997 MINSEGPRES",
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.597461,
+          -44.754225
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-23558",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/23558",
+        "region": "Región de Aysén del General Carlos Ibáñez del Campo",
+        "commune": "Cisnes",
+        "unit_name": "Extracción Áridos La Ponderosa (Ribera Río Cisnes)",
+        "sma_unit_id": "23558",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.52292,
+          -40.652785
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-23843",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/23843",
+        "region": "Región de los Lagos",
+        "commune": "San Juan de La Costa",
+        "unit_name": "EXTRACCIÓN DE ÁRIDOS RIO LIUCURA - SAN JUAN DE LA COSTA",
+        "sma_unit_id": "23843",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.702678,
+          -46.428285
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-24614",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/24614",
+        "region": "Región de Aysén del General Carlos Ibáñez del Campo",
+        "commune": "Río Ibáñez",
+        "unit_name": "Extracción Áridos Río Murta",
+        "sma_unit_id": "24614",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.800755,
+          -46.722121
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-24615",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/24615",
+        "region": "Región de Aysén del General Carlos Ibáñez del Campo",
+        "commune": "Chile Chico",
+        "unit_name": "Extracción Áridos Sector Río Leones Constructora Apia",
+        "sma_unit_id": "24615",
+        "sma_instrument_ids": [
+          "0"
+        ],
+        "instrument_descriptions": [
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.69303,
+          -33.693009
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2744",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2744",
+        "region": "Región Metropolitana",
+        "commune": "Alhué",
+        "unit_name": "EXTRACCION DE ARIDOS PUENTE LOS MORROS - BUIN",
+        "sma_unit_id": "2744",
+        "sma_instrument_ids": [
+          "3561"
+        ],
+        "instrument_descriptions": [
+          "373/2008 EXTRACCION DE ARIDOS EN CAUCE DEL RIO MAIPO DEL KM 0.800 AL 1.550 AGUAS ABAJO PUENTE LOS MORROS"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.871404,
+          -33.797981
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2796",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2796",
+        "region": "Región Metropolitana",
+        "commune": "Isla de Maipo",
+        "unit_name": "EXTRACCION DE ARIDOS PETREOS - BUIN",
+        "sma_unit_id": "2796",
+        "sma_instrument_ids": [
+          "7293"
+        ],
+        "instrument_descriptions": [
+          "198/2012 EXTRACCION Y PROCESAMIENTO DE ARIDOS DEL RIO MAIPO TRAMO A – 4 Y A - 5 KM 4.180 AL 6.360 AGUAS ABAJO PUENTE LA PUNTILLA LONQUEN"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.7736,
+          -33.7072
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2814",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2814",
+        "region": "Región Metropolitana",
+        "commune": "San Bernardo",
+        "unit_name": "PROCESAMIENTO DE ARIDOS MINERA ROSARIO - SAN BERNARDO",
+        "sma_unit_id": "2814",
+        "sma_instrument_ids": [
+          "15224",
+          "9033"
+        ],
+        "instrument_descriptions": [
+          "456/2011 MODIFICACION PLANTA PROCESAMIENTO DE ARIDOS LA PUNTILLA DEL RIO MAIPO",
+          "PC/F-025-2015 MODIFICACION PLANTA PROCESAMIENTO DE ARIDOS LA PUNTILLA DEL RIO MAIPO."
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "1273"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - PDC Satisfactorio"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.3302,
+          -36.5998
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-2839",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/2839",
+        "region": "Región de Ñuble",
+        "commune": "San Nicolás",
+        "unit_name": "EXTRACCION DE ARIDOS EL BOLDAL- RIO ÑUBLE EN CONFLUENCIA CON RIOS CHILLAN Y CHANGARAL",
+        "sma_unit_id": "2839",
+        "sma_instrument_ids": [
+          "17763",
+          "6634",
+          "895"
+        ],
+        "instrument_descriptions": [
+          "33/2020 AMPLIACION Y TRASLADO DE EXTRACCION Y PROCESAMIENTO DE ARIDOS RIO NUBLE EN CONFLUENCIA CON RIOS CHILLAN Y CHANGARAL AL FUNDO SAN FRANCISCO SECTOR HUAPE",
+          "56/2000 EXTRACCION MECANIZADA DE ARIDOS RIO ÑUBLE EN CONFLUENCIA CON RIOS CHILLAN Y CHANGARAL",
+          "9/2012 AMPLIACION EXTRACCION MECANIZADA DE ARIDOS RIO ÑUBLE EN CONFLUENCIA CON RIOS CHILLAN Y CHANGARAL- ARIDOS EL BOLDAL S.A."
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.971834,
+          -40.753033
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-3473",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3473",
+        "region": "Región de los Lagos",
+        "commune": "Osorno",
+        "unit_name": "ARIDOS DOWLING & SCHILLING SECTOR CANCURA",
+        "sma_unit_id": "3473",
+        "sma_instrument_ids": [
+          "6481",
+          "7659"
+        ],
+        "instrument_descriptions": [
+          "604/2013 AMPLIACION DE EXTRACCION DE ARIDOS EN EL RIO RAHUE SECTOR FUNDO EL ALMUD - SAN FLORENTINO",
+          "89/2012 AMPLIACION DE EXTRACCION DE ARIDOS RIO RAHUE SECTOR CANCURA"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "2485"
+        ],
+        "related_sanction_statuses": [
+          "En curso"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.107725,
+          -40.682039
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-3474",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3474",
+        "region": "Región de los Lagos",
+        "commune": "Río Negro",
+        "unit_name": "ARIDOS DOWLING & SCHILLING SECTOR EL ALMUD",
+        "sma_unit_id": "3474",
+        "sma_instrument_ids": [
+          "4385",
+          "5402",
+          "7659"
+        ],
+        "instrument_descriptions": [
+          "114/2011 PROYECTO AMPLIACION EXTRACCION DE ARIDOS EN RIO RAHUE SECTOR FUNDO EL ALMUD",
+          "565/2009 EXTRACCION DE ARIDOS RIO RAHUE FUNDO EL ALMUD",
+          "604/2013 AMPLIACION DE EXTRACCION DE ARIDOS EN EL RIO RAHUE SECTOR FUNDO EL ALMUD - SAN FLORENTINO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.71847727708519,
+          -38.77085946399705
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-3491",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3491",
+        "region": "Región de la Araucanía",
+        "commune": "Temuco",
+        "unit_name": "ARIDOS RIO CAUTIN POZO NILQUILCO",
+        "sma_unit_id": "3491",
+        "sma_instrument_ids": [
+          "1095"
+        ],
+        "instrument_descriptions": [
+          "126/2000 EXTRACCION DE ARIDOS RIO CAUTIN POZO NILQUILCO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.63747456483543,
+          -38.7636319125232
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-3492",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3492",
+        "region": "Región de la Araucanía",
+        "commune": "Temuco",
+        "unit_name": "ARIDOS RIO CAUTIN POZO SANTA ANA DE QUILQUILCO",
+        "sma_unit_id": "3492",
+        "sma_instrument_ids": [
+          "1264"
+        ],
+        "instrument_descriptions": [
+          "13/2001 EXTRACION DE ARIDOS RIO CAUTIN POZO SANTA ANA DE QUILQUILCO (SEGUNDA PRESENTACION)"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.26661,
+          -35.012392
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-3493",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3493",
+        "region": "Región del Maule",
+        "commune": "Curicó",
+        "unit_name": "ÁRIDOS RIO LONTUE",
+        "sma_unit_id": "3493",
+        "sma_instrument_ids": [
+          "9125"
+        ],
+        "instrument_descriptions": [
+          "207/2010 EXPLOTACION MECANIZADA DE ARIDOS RIO LONTUE SECTOR KM 1.500 A 3.650 AGUAS ABAJO PUENTE LONTUE"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "2129"
+        ],
+        "related_sanction_statuses": [
+          "En curso"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.24253329999999,
+          -39.8173788
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-3496",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/3496",
+        "region": "Región de Los Ríos",
+        "commune": "Valdivia",
+        "unit_name": "ÁRIDOS TRES SECTORES DE BORDE DE RÍO DEL CALLE - CALLE",
+        "sma_unit_id": "3496",
+        "sma_instrument_ids": [
+          "2050"
+        ],
+        "instrument_descriptions": [
+          "652/2005 EXTRACCION INDUSTRIAL DE ARIDOS EN TRES SECTORES DE BORDE DE RIO DEL CALLE - CALLE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.08,
+          -40.70006
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-5694",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/5694",
+        "region": "Región de los Lagos",
+        "commune": "Río Negro",
+        "unit_name": "CONSTRUCTORA SOCOVESA",
+        "sma_unit_id": "5694",
+        "sma_instrument_ids": [
+          "14806"
+        ],
+        "instrument_descriptions": [
+          "153/1998 EXTRACCION DE ARIDOS FUNDO SAN FLORENTINO RIO NEGRO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.129391,
+          -36.805035
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6788",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6788",
+        "region": "Región del Biobío",
+        "commune": "Talcahuano",
+        "unit_name": "EXTRACCION ARIDOS DEL RIO BIO BIO -SECTOR DEL FUNDO HUALPEN",
+        "sma_unit_id": "6788",
+        "sma_instrument_ids": [
+          "12243"
+        ],
+        "instrument_descriptions": [
+          "/2002 EXTRACCION MECANIZADA DE ARIDOS DEL RIO BIO BIO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.4166087,
+          -36.8146827
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6789",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6789",
+        "region": "Región de Ñuble",
+        "commune": "Quillón",
+        "unit_name": "EXTRACCION ARIDOS DEL RIO ITATA -SECTOR CANCHILLAS Y LA BALSA",
+        "sma_unit_id": "6789",
+        "sma_instrument_ids": [
+          "8740"
+        ],
+        "instrument_descriptions": [
+          "162/2012 EXTRACCION DE ARIDOS DEL RIO ITATA SECTOR CANCHILLAS Y LA BALSA CERRO NEGRO COMUNA DE QUILLON VIII REGION"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.420595,
+          -36.6387
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6798",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6798",
+        "region": "Región de Ñuble",
+        "commune": "Chillán",
+        "unit_name": "EXTRACCION ARIDOS READY MIX SUR RIO ÑUBLE - SECTOR QUINCHAMALI",
+        "sma_unit_id": "6798",
+        "sma_instrument_ids": [
+          "2787"
+        ],
+        "instrument_descriptions": [
+          "150/2005 EXTRACCION MECANIZADA DE ARIDOS DESDE RIO ÑUBLE SECTOR QUINCHAMALI"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.039461,
+          -36.758626
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6799",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6799",
+        "region": "Región del Biobío",
+        "commune": "Talcahuano",
+        "unit_name": "EXTRACCION ARIDOS RIO ANDALIEN-BESALCO",
+        "sma_unit_id": "6799",
+        "sma_instrument_ids": [
+          "5866"
+        ],
+        "instrument_descriptions": [
+          "129/2004 EXTRACCION MECANIZADA DE ARIDOS DESDE EL RIO ANDALIEN"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.595903,
+          -37.532816
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6800",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6800",
+        "region": "Región del Biobío",
+        "commune": "Negrete",
+        "unit_name": "EXTRACCION ARIDOS RIO BIOBIO - SECTOR FUNDO EL SAUCE",
+        "sma_unit_id": "6800",
+        "sma_instrument_ids": [
+          "238"
+        ],
+        "instrument_descriptions": [
+          "333/2005 EXTRACCION MECANIZADA DE ARIDOS RIO BIOBIO SECTOR FUNDO EL SAUCE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.4061967379177,
+          -36.8199164474093
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6801",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6801",
+        "region": "Región de Ñuble",
+        "commune": "Bulnes",
+        "unit_name": "EXTRACCION ARIDOS ABRATEC",
+        "sma_unit_id": "6801",
+        "sma_instrument_ids": [
+          "11164"
+        ],
+        "instrument_descriptions": [
+          "52/2010 EXTRACCION MECANIZADA DE ARIDOS RIO ITATA ABRATEC S.A ARIDOS"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "2008"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - Sanción"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.222678,
+          -37.185473
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6802",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6802",
+        "region": "Región del Biobío",
+        "commune": "Los Ángeles",
+        "unit_name": "EXTRACCION ARIDOS RIO LAJA TRIBASA",
+        "sma_unit_id": "6802",
+        "sma_instrument_ids": [
+          "10704"
+        ],
+        "instrument_descriptions": [
+          "107/1998 EXTRACCION MECANIZADA DE ARIDOS RIO LAJA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.410304,
+          -36.631078
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6803",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6803",
+        "region": "Región de Ñuble",
+        "commune": "Chillán",
+        "unit_name": "EXTRACCION ARIDOS RIO ÑUBLE- SECTOR QUINCHAMALI",
+        "sma_unit_id": "6803",
+        "sma_instrument_ids": [
+          "8738",
+          "8739"
+        ],
+        "instrument_descriptions": [
+          "22/2009 AMPLIACION PROYECTO DE EXTRACCION MECANIZADA DE ARIDOS RIO ÑUBLE SECTOR QUINCHAMALI",
+          "378/2006 EXTRACCION MECANIZDA DE ARIDOS RIO ÑUBLE SECTOR QUINCHAMALI"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.405218,
+          -36.629457
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6804",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6804",
+        "region": "Región de Ñuble",
+        "commune": "Chillán",
+        "unit_name": "PLANTA DE ARIDOS MAGGI (EXTRACCION ARIDOS RIO ÑUBLE-SECTOR HUECHUPIN)",
+        "sma_unit_id": "6804",
+        "sma_instrument_ids": [
+          "15647",
+          "163",
+          "17139",
+          "2"
+        ],
+        "instrument_descriptions": [
+          "203/1998 EXTRACCION MECANIZADA DE ARIDOS RIO ÑUBLE SECTOR HUECHUPIN",
+          "304/2016 EXTRACCION Y PROCESAMIENTO DE ARIDOS DESDE POZO LASTRERO SECTOR HUECHUPIN",
+          "307/2005 AMPLIACION VOLUMEN EXTRACCION DE ARIDOS EN RIO ÑUBLE SECTOR HUECHUPIN",
+          "40/2019 MODIFICACION ZONA DE EXTRACCION RCA 307/2004"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.3328715,
+          -36.602021
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6805",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6805",
+        "region": "Región de Ñuble",
+        "commune": "Chillán",
+        "unit_name": "EXTRACCION ARIDOS SAN RAFAEL - RIO ÑUBLE SECTOR HUECHUPIN",
+        "sma_unit_id": "6805",
+        "sma_instrument_ids": [
+          "12244"
+        ],
+        "instrument_descriptions": [
+          "/2002 EXTRACCION MECANIZADA DE ARIDOS DEL RIO ÑUBLE SECTOR HUECHUPIN"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.1457,
+          -36.8228
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6806",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6806",
+        "region": "Región del Biobío",
+        "commune": "San Pedro de la Paz",
+        "unit_name": "EXTRACCION ARIDOS SECTOR BOCA SUR INGEMAC -SPP",
+        "sma_unit_id": "6806",
+        "sma_instrument_ids": [
+          "4140",
+          "5419"
+        ],
+        "instrument_descriptions": [
+          "311/2008 PROYECTO DE EXTRACCION DE ARIDOS DESDE EL RIO BIO BIO SECTOR BOCA SUR SAN PEDRO DE LA PAZ",
+          "96/2011 AMPLIACION DE EXTRACCION DE ARIDOS DESDE EL RIO BIO BIO EN SAN PEDRO DE LA PAZ"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.198455,
+          -36.882157
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6808",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6808",
+        "region": "Región de Ñuble",
+        "commune": "Bulnes",
+        "unit_name": "EXTRACCION ARIDOS SOPRAMAT CAUCE DEL RIO DIGUILLIN - SECTOR LOS TILOS",
+        "sma_unit_id": "6808",
+        "sma_instrument_ids": [
+          "3941"
+        ],
+        "instrument_descriptions": [
+          "161/2008 EXTRACCION MECANIZADA DE ARIDOS DESDE EL CAUCE DEL RIO DIGUILLIN - SECTOR LOS TILOS ARIDOS SOPRAMAT"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "2632"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - Sanción"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.296474,
+          -37.600728
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6820",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6820",
+        "region": "Región del Biobío",
+        "commune": "Mulchén",
+        "unit_name": "EXTRACCION DE ARIDOS EN EL RIO BIO-BIO SECTOR MIRADOR DEL BIO-BIO",
+        "sma_unit_id": "6820",
+        "sma_instrument_ids": [
+          "10572"
+        ],
+        "instrument_descriptions": [
+          "/2001 EXTRACCION DE ARIDOS EN EL RIO BIO-BIO SECTOR MIRADOR DEL BIO-BIO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.7055565,
+          -33.670520999999994
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6821",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6821",
+        "region": "Región Metropolitana",
+        "commune": "Buin",
+        "unit_name": "EXTRACCION DE ARIDOS CONSTRUCTORA AGUA SANTA - BUIN",
+        "sma_unit_id": "6821",
+        "sma_instrument_ids": [
+          "4060",
+          "4229"
+        ],
+        "instrument_descriptions": [
+          "247/2010 EXTRACCION DE ARIDOS EN CAUCE DEL RIO MAIPO DEL KILOMETRO 33 AL 43 AGUAS ARRIBA PUENTE MAIPO COMUNA DE BUIN",
+          "997/2009 EXTRACCION DE ARIDOS EN EL RIO MAIPO RIBERA SUR CONCESIONES KM 23 AL 33 Y 43 AL 465 AGUAS ARRIBA PUENTE MAIPO"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "1794"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - PDC Satisfactorio"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.080183,
+          -36.633267
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6822",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6822",
+        "region": "Región de Ñuble",
+        "commune": "Chillán",
+        "unit_name": "EXTRACCION DE ARIDOS EN RIO CHILLAN FUNDO BOYEN",
+        "sma_unit_id": "6822",
+        "sma_instrument_ids": [
+          "8424"
+        ],
+        "instrument_descriptions": [
+          "182/2010 EXTRACCION DE ARIDOS EN RIO CHILLAN FUNDO BOYEN"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.203347,
+          -33.711347
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6823",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6823",
+        "region": "Región Metropolitana",
+        "commune": "Melipilla",
+        "unit_name": "EXTRACCION DE ARIDOS EN SECTOR PUENTE INGENIERO MARAMBIO - MELIPILLA",
+        "sma_unit_id": "6823",
+        "sma_instrument_ids": [
+          "1846"
+        ],
+        "instrument_descriptions": [
+          "554/2002 EXTRACCION MECANIZADA DE ARIDOS EN RIO MAIPO SECTOR  PUENTE INGENIERO MARAMBIO"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "2722"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - Sanción"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.160541,
+          -33.401026
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6824",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6824",
+        "region": "Región Metropolitana",
+        "commune": "Curacaví",
+        "unit_name": "EXTRACCION DE ARIDOS ESTERO PUANGUE (RUTAS DEL PACIFICO) - CURACAVI",
+        "sma_unit_id": "6824",
+        "sma_instrument_ids": [
+          "1056"
+        ],
+        "instrument_descriptions": [
+          "502/2000 EXTRACCION Y CHANCADO DE ARIDOS DEL ESTERO PUANGUE REGION METROPOLITANA"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.799572,
+          -33.734692
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6827",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6827",
+        "region": "Región Metropolitana",
+        "commune": "San Bernardo",
+        "unit_name": "EXTRACCION DE ARIDOS MINERA SANTA LAURA - SAN BERNARDO",
+        "sma_unit_id": "6827",
+        "sma_instrument_ids": [
+          "19196",
+          "4418",
+          "9280"
+        ],
+        "instrument_descriptions": [
+          "202213001271/2022 CONTINUIDAD OPERACIONAL EXTRACCION ARIDOS RIO MAIPO TRAMO KM 85 A KM 112",
+          "361/2010 EXTRACCION DE ARIDOS EN RIO MAIPO SECTOR KM. 8.0 AL 10.5 AGUAS ABAJO PUENTE MAIPO",
+          "414/2014 MODIFICACION PROYECTO EXTRACCION DE ARIDOS EN EL RIO MAIPO SECTOR KM 8.0 AL 10.5 AGUAS ABAJO PUENTE MAIPO"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "1801"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - PDC Satisfactorio"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.754375,
+          -33.865413
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6833",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6833",
+        "region": "Región Metropolitana",
+        "commune": "Paine",
+        "unit_name": "EXTRACCION DE ARIDOS RIO ANGOSTURA SECTOR PUENTE AGUILA NORTE (FERROVIAL AGROMAN CHILE S.A.) - PAINE",
+        "sma_unit_id": "6833",
+        "sma_instrument_ids": [
+          "5763"
+        ],
+        "instrument_descriptions": [
+          "314/2000 PROYECTO DE EXTRACCION MECANIZADA DE ARIDOS CAUCE RIO ANGOSTURA SECTOR PUENTE AGUILA NORTE A PUENTE CHAMPA Y PUENTE FERROVIARIO LOS MAQUIS"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.648783,
+          -38.764404
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6834",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6834",
+        "region": "Región de la Araucanía",
+        "commune": "Temuco",
+        "unit_name": "EXTRACCION DE ARIDOS RIO CAUTIN",
+        "sma_unit_id": "6834",
+        "sma_instrument_ids": [
+          "10483"
+        ],
+        "instrument_descriptions": [
+          "/1998 EXTRACCION DE ARIDOS RIO CAUTIN"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.666066,
+          -38.765104
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6835",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6835",
+        "region": "Región de la Araucanía",
+        "commune": "Padre las Casas",
+        "unit_name": "EXTRACCION DE ARIDOS RIO CAUTIN - SECTOR MAQUEHUE",
+        "sma_unit_id": "6835",
+        "sma_instrument_ids": [
+          "12441"
+        ],
+        "instrument_descriptions": [
+          "/1999 EXTRACCION DE ARIDOS RIO CAUTIN - SECTOR MAQUEHUE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.773853,
+          -38.776324
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6836",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6836",
+        "region": "Región de la Araucanía",
+        "commune": "Temuco",
+        "unit_name": "EXTRACCION DE ARIDOS RIO CAUTIN SECTOR RENGALIL",
+        "sma_unit_id": "6836",
+        "sma_instrument_ids": [
+          "13253"
+        ],
+        "instrument_descriptions": [
+          "213/2006 EXTRACCION DE ARIDOS RIO CAUTIN SECTOR RENGALIL"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.440110091858,
+          -38.58242407097557
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6837",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6837",
+        "region": "Región de la Araucanía",
+        "commune": "Lautaro",
+        "unit_name": "EXTRACCION DE ARIDOS RIO CAUTIN-CANTERA LAUTARO",
+        "sma_unit_id": "6837",
+        "sma_instrument_ids": [
+          "0",
+          "15091",
+          "19186",
+          "9512"
+        ],
+        "instrument_descriptions": [
+          "159/2014 EXPLOTACION MECANIZADA DE ARIDOS",
+          "20220900133/2022 ARIDOS SAN VICENTE",
+          "46/2002 ESTABLECE NORMA DE EMISION DE RESIDUOS LIQUIDOS A AGUAS SUBTERRANEAS",
+          "INFRACCION ART.N° 35 LETRA B - ELUSION"
+        ],
+        "related_sanction_count": 1,
+        "related_sanction_ids": [
+          "2012"
+        ],
+        "related_sanction_statuses": [
+          "Terminado - Sanción"
+        ],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.758957,
+          -33.701232
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6838",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6838",
+        "region": "Región Metropolitana",
+        "commune": "Santiago",
+        "unit_name": "EXTRACCION DE ARIDOS SANTA GLORIA - SAN BERNARDO",
+        "sma_unit_id": "6838",
+        "sma_instrument_ids": [
+          "4866"
+        ],
+        "instrument_descriptions": [
+          "19/2010 EXTRACCIÒN Y PROCESAMIENTO DE ÀRIDOS EN LA RIBERA NORTE DEL RÌO MAIPO KM. 35 AL 45 AGUAS ABAJO DEL PUENTE MAIPO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.717079,
+          -33.673979
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6839",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6839",
+        "region": "Región Metropolitana",
+        "commune": "San Bernardo",
+        "unit_name": "EXTRACCION DE ARIDOS SECTOR PUENTE LOS MORROS (ARENAS Y RIPIOS SANTIAGO LTDA.) - SAN BERNARDO",
+        "sma_unit_id": "6839",
+        "sma_instrument_ids": [
+          "1666"
+        ],
+        "instrument_descriptions": [
+          "346/2002 EXTRACCION DE ARIDOS EN EL RIO MAIPO SECTOR PUENTE LOS MORROS-PUENTE MAIPO RUTA 5 SUR"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.4712301845613,
+          -36.64327983351045
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6843",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6843",
+        "region": "Región de Ñuble",
+        "commune": "Ránquil",
+        "unit_name": "EXTRACCION MECANIZADA DE ARIDOS EN EL RIO ITATA SECTOR PORVENIR",
+        "sma_unit_id": "6843",
+        "sma_instrument_ids": [
+          "159"
+        ],
+        "instrument_descriptions": [
+          "243/2004 EXTRACCION MECANIZADA DE ARIDOS EN EL RIO ITATA SECTOR PORVENIR"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.276645,
+          -37.600287
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6849",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6849",
+        "region": "Región del Biobío",
+        "commune": "Los Ángeles",
+        "unit_name": "EXTRACCION MECANIZADA DE ARIDOS RIO BIO-BIO SECTOR SAN CARLOS DE PUREN",
+        "sma_unit_id": "6849",
+        "sma_instrument_ids": [
+          "12291"
+        ],
+        "instrument_descriptions": [
+          "41/1999 EXTRACCION MECANIZADA DE ARIDOS RIO BIO-BIO SECTOR SAN CARLOS DE PUREN"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.398115,
+          -36.625133
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6851",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6851",
+        "region": "Región de Ñuble",
+        "commune": "Chillán",
+        "unit_name": "EXTRACCION MECANIZADA DE ARIDOS RIO ÑUBLE- TRIBASA",
+        "sma_unit_id": "6851",
+        "sma_instrument_ids": [
+          "10688"
+        ],
+        "instrument_descriptions": [
+          "/1997 EXTRACCION MECANIZADA DE ARIDOS RIO ÑUBLE"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.221472,
+          -33.794127
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-6855",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/6855",
+        "region": "Región Metropolitana",
+        "commune": "San José de Maipo",
+        "unit_name": "EXTRACCION Y EXPLOTACION DE ARENAS DE RODADOS RIO MAIPO - SAN JOSE DE MAIPO",
+        "sma_unit_id": "6855",
+        "sma_instrument_ids": [
+          "14397"
+        ],
+        "instrument_descriptions": [
+          "329/2010 REGULARIZACION DE ACTIVIDADES BANCO ARENERO ROMERAL PROYECTO EXTRACCION Y EXPLOTACION DE ARENAS DE RODADOS RIO MAIPO"
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.353125,
+          -33.739383
+        ]
+      },
+      "properties": {
+        "id": "sma-uf-8597",
+        "label": "known_aggregate_site",
+        "label_confidence": 0.8,
+        "label_basis": "SMA public regulated-unit catalogue contains aggregate-extraction and river-context terms.",
+        "activity_type": "riverbed_aggregate_extraction",
+        "observed_at": "2026-05-20",
+        "source_updated_at": "2026-05-20",
+        "precision": "catalogue_point",
+        "source": "SMA SNIFA Datos Abiertos — Unidades Fiscalizables e Instrumentos",
+        "source_url": "http://snifa.sma.gob.cl/UnidadFiscalizable/Ficha/8597",
+        "region": "Región Metropolitana",
+        "commune": "Melipilla",
+        "unit_name": "PLANTA DE PROCESAMIENTO Y EXTRACCION DE ARIDOS RIO MAIPO SECTOR CONFLUENCIA CON ESTERO PUANGUE - MELIPILLA",
+        "sma_unit_id": "8597",
+        "sma_instrument_ids": [
+          "13273"
+        ],
+        "instrument_descriptions": [
+          "542/2004 PROYECTO DE EXTRACCION Y CHANCADO DE ARIDOS DEL RIO MAIPO SECTOR CONFLUENCIA CON ESTERO PUANGUE."
+        ],
+        "related_sanction_count": 0,
+        "related_sanction_ids": [],
+        "related_sanction_statuses": [],
+        "legal_status": "unknown — an SMA instrument/RCA association is not proof of active authorisation.",
+        "training_use": "positive candidate for visual aggregate-site detection; verify activity date and footprint before use as pixel-level ground truth."
+      }
+    }
+  ]
+}

@@ -23,7 +23,9 @@ Prueba sin GEE: dry_run_atacama()
 
 from __future__ import annotations
 
+import csv
 import json
+import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from pathlib import Path
@@ -44,7 +46,7 @@ from config import CLOUD_COVER_MAX, OUTPUT_DIR, dynamic_date_windows
 # ── Salares prioritarios [west, south, east, north] ──────────────────────────
 
 SALARES_PRIORITARIOS: dict[str, dict] = {
-    "salar_atacama":     {"bbox": [-68.35, -23.65, -67.85, -23.15], "operador": "SQM/Albemarle"},
+    "salar_atacama":     {"bbox": [-68.45, -23.65, -67.85, -23.15], "operador": "SQM/Albemarle"},
     "salar_maricunga":   {"bbox": [-69.2,  -27.1,  -68.8,  -26.8],  "operador": "múltiple"},
     "salar_pedernales":  {"bbox": [-69.4,  -26.4,  -69.0,  -26.1],  "operador": "múltiple"},
     "salar_punta_negra": {"bbox": [-68.8,  -24.8,  -68.4,  -24.5],  "operador": "múltiple"},
@@ -67,6 +69,10 @@ _EMBED_DIM  = 384
 _INPUT_SIZE = 224
 _S2_SCALE   = 10_000.0
 _GAIA_THRESHOLD = 0.50
+
+_CANDIDATOS_DIR = Path("data") / "salares_chips" / "candidatos"
+_CANDIDATOS_CSV = Path("data") / "salares_chips" / "candidatos.csv"
+_CSV_LOCK       = threading.Lock()
 
 # ── Legal: fuentes chilenas ───────────────────────────────────────────────────
 
@@ -458,6 +464,43 @@ def _vectorize_expansion(
     return results
 
 
+# ── Severidad ──────────────────────────────────────────────────────────────────
+
+def _assign_severity(ssi_delta: float, gaia_prob: float) -> str:
+    if ssi_delta >= _SEV_HIGH_THR or (ssi_delta >= _SEV_MEDIUM_THR and gaia_prob > 0.65):
+        return "alta"
+    if ssi_delta >= _SEV_MEDIUM_THR:
+        return "media"
+    return "baja"
+
+
+# ── Exportación de chips para entrenamiento ────────────────────────────────────
+
+def _export_candidato(
+    polygon_id: str,
+    chip: np.ndarray,
+    lat: float,
+    lon: float,
+    salar: str,
+    ssi_delta: float,
+    gaia_prob: float,
+) -> None:
+    _CANDIDATOS_DIR.mkdir(parents=True, exist_ok=True)
+    _CANDIDATOS_CSV.parent.mkdir(parents=True, exist_ok=True)
+
+    chip_filename = f"{polygon_id}.npy"
+    np.save(_CANDIDATOS_DIR / chip_filename, chip)
+
+    sev = _assign_severity(ssi_delta, gaia_prob)
+    with _CSV_LOCK:
+        write_header = not _CANDIDATOS_CSV.exists()
+        with _CANDIDATOS_CSV.open("a", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            if write_header:
+                writer.writerow(["chip_filename", "lat", "lon", "salar", "ssi_delta", "gaia_prob", "severidad"])
+            writer.writerow([chip_filename, round(lat, 6), round(lon, 6), salar, round(ssi_delta, 4), round(gaia_prob, 4), sev])
+
+
 # ── Caché de chips ─────────────────────────────────────────────────────────────
 
 def _load_chip(polygon_id: str) -> "np.ndarray | None":
@@ -486,14 +529,6 @@ def _download_chip(s2_image, lon: float, lat: float) -> "np.ndarray | None":
 
 # ── Severidad ─────────────────────────────────────────────────────────────────
 
-def _assign_severity(ssi_delta: float, gaia_prob: float) -> str:
-    if ssi_delta >= _SEV_HIGH_THR or (ssi_delta >= _SEV_MEDIUM_THR and gaia_prob > 0.65):
-        return "alta"
-    if ssi_delta >= _SEV_MEDIUM_THR:
-        return "media"
-    return "baja"
-
-
 # ── Clasificación + legal por polígono ────────────────────────────────────────
 
 def _classify_polygon(
@@ -504,7 +539,7 @@ def _classify_polygon(
     classified_cache: dict[str, dict],
     salar_name: str = "",
     operador: str = "",
-) -> dict:
+) -> dict | None:
     polygon_id = make_polygon_id(poly["lat"], poly["lon"])
 
     if polygon_id in classified_cache:
@@ -524,6 +559,12 @@ def _classify_polygon(
 
         if chip is not None:
             gaia_result = classifier.predecir(chip, (poly["lat"], poly["lon"]))
+            _export_candidato(
+                polygon_id, chip,
+                poly["lat"], poly["lon"],
+                salar_name, poly["ssi_delta"],
+                gaia_result["confianza"],
+            )
         else:
             gaia_result = {
                 "actividad":    "expansion_piscinas",
@@ -532,11 +573,13 @@ def _classify_polygon(
                 "legal_detail": "chip no disponible",
             }
 
-        # El legal checker corre siempre para toda expansión SSI detectada.
-        # Gaia solo aporta confianza/severidad; no filtra el veredicto legal.
         legal = legal_checker.verificar(poly["lat"], poly["lon"], salar=salar_name)
         gaia_result["veredicto"]    = legal["veredicto"]
         gaia_result["legal_detail"] = legal["legal_detail"]
+
+    # Descartar si Gaia no confirma presencia de piscina (aplica caché y nueva clasificación)
+    if gaia_result["confianza"] < _GAIA_THRESHOLD:
+        return None
 
     severity = _assign_severity(poly["ssi_delta"], gaia_result["confianza"])
 
@@ -618,7 +661,9 @@ def _run_salar(
         }
         for fut in as_completed(futures):
             try:
-                alerts.append(fut.result())
+                result = fut.result()
+                if result is not None:
+                    alerts.append(result)
             except Exception as exc:
                 print(f"  [{salar_name}] Error clasificando polígono: {exc}")
 

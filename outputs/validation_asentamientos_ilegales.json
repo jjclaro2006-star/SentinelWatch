@@ -1,0 +1,183 @@
+{
+  "category": "asentamientos_ilegales",
+  "generated_at": "2026-06-13",
+  "alert_file": "outputs/alerts_20260608.geojson",
+  "source_note": "Coordinates are public-report-derived approximations unless precision states otherwise; do not treat approximate centroids as field GPS points.",
+  "summary": {
+    "points_total": 6,
+    "points_with_alerts_within_50km": 0,
+    "total_point_alert_matches_within_50km": 0,
+    "overall_min_distance_km": 177.825,
+    "median_min_distance_km": 489.823,
+    "alert_file_bbox": {
+      "min_lon": -75.494963,
+      "min_lat": -4.999245,
+      "max_lon": -73.500921,
+      "max_lat": -3.002375
+    }
+  },
+  "conclusion": "Sin coincidencias dentro de 50 km; la mayor?a de puntos cae fuera del footprint espacial del GeoJSON de SentinelWatch.",
+  "points": [
+    {
+      "id": "settle_001",
+      "lat": -6.5579601,
+      "lon": -75.1751279,
+      "location": "Vanderland/Osterreich/Providencia Mennonite settlement complex near Tierra Blanca, Loreto, Peru",
+      "country": "Peru",
+      "date": "2024",
+      "activity": "settlement/colony expansion linked to unauthorized deforestation",
+      "precision": "approx_named_place_osm",
+      "sources": [
+        "https://www.maapprogram.org/mennonites-deforestation-peru-amazon/",
+        "https://www.maapprogram.org/tag/maap-188/"
+      ],
+      "notes": "Treated as illegal/unauthorized settlement expansion because MAAP reports ongoing FEMA/SERFOR investigations and no land-use-change authorization.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 177.825,
+        "nearest_alert": {
+          "index": 1551,
+          "id": "49ceddf0-961f-4cda-b418-6738fc373a0c",
+          "lat": -4.959647,
+          "lon": -75.22909,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "settle_002",
+      "lat": -7.8670293,
+      "lon": -74.8994093,
+      "location": "Chipiar Mennonite colony, Loreto-Ucayali border, Peru",
+      "country": "Peru",
+      "date": "2024",
+      "activity": "settlement/colony expansion linked to unauthorized deforestation",
+      "precision": "approx_district_centroid_osm",
+      "sources": [
+        "https://www.maapprogram.org/mennonites-deforestation-peru-amazon/",
+        "https://www.maapprogram.org/tag/maap-188/"
+      ],
+      "notes": "Judicial suspension of predatory clearing/logging ratified in 2023.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 325.332,
+        "nearest_alert": {
+          "index": 1551,
+          "id": "49ceddf0-961f-4cda-b418-6738fc373a0c",
+          "lat": -4.959647,
+          "lon": -75.22909,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "settle_003",
+      "lat": -9.0105071,
+      "lon": -73.6643745,
+      "location": "Masisea Mennonite colony, Ucayali, Peru",
+      "country": "Peru",
+      "date": "2024",
+      "activity": "settlement/colony expansion linked to unauthorized deforestation",
+      "precision": "approx_district_centroid_osm",
+      "sources": [
+        "https://www.maapprogram.org/mennonites-deforestation-peru-amazon/",
+        "https://www.maapprogram.org/tag/maap-188/"
+      ],
+      "notes": "First Mennonite colony established in Peru, under FEMA/SERFOR case context.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 446.617,
+        "nearest_alert": {
+          "index": 427,
+          "id": "0501b903-ade0-4bc8-b514-49a10cd4f185",
+          "lat": -4.999245,
+          "lon": -73.871445,
+          "severity": "low",
+          "area_ha": 29.56
+        }
+      }
+    },
+    {
+      "id": "settle_004",
+      "lat": -10.729,
+      "lon": -73.756,
+      "location": "Raymondi district / Atalaya narco-airstrip cluster, Ucayali, Peru",
+      "country": "Peru",
+      "date": "2024-11",
+      "activity": "clandestine airstrip/infrastructure in indigenous territories",
+      "precision": "approx_district_area",
+      "sources": [
+        "https://es.mongabay.com/specials/los-vuelos-de-la-muerte/",
+        "https://es.mongabay.com/2024/11/droga-de-alto-vuelo-en-peru-comunidades-nativas-de-atalaya-viven-sitiadas-por-el-narcotrafico-y-mas-de-20-pistas-clandestinas/"
+      ],
+      "notes": "Mongabay/Earth Genome found 31 airstrips in Atalaya and 45 in Ucayali; some in/around indigenous territories.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 637.247,
+        "nearest_alert": {
+          "index": 427,
+          "id": "0501b903-ade0-4bc8-b514-49a10cd4f185",
+          "lat": -4.999245,
+          "lon": -73.871445,
+          "severity": "low",
+          "area_ha": 29.56
+        }
+      }
+    },
+    {
+      "id": "settle_005",
+      "lat": -9.75,
+      "lon": -75.05,
+      "location": "Kakataibo indigenous reserve/concession zone, Ucayali-Huanuco, Peru",
+      "country": "Peru",
+      "date": "2024-11",
+      "activity": "clandestine airstrips/coca infrastructure affecting indigenous reserves",
+      "precision": "approx_regional_centroid",
+      "sources": [
+        "https://es.mongabay.com/specials/los-vuelos-de-la-muerte/"
+      ],
+      "notes": "Mongabay reports illegal runways exposing Kakataibo people and reserves to drug violence.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 533.029,
+        "nearest_alert": {
+          "index": 1551,
+          "id": "49ceddf0-961f-4cda-b418-6738fc373a0c",
+          "lat": -4.959647,
+          "lon": -75.22909,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "settle_006",
+      "lat": -10.4800478,
+      "lon": -73.0982573,
+      "location": "Atalaya province, Ucayali, Peru",
+      "country": "Peru",
+      "date": "2024",
+      "activity": "cluster of clandestine airstrips and associated occupation pressure",
+      "precision": "approx_province_centroid_osm",
+      "sources": [
+        "https://es.mongabay.com/specials/los-vuelos-de-la-muerte/",
+        "https://es.mongabay.com/2024/11/droga-de-alto-vuelo-en-peru-comunidades-nativas-de-atalaya-viven-sitiadas-por-el-narcotrafico-y-mas-de-20-pistas-clandestinas/"
+      ],
+      "notes": "Province-level point: 31 runways concentrated in Atalaya.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 615.359,
+        "nearest_alert": {
+          "index": 427,
+          "id": "0501b903-ade0-4bc8-b514-49a10cd4f185",
+          "lat": -4.999245,
+          "lon": -73.871445,
+          "severity": "low",
+          "area_ha": 29.56
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "alert_file_used": "C:\\Users\\juanc\\OneDrive\\Documentos\\SentinelWatch\\outputs\\alerts_20260608.geojson",
+  "reference_file": "outputs/nanay_reference_coords.json",
+  "total_alert_features_in_file": 1642,
+  "method": "nearest-neighbor haversine distance from alert point to approximate ACCA/Mongabay Nanay reference points; reported top 24 closest alerts because the provided file contains more than 24 features.",
+  "top_24_closest_alerts": [
+    {
+      "feature_index": 412,
+      "id": "d0920288-23e2-4c29-80b9-143f3746519d",
+      "lat": -3.774536,
+      "lon": -73.857303,
+      "nearest_reference_km": 10.404,
+      "nearest_reference": "draga 21 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 484.2,329.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 399,
+      "id": "7d216082-eb9c-4252-9e34-c3a7054363db",
+      "lat": -3.771708,
+      "lon": -73.853061,
+      "nearest_reference_km": 10.903,
+      "nearest_reference": "draga 21 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 484.2,329.2)",
+      "severity": "low",
+      "area_ha": 19.74
+    },
+    {
+      "feature_index": 411,
+      "id": "28cf37bc-dfed-4aa3-a978-5c275a8a7e51",
+      "lat": -3.768879,
+      "lon": -73.857303,
+      "nearest_reference_km": 10.966,
+      "nearest_reference": "draga 21 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 484.2,329.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 699,
+      "id": "9549da31-add0-4ec7-a743-accf296a2758",
+      "lat": -3.684026,
+      "lon": -74.092063,
+      "nearest_reference_km": 13.291,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 729,
+      "id": "de401e60-2cb1-4e1c-9705-686d697adffd",
+      "lat": -3.689683,
+      "lon": -74.106205,
+      "nearest_reference_km": 13.469,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 633,
+      "id": "f74b22d3-f38a-4160-9633-6516d0df6799",
+      "lat": -3.602002,
+      "lon": -74.035494,
+      "nearest_reference_km": 21.253,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 732,
+      "id": "b59357a0-d0cc-4e44-a514-8460fb6b1545",
+      "lat": -3.603416,
+      "lon": -74.110448,
+      "nearest_reference_km": 22.376,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 39.49
+    },
+    {
+      "feature_index": 760,
+      "id": "4a732059-63ce-4712-aa35-5d3ba5af5885",
+      "lat": -3.607659,
+      "lon": -74.126004,
+      "nearest_reference_km": 22.581,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 599,
+      "id": "90fab7fe-c403-4175-a505-a0114bb3e881",
+      "lat": -3.592102,
+      "lon": -74.001553,
+      "nearest_reference_km": 22.803,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "medium",
+      "area_ha": 19.74
+    },
+    {
+      "feature_index": 805,
+      "id": "fd69f244-b92f-4ba2-ae02-682b687acc0a",
+      "lat": -3.621801,
+      "lon": -74.159945,
+      "nearest_reference_km": 23.049,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 524,
+      "id": "8a552adf-42b8-4507-82ea-a8fc96c58868",
+      "lat": -3.60483,
+      "lon": -73.95347,
+      "nearest_reference_km": 23.153,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 532,
+      "id": "3558e82d-dece-4c55-8cf3-dc2fe0779099",
+      "lat": -3.602002,
+      "lon": -73.956298,
+      "nearest_reference_km": 23.307,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 580,
+      "id": "9b2cb2fd-6475-4ee4-a4b7-8f022c86c560",
+      "lat": -3.582203,
+      "lon": -73.987411,
+      "nearest_reference_km": 24.232,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 605,
+      "id": "ec5b3c9e-55fa-4cc7-ab1d-7cdce74ba34d",
+      "lat": -3.569475,
+      "lon": -74.00721,
+      "nearest_reference_km": 25.166,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 19.74
+    },
+    {
+      "feature_index": 595,
+      "id": "6407b1fc-c415-43ff-9985-b3fb47481fe4",
+      "lat": -3.558161,
+      "lon": -73.998725,
+      "nearest_reference_km": 26.567,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 19.74
+    },
+    {
+      "feature_index": 804,
+      "id": "90a19374-9d4d-4076-b9b9-95b30de75169",
+      "lat": -3.573718,
+      "lon": -74.159945,
+      "nearest_reference_km": 27.63,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 585,
+      "id": "a24b51df-4905-4845-86eb-017635ce596d",
+      "lat": -3.542605,
+      "lon": -73.990239,
+      "nearest_reference_km": 28.447,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 544,
+      "id": "ee77052b-4186-4c26-b5a5-c515b87e9afa",
+      "lat": -3.536948,
+      "lon": -73.964784,
+      "nearest_reference_km": 29.759,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 886,
+      "id": "44c6aa7a-12c1-4327-b1fb-bdf6979e4743",
+      "lat": -3.610487,
+      "lon": -74.241969,
+      "nearest_reference_km": 29.94,
+      "nearest_reference": "draga 2 aproximada digitizada del mapa ACCA/Mongabay (cyan, pixel 391.1,284.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 902,
+      "id": "b259b8ae-5f63-4425-a8cf-ad87ccb54750",
+      "lat": -3.862217,
+      "lon": -74.326822,
+      "nearest_reference_km": 29.957,
+      "nearest_reference": "draga 1 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 387.6,293.0)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 903,
+      "id": "2d22bd47-c020-47bb-bdc2-a937b12f4f01",
+      "lat": -3.873531,
+      "lon": -74.329651,
+      "nearest_reference_km": 30.509,
+      "nearest_reference": "draga 1 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 387.6,293.0)",
+      "severity": "medium",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 906,
+      "id": "0c445fb4-e705-42f7-9af3-19fcbaa3cc2f",
+      "lat": -3.83959,
+      "lon": -74.335307,
+      "nearest_reference_km": 30.559,
+      "nearest_reference": "draga 1 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 387.6,293.0)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 551,
+      "id": "9490e2a0-98f9-454e-a3ec-55f1f5c614a3",
+      "lat": -3.522806,
+      "lon": -73.967612,
+      "nearest_reference_km": 31.181,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    },
+    {
+      "feature_index": 714,
+      "id": "0d272adf-c64b-41fb-8ff1-c89db042ca22",
+      "lat": -3.517149,
+      "lon": -74.09772,
+      "nearest_reference_km": 31.272,
+      "nearest_reference": "draga 3 aproximada digitizada del mapa ACCA/Mongabay (white, pixel 398.5,274.2)",
+      "severity": "low",
+      "area_ha": 9.87
+    }
+  ],
+  "summary_top_24": {
+    "min_km": 10.404,
+    "median_km": 23.7695,
+    "mean_km": 23.449,
+    "max_km": 31.272,
+    "within_5km": 0,
+    "within_10km": 0,
+    "within_25km": 13,
+    "within_50km": 24
+  }
+}

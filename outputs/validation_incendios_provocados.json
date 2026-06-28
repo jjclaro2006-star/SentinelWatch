@@ -1,0 +1,197 @@
+{
+  "category": "incendios_provocados",
+  "generated_at": "2026-06-13",
+  "alert_file": "outputs/alerts_20260608.geojson",
+  "source_note": "Coordinates are public-report-derived approximations unless precision states otherwise; do not treat approximate centroids as field GPS points. Fire points also reference NASA FIRMS and INPE BDQueimadas as public active-fire technical data systems.",
+  "summary": {
+    "points_total": 6,
+    "points_with_alerts_within_50km": 0,
+    "total_point_alert_matches_within_50km": 0,
+    "overall_min_distance_km": 177.825,
+    "median_min_distance_km": 657.3635,
+    "alert_file_bbox": {
+      "min_lon": -75.494963,
+      "min_lat": -4.999245,
+      "max_lon": -73.500921,
+      "max_lat": -3.002375
+    }
+  },
+  "conclusion": "Sin coincidencias dentro de 50 km; la mayor?a de puntos cae fuera del footprint espacial del GeoJSON de SentinelWatch.",
+  "points": [
+    {
+      "id": "fire_001",
+      "lat": -6.5579601,
+      "lon": -75.1751279,
+      "location": "Tierra Blanca Mennonite colonies, Loreto, Peru",
+      "country": "Peru",
+      "date": "2023-2024",
+      "activity": "escaped/land-clearing fire associated with deforestation",
+      "precision": "approx_named_place_osm",
+      "sources": [
+        "https://www.maapprogram.org/tag/maap-188/",
+        "https://www.maapprogram.org/amazon-deforestation-fire-hotspots-2024/",
+        "https://firms.modaps.eosdis.nasa.gov/active_fire/",
+        "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/"
+      ],
+      "notes": "MAAP #188 estimates 1,600 ha of additional degradation by fires escaped from Mennonite plantations; MAAP #229 flags central Peru fires in 2024.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 177.825,
+        "nearest_alert": {
+          "index": 1551,
+          "id": "49ceddf0-961f-4cda-b418-6738fc373a0c",
+          "lat": -4.959647,
+          "lon": -75.22909,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "fire_002",
+      "lat": -7.8670293,
+      "lon": -74.8994093,
+      "location": "Chipiar / Padre Marquez, Loreto-Ucayali border, Peru",
+      "country": "Peru",
+      "date": "2023-2024",
+      "activity": "escaped/land-clearing fire associated with Mennonite deforestation",
+      "precision": "approx_district_centroid_osm",
+      "sources": [
+        "https://www.maapprogram.org/tag/maap-188/",
+        "https://www.maapprogram.org/amazon-deforestation-fire-hotspots-2024/",
+        "https://firms.modaps.eosdis.nasa.gov/active_fire/",
+        "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/"
+      ],
+      "notes": "Chipiar is part of the Mennonite deforestation/fire complex documented by MAAP.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 325.332,
+        "nearest_alert": {
+          "index": 1551,
+          "id": "49ceddf0-961f-4cda-b418-6738fc373a0c",
+          "lat": -4.959647,
+          "lon": -75.22909,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "fire_003",
+      "lat": -8.38,
+      "lon": -74.55,
+      "location": "Pucallpa/Calleria wildfire region, Ucayali, Peru",
+      "country": "Peru",
+      "date": "2024-09",
+      "activity": "major Amazon wildfire area, likely human-caused regional fires",
+      "precision": "approx_city_region_centroid",
+      "sources": [
+        "https://www.maapprogram.org/amazon-deforestation-fire-hotspots-2024/",
+        "https://es.mongabay.com/2025/07/incendios-forestales-afectaron-millones-hectareas-amazonia-2024/",
+        "https://www.globalforestwatch.org/dashboards/country/PER?category=fires",
+        "https://firms.modaps.eosdis.nasa.gov/active_fire/",
+        "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/"
+      ],
+      "notes": "MAAP reports 2024 Peruvian Amazon fires concentrated in central Amazon/Ucayali; Mongabay summarizes Peru record fire impacts.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 382.632,
+        "nearest_alert": {
+          "index": 464,
+          "id": "debedf40-4443-4535-877f-0dc2173b46e6",
+          "lat": -4.999245,
+          "lon": -73.903972,
+          "severity": "low",
+          "area_ha": 19.71
+        }
+      }
+    },
+    {
+      "id": "fire_004",
+      "lat": -12.6241871,
+      "lon": -70.3069666,
+      "location": "Guacamayo / mining corridor, Madre de Dios, Peru",
+      "country": "Peru",
+      "date": "2024",
+      "activity": "fire/forest-loss hotspot in southeast Amazon mining frontier",
+      "precision": "approx_named_place_osm",
+      "sources": [
+        "https://www.maapprogram.org/amazon-deforestation-fire-hotspots-2024/",
+        "https://www.globalforestwatch.org/dashboards/country/PER?category=fires",
+        "https://firms.modaps.eosdis.nasa.gov/active_fire/",
+        "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/"
+      ],
+      "notes": "MAAP #229 reports intense 2024 fires in southeast Amazon/Madre de Dios.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 932.095,
+        "nearest_alert": {
+          "index": 323,
+          "id": "ee9f7e66-ae2c-4f3f-9f10-9ff4ddd71086",
+          "lat": -4.979446,
+          "lon": -73.789421,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "fire_005",
+      "lat": -12.9617474,
+      "lon": -70.0011779,
+      "location": "La Pampa, Madre de Dios, Peru",
+      "country": "Peru",
+      "date": "2024",
+      "activity": "fire/forest-loss hotspot near illegal mining deforestation frontier",
+      "precision": "approx_named_place_osm",
+      "sources": [
+        "https://www.maapprogram.org/amazon-deforestation-fire-hotspots-2024/",
+        "https://www.globalforestwatch.org/dashboards/country/PER?category=fires",
+        "https://firms.modaps.eosdis.nasa.gov/active_fire/",
+        "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/"
+      ],
+      "notes": "La Pampa remains the emblematic Madre de Dios mining deforestation zone; fires concentrated in southeast Amazon.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 980.123,
+        "nearest_alert": {
+          "index": 323,
+          "id": "ee9f7e66-ae2c-4f3f-9f10-9ff4ddd71086",
+          "lat": -4.979446,
+          "lon": -73.789421,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "fire_006",
+      "lat": -16.37,
+      "lon": -60.96,
+      "location": "San Ignacio de Velasco / northern soy frontier, Santa Cruz, Bolivia",
+      "country": "Bolivia",
+      "date": "2024",
+      "activity": "large Amazon fire hotspot in agricultural frontier",
+      "precision": "approx_regional_centroid",
+      "sources": [
+        "https://www.maapprogram.org/amazon-deforestation-fire-hotspots-2024/",
+        "https://es.mongabay.com/2025/07/incendios-forestales-afectaron-millones-hectareas-amazonia-2024/",
+        "https://firms.modaps.eosdis.nasa.gov/active_fire/",
+        "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/"
+      ],
+      "notes": "Included as Latin American Amazon reference; MAAP reports record Bolivian Amazon fire impacts in 2024.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 1884.092,
+        "nearest_alert": {
+          "index": 224,
+          "id": "86e5c704-d38a-42e7-a127-70d7dfd2d108",
+          "lat": -4.944091,
+          "lon": -73.715882,
+          "severity": "medium",
+          "area_ha": 19.71
+        }
+      }
+    }
+  ]
+}

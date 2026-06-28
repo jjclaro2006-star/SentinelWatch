@@ -6,6 +6,7 @@ import schedule
 
 from config import OUTPUT_DIR
 from main import run_pipeline
+from modules.module_b_forensic.sentinel2_monitor import sentinel2_monitor  # ADDED: module_b
 
 LOG_FILE = OUTPUT_DIR / "sentinel_watch.log"
 
@@ -43,6 +44,7 @@ if __name__ == "__main__":
     # Run immediately on startup, then every 5 days
     _run()
     schedule.every(5).days.do(_run)
+    schedule.every(6).hours.do(sentinel2_monitor.monitor_loop)  # ADDED: module_b
 
     while True:
         schedule.run_pending()

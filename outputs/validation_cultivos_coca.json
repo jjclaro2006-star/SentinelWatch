@@ -1,0 +1,232 @@
+{
+  "category": "cultivos_coca",
+  "generated_at": "2026-06-13",
+  "alert_file": "outputs/alerts_20260608.geojson",
+  "source_note": "Coordinates are public-report-derived approximations unless precision states otherwise; do not treat approximate centroids as field GPS points.",
+  "summary": {
+    "points_total": 8,
+    "points_with_alerts_within_50km": 0,
+    "total_point_alert_matches_within_50km": 0,
+    "overall_min_distance_km": 257.852,
+    "median_min_distance_km": 431.8705,
+    "alert_file_bbox": {
+      "min_lon": -75.494963,
+      "min_lat": -4.999245,
+      "max_lon": -73.500921,
+      "max_lat": -3.002375
+    }
+  },
+  "conclusion": "Sin coincidencias dentro de 50 km; la mayor?a de puntos cae fuera del footprint espacial del GeoJSON de SentinelWatch.",
+  "points": [
+    {
+      "id": "coca_001",
+      "lat": -3.9,
+      "lon": -70.52,
+      "location": "Bajo Amazonas / Mariscal Castilla, Loreto, Peru",
+      "country": "Peru",
+      "date": "2023",
+      "activity": "coca cultivation zone monitored by DEVIDA/UNODC quality assurance",
+      "precision": "approx_zone_centroid",
+      "sources": [
+        "https://www.gob.pe/institucion/devida/noticias/978259-peru-rompe-tendencia-creciente-de-cultivos-de-coca-en-2023"
+      ],
+      "notes": "DEVIDA reports actions/reductions in Bajo Amazonas and Amazon border coca-deforestation risk.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 335.446,
+        "nearest_alert": {
+          "index": 25,
+          "id": "3653c14c-9efb-43b6-b4bc-f72267a89960",
+          "lat": -3.511492,
+          "lon": -73.517892,
+          "severity": "low",
+          "area_ha": 9.87
+        }
+      }
+    },
+    {
+      "id": "coca_002",
+      "lat": -2.9150981,
+      "lon": -71.189887,
+      "location": "Yaguas production zone / Yaguas National Park landscape, Loreto, Peru",
+      "country": "Peru",
+      "date": "2023",
+      "activity": "coca cultivation production zone",
+      "precision": "approx_protected_area_centroid_osm",
+      "sources": [
+        "https://www.gob.pe/institucion/devida/noticias/978259-peru-rompe-tendencia-creciente-de-cultivos-de-coca-en-2023"
+      ],
+      "notes": "DEVIDA reports Yaguas zone reduction of 42% in 2023.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 257.852,
+        "nearest_alert": {
+          "index": 6,
+          "id": "dae7ed74-d6e0-4b54-8c37-ea9937b411dd",
+          "lat": -3.073086,
+          "lon": -73.506578,
+          "severity": "medium",
+          "area_ha": 9.88
+        }
+      }
+    },
+    {
+      "id": "coca_003",
+      "lat": -8.38,
+      "lon": -74.55,
+      "location": "Calleria / Pucallpa, Ucayali, Peru",
+      "country": "Peru",
+      "date": "2023",
+      "activity": "coca cultivation and eradication/intervention zone",
+      "precision": "approx_city_region_centroid",
+      "sources": [
+        "https://www.gob.pe/institucion/devida/noticias/978259-peru-rompe-tendencia-creciente-de-cultivos-de-coca-en-2023",
+        "https://es.mongabay.com/2024/11/concesiones-de-alto-vuelo-pistas-de-aterrizaje-clandestinas-y-cultivos-de-coca-invaden-tierras-forestales-de-ucayali/"
+      ],
+      "notes": "DEVIDA reports actions in Calleria; Mongabay reports coca crops and clandestine airstrips invading Ucayali forest concessions.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 382.632,
+        "nearest_alert": {
+          "index": 464,
+          "id": "debedf40-4443-4535-877f-0dc2173b46e6",
+          "lat": -4.999245,
+          "lon": -73.903972,
+          "severity": "low",
+          "area_ha": 19.71
+        }
+      }
+    },
+    {
+      "id": "coca_004",
+      "lat": -9.04,
+      "lon": -75.51,
+      "location": "Aguaytia, Ucayali, Peru",
+      "country": "Peru",
+      "date": "2023",
+      "activity": "coca cultivation and eradication/intervention zone",
+      "precision": "approx_zone_centroid",
+      "sources": [
+        "https://www.gob.pe/institucion/devida/noticias/978259-peru-rompe-tendencia-creciente-de-cultivos-de-coca-en-2023"
+      ],
+      "notes": "DEVIDA reports actions in Aguaytia.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 454.773,
+        "nearest_alert": {
+          "index": 1551,
+          "id": "49ceddf0-961f-4cda-b418-6738fc373a0c",
+          "lat": -4.959647,
+          "lon": -75.22909,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "coca_005",
+      "lat": -11.2099268,
+      "lon": -70.4766541,
+      "location": "Tahuamanu, Madre de Dios, Peru",
+      "country": "Peru",
+      "date": "2023",
+      "activity": "newly monitored coca cultivation zone",
+      "precision": "approx_province_centroid_osm",
+      "sources": [
+        "https://www.gob.pe/institucion/devida/noticias/978259-peru-rompe-tendencia-creciente-de-cultivos-de-coca-en-2023"
+      ],
+      "notes": "DEVIDA added Tahuamanu as a monitored zone with possible coca presence.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 782.605,
+        "nearest_alert": {
+          "index": 224,
+          "id": "86e5c704-d38a-42e7-a127-70d7dfd2d108",
+          "lat": -4.944091,
+          "lon": -73.715882,
+          "severity": "medium",
+          "area_ha": 19.71
+        }
+      }
+    },
+    {
+      "id": "coca_006",
+      "lat": -10.4800478,
+      "lon": -73.0982573,
+      "location": "Atalaya, Ucayali, Peru",
+      "country": "Peru",
+      "date": "2024",
+      "activity": "coca cultivation and narco-logistics cluster",
+      "precision": "approx_province_centroid_osm",
+      "sources": [
+        "https://es.mongabay.com/2024/11/droga-de-alto-vuelo-en-peru-comunidades-nativas-de-atalaya-viven-sitiadas-por-el-narcotrafico-y-mas-de-20-pistas-clandestinas/",
+        "https://es.mongabay.com/2024/11/concesiones-de-alto-vuelo-pistas-de-aterrizaje-clandestinas-y-cultivos-de-coca-invaden-tierras-forestales-de-ucayali/"
+      ],
+      "notes": "Mongabay reports expansion of illicit coca and clandestine runways in Atalaya.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 615.359,
+        "nearest_alert": {
+          "index": 427,
+          "id": "0501b903-ade0-4bc8-b514-49a10cd4f185",
+          "lat": -4.999245,
+          "lon": -73.871445,
+          "severity": "low",
+          "area_ha": 29.56
+        }
+      }
+    },
+    {
+      "id": "coca_007",
+      "lat": 0.505,
+      "lon": -76.5,
+      "location": "Puerto Asis / Putumayo coca zone, Colombia",
+      "country": "Colombia",
+      "date": "2023",
+      "activity": "coca cultivation department/enclave",
+      "precision": "approx_municipality_centroid",
+      "sources": [
+        "https://www.unodc.org/unodc/press/releases/2024/October/colombia_-potential-cocaine-production-increased-by-53-per-cent-in-2023--according-to-new-unodc-survey.html"
+      ],
+      "notes": "UNODC reports 2023 coca growth heavily distributed and references Putumayo as a prior concentration; Colombian Amazon validation point.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 408.968,
+        "nearest_alert": {
+          "index": 1632,
+          "id": "c85c83b0-4683-49c5-a274-b6e8ccfbeb70",
+          "lat": -3.016518,
+          "lon": -75.438394,
+          "severity": "low",
+          "area_ha": 9.88
+        }
+      }
+    },
+    {
+      "id": "coca_008",
+      "lat": 1.334,
+      "lon": -74.842,
+      "location": "Cartagena del Chaira / Caqueta coca-deforestation zone, Colombia",
+      "country": "Colombia",
+      "date": "2023",
+      "activity": "coca cultivation department/enclave",
+      "precision": "approx_municipality_centroid",
+      "sources": [
+        "https://www.unodc.org/unodc/press/releases/2024/October/colombia_-potential-cocaine-production-increased-by-53-per-cent-in-2023--according-to-new-unodc-survey.html"
+      ],
+      "notes": "UNODC 2023 survey context; Caqueta is a Colombian Amazon coca/deforestation department.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 484.886,
+        "nearest_alert": {
+          "index": 1561,
+          "id": "7fec24b4-538d-4151-bf70-3bb19b109f05",
+          "lat": -3.005204,
+          "lon": -75.274345,
+          "severity": "high",
+          "area_ha": 9.88
+        }
+      }
+    }
+  ]
+}

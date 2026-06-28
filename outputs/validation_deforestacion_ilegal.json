@@ -1,0 +1,235 @@
+{
+  "category": "deforestacion_ilegal",
+  "generated_at": "2026-06-13",
+  "alert_file": "outputs/alerts_20260608.geojson",
+  "source_note": "Coordinates are public-report-derived approximations unless precision states otherwise; do not treat approximate centroids as field GPS points.",
+  "summary": {
+    "points_total": 8,
+    "points_with_alerts_within_50km": 1,
+    "total_point_alert_matches_within_50km": 177,
+    "overall_min_distance_km": 1.92,
+    "median_min_distance_km": 465.328,
+    "alert_file_bbox": {
+      "min_lon": -75.494963,
+      "min_lat": -4.999245,
+      "max_lon": -73.500921,
+      "max_lat": -3.002375
+    }
+  },
+  "conclusion": "Validaci?n parcial: hay coincidencias cerca de algunos puntos, pero muchos casos documentados est?n fuera del footprint o son zonas aproximadas.",
+  "points": [
+    {
+      "id": "def_001",
+      "lat": -3.52,
+      "lon": -74.43,
+      "location": "Comunidad nativa Alvarenga / Alto Nanay, Loreto, Peru",
+      "country": "Peru",
+      "date": "2024-04",
+      "activity": "illegal mining-linked riparian deforestation",
+      "precision": "approx_named_place",
+      "sources": [
+        "https://fcds.org.pe/noticias/loreto-detectan-primeros-casos-de-deforestacion-por-mineria-ilegal-en-el-rio-nanay/"
+      ],
+      "notes": "FCDS/ACCA reported initial 0.2 ha forest loss near Alvarenga and roughly 30 active dredges Jan-Mar 2024.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 177,
+        "min_distance_km": 1.92,
+        "nearest_alert": {
+          "index": 927,
+          "id": "92ccdbe0-f026-4969-bf47-987fff18c8e2",
+          "lat": -3.53412,
+          "lon": -74.439959,
+          "severity": "low",
+          "area_ha": 9.87
+        }
+      }
+    },
+    {
+      "id": "def_002",
+      "lat": -6.5579601,
+      "lon": -75.1751279,
+      "location": "Tierra Blanca Mennonite colonies, Loreto, Peru",
+      "country": "Peru",
+      "date": "2024-10",
+      "activity": "large-scale deforestation by Mennonite colonies under investigation",
+      "precision": "approx_named_place_osm",
+      "sources": [
+        "https://www.maapprogram.org/mennonites-deforestation-peru-amazon/",
+        "https://www.maapprogram.org/tag/maap-188/"
+      ],
+      "notes": "MAAP reports Vanderland, Osterreich and Providencia colonies near Tierra Blanca; 4,824 ha deforested since 2017.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 177.825,
+        "nearest_alert": {
+          "index": 1551,
+          "id": "49ceddf0-961f-4cda-b418-6738fc373a0c",
+          "lat": -4.959647,
+          "lon": -75.22909,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "def_003",
+      "lat": -7.8670293,
+      "lon": -74.8994093,
+      "location": "Chipiar / Padre Marquez, Loreto-Ucayali border, Peru",
+      "country": "Peru",
+      "date": "2024-10",
+      "activity": "large-scale deforestation by Mennonite colony under investigation",
+      "precision": "approx_district_centroid_osm",
+      "sources": [
+        "https://www.maapprogram.org/mennonites-deforestation-peru-amazon/",
+        "https://www.maapprogram.org/tag/maap-188/"
+      ],
+      "notes": "MAAP reports 2,708 ha deforested in Chipiar since 2020; judicial suspension of clearing/logging ratified in 2023.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 325.332,
+        "nearest_alert": {
+          "index": 1551,
+          "id": "49ceddf0-961f-4cda-b418-6738fc373a0c",
+          "lat": -4.959647,
+          "lon": -75.22909,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "def_004",
+      "lat": -9.0105071,
+      "lon": -73.6643745,
+      "location": "Masisea colony, Ucayali, Peru",
+      "country": "Peru",
+      "date": "2024-10",
+      "activity": "Mennonite colony deforestation under investigation",
+      "precision": "approx_district_centroid_osm",
+      "sources": [
+        "https://www.maapprogram.org/mennonites-deforestation-peru-amazon/",
+        "https://www.maapprogram.org/tag/maap-188/"
+      ],
+      "notes": "MAAP reports 963 ha documented in Masisea since 2017.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 446.617,
+        "nearest_alert": {
+          "index": 427,
+          "id": "0501b903-ade0-4bc8-b514-49a10cd4f185",
+          "lat": -4.999245,
+          "lon": -73.871445,
+          "severity": "low",
+          "area_ha": 29.56
+        }
+      }
+    },
+    {
+      "id": "def_005",
+      "lat": -12.6873965,
+      "lon": -70.5212134,
+      "location": "San Jose de Karene native community, Madre de Dios, Peru",
+      "country": "Peru",
+      "date": "2021-2024",
+      "activity": "probable illegal gold mining deforestation in native community",
+      "precision": "approx_named_place_osm",
+      "sources": [
+        "https://www.maapprogram.org/category/countries/peru/"
+      ],
+      "notes": "MAAP #208 identifies San Jose de Karene as one of the most affected native communities, 1,099 ha.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 929.16,
+        "nearest_alert": {
+          "index": 323,
+          "id": "ee9f7e66-ae2c-4f3f-9f10-9ff4ddd71086",
+          "lat": -4.979446,
+          "lon": -73.789421,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "def_006",
+      "lat": -12.8213135,
+      "lon": -70.5113831,
+      "location": "Barranco Chico native community, Madre de Dios, Peru",
+      "country": "Peru",
+      "date": "2021-2024",
+      "activity": "probable illegal gold mining deforestation in native community",
+      "precision": "approx_named_place_osm",
+      "sources": [
+        "https://www.maapprogram.org/category/countries/peru/"
+      ],
+      "notes": "MAAP #208 reports 1,008 ha in Barranco Chico and multiple operations 2022-2024.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 943.296,
+        "nearest_alert": {
+          "index": 323,
+          "id": "ee9f7e66-ae2c-4f3f-9f10-9ff4ddd71086",
+          "lat": -4.979446,
+          "lon": -73.789421,
+          "severity": "low",
+          "area_ha": 9.85
+        }
+      }
+    },
+    {
+      "id": "def_007",
+      "lat": 1.35,
+      "lon": -73.85,
+      "location": "Chiribiquete / Yari-Yaguara II deforestation arc, Caqueta-Guaviare, Colombia",
+      "country": "Colombia",
+      "date": "2024",
+      "activity": "deforestation arc affecting protected areas and indigenous reserves",
+      "precision": "approx_hotspot_centroid_from_report_map",
+      "sources": [
+        "https://www.maapprogram.org/amazon-deforestation-fire-hotspots-2024/",
+        "https://www.globalforestwatch.org/dashboards/country/COL"
+      ],
+      "notes": "MAAP #229 notes very high deforestation areas surrounding Chiribiquete and impacts to Yari-Yaguara II.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 484.039,
+        "nearest_alert": {
+          "index": 298,
+          "id": "824b44ad-d2ce-46a3-9aba-75251c55f80f",
+          "lat": -3.002375,
+          "lon": -73.77245,
+          "severity": "low",
+          "area_ha": 9.88
+        }
+      }
+    },
+    {
+      "id": "def_008",
+      "lat": 2.5524805,
+      "lon": -74.1065447,
+      "location": "Tinigua National Park, Meta/Caqueta Amazon arc, Colombia",
+      "country": "Colombia",
+      "date": "2024",
+      "activity": "deforestation hotspot in protected area",
+      "precision": "approx_protected_area_centroid_osm",
+      "sources": [
+        "https://www.maapprogram.org/amazon-deforestation-fire-hotspots-2024/",
+        "https://www.globalforestwatch.org/dashboards/country/COL"
+      ],
+      "notes": "MAAP #229 identifies high deforestation areas within Tinigua National Park.",
+      "sentinelwatch_match": {
+        "alerts_within_50km": 0,
+        "min_distance_km": 617.866,
+        "nearest_alert": {
+          "index": 545,
+          "id": "007b1ce0-2172-4aef-ba14-66f84cdff988",
+          "lat": -3.002375,
+          "lon": -73.967612,
+          "severity": "low",
+          "area_ha": 9.88
+        }
+      }
+    }
+  ]
+}

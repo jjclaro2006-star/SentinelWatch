@@ -23,6 +23,34 @@ interface ApiGeoJSONCollection {
   }>
 }
 
+interface FireEventProperties {
+  event_id: string
+  tier: "confirmed" | "preliminary" | "unconfirmed"
+  detection_count: number
+  max_frp: number
+  duration_hours: number
+  start_date: string
+  last_seen: string
+  sources: string[]
+  wdpa_overlap?: boolean
+  intentionality_score?: number
+  intentionality_level?: string
+  legal_risk_score?: number
+  spread_summary?: string
+  fire_weather_index?: string
+}
+
+interface FireEventFeature {
+  type: string
+  geometry: { type: string; coordinates: [number, number] }
+  properties: FireEventProperties
+}
+
+interface FireGeoJSONCollection {
+  type: string
+  features: FireEventFeature[]
+}
+
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000'
 
 const ACTIVITY_MAP: Record<string, ActivityType> = {
@@ -97,6 +125,54 @@ export async function fetchSummary(): Promise<AlertSummary> {
     headers: { 'Content-Type': 'application/json' },
   })
   if (!res.ok) throw new Error(`API error: ${res.status}`)
+  return res.json()
+}
+
+const _FIRE_TIER_SEVERITY: Record<string, Severity> = {
+  confirmed:   "critica",
+  preliminary: "alta",
+  unconfirmed: "media",
+}
+
+export function mapFireEventToAlert(feature: FireEventFeature): Alert {
+  const p = feature.properties
+  const [lon, lat] = feature.geometry.coordinates
+  return {
+    id:              p.event_id,
+    type:            "incendios",
+    lat,
+    lon,
+    date:            p.start_date,
+    confidence:      Math.round(Math.min((p.max_frp ?? 0) / 200, 1) * 100),
+    verdict:         p.tier === "confirmed" ? "CONFIRMADO" : "PRELIMINAR",
+    severity:        _FIRE_TIER_SEVERITY[p.tier] ?? "media",
+    region:          "biobio",
+    wdpa:            p.wdpa_overlap ?? false,
+    source:          p.sources?.join(", ") || "VIIRS",
+    x:               lon,
+    y:               lat,
+    // Fire-specific fields
+    tier:                p.tier,
+    max_frp:             p.max_frp,
+    duration_hours:      p.duration_hours,
+    detection_count:     p.detection_count,
+    intentionality_score:  p.intentionality_score,
+    intentionality_level:  p.intentionality_level,
+    legal_risk_score:      p.legal_risk_score,
+    spread_summary:        p.spread_summary,
+    fire_weather_index:    p.fire_weather_index,
+  }
+}
+
+export async function fetchFireEvents(): Promise<FireGeoJSONCollection> {
+  const res = await fetch(`${API_BASE}/fire/events`)
+  if (!res.ok) return { type: "FeatureCollection", features: [] }
+  return res.json()
+}
+
+export async function fetchFireStats(): Promise<Record<string, unknown>> {
+  const res = await fetch(`${API_BASE}/fire/stats`)
+  if (!res.ok) return {}
   return res.json()
 }
 

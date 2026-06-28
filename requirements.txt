@@ -14,3 +14,6 @@ Pillow>=10.0
 google-api-python-client>=2.100.0
 google-auth-oauthlib>=1.0.0
 tifffile>=2023.1.23
+# --- áridos / SMA / STAC (from sentinelwatch-aridos) ---
+folium>=0.16
+rasterio>=1.5

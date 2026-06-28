@@ -1,0 +1,50 @@
+{
+  "point_feature_count": 1,
+  "code_feature_count": 1,
+  "point_attrs": [
+    {
+      "OBJECTID": 105378,
+      "CODIGOU": "010060293",
+      "CONCESION": "CABECERA CAYCHIVE 2000",
+      "TIT_CONCES": "MINERA AURIFERA SUR AMAZONICO S.R.L.",
+      "HECTAGIS": 300.011,
+      "HASDATUM": 300.0,
+      "ESTADO": "T",
+      "D_ESTADO": "D.M. Titulado D.L. 708",
+      "LEYENDA": "TITULADO",
+      "ESTADO_MINEM": "EXPLOTACIÓN",
+      "OBSERV": "LIMA",
+      "DEPA": "MADRE DE DIOS",
+      "PROVI": "MANU",
+      "DISTRI": "HUEPETUHE",
+      "DIRECCION": "AV. SOL Nº 800, APARTADO POSTAL 319",
+      "SUSTANCIA": "M",
+      "FECHA_ACTUALIZACION": 1781659368000,
+      "FECHA_ACTUALIZACION_ISO": "2026-06-17T01:22:48+00:00"
+    }
+  ],
+  "code_attrs": [
+    {
+      "OBJECTID": 105378,
+      "CODIGOU": "010060293",
+      "CONCESION": "CABECERA CAYCHIVE 2000",
+      "TIT_CONCES": "MINERA AURIFERA SUR AMAZONICO S.R.L.",
+      "HECTAGIS": 300.011,
+      "HASDATUM": 300.0,
+      "ESTADO": "T",
+      "D_ESTADO": "D.M. Titulado D.L. 708",
+      "LEYENDA": "TITULADO",
+      "ESTADO_MINEM": "EXPLOTACIÓN",
+      "OBSERV": "LIMA",
+      "DEPA": "MADRE DE DIOS",
+      "PROVI": "MANU",
+      "DISTRI": "HUEPETUHE",
+      "DIRECCION": "AV. SOL Nº 800, APARTADO POSTAL 319",
+      "SUSTANCIA": "M",
+      "FECHA_ACTUALIZACION": 1781659368000,
+      "FECHA_ACTUALIZACION_ISO": "2026-06-17T01:22:48+00:00",
+      "contains_point_local": true,
+      "edge_distance_m_if_inside": 105.22
+    }
+  ]
+}
