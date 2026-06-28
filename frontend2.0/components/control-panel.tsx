@@ -1,5 +1,6 @@
 "use client"
 
+import { memo } from "react"
 import { ActivityTabs } from "@/components/activity-tabs"
 import { RegionSelect } from "@/components/region-select"
 import { KpiCards } from "@/components/kpi-cards"
@@ -22,7 +23,7 @@ const VERDICT_OPTIONS: { value: VerdictFilter; label: string }[] = [
   { value: "VERIFICAR", label: "Verificar" },
 ]
 
-export function ControlPanel({
+export const ControlPanel = memo(function ControlPanel({
   activity,
   region,
   filterVerdict,
@@ -183,4 +184,4 @@ export function ControlPanel({
       </div>
     </section>
   )
-}
+})

@@ -300,19 +300,12 @@ export function MapViewport({ alerts, region, selected, onSelect, onClosePopup }
     mapRef.current.flyTo({ center, zoom, duration: 1200, essential: true })
   }, [region])
 
-  // Sync alerts to GeoJSON source
+  // Sync alerts + fire areas in one effect to avoid two back-to-back setData calls
   useEffect(() => {
     alertsRef.current = new Map(alerts.map((a) => [a.id, a]))
     if (!mapRef.current || !mapLoadedRef.current) return
-    const src = mapRef.current.getSource("alerts") as mapboxgl.GeoJSONSource
-    src?.setData(toGeoJSON(alerts))
-  }, [alerts])
-
-  // Sync fire area circles
-  useEffect(() => {
-    if (!mapRef.current || !mapLoadedRef.current) return
-    const src = mapRef.current.getSource("fire-areas") as mapboxgl.GeoJSONSource
-    src?.setData(toFireGeoJSON(alerts))
+    ;(mapRef.current.getSource("alerts") as mapboxgl.GeoJSONSource)?.setData(toGeoJSON(alerts))
+    ;(mapRef.current.getSource("fire-areas") as mapboxgl.GeoJSONSource)?.setData(toFireGeoJSON(alerts))
   }, [alerts])
 
   // Popup for selected alert

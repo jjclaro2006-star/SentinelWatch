@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 import dynamic from "next/dynamic"
 import { ControlPanel } from "@/components/control-panel"
 import { useAlerts } from "@/hooks/useAlerts"
@@ -54,26 +54,26 @@ export default function Page() {
     [visibleOnMap, selectedId],
   )
 
-  function handleSelect(alert: Alert) {
+  const handleSelect = useCallback((alert: Alert) => {
     setSelectedId((prev) => (prev === alert.id ? null : alert.id))
-  }
+  }, [])
 
-  function handleActivityChange(value: ActivityFilter) {
+  const handleActivityChange = useCallback((value: ActivityFilter) => {
     setActivity(value)
     setSelectedId(null)
-  }
+  }, [])
 
-  function handleRegionChange(value: Region) {
+  const handleRegionChange = useCallback((value: Region) => {
     setRegion(value)
     setSelectedId(null)
-  }
+  }, [])
 
-  function handleVerdictChange(value: VerdictFilter) {
+  const handleVerdictChange = useCallback((value: VerdictFilter) => {
     setFilterVerdict(value)
     setSelectedId(null)
-  }
+  }, [])
 
-  function handleToggleVisibility(id: string) {
+  const handleToggleVisibility = useCallback((id: string) => {
     setHiddenIds((prev) => {
       const next = new Set(prev)
       if (next.has(id)) next.delete(id)
@@ -83,11 +83,11 @@ export default function Page() {
       }
       return next
     })
-  }
+  }, [selectedId])
 
-  function handleExportCSV() {
+  const handleExportCSV = useCallback(() => {
     exportAlertsCSV(filtered)
-  }
+  }, [filtered])
 
   return (
     <main className="flex h-screen w-full overflow-hidden">
