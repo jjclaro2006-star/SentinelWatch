@@ -5,14 +5,20 @@ import { cn } from "@/lib/utils"
 import { REGION_LABELS, type Region } from "@/lib/sentinel-data"
 import { ChevronDown, Globe2, Check } from "lucide-react"
 
-const REGIONS = Object.keys(REGION_LABELS) as Region[]
+export type RegionFilter = Region | "all"
+
+const OPTIONS: { value: RegionFilter; label: string }[] = [
+  { value: "all",    label: "Todos" },
+  { value: "peru",   label: REGION_LABELS.peru },
+  { value: "biobio", label: REGION_LABELS.biobio },
+]
 
 export function RegionSelect({
   value,
   onChange,
 }: {
-  value: Region
-  onChange: (value: Region) => void
+  value: RegionFilter
+  onChange: (value: RegionFilter) => void
 }) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -27,6 +33,8 @@ export function RegionSelect({
     return () => document.removeEventListener("mousedown", handle)
   }, [])
 
+  const currentLabel = OPTIONS.find((o) => o.value === value)?.label ?? value
+
   return (
     <div className="relative" ref={ref}>
       <button
@@ -37,7 +45,7 @@ export function RegionSelect({
       >
         <span className="flex items-center gap-2">
           <Globe2 className="size-4 text-primary" aria-hidden />
-          {REGION_LABELS[value]}
+          {currentLabel}
         </span>
         <ChevronDown
           className={cn(
@@ -53,15 +61,15 @@ export function RegionSelect({
           role="listbox"
           className="absolute z-30 mt-1 w-full overflow-hidden rounded-lg border border-border bg-popover py-1 shadow-xl"
         >
-          {REGIONS.map((region) => {
-            const active = region === value
+          {OPTIONS.map(({ value: val, label }) => {
+            const active = val === value
             return (
-              <li key={region}>
+              <li key={val}>
                 <button
                   role="option"
                   aria-selected={active}
                   onClick={() => {
-                    onChange(region)
+                    onChange(val)
                     setOpen(false)
                   }}
                   className={cn(
@@ -69,7 +77,7 @@ export function RegionSelect({
                     active ? "text-primary" : "text-foreground",
                   )}
                 >
-                  {REGION_LABELS[region]}
+                  {label}
                   {active && <Check className="size-4" aria-hidden />}
                 </button>
               </li>

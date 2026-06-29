@@ -2,13 +2,12 @@
 
 import { memo } from "react"
 import { ActivityTabs } from "@/components/activity-tabs"
-import { RegionSelect } from "@/components/region-select"
+import { RegionSelect, type RegionFilter } from "@/components/region-select"
 import { KpiCards } from "@/components/kpi-cards"
 import { AlertsTable } from "@/components/alerts-table"
 import {
   type ActivityType,
   type Alert,
-  type Region,
   type Verdict,
 } from "@/lib/sentinel-data"
 import { cn } from "@/lib/utils"
@@ -44,7 +43,7 @@ export const ControlPanel = memo(function ControlPanel({
   onExportCSV,
 }: {
   activity: ActivityFilter
-  region: Region
+  region: RegionFilter
   filterVerdict: VerdictFilter
   alerts: Alert[]
   total: number
@@ -56,7 +55,7 @@ export const ControlPanel = memo(function ControlPanel({
   loading: boolean
   lastSync: Date | null
   onActivityChange: (value: ActivityFilter) => void
-  onRegionChange: (value: Region) => void
+  onRegionChange: (value: RegionFilter) => void
   onVerdictChange: (value: VerdictFilter) => void
   onSelect: (alert: Alert) => void
   onToggleVisibility: (id: string) => void
@@ -151,6 +150,8 @@ export const ControlPanel = memo(function ControlPanel({
         total={total}
         avgConfidence={avgConfidence}
         wdpaCount={wdpaCount}
+        alerts={alerts}
+        activity={activity}
       />
 
       {/* Table */}

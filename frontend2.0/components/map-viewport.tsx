@@ -4,10 +4,11 @@ import { useEffect, useRef } from "react"
 import mapboxgl from "mapbox-gl"
 import "mapbox-gl/dist/mapbox-gl.css"
 import { ACTIVITY_LABELS, type ActivityType, type Alert, type Region } from "@/lib/sentinel-data"
+import type { RegionFilter } from "@/components/region-select"
 
 interface Props {
   alerts: Alert[]
-  region: Region
+  region: RegionFilter
   selected: Alert | null
   onSelect: (alert: Alert) => void
   onClosePopup: () => void
@@ -15,19 +16,15 @@ interface Props {
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000"
 
-const REGION_VIEW: Record<Region, { center: [number, number]; zoom: number }> = {
-  colombia: { center: [-72.5,  -0.5], zoom: 6 },
-  peru:     { center: [-74.5,  -5.0], zoom: 6 },
-  brasil:   { center: [-62.0, -10.0], zoom: 5 },
-  bolivia:  { center: [-65.0, -15.0], zoom: 6 },
-  biobio:   { center: [-72.0, -37.5], zoom: 8 },
+const REGION_VIEW: Record<RegionFilter, { center: [number, number]; zoom: number }> = {
+  all:    { center: [-72.0, -20.0], zoom: 4 },
+  peru:   { center: [-74.5,  -5.0], zoom: 6 },
+  biobio: { center: [-72.0, -37.5], zoom: 7 },
 }
 
 const ACTIVITY_COLORS: Record<ActivityType, string> = {
-  mineria:       "#f97316",
-  deforestacion: "#22c55e",
-  incendios:     "#eab308",
-  cultivos:      "#a855f7",
+  mineria:   "#f97316",
+  incendios: "#eab308",
 }
 
 const METERS_PER_PIXEL_AT_ZOOM: mapboxgl.ExpressionSpecification = [
@@ -71,9 +68,91 @@ function toGeoJSON(alerts: Alert[]): GeoJSON.FeatureCollection {
   }
 }
 
+function fetchThumbnail(thumbId: string, lat: unknown, lon: unknown, date: unknown, type: unknown) {
+  setTimeout(async () => {
+    try {
+      const res = await fetch(
+        `${API_BASE}/alert/thumbnail?lat=${lat}&lon=${lon}&date=${date}&actividad=${type}`
+      )
+      const data = (await res.json()) as { url?: string | null }
+      const img = document.getElementById(thumbId) as HTMLImageElement | null
+      if (img) {
+        if (data.url) img.src = data.url
+        else img.style.display = "none"
+      }
+    } catch {
+      const img = document.getElementById(thumbId) as HTMLImageElement | null
+      if (img) img.style.display = "none"
+    }
+  }, 100)
+}
+
+function buildFirePopupHTML(p: Record<string, unknown>): string {
+  const id = String(p.id)
+  const thumbId = `sat-thumb-${id}`
+
+  const tier = String(p.tier ?? "")
+  const tierLabel = tier === "confirmed" ? "CONFIRMADO" : tier === "preliminary" ? "PRELIMINAR" : "SIN CONFIRMAR"
+  const tierColor = tier === "confirmed" ? "#ef4444" : tier === "preliminary" ? "#f97316" : "#6b7280"
+
+  const iScore = p.intentionality_score != null ? Number(p.intentionality_score) : null
+  const iLevel = p.intentionality_level ? String(p.intentionality_level) : null
+  const iColor = iLevel === "ALTO" || iLevel === "EXTREMO" ? "#ef4444" : iLevel === "MEDIO" ? "#f97316" : "#22c55e"
+
+  const fwi = p.fire_weather_index ? String(p.fire_weather_index) : null
+  const fwiColor = fwi === "ALTO" || fwi === "EXTREMO" ? "#ef4444" : fwi === "MEDIO" ? "#f97316" : "#22c55e"
+
+  const legalRisk = p.legal_risk_score != null ? Number(p.legal_risk_score) : null
+
+  fetchThumbnail(thumbId, p.lat, p.lon, p.date, "incendios")
+
+  return `
+    <div style="font-family:ui-monospace,monospace;font-size:12.5px;line-height:1.65;color:#c9d1d9;background:#161b22;border-radius:8px;min-width:380px;max-width:460px;border:1px solid #30363d;overflow:hidden;max-height:600px;overflow-y:auto">
+      <div style="background:#1c0d0d;padding:12px 16px;border-bottom:1px solid #30363d">
+        <div style="color:#ef4444;font-weight:700;font-size:14px;letter-spacing:0.04em">🔥 ALERTA INCENDIO</div>
+        <div style="color:#6e7681;font-size:11px;margin-top:3px;letter-spacing:0.06em">${id}</div>
+      </div>
+      <div style="padding:10px 16px;border-bottom:1px solid #21262d">
+        <table style="border-collapse:collapse;width:100%">
+          <tr><td style="color:#8b949e;padding-right:14px;padding-bottom:4px;white-space:nowrap">Estado</td><td style="color:${tierColor};font-weight:600">${tierLabel}</td></tr>
+          ${p.max_frp != null ? `<tr><td style="color:#8b949e;padding-right:14px;padding-bottom:4px;white-space:nowrap">FRP máx</td><td>${Number(p.max_frp).toFixed(1)} MW</td></tr>` : ""}
+          ${p.duration_hours != null ? `<tr><td style="color:#8b949e;padding-right:14px;padding-bottom:4px;white-space:nowrap">Activo</td><td>${Number(p.duration_hours).toFixed(1)} horas</td></tr>` : ""}
+          ${p.detection_count != null ? `<tr><td style="color:#8b949e;padding-right:14px;white-space:nowrap">Detecciones</td><td>${p.detection_count}</td></tr>` : ""}
+        </table>
+      </div>
+      ${p.spread_summary || fwi ? `
+      <div style="padding:10px 16px;border-bottom:1px solid #21262d">
+        <div style="color:#ef4444;font-size:10.5px;font-weight:700;letter-spacing:0.08em;margin-bottom:6px">PROPAGACIÓN</div>
+        ${p.spread_summary ? `<div style="color:#c9d1d9;margin-bottom:5px">${String(p.spread_summary)}</div>` : ""}
+        ${fwi ? `<div>FWI: <span style="color:${fwiColor};font-weight:600">${fwi}</span></div>` : ""}
+      </div>` : ""}
+      ${iScore != null || iLevel ? `
+      <div style="padding:10px 16px;border-bottom:1px solid #21262d">
+        <div style="color:#ef4444;font-size:10.5px;font-weight:700;letter-spacing:0.08em;margin-bottom:6px">INTENCIONALIDAD</div>
+        <div>Score: <span style="font-weight:600">${iScore ?? "—"}/100</span>${iLevel ? ` — <span style="color:${iColor};font-weight:600">${iLevel}</span>` : ""}</div>
+      </div>` : ""}
+      ${legalRisk != null || p.wdpaName ? `
+      <div style="padding:10px 16px;border-bottom:1px solid #21262d">
+        <div style="color:#ef4444;font-size:10.5px;font-weight:700;letter-spacing:0.08em;margin-bottom:6px">CONTEXTO LEGAL</div>
+        ${legalRisk != null ? `<div>Riesgo: <span style="font-weight:600">${legalRisk}/100</span></div>` : ""}
+        ${p.wdpaName ? `<div style="color:#f85149;margin-top:4px">WDPA: ${String(p.wdpaName)}</div>` : ""}
+      </div>` : ""}
+      <div style="padding:10px 16px">
+        <img id="${thumbId}"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="width:100%;height:256px;object-fit:cover;border-radius:4px;background:#0d1117;display:block"
+          alt="Imagen satelital"
+        />
+      </div>
+    </div>`
+}
+
 function buildPopupHTML(p: Record<string, unknown>): string {
+  if (p.type === "incendios") return buildFirePopupHTML(p)
+
   const color = ACTIVITY_COLORS[p.type as ActivityType] ?? "#fff"
   const label = ACTIVITY_LABELS[p.type as ActivityType] ?? String(p.type)
+  const thumbId = `sat-thumb-${String(p.id)}`
   const rows: [string, string][] = [
     ["Severidad", `<span style="color:${color}">${p.severity}</span>`],
     ["Confianza", `${p.confidence}%`],
@@ -83,76 +162,77 @@ function buildPopupHTML(p: Record<string, unknown>): string {
     ...(p.wdpaName ? [["WDPA", `<span style="color:#f85149">${p.wdpaName}</span>`] as [string, string]] : []),
   ]
 
-  if (p.type === "incendios") {
-    if (p.max_frp != null)
-      rows.push(["FRP máx.", `${Number(p.max_frp).toFixed(1)} MW`])
-    if (p.duration_hours != null)
-      rows.push(["Activo", `${Number(p.duration_hours).toFixed(1)} h`])
-    if (p.detection_count != null)
-      rows.push(["Detecciones", String(p.detection_count)])
-    if (p.intentionality_level)
-      rows.push(["Intencionalidad", `${String(p.intentionality_level)}${p.intentionality_score != null ? ` (${p.intentionality_score}/100)` : ""}`])
-    if (p.legal_risk_score != null)
-      rows.push(["Riesgo legal", `${p.legal_risk_score}/100`])
-    if (p.spread_summary)
-      rows.push(["Propagación", String(p.spread_summary)])
-    if (p.fire_weather_index)
-      rows.push(["FWI", String(p.fire_weather_index)])
-  }
-  const thumbId = `sat-thumb-${String(p.id)}`
-
-  setTimeout(async () => {
-    try {
-      const res = await fetch(
-        `${API_BASE}/alert/thumbnail?lat=${p.lat}&lon=${p.lon}&date=${p.date}&actividad=${p.type}`
-      )
-      const data = (await res.json()) as { url?: string | null }
-      const img = document.getElementById(thumbId) as HTMLImageElement | null
-      if (img) {
-        if (data.url) {
-          img.src = data.url
-        } else {
-          img.style.display = "none"
-        }
-      }
-    } catch {
-      const img = document.getElementById(thumbId) as HTMLImageElement | null
-      if (img) img.style.display = "none"
-    }
-  }, 100)
+  fetchThumbnail(thumbId, p.lat, p.lon, p.date, p.type)
 
   return `
-    <div style="font-family:ui-monospace,monospace;font-size:11px;line-height:1.6;
-                color:#c9d1d9;background:#161b22;padding:10px 12px;
-                border-radius:6px;min-width:200px;border:1px solid #30363d">
-      <div style="color:${color};font-weight:700;font-size:12px;margin-bottom:6px">${label}</div>
+    <div style="font-family:ui-monospace,monospace;font-size:12.5px;line-height:1.65;
+                color:#c9d1d9;background:#161b22;padding:12px 16px;
+                border-radius:8px;min-width:380px;max-width:460px;max-height:600px;overflow-y:auto;border:1px solid #30363d">
+      <div style="color:${color};font-weight:700;font-size:14px;margin-bottom:8px">${label}</div>
       <table style="border-collapse:collapse;width:100%">
         ${rows.map(([k, v]) => `
           <tr>
-            <td style="color:#8b949e;padding-right:8px;white-space:nowrap">${k}</td>
+            <td style="color:#8b949e;padding-right:14px;padding-bottom:4px;white-space:nowrap">${k}</td>
             <td>${v}</td>
           </tr>`).join("")}
       </table>
       <img
         id="${thumbId}"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-        style="width:100%;height:120px;object-fit:cover;border-radius:4px;background:#1a1a2e;margin-top:8px;display:block"
+        style="width:100%;height:256px;object-fit:cover;border-radius:4px;background:#1a1a2e;margin-top:10px;display:block"
         alt="Imagen satelital"
       />
     </div>`
 }
 
+const PULSE_STYLE_ID = "sw-fire-pulse-style"
+
+function injectPulseCSS() {
+  if (document.getElementById(PULSE_STYLE_ID)) return
+  const style = document.createElement("style")
+  style.id = PULSE_STYLE_ID
+  style.textContent = `
+    @keyframes sw-fire-pulse {
+      0%   { transform: scale(1); opacity: 0.8; }
+      70%  { transform: scale(2.8); opacity: 0; }
+      100% { transform: scale(2.8); opacity: 0; }
+    }
+    .sw-fire-marker { position: relative; width: 14px; height: 14px; cursor: pointer; }
+    .sw-fire-marker::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: rgba(239,68,68,0.55);
+      animation: sw-fire-pulse 2s ease-out infinite;
+    }
+    .sw-fire-marker::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      background: #ef4444;
+      border: 1.5px solid rgba(255,255,255,0.9);
+    }
+  `
+  document.head.appendChild(style)
+}
+
 export function MapViewport({ alerts, region, selected, onSelect, onClosePopup }: Props) {
-  const containerRef  = useRef<HTMLDivElement>(null)
-  const mapRef        = useRef<mapboxgl.Map | null>(null)
-  const popupRef      = useRef<mapboxgl.Popup | null>(null)
-  const alertsRef     = useRef<Map<string, Alert>>(new Map())
-  const mapLoadedRef  = useRef(false)
-  const onSelectRef   = useRef(onSelect)
-  const onCloseRef    = useRef(onClosePopup)
+  const containerRef     = useRef<HTMLDivElement>(null)
+  const mapRef           = useRef<mapboxgl.Map | null>(null)
+  const popupRef         = useRef<mapboxgl.Popup | null>(null)
+  const alertsRef        = useRef<Map<string, Alert>>(new Map())
+  const mapLoadedRef     = useRef(false)
+  const onSelectRef      = useRef(onSelect)
+  const onCloseRef       = useRef(onClosePopup)
+  const fireMarkersRef   = useRef<mapboxgl.Marker[]>([])
 
   useEffect(() => { onSelectRef.current = onSelect }, [onSelect])
   useEffect(() => { onCloseRef.current = onClosePopup }, [onClosePopup])
+
+  // Inject pulse CSS once
+  useEffect(() => { injectPulseCSS() }, [])
 
   // Init map once
   useEffect(() => {
@@ -287,6 +367,8 @@ export function MapViewport({ alerts, region, selected, onSelect, onClosePopup }
 
     return () => {
       mapLoadedRef.current = false
+      fireMarkersRef.current.forEach((m) => m.remove())
+      fireMarkersRef.current = []
       map.remove()
       mapRef.current = null
     }
@@ -308,6 +390,24 @@ export function MapViewport({ alerts, region, selected, onSelect, onClosePopup }
     ;(mapRef.current.getSource("fire-areas") as mapboxgl.GeoJSONSource)?.setData(toFireGeoJSON(alerts))
   }, [alerts])
 
+  // Pulse markers for confirmed fire alerts
+  useEffect(() => {
+    fireMarkersRef.current.forEach((m) => m.remove())
+    fireMarkersRef.current = []
+    if (!mapRef.current) return
+    alerts
+      .filter((a) => a.type === "incendios" && a.tier === "confirmed")
+      .forEach((a) => {
+        const el = document.createElement("div")
+        el.className = "sw-fire-marker"
+        el.addEventListener("click", () => onSelectRef.current(a))
+        const marker = new mapboxgl.Marker({ element: el, anchor: "center" })
+          .setLngLat([a.lon, a.lat])
+          .addTo(mapRef.current!)
+        fireMarkersRef.current.push(marker)
+      })
+  }, [alerts])
+
   // Popup for selected alert
   useEffect(() => {
     popupRef.current?.remove()
@@ -317,7 +417,7 @@ export function MapViewport({ alerts, region, selected, onSelect, onClosePopup }
     const popup = new mapboxgl.Popup({
       closeButton: true,
       closeOnClick: false,
-      maxWidth: "280px",
+      maxWidth: "460px",
       offset: 12,
     })
       .setLngLat([selected.lon, selected.lat])

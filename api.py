@@ -66,8 +66,10 @@ def _load_all_alerts() -> tuple[list[dict], list[str]]:
 
     features: list[dict] = []
     source_files: list[str] = []
-    for path in latest_per_region.values():
+    for region_key, path in latest_per_region.items():
         data = json.loads(path.read_text(encoding="utf-8"))
+        for feature in data.get("features", []):
+            feature.setdefault("properties", {})["_source_region"] = region_key
         features.extend(data.get("features", []))
         source_files.append(path.name)
 
@@ -89,13 +91,29 @@ def get_alerts(actividad: Optional[str] = Query(None)):
     features, _ = _load_all_alerts()
     if actividad is not None:
         features = [f for f in features if f.get("properties", {}).get("actividad") == actividad]
+    # MVP: mining alerts are Peru-only and must meet minimum confidence
+    features = [
+        f for f in features
+        if not (
+            f.get("properties", {}).get("actividad") == "mineria"
+            and (
+                f.get("properties", {}).get("_source_region") != "peru"
+                or (f.get("properties", {}).get("confianza") or 0) < 0.3
+            )
+        )
+    ]
     return JSONResponse(content={"type": "FeatureCollection", "features": features})
 
 
 @app.get("/alerts/summary")
 def get_alerts_summary():
     features, source_files = _load_all_alerts()
-    mining = [f for f in features if f.get("properties", {}).get("actividad") == "mineria"]
+    mining = [
+        f for f in features
+        if f.get("properties", {}).get("actividad") == "mineria"
+        and f.get("properties", {}).get("_source_region") == "peru"
+        and (f.get("properties", {}).get("confianza") or 0) >= 0.3
+    ]
 
     severity: dict[str, int] = {}
     dates: set[str] = set()

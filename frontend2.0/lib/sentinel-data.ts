@@ -1,10 +1,8 @@
 export type ActivityType =
   | "mineria"
-  | "deforestacion"
   | "incendios"
-  | "cultivos"
 
-export type Region = "colombia" | "peru" | "brasil" | "bolivia" | "biobio"
+export type Region = "peru" | "biobio"
 
 export type Verdict = "ILEGAL" | "VERIFICAR" | "CONFIRMADO" | "PRELIMINAR"
 
@@ -48,17 +46,12 @@ export interface AlertSummary {
 
 export const ACTIVITY_LABELS: Record<ActivityType, string> = {
   mineria: "Minería Ilegal",
-  deforestacion: "Deforestación",
   incendios: "Incendios",
-  cultivos: "Cultivos Ilícitos",
 }
 
 export const REGION_LABELS: Record<Region, string> = {
-  colombia: "Amazonas — Colombia",
-  peru: "Amazonas — Perú",
-  brasil: "Amazonas — Brasil",
-  bolivia: "Amazonas — Bolivia",
-  biobio: "Chile — Biobío",
+  peru:   "Perú",
+  biobio: "Chile",
 }
 
 export const SEVERITY_META: Record<

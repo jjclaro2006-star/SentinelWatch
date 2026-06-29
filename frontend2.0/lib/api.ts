@@ -54,20 +54,14 @@ interface FireGeoJSONCollection {
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000'
 
 const ACTIVITY_MAP: Record<string, ActivityType> = {
-  deforestacion: 'deforestacion',
-  mineria: 'mineria',
-  incendio: 'incendios',
+  mineria:   'mineria',
+  incendio:  'incendios',
   incendios: 'incendios',
-  agricultura: 'cultivos',
-  asentamiento: 'cultivos',
-  normal: 'deforestacion',
 }
 
 function detectRegion(lat: number, lon: number): Region {
-  if (lat > -4 && lat < 12 && lon > -79 && lon < -66) return 'colombia'
-  if (lat > -18 && lat < 0 && lon > -82 && lon < -68) return 'peru'
-  if (lat > -22 && lat < -9 && lon > -70 && lon < -57) return 'bolivia'
-  return 'brasil'
+  if (lat > -48 && lat < -16 && lon > -76 && lon < -65) return 'biobio'
+  return 'peru'
 }
 
 function computeMapPosition(lat: number, lon: number): { x: number; y: number } {
@@ -94,7 +88,7 @@ export function mapApiAlertToAlert(props: ApiAlertProperties): Alert {
   const { x, y } = computeMapPosition(lat, lon)
   return {
     id: props.id,
-    type: ACTIVITY_MAP[props.actividad ?? ''] ?? 'deforestacion',
+    type: ACTIVITY_MAP[props.actividad ?? ''] ?? 'mineria',
     lat,
     lon,
     date: props.detection_date ?? new Date().toISOString().split('T')[0],

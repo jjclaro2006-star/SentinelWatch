@@ -4,13 +4,14 @@ import { useCallback, useMemo, useState } from "react"
 import dynamic from "next/dynamic"
 import { ControlPanel } from "@/components/control-panel"
 import { useAlerts } from "@/hooks/useAlerts"
+import type { RegionFilter } from "@/components/region-select"
 
 const MapViewport = dynamic(
   () => import("@/components/map-viewport").then((m) => m.MapViewport),
   { ssr: false, loading: () => <div className="flex-1 h-full bg-[#0d1117]" /> },
 )
 import { exportAlertsCSV } from "@/lib/utils"
-import type { ActivityType, Alert, Region, Verdict } from "@/lib/sentinel-data"
+import type { ActivityType, Alert, Verdict } from "@/lib/sentinel-data"
 
 type ActivityFilter = ActivityType | "all"
 type VerdictFilter = Verdict | "all"
@@ -18,8 +19,8 @@ type VerdictFilter = Verdict | "all"
 export default function Page() {
   const { alerts, summary, error, loading, lastSync } = useAlerts()
 
-  const [activity, setActivity] = useState<ActivityFilter>("all")
-  const [region, setRegion] = useState<Region>("colombia")
+  const [activity, setActivity] = useState<ActivityFilter>("mineria")
+  const [region, setRegion] = useState<RegionFilter>("peru")
   const [filterVerdict, setFilterVerdict] = useState<VerdictFilter>("all")
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [hiddenIds, setHiddenIds] = useState<Set<string>>(new Set())
@@ -27,7 +28,7 @@ export default function Page() {
   const filtered = useMemo(() => {
     return alerts.filter(
       (a) =>
-        a.region === region &&
+        (region === "all" || a.region === region) &&
         (activity === "all" || a.type === activity) &&
         (filterVerdict === "all" || a.verdict === filterVerdict),
     )
@@ -63,7 +64,7 @@ export default function Page() {
     setSelectedId(null)
   }, [])
 
-  const handleRegionChange = useCallback((value: Region) => {
+  const handleRegionChange = useCallback((value: RegionFilter) => {
     setRegion(value)
     setSelectedId(null)
   }, [])

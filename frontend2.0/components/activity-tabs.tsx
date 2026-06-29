@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { ACTIVITY_LABELS, type ActivityType } from "@/lib/sentinel-data"
-import { Pickaxe, Trees, Flame, Sprout, LayoutGrid } from "lucide-react"
+import { Pickaxe, Flame, LayoutGrid } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 
 type Filter = ActivityType | "all"
@@ -10,18 +10,10 @@ type Filter = ActivityType | "all"
 const ICONS: Record<Filter, LucideIcon> = {
   all: LayoutGrid,
   mineria: Pickaxe,
-  deforestacion: Trees,
   incendios: Flame,
-  cultivos: Sprout,
 }
 
-const ORDER: Filter[] = [
-  "all",
-  "mineria",
-  "deforestacion",
-  "incendios",
-  "cultivos",
-]
+const ORDER: Filter[] = ["all", "mineria", "incendios"]
 
 const LABELS: Record<Filter, string> = {
   all: "Todas",
@@ -39,7 +31,7 @@ export function ActivityTabs({
     <div
       role="tablist"
       aria-label="Filtrar por tipo de actividad ilegal"
-      className="grid grid-cols-5 gap-1 rounded-lg border border-border bg-secondary/40 p-1"
+      className="grid grid-cols-3 gap-1 rounded-lg border border-border bg-secondary/40 p-1"
     >
       {ORDER.map((key) => {
         const Icon = ICONS[key]
