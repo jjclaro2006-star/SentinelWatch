@@ -2,7 +2,7 @@ export type ActivityType =
   | "mineria"
   | "incendios"
 
-export type Region = "peru" | "biobio"
+export type Region = "peru" | "biobio" | "brasil" | "bolivia" | "colombia"
 
 export type Verdict = "ILEGAL" | "VERIFICAR" | "CONFIRMADO" | "PRELIMINAR"
 
@@ -50,8 +50,11 @@ export const ACTIVITY_LABELS: Record<ActivityType, string> = {
 }
 
 export const REGION_LABELS: Record<Region, string> = {
-  peru:   "Perú",
-  biobio: "Chile",
+  peru:     "Perú",
+  brasil:   "Brasil",
+  bolivia:  "Bolivia",
+  colombia: "Colombia",
+  biobio:   "Chile",
 }
 
 export const SEVERITY_META: Record<

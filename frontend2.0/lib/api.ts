@@ -12,6 +12,7 @@ interface ApiAlertProperties {
   confianza?: number | null
   ndvi_change?: number | null
   detection_date?: string
+  _source_region?: string
 }
 
 interface ApiGeoJSONCollection {
@@ -59,8 +60,12 @@ const ACTIVITY_MAP: Record<string, ActivityType> = {
   incendios: 'incendios',
 }
 
-function detectRegion(lat: number, lon: number): Region {
-  if (lat > -48 && lat < -16 && lon > -76 && lon < -65) return 'biobio'
+function mapSourceRegion(sourceRegion?: string): Region {
+  if (!sourceRegion) return 'peru'
+  if (sourceRegion.startsWith('brasil')) return 'brasil'
+  if (sourceRegion === 'bolivia') return 'bolivia'
+  if (sourceRegion === 'colombia') return 'colombia'
+  if (sourceRegion === 'biobio' || sourceRegion.startsWith('chile')) return 'biobio'
   return 'peru'
 }
 
@@ -95,7 +100,7 @@ export function mapApiAlertToAlert(props: ApiAlertProperties): Alert {
     confidence: Math.round((props.confianza ?? 0) * 100) / 100,
     verdict: mapVerdict(props.veredicto),
     severity: mapSeverity(props.severity ?? props.severidad),
-    region: detectRegion(lat, lon),
+    region: mapSourceRegion(props._source_region),
     wdpa: false,
     source: 'Sentinel',
     x,

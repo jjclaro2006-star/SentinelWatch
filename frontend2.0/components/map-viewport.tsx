@@ -17,9 +17,12 @@ interface Props {
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000"
 
 const REGION_VIEW: Record<RegionFilter, { center: [number, number]; zoom: number }> = {
-  all:    { center: [-72.0, -20.0], zoom: 4 },
-  peru:   { center: [-74.5,  -5.0], zoom: 6 },
-  biobio: { center: [-72.0, -37.5], zoom: 7 },
+  all:      { center: [-64.0,  -8.0], zoom: 4 },
+  peru:     { center: [-74.5,  -5.0], zoom: 6 },
+  brasil:   { center: [-62.0,  -5.0], zoom: 5 },
+  bolivia:  { center: [-63.5, -13.0], zoom: 6 },
+  colombia: { center: [-72.5,   2.0], zoom: 6 },
+  biobio:   { center: [-72.0, -37.5], zoom: 7 },
 }
 
 const ACTIVITY_COLORS: Record<ActivityType, string> = {

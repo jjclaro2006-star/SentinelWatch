@@ -32,6 +32,26 @@ def _ensure_gee() -> None:
         _gee_initialized = True
 
 
+# Regions approved for mining alerts and their minimum confidence thresholds.
+# Anything not listed is archived on disk and never served to the frontend.
+_MINING_APPROVED: dict[str, float] = {
+    "peru":           0.30,
+    "bolivia":        0.30,
+    "brasil_norte":   0.30,
+    "brasil_oeste_1": 0.30,
+    "brasil_oeste_2": 0.30,
+    "brasil_oeste_3": 0.30,
+    "colombia":       0.50,
+    "brasil_este":    0.50,
+}
+
+
+def _mining_passes(f: dict) -> bool:
+    props = f.get("properties", {})
+    min_conf = _MINING_APPROVED.get(props.get("_source_region", ""))
+    return min_conf is not None and (props.get("confianza") or 0) >= min_conf
+
+
 def _load_all_alerts() -> tuple[list[dict], list[str]]:
     """Combines the latest alerts file per region into a single feature list.
 
@@ -91,16 +111,10 @@ def get_alerts(actividad: Optional[str] = Query(None)):
     features, _ = _load_all_alerts()
     if actividad is not None:
         features = [f for f in features if f.get("properties", {}).get("actividad") == actividad]
-    # MVP: mining alerts are Peru-only and must meet minimum confidence
+    # Only pass through mining alerts that are in an approved region with sufficient confidence.
     features = [
         f for f in features
-        if not (
-            f.get("properties", {}).get("actividad") == "mineria"
-            and (
-                f.get("properties", {}).get("_source_region") != "peru"
-                or (f.get("properties", {}).get("confianza") or 0) < 0.3
-            )
-        )
+        if f.get("properties", {}).get("actividad") != "mineria" or _mining_passes(f)
     ]
     return JSONResponse(content={"type": "FeatureCollection", "features": features})
 
@@ -110,9 +124,7 @@ def get_alerts_summary():
     features, source_files = _load_all_alerts()
     mining = [
         f for f in features
-        if f.get("properties", {}).get("actividad") == "mineria"
-        and f.get("properties", {}).get("_source_region") == "peru"
-        and (f.get("properties", {}).get("confianza") or 0) >= 0.3
+        if f.get("properties", {}).get("actividad") == "mineria" and _mining_passes(f)
     ]
 
     severity: dict[str, int] = {}

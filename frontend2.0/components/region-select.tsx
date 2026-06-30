@@ -8,9 +8,12 @@ import { ChevronDown, Globe2, Check } from "lucide-react"
 export type RegionFilter = Region | "all"
 
 const OPTIONS: { value: RegionFilter; label: string }[] = [
-  { value: "all",    label: "Todos" },
-  { value: "peru",   label: REGION_LABELS.peru },
-  { value: "biobio", label: REGION_LABELS.biobio },
+  { value: "all",      label: "Todos" },
+  { value: "peru",     label: REGION_LABELS.peru },
+  { value: "brasil",   label: REGION_LABELS.brasil },
+  { value: "bolivia",  label: REGION_LABELS.bolivia },
+  { value: "colombia", label: REGION_LABELS.colombia },
+  { value: "biobio",   label: REGION_LABELS.biobio },
 ]
 
 export function RegionSelect({
