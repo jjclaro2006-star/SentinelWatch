@@ -30,7 +30,8 @@ export default function Page() {
       (a) =>
         (region === "all" || a.region === region) &&
         (activity === "all" || a.type === activity) &&
-        (filterVerdict === "all" || a.verdict === filterVerdict),
+        (filterVerdict === "all" || a.verdict === filterVerdict) &&
+        (a.type !== "mineria" || a.confidence >= 30),
     )
   }, [alerts, activity, region, filterVerdict])
 
@@ -40,7 +41,7 @@ export default function Page() {
   )
 
   const kpis = useMemo(() => {
-    const total = summary?.total_alerts ?? filtered.length
+    const total = filtered.length
     const avgConfidence = filtered.length
       ? Math.round(
           filtered.reduce((sum, a) => sum + a.confidence, 0) / filtered.length,

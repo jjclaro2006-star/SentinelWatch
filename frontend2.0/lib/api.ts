@@ -97,7 +97,7 @@ export function mapApiAlertToAlert(props: ApiAlertProperties): Alert {
     lat,
     lon,
     date: props.detection_date ?? new Date().toISOString().split('T')[0],
-    confidence: Math.round((props.confianza ?? 0) * 100) / 100,
+    confidence: Math.round((props.confianza ?? 0) * 100),
     verdict: mapVerdict(props.veredicto),
     severity: mapSeverity(props.severity ?? props.severidad),
     region: mapSourceRegion(props._source_region),

@@ -111,6 +111,9 @@ def get_alerts(actividad: Optional[str] = Query(None)):
     features, _ = _load_all_alerts()
     if actividad is not None:
         features = [f for f in features if f.get("properties", {}).get("actividad") == actividad]
+    # Only serve actionable activity types; drop negative-class and unsupported modules.
+    _ALLOWED = {"mineria", "incendios"}
+    features = [f for f in features if f.get("properties", {}).get("actividad") in _ALLOWED]
     # Only pass through mining alerts that are in an approved region with sufficient confidence.
     features = [
         f for f in features
