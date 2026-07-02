@@ -44,10 +44,10 @@ export function RegionSelect({
         onClick={() => setOpen((o) => !o)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex w-full items-center justify-between gap-2 rounded-lg border border-border bg-secondary/40 px-3 py-2.5 text-sm font-medium transition-colors hover:bg-accent"
+        className="flex w-full items-center justify-between gap-2 rounded-[10px] border border-white/[0.07] bg-white/[0.02] px-3 py-2.5 text-sm font-medium transition-all hover:bg-white/[0.05]"
       >
         <span className="flex items-center gap-2">
-          <Globe2 className="size-4 text-primary" aria-hidden />
+          <Globe2 className="size-4 text-foreground" aria-hidden />
           {currentLabel}
         </span>
         <ChevronDown
@@ -62,7 +62,8 @@ export function RegionSelect({
       {open && (
         <ul
           role="listbox"
-          className="absolute z-30 mt-1 w-full overflow-hidden rounded-lg border border-border bg-popover py-1 shadow-xl"
+          className="absolute z-30 mt-1 w-full overflow-hidden rounded-[10px] border border-white/[0.07] py-1 shadow-xl"
+          style={{ background: "#0a0a0c" }}
         >
           {OPTIONS.map(({ value: val, label }) => {
             const active = val === value
@@ -76,8 +77,8 @@ export function RegionSelect({
                     setOpen(false)
                   }}
                   className={cn(
-                    "flex w-full items-center justify-between px-3 py-2 text-sm transition-colors hover:bg-accent",
-                    active ? "text-primary" : "text-foreground",
+                    "flex w-full items-center justify-between px-3 py-2 text-sm transition-colors hover:bg-white/[0.05]",
+                    active ? "text-foreground" : "text-muted-foreground",
                   )}
                 >
                   {label}

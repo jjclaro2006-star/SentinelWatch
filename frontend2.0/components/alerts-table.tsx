@@ -43,8 +43,9 @@ export const AlertsTable = memo(function AlertsTable({
   const offsetTop = startIdx * ROW_HEIGHT
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
-      <div className="grid grid-cols-[1fr_1.4fr_1.3fr_0.9fr_1.3fr_auto] gap-2 border-b border-border bg-secondary/40 px-4 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+    <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[11px] border border-white/[0.07]">
+      {/* Header */}
+      <div className="grid grid-cols-[1fr_1.4fr_1.3fr_0.9fr_1.3fr_auto] gap-2 border-b border-white/[0.07] bg-white/[0.03] px-4 py-2.5 font-mono text-[9px] uppercase tracking-[0.18em] text-muted-foreground">
         <span>ID / Tipo</span>
         <span>Coordenadas</span>
         <span>Fecha</span>
@@ -66,7 +67,7 @@ export const AlertsTable = memo(function AlertsTable({
           </div>
         )}
         {!loading && alerts.length === 0 && (
-          <p className="px-4 py-10 text-center text-sm text-muted-foreground">
+          <p className="px-4 py-10 text-center font-mono text-[11px] text-muted-foreground">
             No hay alertas para los filtros seleccionados.
           </p>
         )}
@@ -83,18 +84,18 @@ export const AlertsTable = memo(function AlertsTable({
                     onClick={() => onSelect(alert)}
                     style={{ height: ROW_HEIGHT }}
                     className={cn(
-                      "grid w-full grid-cols-[1fr_1.4fr_1.3fr_0.9fr_1.3fr_auto] items-center gap-2 border-b border-border/60 px-4 py-3 text-left text-xs transition-colors",
-                      selected ? "bg-primary/10" : "hover:bg-accent/60",
-                      hidden && "opacity-45",
+                      "grid w-full grid-cols-[1fr_1.4fr_1.3fr_0.9fr_1.3fr_auto] items-center gap-2 border-b border-white/[0.05] px-4 py-3 text-left text-xs transition-colors",
+                      selected ? "bg-white/[0.06]" : "hover:bg-white/[0.03]",
+                      hidden && "opacity-40",
                     )}
                   >
                     <span className="flex flex-col gap-1">
-                      <span className="font-mono font-medium text-foreground">
+                      <span className="font-mono text-[11px] font-medium text-foreground">
                         {alert.id}
                       </span>
                       <span
                         className={cn(
-                          "w-fit rounded border px-1.5 py-0.5 text-[10px] font-medium",
+                          "w-fit rounded border px-1.5 py-0.5 font-mono text-[9px] font-medium uppercase tracking-[0.06em]",
                           severity.className,
                         )}
                       >
@@ -102,13 +103,13 @@ export const AlertsTable = memo(function AlertsTable({
                       </span>
                     </span>
 
-                    <span className="font-mono text-[11px] text-muted-foreground">
+                    <span className="font-mono text-[10px] text-muted-foreground">
                       {alert.lat.toFixed(4)}
                       <br />
                       {alert.lon.toFixed(4)}
                     </span>
 
-                    <span className="text-muted-foreground">
+                    <span className="font-mono text-[10px] text-muted-foreground">
                       {new Date(alert.date).toLocaleDateString("es", {
                         day: "2-digit",
                         month: "short",
@@ -117,14 +118,14 @@ export const AlertsTable = memo(function AlertsTable({
                       })}
                     </span>
 
-                    <span className="font-mono font-semibold tabular-nums text-foreground">
+                    <span className="font-mono text-[11px] font-semibold tabular-nums text-foreground">
                       {alert.confidence}%
                     </span>
 
                     <span>
                       <span
                         className={cn(
-                          "inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-[10px] font-semibold",
+                          "inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-mono text-[9px] font-semibold uppercase tracking-[0.06em]",
                           alert.verdict === "ILEGAL"
                             ? "bg-destructive/15 text-destructive"
                             : "bg-chart-3/15 text-[color:oklch(0.82_0.15_80)]",
@@ -138,7 +139,7 @@ export const AlertsTable = memo(function AlertsTable({
                               : "bg-[oklch(0.82_0.15_80)]",
                           )}
                         />
-                        {alert.verdict === "ILEGAL" ? "ILEGAL" : "Verificación"}
+                        {alert.verdict === "ILEGAL" ? "ILEGAL" : "Verificar"}
                       </span>
                     </span>
 
@@ -161,7 +162,7 @@ export const AlertsTable = memo(function AlertsTable({
                           onToggleVisibility(alert.id)
                         }
                       }}
-                      className="flex size-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                      className="flex size-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-white/[0.06] hover:text-foreground"
                     >
                       {hidden ? (
                         <EyeOff className="size-4" aria-hidden />

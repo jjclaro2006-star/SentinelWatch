@@ -14,7 +14,7 @@ interface Kpi {
 }
 
 const TONE: Record<Kpi["tone"], string> = {
-  primary: "text-primary",
+  primary: "text-foreground",
   destructive: "text-destructive",
   neutral: "text-foreground",
 }
@@ -37,28 +37,28 @@ function computeFireKpis(alerts: Alert[]): Kpi[] {
     {
       label: "Eventos Activos",
       value: confirmed.length.toString(),
-      hint: "alertas tier=confirmed",
+      hint: "tier=confirmed",
       icon: Flame,
       tone: "destructive",
     },
     {
       label: "FRP Máximo",
       value: maxFrp > 0 ? `${maxFrp.toFixed(0)} MW` : "—",
-      hint: "potencia radiativa máx.",
+      hint: "potencia radiativa",
       icon: Zap,
       tone: "destructive",
     },
     {
-      label: "Índice Meteorológico",
+      label: "Índice Met.",
       value: topFwi,
-      hint: "fire weather index más frecuente",
+      hint: "fire weather index",
       icon: Wind,
       tone: "neutral",
     },
     {
-      label: "Riesgo Promedio",
+      label: "Riesgo Prom.",
       value: scores.length ? `${avgRisk}%` : "—",
-      hint: "score intencionalidad medio",
+      hint: "intencionalidad",
       icon: Target,
       tone: scores.length && avgRisk >= 60 ? "destructive" : "primary",
     },
@@ -84,21 +84,21 @@ export function KpiCards({
     {
       label: "Alertas Totales",
       value: total.toString(),
-      hint: "en la región y filtro activos",
+      hint: "en filtro activo",
       icon: Activity,
       tone: "neutral",
     },
     {
-      label: "Certeza Promedio",
+      label: "Certeza Prom.",
       value: `${avgConfidence}%`,
       hint: "confianza del modelo",
       icon: Gauge,
       tone: "primary",
     },
     {
-      label: "Áreas Protegidas",
+      label: "Áreas Prot.",
       value: wdpaCount.toString(),
-      hint: "cruces con polígonos WDPA",
+      hint: "cruces WDPA",
       icon: ShieldAlert,
       tone: "destructive",
     },
@@ -107,32 +107,39 @@ export function KpiCards({
   const kpis = isFireTab ? computeFireKpis(alerts) : defaultKpis
 
   return (
-    <div className={cn("grid gap-3", isFireTab ? "grid-cols-4" : "grid-cols-3")}>
+    <div className={cn("grid gap-2.5 shrink-0", isFireTab ? "grid-cols-4" : "grid-cols-3")}>
       {kpis.map((kpi) => {
         const Icon = kpi.icon
         return (
           <div
             key={kpi.label}
-            className="rounded-xl border border-border bg-card p-4"
+            className="rounded-[11px] border border-white/[0.09] p-3.5"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018))",
+            }}
           >
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-muted-foreground">
+            <div className="flex items-center justify-between gap-1">
+              <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-muted-foreground leading-tight">
                 {kpi.label}
               </span>
               <Icon
-                className={cn("size-4", TONE[kpi.tone])}
+                className={cn("size-3.5 shrink-0", TONE[kpi.tone])}
                 aria-hidden
               />
             </div>
             <p
               className={cn(
-                "mt-3 font-mono text-3xl font-semibold tabular-nums tracking-tight",
+                "mt-2.5 font-mono tabular-nums tracking-tight",
+                isFireTab ? "text-xl font-semibold" : "text-3xl font-semibold",
                 TONE[kpi.tone],
               )}
             >
               {kpi.value}
             </p>
-            <p className="mt-1 text-[11px] text-muted-foreground">{kpi.hint}</p>
+            <p className="mt-1 font-mono text-[9px] tracking-[0.06em] text-muted-foreground">
+              {kpi.hint}
+            </p>
           </div>
         )
       })}

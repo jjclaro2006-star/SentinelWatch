@@ -31,7 +31,7 @@ export function ActivityTabs({
     <div
       role="tablist"
       aria-label="Filtrar por tipo de actividad ilegal"
-      className="grid grid-cols-3 gap-1 rounded-lg border border-border bg-secondary/40 p-1"
+      className="grid grid-cols-3 gap-1 rounded-[10px] border border-white/[0.07] bg-white/[0.02] p-1"
     >
       {ORDER.map((key) => {
         const Icon = ICONS[key]
@@ -43,10 +43,10 @@ export function ActivityTabs({
             aria-selected={active}
             onClick={() => onChange(key)}
             className={cn(
-              "flex flex-col items-center justify-center gap-1.5 rounded-md px-1 py-2.5 text-[11px] font-medium leading-tight transition-colors",
+              "flex flex-col items-center justify-center gap-1.5 rounded-[7px] px-1 py-2.5 font-mono text-[10px] font-medium leading-tight tracking-[0.04em] transition-all",
               active
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "text-muted-foreground hover:bg-accent hover:text-foreground",
+                ? "border border-white/[0.12] bg-[linear-gradient(180deg,rgba(255,255,255,0.09),rgba(255,255,255,0.04))] text-foreground shadow-sm"
+                : "text-muted-foreground hover:bg-white/[0.04] hover:text-foreground",
             )}
           >
             <Icon className="size-4" aria-hidden />

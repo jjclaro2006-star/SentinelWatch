@@ -86,37 +86,37 @@
 
 .dark {
   color-scheme: dark;
-  --background: oklch(0.16 0.012 250);
-  --foreground: oklch(0.96 0.005 250);
-  --card: oklch(0.21 0.015 250);
-  --card-foreground: oklch(0.96 0.005 250);
-  --popover: oklch(0.19 0.015 250);
-  --popover-foreground: oklch(0.96 0.005 250);
+  --background: oklch(0.072 0 0);
+  --foreground: oklch(0.96 0 0);
+  --card: oklch(0.095 0 0);
+  --card-foreground: oklch(0.96 0 0);
+  --popover: oklch(0.085 0 0);
+  --popover-foreground: oklch(0.96 0 0);
   --primary: oklch(0.96 0 0);
-  --primary-foreground: oklch(0.18 0.02 250);
-  --secondary: oklch(0.27 0.015 250);
-  --secondary-foreground: oklch(0.96 0.005 250);
-  --muted: oklch(0.25 0.012 250);
-  --muted-foreground: oklch(0.68 0.015 250);
-  --accent: oklch(0.28 0.02 250);
-  --accent-foreground: oklch(0.96 0.005 250);
+  --primary-foreground: oklch(0.095 0 0);
+  --secondary: oklch(0.12 0 0);
+  --secondary-foreground: oklch(0.96 0 0);
+  --muted: oklch(0.12 0 0);
+  --muted-foreground: oklch(0.58 0 0);
+  --accent: oklch(0.15 0 0);
+  --accent-foreground: oklch(0.96 0 0);
   --destructive: oklch(0.63 0.23 25);
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.65 0 0);
+  --border: oklch(1 0 0 / 7%);
+  --input: oklch(1 0 0 / 9%);
+  --ring: oklch(0.50 0 0);
   --chart-1: oklch(0.96 0 0);
   --chart-2: oklch(0.63 0.23 25);
   --chart-3: oklch(0.78 0.15 80);
   --chart-4: oklch(0.6 0.13 250);
   --chart-5: oklch(0.55 0.12 30);
-  --sidebar: oklch(0.18 0.013 250);
-  --sidebar-foreground: oklch(0.96 0.005 250);
+  --sidebar: oklch(0.082 0 0);
+  --sidebar-foreground: oklch(0.96 0 0);
   --sidebar-primary: oklch(0.96 0 0);
-  --sidebar-primary-foreground: oklch(0.18 0.02 250);
-  --sidebar-accent: oklch(0.27 0.015 250);
-  --sidebar-accent-foreground: oklch(0.96 0.005 250);
-  --sidebar-border: oklch(1 0 0 / 8%);
-  --sidebar-ring: oklch(0.65 0 0);
+  --sidebar-primary-foreground: oklch(0.082 0 0);
+  --sidebar-accent: oklch(0.14 0 0);
+  --sidebar-accent-foreground: oklch(0.96 0 0);
+  --sidebar-border: oklch(1 0 0 / 7%);
+  --sidebar-ring: oklch(0.50 0 0);
 }
 
 @media (prefers-color-scheme: dark) {
