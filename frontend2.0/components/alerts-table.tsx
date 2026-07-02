@@ -4,12 +4,13 @@ import { memo, useRef, useState, useCallback } from "react"
 import { cn } from "@/lib/utils"
 import {
   ACTIVITY_LABELS,
+  REGION_LABELS,
   SEVERITY_META,
   type Alert,
 } from "@/lib/sentinel-data"
 import { Eye, EyeOff, Loader2 } from "lucide-react"
 
-const ROW_HEIGHT = 61
+const ROW_HEIGHT = 54
 const OVERSCAN   = 5
 
 export const AlertsTable = memo(function AlertsTable({
@@ -43,16 +44,14 @@ export const AlertsTable = memo(function AlertsTable({
   const offsetTop = startIdx * ROW_HEIGHT
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[11px] border border-white/[0.07]">
+    <div className="flex h-full flex-col overflow-hidden rounded-[11px] border border-white/[0.07]">
       {/* Header */}
-      <div className="grid grid-cols-[1fr_1.4fr_1.3fr_0.9fr_1.3fr_auto] gap-2 border-b border-white/[0.07] bg-white/[0.03] px-4 py-2.5 font-mono text-[9px] uppercase tracking-[0.18em] text-muted-foreground">
+      <div className="grid grid-cols-[1.4fr_1fr_1.1fr_1.2fr_auto] gap-2 border-b border-white/[0.07] bg-white/[0.03] px-4 py-2.5 font-mono text-[9px] uppercase tracking-[0.18em] text-muted-foreground">
         <span>ID / Tipo</span>
-        <span>Coordenadas</span>
+        <span>Región</span>
         <span>Fecha</span>
-        <span>Conf.</span>
         <span>Veredicto</span>
         <span className="sr-only">Visibilidad</span>
-        <span aria-hidden />
       </div>
 
       <div
@@ -84,13 +83,14 @@ export const AlertsTable = memo(function AlertsTable({
                     onClick={() => onSelect(alert)}
                     style={{ height: ROW_HEIGHT }}
                     className={cn(
-                      "grid w-full grid-cols-[1fr_1.4fr_1.3fr_0.9fr_1.3fr_auto] items-center gap-2 border-b border-white/[0.05] px-4 py-3 text-left text-xs transition-colors",
+                      "grid w-full grid-cols-[1.4fr_1fr_1.1fr_1.2fr_auto] items-center gap-2 border-b border-white/[0.05] px-4 py-3 text-left transition-colors",
                       selected ? "bg-white/[0.06]" : "hover:bg-white/[0.03]",
                       hidden && "opacity-40",
                     )}
                   >
-                    <span className="flex flex-col gap-1">
-                      <span className="font-mono text-[11px] font-medium text-foreground">
+                    {/* ID / Tipo */}
+                    <span className="flex flex-col gap-0.5">
+                      <span className="font-mono text-[11px] font-medium text-foreground truncate">
                         {alert.id}
                       </span>
                       <span
@@ -103,12 +103,12 @@ export const AlertsTable = memo(function AlertsTable({
                       </span>
                     </span>
 
+                    {/* Región */}
                     <span className="font-mono text-[10px] text-muted-foreground">
-                      {alert.lat.toFixed(4)}
-                      <br />
-                      {alert.lon.toFixed(4)}
+                      {REGION_LABELS[alert.region]}
                     </span>
 
+                    {/* Fecha */}
                     <span className="font-mono text-[10px] text-muted-foreground">
                       {new Date(alert.date).toLocaleDateString("es", {
                         day: "2-digit",
@@ -118,15 +118,12 @@ export const AlertsTable = memo(function AlertsTable({
                       })}
                     </span>
 
-                    <span className="font-mono text-[11px] font-semibold tabular-nums text-foreground">
-                      {alert.confidence}%
-                    </span>
-
+                    {/* Veredicto */}
                     <span>
                       <span
                         className={cn(
                           "inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-mono text-[9px] font-semibold uppercase tracking-[0.06em]",
-                          alert.verdict === "ILEGAL"
+                          alert.verdict === "ILEGAL" || alert.verdict === "CONFIRMADO"
                             ? "bg-destructive/15 text-destructive"
                             : "bg-chart-3/15 text-[color:oklch(0.82_0.15_80)]",
                         )}
@@ -134,15 +131,18 @@ export const AlertsTable = memo(function AlertsTable({
                         <span
                           className={cn(
                             "size-1.5 rounded-full",
-                            alert.verdict === "ILEGAL"
+                            alert.verdict === "ILEGAL" || alert.verdict === "CONFIRMADO"
                               ? "bg-destructive"
                               : "bg-[oklch(0.82_0.15_80)]",
                           )}
                         />
-                        {alert.verdict === "ILEGAL" ? "ILEGAL" : "Verificar"}
+                        {alert.verdict === "ILEGAL" || alert.verdict === "CONFIRMADO"
+                          ? "ILEGAL"
+                          : "Verificar"}
                       </span>
                     </span>
 
+                    {/* Visibility */}
                     <span
                       role="button"
                       tabIndex={0}

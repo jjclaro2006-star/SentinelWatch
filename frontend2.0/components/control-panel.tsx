@@ -5,27 +5,37 @@ import { ActivityTabs } from "@/components/activity-tabs"
 import { RegionSelect, type RegionFilter } from "@/components/region-select"
 import { KpiCards } from "@/components/kpi-cards"
 import { AlertsTable } from "@/components/alerts-table"
-import {
-  type ActivityType,
-  type Alert,
-  type Verdict,
-} from "@/lib/sentinel-data"
+import { type ActivityType, type Alert, type Severity } from "@/lib/sentinel-data"
 import { cn } from "@/lib/utils"
 import { Radar, Download, AlertCircle } from "lucide-react"
+import type { TimeFilter, SeverityFilter } from "@/app/page"
 
 type ActivityFilter = ActivityType | "all"
-type VerdictFilter = Verdict | "all"
 
-const VERDICT_OPTIONS: { value: VerdictFilter; label: string }[] = [
+const TIME_OPTS: { value: TimeFilter; label: string }[] = [
+  { value: "7d",  label: "7d" },
+  { value: "30d", label: "30d" },
+  { value: "90d", label: "90d" },
   { value: "all", label: "Todos" },
-  { value: "ILEGAL", label: "ILEGAL" },
-  { value: "VERIFICAR", label: "Verificar" },
+]
+
+const SEVERITY_OPTS: {
+  value: SeverityFilter
+  label: string
+  dot: string
+}[] = [
+  { value: "critica", label: "Crítica", dot: "#f85149" },
+  { value: "alta",    label: "Alerta",  dot: "#d29922" },
+  { value: "media",   label: "Normal",  dot: "#3fb950" },
 ]
 
 export const ControlPanel = memo(function ControlPanel({
   activity,
   region,
-  filterVerdict,
+  severityFilter,
+  severityCounts,
+  searchQuery,
+  timeFilter,
   alerts,
   total,
   avgConfidence,
@@ -37,14 +47,17 @@ export const ControlPanel = memo(function ControlPanel({
   lastSync,
   onActivityChange,
   onRegionChange,
-  onVerdictChange,
+  onSeverityChange,
+  onTimeChange,
   onSelect,
   onToggleVisibility,
   onExportCSV,
 }: {
   activity: ActivityFilter
   region: RegionFilter
-  filterVerdict: VerdictFilter
+  severityFilter: SeverityFilter
+  severityCounts: { critica: number; alta: number; media: number }
+  timeFilter: TimeFilter
   alerts: Alert[]
   total: number
   avgConfidence: number
@@ -56,14 +69,15 @@ export const ControlPanel = memo(function ControlPanel({
   lastSync: Date | null
   onActivityChange: (value: ActivityFilter) => void
   onRegionChange: (value: RegionFilter) => void
-  onVerdictChange: (value: VerdictFilter) => void
+  onSeverityChange: (value: SeverityFilter) => void
+  onTimeChange: (value: TimeFilter) => void
   onSelect: (alert: Alert) => void
   onToggleVisibility: (id: string) => void
   onExportCSV: () => void
 }) {
   return (
     <section
-      className="flex h-full w-1/2 min-w-0 flex-col gap-3.5 overflow-hidden border-r border-white/[0.07] px-[30px] py-[34px]"
+      className="flex h-full w-1/2 min-w-0 flex-col gap-3 overflow-y-auto border-r border-white/[0.07] px-7 py-6"
       style={{ background: "linear-gradient(180deg, #0c0c0e, #060607)" }}
     >
       {/* Header */}
@@ -116,43 +130,69 @@ export const ControlPanel = memo(function ControlPanel({
       )}
 
       {/* Filters */}
-      <div className="shrink-0 space-y-3">
-        <div>
-          <p className="mb-1.5 pl-0.5 font-mono text-[9.5px] uppercase tracking-[0.22em] text-muted-foreground">
-            Actividad ilegal
-          </p>
-          <ActivityTabs value={activity} onChange={onActivityChange} />
+      <div className="shrink-0 space-y-2.5">
+        <p className="pl-0.5 font-mono text-[9.5px] uppercase tracking-[0.22em] text-muted-foreground">
+          Filtros
+        </p>
+
+        {/* Time tabs */}
+        <div className="grid grid-cols-4 gap-1 rounded-[10px] border border-white/[0.07] bg-white/[0.02] p-1">
+          {TIME_OPTS.map((opt) => (
+            <button
+              key={opt.value}
+              onClick={() => onTimeChange(opt.value)}
+              className={cn(
+                "rounded-[7px] py-1.5 font-mono text-[10px] tracking-[0.04em] font-medium transition-all",
+                timeFilter === opt.value
+                  ? "border border-white/[0.12] bg-[linear-gradient(180deg,rgba(255,255,255,0.09),rgba(255,255,255,0.04))] text-foreground shadow-sm"
+                  : "text-muted-foreground hover:bg-white/[0.04] hover:text-foreground",
+              )}
+            >
+              {opt.label}
+            </button>
+          ))}
         </div>
-        <div>
-          <p className="mb-1.5 pl-0.5 font-mono text-[9.5px] uppercase tracking-[0.22em] text-muted-foreground">
-            Región activa
-          </p>
-          <RegionSelect value={region} onChange={onRegionChange} />
-        </div>
-        <div>
-          <p className="mb-1.5 pl-0.5 font-mono text-[9.5px] uppercase tracking-[0.22em] text-muted-foreground">
-            Veredicto legal
-          </p>
-          <div
-            role="group"
-            aria-label="Filtrar por veredicto legal"
-            className="grid grid-cols-3 gap-1 rounded-[10px] border border-white/[0.07] bg-white/[0.02] p-1"
+
+        {/* Activity tabs */}
+        <ActivityTabs value={activity} onChange={onActivityChange} />
+
+        {/* Region */}
+        <RegionSelect value={region} onChange={onRegionChange} />
+
+        {/* Severity chips */}
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => onSeverityChange("all")}
+            className={cn(
+              "rounded-full border px-3 py-1 font-mono text-[10px] tracking-[0.04em] transition-all",
+              severityFilter === "all"
+                ? "border-white/[0.2] bg-white/[0.08] text-foreground"
+                : "border-white/[0.07] text-muted-foreground hover:border-white/[0.12] hover:text-foreground",
+            )}
           >
-            {VERDICT_OPTIONS.map((opt) => (
-              <button
-                key={opt.value}
-                onClick={() => onVerdictChange(opt.value)}
-                className={cn(
-                  "rounded-[7px] px-2 py-2 font-mono text-[10px] tracking-[0.04em] font-medium transition-all",
-                  filterVerdict === opt.value
-                    ? "border border-white/[0.12] bg-[linear-gradient(180deg,rgba(255,255,255,0.09),rgba(255,255,255,0.04))] text-foreground shadow-sm"
-                    : "text-muted-foreground hover:bg-white/[0.04] hover:text-foreground",
-                )}
-              >
-                {opt.label}
-              </button>
-            ))}
-          </div>
+            Todas
+          </button>
+          {SEVERITY_OPTS.map((opt) => (
+            <button
+              key={opt.value}
+              onClick={() => onSeverityChange(opt.value)}
+              className={cn(
+                "flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-[10px] tracking-[0.04em] transition-all",
+                severityFilter === opt.value
+                  ? "border-white/[0.2] bg-white/[0.08] text-foreground"
+                  : "border-white/[0.07] text-muted-foreground hover:border-white/[0.12] hover:text-foreground",
+              )}
+            >
+              <span
+                className="size-1.5 rounded-full shrink-0"
+                style={{ backgroundColor: opt.dot }}
+              />
+              {opt.label}
+              <span className="text-muted-foreground">
+                {severityCounts[opt.value as Severity]}
+              </span>
+            </button>
+          ))}
         </div>
       </div>
 
@@ -166,7 +206,7 @@ export const ControlPanel = memo(function ControlPanel({
       />
 
       {/* Table */}
-      <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex flex-col" style={{ height: "320px" }}>
         <div className="mb-1.5 flex items-center justify-between pl-0.5">
           <p className="font-mono text-[9.5px] uppercase tracking-[0.22em] text-muted-foreground">
             Índice de alertas
@@ -194,7 +234,6 @@ export const ControlPanel = memo(function ControlPanel({
           onToggleVisibility={onToggleVisibility}
         />
       </div>
-
     </section>
   )
 })

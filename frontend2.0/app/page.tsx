@@ -11,29 +11,58 @@ const MapViewport = dynamic(
   { ssr: false, loading: () => <div className="flex-1 h-full bg-[#0d1117]" /> },
 )
 import { exportAlertsCSV } from "@/lib/utils"
-import type { ActivityType, Alert, Verdict } from "@/lib/sentinel-data"
+import type { ActivityType, Alert, Severity } from "@/lib/sentinel-data"
 
 type ActivityFilter = ActivityType | "all"
-type VerdictFilter = Verdict | "all"
+type SeverityFilter = Severity | "all"
+export type TimeFilter = "7d" | "30d" | "90d" | "all"
+export type SeverityFilter = Severity | "all"
 
 export default function Page() {
   const { alerts, summary, error, loading, lastSync } = useAlerts()
 
   const [activity, setActivity] = useState<ActivityFilter>("mineria")
   const [region, setRegion] = useState<RegionFilter>("peru")
-  const [filterVerdict, setFilterVerdict] = useState<VerdictFilter>("all")
+  const [severityFilter, setSeverityFilter] = useState<SeverityFilter>("all")
+  const [timeFilter, setTimeFilter] = useState<TimeFilter>("all")
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [hiddenIds, setHiddenIds] = useState<Set<string>>(new Set())
 
-  const filtered = useMemo(() => {
+  // Pre-severity filtered set — used for severity chip counts
+  const preFiltered = useMemo(() => {
+    const cutoff =
+      timeFilter !== "all"
+        ? new Date(Date.now() - parseInt(timeFilter) * 24 * 60 * 60 * 1000)
+            .toISOString()
+            .split("T")[0]
+        : null
+
     return alerts.filter(
       (a) =>
         (region === "all" || a.region === region) &&
         (activity === "all" || a.type === activity) &&
-        (filterVerdict === "all" || a.verdict === filterVerdict) &&
-        (a.type !== "mineria" || a.confidence >= 30),
+        (a.type !== "mineria" || a.confidence >= 30) &&
+        (!cutoff || a.date >= cutoff),
     )
-  }, [alerts, activity, region, filterVerdict])
+  }, [alerts, activity, region, timeFilter])
+
+  const severityCounts = useMemo(
+    () => ({
+      critica: preFiltered.filter((a) => a.severity === "critica").length,
+      alta: preFiltered.filter((a) => a.severity === "alta").length,
+      media: preFiltered.filter((a) => a.severity === "media").length,
+    }),
+    [preFiltered],
+  )
+
+  // Final filtered set (table + KPIs)
+  const filtered = useMemo(
+    () =>
+      severityFilter === "all"
+        ? preFiltered
+        : preFiltered.filter((a) => a.severity === severityFilter),
+    [preFiltered, severityFilter],
+  )
 
   const visibleOnMap = useMemo(
     () => filtered.filter((a) => !hiddenIds.has(a.id)),
@@ -70,22 +99,30 @@ export default function Page() {
     setSelectedId(null)
   }, [])
 
-  const handleVerdictChange = useCallback((value: VerdictFilter) => {
-    setFilterVerdict(value)
+  const handleSeverityChange = useCallback((value: SeverityFilter) => {
+    setSeverityFilter(value)
     setSelectedId(null)
   }, [])
 
-  const handleToggleVisibility = useCallback((id: string) => {
-    setHiddenIds((prev) => {
-      const next = new Set(prev)
-      if (next.has(id)) next.delete(id)
-      else {
-        next.add(id)
-        if (selectedId === id) setSelectedId(null)
-      }
-      return next
-    })
-  }, [selectedId])
+  const handleTimeChange = useCallback((value: TimeFilter) => {
+    setTimeFilter(value)
+    setSelectedId(null)
+  }, [])
+
+  const handleToggleVisibility = useCallback(
+    (id: string) => {
+      setHiddenIds((prev) => {
+        const next = new Set(prev)
+        if (next.has(id)) next.delete(id)
+        else {
+          next.add(id)
+          if (selectedId === id) setSelectedId(null)
+        }
+        return next
+      })
+    },
+    [selectedId],
+  )
 
   const handleExportCSV = useCallback(() => {
     exportAlertsCSV(filtered)
@@ -96,7 +133,9 @@ export default function Page() {
       <ControlPanel
         activity={activity}
         region={region}
-        filterVerdict={filterVerdict}
+        severityFilter={severityFilter}
+        severityCounts={severityCounts}
+        timeFilter={timeFilter}
         alerts={filtered}
         total={kpis.total}
         avgConfidence={kpis.avgConfidence}
@@ -108,7 +147,8 @@ export default function Page() {
         lastSync={lastSync}
         onActivityChange={handleActivityChange}
         onRegionChange={handleRegionChange}
-        onVerdictChange={handleVerdictChange}
+        onSeverityChange={handleSeverityChange}
+        onTimeChange={handleTimeChange}
         onSelect={handleSelect}
         onToggleVisibility={handleToggleVisibility}
         onExportCSV={handleExportCSV}
