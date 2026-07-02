@@ -107,7 +107,7 @@ export function KpiCards({
   const kpis = isFireTab ? computeFireKpis(alerts) : defaultKpis
 
   return (
-    <div className={cn("grid gap-3", isFireTab ? "grid-cols-2" : "grid-cols-3")}>
+    <div className={cn("grid gap-3", isFireTab ? "grid-cols-4" : "grid-cols-3")}>
       {kpis.map((kpi) => {
         const Icon = kpi.icon
         return (
